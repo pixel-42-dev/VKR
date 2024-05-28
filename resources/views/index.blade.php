@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html class="no-js" lang="">
+<html lang="ru">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Hosoren Homepage</title>
-    <meta name="description" content="">
+    <title>FashionHub</title>
+    <meta name="description" content="В интернет магазине одежды Fashion Hub Вас ждут ТЫСЯЧИ моделей модной брендовой одежды, а также обуви и аксесуаров разных размеров с бесплатной доставкой!">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,700,400italic,700italic&amp;subset=latin,vietnamese">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
     <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/main.css') }}">
 
-    <script src="js/vendor.js"></script>
+    <script src="{{ asset('js/vendor.js') }}"></script>
 
     <script>
         window.SHOW_LOADING = false;
@@ -26,7 +26,7 @@
     <div class="awe-page-loading">
         <div class="awe-loading-wrapper">
             <div class="awe-loading-icon">
-                <span class="icon icon-logo"></span>
+                <i class="fa fa-spinner fa-spin"></i>
             </div>
 
             <div class="progress">
@@ -35,6 +35,7 @@
         </div>
     </div>
     <!-- // END LOADING -->
+
 
 
     <div id="wrapper">
@@ -51,7 +52,7 @@
                                 <li class="menubar-account">
                                     <a href="#" title="" class="awemenu-icon">
                                         <i class="icon icon-user-circle"></i>
-                                        <span class="awe-hidden-text">Account</span>
+                                        <span class="awe-hidden-text">Аккаунт</span>
                                     </a>
 
                                     <ul class="submenu megamenu">
@@ -66,15 +67,15 @@
                                                     </div>
 
                                                     <div class="header-account-username">
-                                                        <h4><a href="#">Jessica Alba</a></h4>
+                                                        <h4><a href="#">Виктор Фролов</a></h4>
                                                     </div>
 
                                                     <ul>
-                                                        <li><a href="#">Invite Friends</a>
+                                                        <li><a href="#">Профиль</a>
                                                         </li>
-                                                        <li><a href="#">Account Infomation</a>
+                                                        <li><a href="#">Заказы</a>
                                                         </li>
-                                                        <li><a href="#">Logout</a>
+                                                        <li><a href="#">Выйти</a>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -307,10 +308,10 @@
                         </div>
                         <!-- /.awe-logo -->
 
-                        <ul class="awemenu awemenu-right">
+                        <ul class="awemenu awemenu-right" id="left-menu">
                             <li class="awemenu-item">
                                 <a href="#" title="">
-                                    <span>Clothing</span>
+                                    <span>Одежда</span>
                                 </a>
 
                                 <ul class="awemenu-submenu awemenu-megamenu" data-width="100%" data-animation="fadeup">
@@ -405,7 +406,7 @@
 
                             <li class="awemenu-item">
                                 <a href="#" title="">
-                                    <span>Shoes</span>
+                                    <span>Обувь</span>
                                 </a>
 
                                 <ul class="awemenu-submenu awemenu-megamenu" data-width="100%" data-animation="fadeup">
@@ -512,7 +513,7 @@
 
                             <li class="awemenu-item">
                                 <a href="#" title="">
-                                    <span>Accessories</span>
+                                    <span>Аксесуары</span>
                                 </a>
 
                                 <ul class="awemenu-submenu awemenu-megamenu" data-width="100%" data-animation="fadeup">
@@ -603,7 +604,7 @@
 
                             <li class="awemenu-item">
                                 <a href="#" title="">
-                                    <span>Brand</span>
+                                    <span>Контакты</span>
                                 </a>
 
                                 <ul class="awemenu-submenu awemenu-megamenu" data-width="100%" data-animation="fadeup">
@@ -732,211 +733,7 @@
                                 </ul>
                             </li>
 
-                            <li class="awemenu-item">
-                                <a href="#" title="">Pages</a>
 
-                                <ul class="awemenu-submenu awemenu-megamenu" data-width="100%" data-animation="fadeup">
-                                    <li class="awemenu-megamenu-item">
-                                        <div class="container-fluid">
-
-                                            <div class="row">
-                                                <div class="col-lg-3">
-                                                    <ul class="list-unstyled">
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Home Page</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Home Page 2</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Home Page 3</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Home Page 4</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Home Page sytle</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Home with empty cart</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">404</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Comming soon</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-lg-3">
-                                                    <ul class="list-unstyled">
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">About us</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Contact</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Customers Say</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Blog left</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Blog right</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Blog nobar</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Blog masonry</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Blog details</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-lg-3">
-                                                    <ul class="list-unstyled">
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Lookbook</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Lookbook details</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Portfolio 1</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Portfolio 2</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Portfolio 3</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Portfolio 4</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Portfolio details</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-lg-3">
-                                                    <ul class="list-unstyled">
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Product grid</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Product grid 2</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Product list</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Product detail</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Product detail 2</a>
-                                                        </li>
-
-                                                        <li class="awemenu-item">
-                                                            <a href="" title="">Checkout</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li class="awemenu-item">
-                                <a href="#">Elements</a>
-
-                                <ul class="awemenu-submenu awemenu-megamenu" data-width="650px" data-animation="fadeup">
-                                    <li class="awemenu-megamenu-item">
-
-                                        <div class="container-fluid">
-                                            <div class="row">
-                                                <div class="col-lg-6">
-                                                    <ul class="list-unstyled">
-                                                        <li class="awemenu-item"><a href="">Alert</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Background</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Bar (Progress)</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Box</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Buttons</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Form Fields</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Grid</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Page Title</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Maps</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="col-lg-6">
-                                                    <ul class="list-unstyled">
-                                                        <li class="awemenu-item"><a href="">Icons (Aweicon)</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Icons (Glyphicon)</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Icons (FontAwesome)</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Carousel</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Tabs</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Typography</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Video / Sound</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Divider</a>
-                                                        </li>
-                                                        <li class="awemenu-item"><a href="">Counter</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    </li>
-                                </ul>
-                            </li>
 
                         </ul>
                         <!-- /.awemenu -->
@@ -1475,6 +1272,107 @@
                 <div class="divider"></div>
             </div>
 
+            <section class="background background-color-dark background-image-section-customers-say">
+                <div class="container">
+                    <div class="padding-top-60">
+                        <div class="section-header center">
+                            <h2>Customer Say</h2>
+                        </div>
+                        <!-- /.section-header -->
+
+                        <div class="section-customers">
+                            <div class="row">
+                                <div class="col-md-8 col-md-offset-2">
+                                    <div class="customers-carousel owl-carousel" id="customers-carousel" data-toggle="carousel" data-dots="true" data-nav="0">
+                                        <div class="center">
+                                            <h4>Natasha Roson</h4>
+                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
+                                                you are going to use a passage of Lorem Ipsum“</p>
+                                        </div>
+                                        <!-- /.center -->
+
+                                        <div class="center">
+                                            <h4>Natasha Roson</h4>
+                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
+                                                you are going to use a passage of Lorem Ipsum“</p>
+                                        </div>
+                                        <!-- /.center -->
+
+                                        <div class="center">
+                                            <h4>Natasha Roson</h4>
+                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
+                                                you are going to use a passage of Lorem Ipsum“</p>
+                                        </div>
+                                        <!-- /.center -->
+                                    </div>
+                                    <!-- /.customers-say-carousel -->
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.section-content -->
+                    </div>
+                </div>
+                <!-- /.container -->
+
+                <div class="section-brands">
+                    <div class="container">
+                        <div class="brands-carousel owl-carousel" id="brands-carousel">
+
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-1.png') }}" alt="">
+
+                            </div>
+                            <!-- /.center -->
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-2.png') }}" alt="">
+                            </div>
+                            <!-- /.center -->
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-3.png') }}" alt="">
+                            </div>
+                            <!-- /.center -->
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-4.png') }}" alt="">
+                            </div>
+                            <!-- /.center -->
+
+
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-1.png') }}" alt="">
+                            </div>
+                            <!-- /.center -->
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-2.png') }}" alt="">
+                            </div>
+                            <!-- /.center -->
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-3.png') }}" alt="">
+                            </div>
+                            <!-- /.center -->
+
+                            <div class="center">
+                                <img src="{{ asset('img/samples/brands/brand-4.png') }}" alt="">
+                            </div>
+                            <!-- /.center -->
+
+
+                        </div>
+                        <!-- /.brands-carousel -->
+                    </div>
+                    <!-- /.container -->
+                </div>
+                <!-- /.section-brands -->
+
+            </section>
+            <!-- /section -->s
+
             <section>
                 <div class="container">
 
@@ -1742,108 +1640,6 @@
                 <!-- /.container -->
             </section>
             <!-- /section -->
-
-            <section class="background background-color-dark background-image-section-customers-say">
-                <div class="container">
-                    <div class="padding-top-60">
-                        <div class="section-header center">
-                            <h2>Customer Say</h2>
-                        </div>
-                        <!-- /.section-header -->
-
-                        <div class="section-customers">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <div class="customers-carousel owl-carousel" id="customers-carousel" data-toggle="carousel" data-dots="true" data-nav="0">
-                                        <div class="center">
-                                            <h4>Natasha Roson</h4>
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                                                you are going to use a passage of Lorem Ipsum“</p>
-                                        </div>
-                                        <!-- /.center -->
-
-                                        <div class="center">
-                                            <h4>Natasha Roson</h4>
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                                                you are going to use a passage of Lorem Ipsum“</p>
-                                        </div>
-                                        <!-- /.center -->
-
-                                        <div class="center">
-                                            <h4>Natasha Roson</h4>
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                                                you are going to use a passage of Lorem Ipsum“</p>
-                                        </div>
-                                        <!-- /.center -->
-                                    </div>
-                                    <!-- /.customers-say-carousel -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.section-content -->
-                    </div>
-                </div>
-                <!-- /.container -->
-
-                <div class="section-brands">
-                    <div class="container">
-                        <div class="brands-carousel owl-carousel" id="brands-carousel">
-
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-1.png') }}" alt="">
-
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-2.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-3.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-4.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-1.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-2.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-3.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-4.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-
-                        </div>
-                        <!-- /.brands-carousel -->
-                    </div>
-                    <!-- /.container -->
-                </div>
-                <!-- /.section-brands -->
-
-            </section>
-            <!-- /section -->
-
         </div>
 
 
