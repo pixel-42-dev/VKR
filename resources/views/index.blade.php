@@ -87,7 +87,7 @@
                                 <li class="menubar-wishlist">
                                     <a href="#" title="" class="awemenu-icon">
                                         <i class="icon icon-star"></i>
-                                        <span class="awe-hidden-text">Wishlist</span>
+                                        <span class="awe-hidden-text">Избранное</span>
                                     </a>
 
                                     <ul class="submenu megamenu">
@@ -106,12 +106,12 @@
 
                                                             <div class="product-body">
                                                                 <div class="whishlist-name">
-                                                                    <h3><a href="#" title="">Gin Lane Greenport Cotton Shirt</a></h3>
+                                                                    <h3><a href="#" title="">Хлопковая рубашка Gin Lane Greenport</a></h3>
                                                                 </div>
 
                                                                 <div class="whishlist-price">
-                                                                    <span>Price:</span>
-                                                                    <strong>$120</strong>
+                                                                    <span>Цена:</span>
+                                                                    <strong>12000 ₽</strong>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -131,12 +131,12 @@
 
                                                             <div class="product-body">
                                                                 <div class="whishlist-name">
-                                                                    <h3><a href="#" title="">Gin Lane Greenport Cotton Shirt</a></h3>
+                                                                    <h3><a href="#" title="">Хлопковая рубашка Gin Lane Greenport</a></h3>
                                                                 </div>
 
                                                                 <div class="whishlist-price">
-                                                                    <span>Price:</span>
-                                                                    <strong>$120</strong>
+                                                                    <span>Цена:</span>
+                                                                    <strong>12000 ₽</strong>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -156,12 +156,12 @@
 
                                                             <div class="product-body">
                                                                 <div class="whishlist-name">
-                                                                    <h3><a href="#" title="">Gin Lane Greenport Cotton Shirt</a></h3>
+                                                                    <h3><a href="#" title="">Хлопковая рубашка Gin Lane Greenport</a></h3>
                                                                 </div>
 
                                                                 <div class="whishlist-price">
-                                                                    <span>Price:</span>
-                                                                    <strong>$120</strong>
+                                                                    <span>Цена:</span>
+                                                                    <strong>12000 ₽</strong>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -176,7 +176,7 @@
                                                 <hr>
 
                                                 <div class="whishlist-action">
-                                                    <a href="#" title="" class="btn btn-dark btn-lg btn-outline btn-block">View Wishlist</a>
+                                                    <a href="#" title="" class="btn btn-dark btn-lg btn-outline btn-block">Открыть избранное</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -186,7 +186,7 @@
                                 <li class="menubar-cart">
                                     <a href="#" title="" class="awemenu-icon menu-shopping-cart">
                                         <i class="icon icon-shopping-bag"></i>
-                                        <span class="awe-hidden-text">Cart</span>
+                                        <span class="awe-hidden-text">Корзина</span>
 
                                         <span class="cart-number">2</span>
                                     </a>
@@ -208,16 +208,16 @@
 
                                                             <div class="product-body">
                                                                 <div class="whishlist-name">
-                                                                    <h3><a href="#" title="">Gin Lane Greenport Cotton Shirt</a></h3>
+                                                                    <h3><a href="#" title="">Хлопковая рубашка Gin Lane Greenport</a></h3>
                                                                 </div>
 
                                                                 <div class="whishlist-price">
-                                                                    <span>Price:</span>
-                                                                    <strong>$120</strong>
+                                                                    <span>Цена:</span>
+                                                                    <strong>12000 ₽</strong>
                                                                 </div>
 
                                                                 <div class="whishlist-quantity">
-                                                                    <span>Quantity:</span>
+                                                                    <span>Количество:</span>
                                                                     <span>1</span>
                                                                 </div>
                                                             </div>
@@ -238,16 +238,16 @@
 
                                                             <div class="product-body">
                                                                 <div class="whishlist-name">
-                                                                    <h3><a href="#" title="">Gin Lane Greenport Cotton Shirt</a></h3>
+                                                                    <h3><a href="#" title="">Какие то часы</a></h3>
                                                                 </div>
 
                                                                 <div class="whishlist-price">
-                                                                    <span>Price:</span>
-                                                                    <strong>$120</strong>
+                                                                    <span>Цена:</span>
+                                                                    <strong>12000 ₽</strong>
                                                                 </div>
 
                                                                 <div class="whishlist-quantity">
-                                                                    <span>Quantity:</span>
+                                                                    <span>Количество:</span>
                                                                     <span>1</span>
                                                                 </div>
                                                             </div>
@@ -261,13 +261,13 @@
                                                 </ul>
 
                                                 <div class="menu-cart-total">
-                                                    <span>Total</span>
-                                                    <span class="price">$180</span>
+                                                    <span>Того:</span>
+                                                    <span class="price">29000 ₽</span>
                                                 </div>
 
                                                 <div class="cart-action">
-                                                    <a href="#" title="" class="btn btn-lg btn-dark btn-outline btn-block">View cart</a>
-                                                    <a href="#" title="" class="btn btn-lg btn-primary btn-block">Proceed To Checkout</a>
+                                                    <a href="#" title="" class="btn btn-lg btn-dark btn-outline btn-block">Открыть корзину</a>
+                                                    <a href="#" title="" class="btn btn-lg btn-primary btn-block">Оформить заказ</a>
                                                 </div>
                                             </div>
                                         </li>
@@ -280,15 +280,15 @@
                             <ul class="navbar-search">
                                 <li>
                                     <a href="#" title="" class="awemenu-icon awe-menubar-search" id="open-search-form">
-                                        <span class="sr-only">Search</span>
+                                        <span class="sr-only">Поиск</span>
                                         <span class="icon icon-search"></span>
                                     </a>
 
                                     <div class="menubar-search-form" id="menubar-search-form">
                                         <form action="index.html" method="GET">
-                                            <input type="text" name="s" class="form-control" placeholder="Search your entry here...">
+                                            <input type="text" name="s" class="form-control" placeholder="Введите ваш запрос здесь">
                                             <div class="menubar-search-buttons">
-                                                <button type="submit" class="btn btn-sm btn-white">Search</button>
+                                                <button type="submit" class="btn btn-sm btn-white">Поиск</button>
                                                 <button type="button" class="btn btn-sm btn-white" id="close-search-form">
                                                     <span class="icon icon-remove"></span>
                                                 </button>
@@ -321,40 +321,36 @@
 
                                                 <div class="row">
                                                     <div class="col-lg-3">
-                                                        <h2 class="upper">Clothing</h2>
+                                                        <h2 class="upper">Одежда</h2>
 
                                                         <ul class="super">
-                                                            <li><a href="#" title="">Bestseller</a>
+                                                            <li><a href="#" title="">Мужская</a>
                                                             </li>
-                                                            <li><a href="#" title="">New Arrivals</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <ul class="sublist">
-                                                            <li><a href="#" title="">Blazers &amp; Vests</a>
-                                                            </li>
-                                                            <li><a href="#" title="">Graphics Tees</a>
-                                                            </li>
-                                                            <li><a href="#" title="">Jeans</a>
-                                                            </li>
-                                                            <li><a href="#" title="">Jackets &amp; Outerwear</a>
-                                                            </li>
-                                                            <li><a href="#" title="">Pants</a>
+                                                            <li><a href="#" title="">Женскаяы</a>
                                                             </li>
                                                         </ul>
                                                     </div>
 
                                                     <div class="col-lg-3">
                                                         <ul class="sublist">
-                                                            <li><a href="#" title="">Shirts</a>
+                                                            <li><a href="#" title="">Джинсы</a>
                                                             </li>
-                                                            <li><a href="#" title="">Short &amp; Swim</a>
+                                                            <li><a href="#" title="">Куртки</a>
                                                             </li>
-                                                            <li><a href="#" title="">Tees</a>
+                                                            <li><a href="#" title="">Шорты</a>
                                                             </li>
-                                                            <li><a href="#" title="">Underwear &amp; Socks</a>
+                                                            <li><a href="#" title="">Кофты</a>
+                                                            </li>
+                                                            <li><a href="#" title="">Штаны</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="col-lg-3">
+                                                        <ul class="sublist">
+                                                            <li><a href="#" title="">Футболки</a>
+                                                            </li>
+                                                            <li><a href="#" title="">Носки</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -368,7 +364,7 @@
                                                                 </a>
                                                             </div>
                                                             <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">The trend shop</a>
+                                                            <a href="#" title="">В тренде</a>
                                                         </h4>
                                                         </div>
 
@@ -377,16 +373,9 @@
                                                                 <a href="#" title="">
                                                                     <img src="{{ asset('img/samples/menu/shirt-shop.jpg') }}" alt="">
                                                                 </a>
-                                                                <div class="awe-media-overlay overlay-dark-50 fullpage">
-                                                                    <div class="fp-table">
-                                                                        <div class="fp-table-cell center">
-                                                                            <a href="#" class="btn btn-white">Show now</a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
                                                             </div>
                                                             <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">Shirt shop</a>
+                                                            <a href="#" title="">Новинки</a>
                                                         </h4>
                                                         </div>
                                                     </div>
@@ -394,7 +383,7 @@
 
                                                 <div class="bottom-link">
                                                     <a href="#" class="btn btn-lg btn-dark btn-outline">
-                                                        <span>Shop All Clothing</span>
+                                                        <span>Вся одежда</span>
                                                     </a>
                                                 </div>
 
@@ -416,58 +405,37 @@
 
                                                 <div class="row">
                                                     <div class="col-lg-3">
-                                                        <h2 class="upper">Shoes</h2>
+                                                        <h2 class="upper">Обувь</h2>
 
                                                         <ul class="super">
-                                                            <li><a href="#" title="">Bestseller</a>
+                                                            <li><a href="#" title="">Мужская</a>
                                                             </li>
-                                                            <li><a href="#" title="">New Arrivals</a>
+                                                            <li><a href="#" title="">Женская</a>
                                                             </li>
                                                         </ul>
                                                     </div>
 
                                                     <div class="col-lg-3">
                                                         <ul class="sublist">
-                                                            <li><a href="#">Boat Shoes</a>
+                                                            <li><a href="#">Сапоги</a>
                                                             </li>
-                                                            <li><a href="#">Boots</a>
+                                                            <li><a href="#">Туфли</a>
                                                             </li>
-                                                            <li><a href="#">Casual Shoes</a>
+                                                            <li><a href="#">Сандали</a>
                                                             </li>
-                                                            <li><a href="#">Dress Shoes</a>
+                                                            <li><a href="#">Кросовки</a>
                                                             </li>
-                                                            <li><a href="#">Sneakers</a>
+                                                            <li><a href="#">Кеды</a>
                                                             </li>
                                                         </ul>
                                                     </div>
 
                                                     <div class="col-lg-3">
                                                         <div class="sublist">
-                                                            <p>Shop Size</p>
-                                                            <ul class="numbers-list">
-                                                                <li><a href="#">7</a>
+                                                            <ul class="sublist">
+                                                                <li><a href="#">Ботинки</a>
                                                                 </li>
-                                                                <li><a href="#">7.5</a>
-                                                                </li>
-                                                                <li><a href="#">7.5</a>
-                                                                </li>
-                                                                <li><a href="#">8</a>
-                                                                </li>
-                                                                <li><a href="#">8.5</a>
-                                                                </li>
-                                                                <li><a href="#">9</a>
-                                                                </li>
-                                                                <li><a href="#">10</a>
-                                                                </li>
-                                                                <li><a href="#">10.5</a>
-                                                                </li>
-                                                                <li><a href="#">11</a>
-                                                                </li>
-                                                                <li><a href="#">11.5</a>
-                                                                </li>
-                                                                <li><a href="#">12</a>
-                                                                </li>
-                                                                <li><a href="#">13</a>
+                                                                <li><a href="#">Босоножки</a>
                                                                 </li>
                                                             </ul>
                                                         </div>
@@ -482,7 +450,7 @@
                                                                 </a>
                                                             </div>
                                                             <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">Hot trend shoes</a>
+                                                            <a href="#" title="">В тренде</a>
                                                         </h4>
                                                         </div>
 
@@ -493,7 +461,7 @@
                                                                 </a>
                                                             </div>
                                                             <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">Dress shoes shop</a>
+                                                            <a href="#" title="">Новинки</a>
                                                         </h4>
                                                         </div>
                                                     </div>
@@ -501,7 +469,7 @@
 
                                                 <div class="bottom-link">
                                                     <a href="#" class="btn btn-lg btn-dark btn-outline">
-                                                        <span>Shop All Shoes</span>
+                                                        <span>Вся обувь</span>
                                                     </a>
                                                 </div>
 
@@ -523,42 +491,38 @@
 
                                                 <div class="row">
                                                     <div class="col-lg-3">
-                                                        <h2 class="upper">Shoes</h2>
+                                                        <h2 class="upper">Аксесуары</h2>
 
                                                         <ul class="super">
-                                                            <li><a href="#" title="">Bestseller</a>
+                                                            <li><a href="#" title="">Мужские</a>
                                                             </li>
-                                                            <li><a href="#" title="">New Arrivals</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <ul class="sublist">
-                                                            <li><a href="#" title="#">Bags</a>
-                                                            </li>
-                                                            <li><a href="#" title="#">Belts</a>
-                                                            </li>
-                                                            <li><a href="#" title="#">Grooming</a>
-                                                            </li>
-                                                            <li><a href="#" title="#">Hats</a>
-                                                            </li>
-                                                            <li><a href="#" title="#">Jewelry</a>
+                                                            <li><a href="#" title="">Женские</a>
                                                             </li>
                                                         </ul>
                                                     </div>
 
                                                     <div class="col-lg-3">
                                                         <ul class="sublist">
-                                                            <li><a href="#" title="">Scarves &amp; Glovers</a>
+                                                            <li><a href="#" title="#">Сумочки</a>
                                                             </li>
-                                                            <li><a href="#" title="">Wallets</a>
+                                                            <li><a href="#" title="#">Ремни</a>
                                                             </li>
-                                                            <li><a href="#" title="">Watches</a>
+                                                            <li><a href="#" title="#">Цепочки</a>
                                                             </li>
-                                                            <li><a href="#" title="">Glasses</a>
+                                                            <li><a href="#" title="#">Браслеты</a>
                                                             </li>
-                                                            <li><a href="#" title="">Zippo</a>
+                                                            <li><a href="#" title="#">Кулоны</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+                                                    <div class="col-lg-3">
+                                                        <ul class="sublist">
+                                                            <li><a href="#" title="">Очки</a>
+                                                            </li>
+                                                            <li><a href="#" title="">Кошельки</a>
+                                                            </li>
+                                                            <li><a href="#" title="">Часы</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -572,7 +536,7 @@
                                                                 </a>
                                                             </div>
                                                             <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">Hot Trend Accessories</a>
+                                                            <a href="#" title="">В тренде</a>
                                                         </h4>
                                                         </div>
 
@@ -584,7 +548,7 @@
                                                                 </a>
                                                             </div>
                                                             <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">New Arrivals Swatch</a>
+                                                            <a href="#" title="">Новинки</a>
                                                         </h4>
                                                         </div>
                                                     </div>
@@ -592,7 +556,7 @@
 
                                                 <div class="bottom-link">
                                                     <a href="#" class="btn btn-lg btn-dark btn-outline">
-                                                        <span>Shop All Accessories</span>
+                                                        <span>Все аксесуары</span>
                                                     </a>
                                                 </div>
 
@@ -607,136 +571,6 @@
                                     <span>Контакты</span>
                                 </a>
 
-                                <ul class="awemenu-submenu awemenu-megamenu" data-width="100%" data-animation="fadeup">
-                                    <li class="awemenu-megamenu-item">
-                                        <div class="container-fluid">
-                                            <div class="awemenu-megamenu-wrapper">
-
-                                                <div class="row">
-                                                    <div class="col-lg-3">
-                                                        <h2 class="upper">Brand</h2>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <ul class="sublist">
-                                                            <li><a href="#" title="">Dr.Matten</a>
-                                                            </li>
-                                                            <li><a href="#" title="">The Police</a>
-                                                            </li>
-                                                            <li><a href="#" title="">Adidas</a>
-                                                            </li>
-                                                            <li><a href="#" title="">Like</a>
-                                                            </li>
-                                                            <li><a href="#" title="">The Sandiago</a>
-                                                            </li>
-                                                            <li><a href="#" title="">Pollo</a>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <div class="sublist">
-                                                            <p>Brand</p>
-                                                            <ul class="numbers-list">
-                                                                <li><a href="#" title="">A</a>
-                                                                </li>
-                                                                <li><a href="#" title="">B</a>
-                                                                </li>
-                                                                <li><a href="#" title="">C</a>
-                                                                </li>
-                                                                <li><a href="#" title="">D</a>
-                                                                </li>
-                                                                <li><a href="#" title="">E</a>
-                                                                </li>
-                                                                <li><a href="#" title="">F</a>
-                                                                </li>
-                                                                <li><a href="#" title="">G</a>
-                                                                </li>
-                                                                <li><a href="#" title="">H</a>
-                                                                </li>
-                                                                <li><a href="#" title="">I</a>
-                                                                </li>
-                                                                <li><a href="#" title="">J</a>
-                                                                </li>
-                                                                <li><a href="#" title="">K</a>
-                                                                </li>
-                                                                <li><a href="#" title="">L</a>
-                                                                </li>
-                                                                <li><a href="#" title="">M</a>
-                                                                </li>
-                                                                <li><a href="#" title="">N</a>
-                                                                </li>
-                                                                <li><a href="#" title="">O</a>
-                                                                </li>
-                                                                <li><a href="#" title="">P</a>
-                                                                </li>
-                                                                <li><a href="#" title="">Q</a>
-                                                                </li>
-                                                                <li><a href="#" title="">R</a>
-                                                                </li>
-                                                                <li><a href="#" title="">S</a>
-                                                                </li>
-                                                                <li><a href="#" title="">T</a>
-                                                                </li>
-                                                                <li><a href="#" title="">U</a>
-                                                                </li>
-                                                                <li><a href="#" title="">V</a>
-                                                                </li>
-                                                                <li><a href="#" title="">W</a>
-                                                                </li>
-                                                                <li><a href="#" title="">X</a>
-                                                                </li>
-                                                                <li><a href="#" title="">Y</a>
-                                                                </li>
-                                                                <li><a href="#" title="">Z</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="col-lg-3">
-                                                        <div class="awe-media inline margin-bottom-25">
-                                                            <div class="awe-media-image">
-                                                                <a href="#" title="">
-                                                                    <img src="{{ asset('img/samples/menu/horosen-shop.jpg') }}" alt="">
-
-                                                                </a>
-                                                            </div>
-                                                            <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">Horosen shop</a>
-                                                        </h4>
-                                                        </div>
-
-                                                        <div class="awe-media inline">
-                                                            <div class="awe-media-image">
-                                                                <a href="#" title="">
-                                                                    <img src="{{ asset('img/samples/menu/police-shop.jpg') }}" alt="">
-
-                                                                </a>
-                                                            </div>
-                                                            <h4 class="awe-media-title medium upper center">
-                                                            <a href="#" title="">The police shop</a>
-                                                        </h4>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="bottom-link">
-                                                    <a href="#" class="btn btn-lg btn-dark btn-outline">
-                                                        <span>Shop All Accessories</span>
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-
-                        </ul>
-                        <!-- /.awemenu -->
                     </div>
                 </div>
                 <!-- /.container -->
@@ -768,12 +602,12 @@
                                 <div class="fp-table">
                                     <div class="fp-table-cell center">
                                         <div class="container">
-                                            <h3>The Shoes For Summer</h3>
-                                            <h2>Shoes Vans<br>$160.00</h2>
+                                            <h3>Обувь на лето</h3>
+                                            <h2>Лёгкая обувь<br>От 1100 ₽</h2>
 
                                             <div class="button">
-                                                <a href="#" class="btn btn-lg btn-primary margin-right-15">Shop now</a>
-                                                <a href="#" class="btn btn-lg btn-white btn-outline">Browse category</a>
+                                                <a href="#" class="btn btn-lg btn-primary margin-right-15">Просмотреть</a>
+                                                <a href="#" class="btn btn-lg btn-white btn-outline">Вся категория</a>
                                             </div>
                                         </div>
                                     </div>
@@ -790,11 +624,11 @@
                                 <div class="fp-table">
                                     <div class="fp-table-cell center">
                                         <div class="container">
-                                            <h3 class="small">New Fashion For Winter</h3>
-                                            <h2 class="small">New Jacket <br> only $60</h2>
+                                            <h3 class="small">Новая зимняя мода</h3>
+                                            <h2 class="small">Новые куртки <br> От 4000 ₽</h2>
 
                                             <div class="button">
-                                                <a href="#" class="btn btn-lg btn-primary margin-right-15">Shop now</a>
+                                                <a href="#" class="btn btn-lg btn-primary margin-right-15">Просмотреть</a>
                                             </div>
                                         </div>
                                     </div>
@@ -811,8 +645,8 @@
                                 <div class="fp-table">
                                     <div class="fp-table-cell center">
                                         <div class="container">
-                                            <h3 class="light">New T-shirt</h3>
-                                            <h2 class="small margin-bottom-25">Vintage Raglan</h2>
+                                            <h3 class="light">Новые футболки</h3>
+                                            <h2 class="small margin-bottom-25">Весенняя коллекция</h2>
 
                                             <div class="dots-color center margin-bottom-35">
                                                 <span class="orange"></span>
@@ -823,37 +657,13 @@
                                             </div>
 
                                             <div class="button">
-                                                <a href="#" class="btn btn-lg btn-primary">Shop now</a>
+                                                <a href="#" class="btn btn-lg btn-primary">Просмотреть</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <div class="main-slider-item">
-                            <div class="main-slider-image">
-                                <img src="{{ asset('img/samples/sliders/4.jpg') }}" alt="">
-                            </div>
-
-                            <div class="main-slider-text">
-
-                                <div class="fp-table">
-                                    <div class="fp-table-cell center">
-                                        <div class="container">
-                                            <h3 class="small">What's Trending</h3>
-                                            <h2 class="small">Look Book<br>fashion 2015</h2>
-
-                                            <div class="button">
-                                                <a href="#" class="btn btn-lg btn-primary margin-right-15">View now</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
@@ -875,8 +685,8 @@
 
                     <div class="home-trending padding-vertical-50">
                         <div class="section-header center">
-                            <h2 class="upper margin-bottom-20">What's Trending</h2>
-                            <p>All trend style for man</p>
+                            <h2 class="upper margin-bottom-20">В тренде</h2>
+                            <p>Стильные вещи для мужчин</p>
                         </div>
                         <!-- ./section-header -->
 
@@ -893,7 +703,7 @@
                                     <!-- /.awe-media-image -->
 
                                     <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Collection For Man">New Collection For Man</a>
+                                        <a href="#" title="New Collection For Man">Новая коллекция для мужчин</a>
                                     </div>
                                     <!-- /.awe-media-body -->
                                 </div>
@@ -910,7 +720,7 @@
                                     <!-- /.awe-media-image -->
 
                                     <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Trending Shop">New Trending Shop</a>
+                                        <a href="#" title="New Trending Shop">Модная обувь</a>
                                     </div>
                                     <!-- /.awe-media-body -->
                                 </div>
@@ -927,7 +737,7 @@
                                     <!-- /.awe-media-image -->
 
                                     <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Fashion for Cafe Racer Boy">New Fashion for Cafe Racer Boy</a>
+                                        <a href="#" title="New Fashion for Cafe Racer Boy">Лучшая одежда в мире</a>
                                     </div>
                                     <!-- /.awe-media-body -->
                                 </div>
@@ -944,7 +754,7 @@
                                     <!-- /.awe-media-image -->
 
                                     <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Watch Style">New Watch Style</a>
+                                        <a href="#" title="New Watch Style">Супер мега стиль</a>
                                     </div>
                                     <!-- /.awe-media-body -->
                                 </div>
@@ -971,7 +781,7 @@
 
                         <div class="arrivals">
                             <div class="section-header center">
-                                <h2>New Arrivals</h2>
+                                <h2>Новые поступления</h2>
                             </div>
                             <!-- /.section-header -->
 
@@ -1012,7 +822,7 @@
 
                                     <div class="product-body">
                                         <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
                                 </h2>
                                         <!-- /.product-product -->
 
@@ -1023,7 +833,7 @@
 
                                         <div class="product-price">
 
-                                            <span class="amount">$80</span>
+                                            <span class="amount">500 ₽</span>
 
                                         </div>
                                         <!-- /.product-price -->
@@ -1068,7 +878,7 @@
 
                                     <div class="product-body">
                                         <h2 class="product-name">
-                                    <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge Navy/White</a>
+                                    <a href="#" title="Goodale Rutledge Navy/White">Модная вещь</a>
                                 </h2>
                                         <!-- /.product-product -->
 
@@ -1079,7 +889,7 @@
 
                                         <div class="product-price">
 
-                                            <span class="amount">$50</span>
+                                            <span class="amount">500 ₽</span>
 
                                         </div>
                                         <!-- /.product-price -->
@@ -1124,7 +934,7 @@
 
                                     <div class="product-body">
                                         <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
                                 </h2>
                                         <!-- /.product-product -->
 
@@ -1135,7 +945,7 @@
 
                                         <div class="product-price">
 
-                                            <span class="amount">$60</span>
+                                            <span class="amount">500 ₽</span>
 
                                         </div>
                                         <!-- /.product-price -->
@@ -1180,7 +990,7 @@
 
                                     <div class="product-body">
                                         <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
                                 </h2>
                                         <!-- /.product-product -->
 
@@ -1191,7 +1001,7 @@
 
                                         <div class="product-price">
 
-                                            <span class="amount">$50</span>
+                                            <span class="amount">500 ₽</span>
 
                                         </div>
                                         <!-- /.product-price -->
@@ -1236,7 +1046,7 @@
 
                                     <div class="product-body">
                                         <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
+                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
                                 </h2>
                                         <!-- /.product-product -->
 
@@ -1247,7 +1057,7 @@
 
                                         <div class="product-price">
 
-                                            <span class="amount">$50</span>
+                                            <span class="amount">500 ₽</span>
 
                                         </div>
                                         <!-- /.product-price -->
@@ -1655,7 +1465,7 @@
                                     <div class="col-md-12 col-sm-6">
 
                                         <div class="widget">
-                                            <h3 class="widget-title">ABOUT HOSOREN</h3>
+                                            <h3 class="widget-title">О нас</h3>
 
                                             <div class="widget-content">
                                                 <p>Lorem ipsum dolor sit amet isse potenti. Vesquam ante aliquet lacusemper elit. Cras neque nulla, convallis non commodo et, euismod nonsese.</p>
@@ -1691,8 +1501,6 @@
                                         <li><a href="#" title="">Your Cart</a>
                                         </li>
                                         <li><a href="#" title="">Your Orders</a>
-                                        </li>
-                                        <li><a href="#" title="">Compared Items</a>
                                         </li>
                                         <li><a href="#" title="">Wishlist Items</a>
                                         </li>
@@ -1742,34 +1550,6 @@
                                         </li>
                                     </ul>
                                 </div>
-
-
-
-                                <div class="widget">
-                                    <h3 class="widget-title">PAYMENT ACCEPT</h3>
-
-                                    <ul class="list-socials">
-                                        <li>
-                                            <a href="#" title="">
-                                                <i class="fa fa-cc-paypal"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" title="">
-                                                <i class="fa fa-cc-visa"></i>
-                                            </a>
-                                        </li>
-
-                                        <li>
-                                            <a href="#" title="">
-                                                <i class="fa fa-cc-amex"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- /.widget -->
-
                             </div>
                         </div>
                     </div>
@@ -1777,70 +1557,6 @@
 
                 </div>
                 <!-- /.footer-widgets -->
-
-                <div class="footer-copyright">
-                    <div class="container">
-                        <div class="copyright">
-                            <p>Copyright &copy; 2015 Hosoren - All Rights Reserved.</p>
-                        </div>
-
-                        <div class="footer-nav">
-                            <nav>
-                                <ul>
-                                    <li><a href="#" title="">Contact Us</a>
-                                    </li>
-                                    <li><a href="#" title="">Term of Use</a>
-                                    </li>
-                                    <li><a href="#" title="">Privacy Policy</a>
-                                    </li>
-                                    <li><a href="#" title="">Site Map</a>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                            <nav>
-                                <ul>
-                                    <li class="dropdown dropup">
-                                        <div class="language-select">
-                                            <span class="select-title">Language:</span>
-
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                <span>ENG</span>
-                                                <span class="icon icon-arrow-down"></span>
-                                            </a>
-
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">English</a>
-                                                </li>
-                                                <li><a href="#">Vietnamese</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-
-                                    <li class="dropdown dropup">
-                                        <div class="price-select">
-                                            <span class="select-title">Price:</span>
-
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                                <span>USD</span>
-                                                <span class="icon icon-arrow-down"></span>
-                                            </a>
-
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">USD</a>
-                                                </li>
-                                                <li><a href="#">VND</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-                <!-- /.footer-copyright -->
             </div>
             <!-- /.footer-wrapper -->
 
@@ -1850,7 +1566,7 @@
 
                 </span>
 
-                <small>Back top top</small>
+                <small>Наверх</small>
             </a>
             <!-- /.back-top -->
         </footer>
@@ -1858,97 +1574,6 @@
 
     </div>
     <!-- /#wrapper -->
-
-
-    <div id="login-popup" class="white-popup login-popup mfp-hide">
-        <div role="tabpanel">
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active">
-                    <a href="#account-login" aria-controls="account-login" role="tab" data-toggle="tab">Account Login</a>
-                </li>
-
-                <li role="presentation">
-                    <a href="#account-register" aria-controls="account-register" role="tab" data-toggle="tab">Register</a>
-                </li>
-            </ul>
-            <!-- /.nav -->
-
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="account-login">
-                    <form action="index.html" method="POST">
-                        <div class="form-group">
-                            <label for="login-account">Account</label>
-                            <input type="text" class="form-control" id="login-account">
-                        </div>
-                        <!-- /.form-group -->
-
-                        <div class="form-group">
-                            <label for="login-password">Password</label>
-                            <input type="password" class="form-control" id="login-password" data-show-password="true">
-                        </div>
-                        <!-- /.form-group -->
-
-                        <div class="forgot-passwd">
-                            <a href="#" title="">
-                                <i class="icon icon-key"></i>
-                                <span>Forgot your password?</span>
-                            </a>
-                        </div>
-                        <!-- /.forgot-passwd -->
-
-                        <div class="form-button">
-                            <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
-                        </div>
-                        <!-- /.form-group -->
-                    </form>
-                </div>
-                <!-- /.tab-pane -->
-
-                <div role="tabpanel" class="tab-pane" id="account-register">
-                    <form action="index.html" method="POST">
-                        <div class="form-group">
-                            <label for="register-username">Username <sup>*</sup>
-                            </label>
-                            <input type="text" class="form-control" id="register-username">
-                        </div>
-                        <!-- /.form-group -->
-
-                        <div class="form-group">
-                            <label for="register-email">Email <sup>*</sup>
-                            </label>
-                            <input type="text" class="form-control" id="register-email">
-                        </div>
-                        <!-- /.form-group -->
-
-                        <div class="form-group">
-                            <label for="register-password">Password <sup>*</sup>
-                            </label>
-                            <input type="password" class="form-control" id="register-password">
-                        </div>
-                        <!-- /.form-group -->
-
-                        <div class="form-group">
-                            <label for="register-confirm-password">Confirm Password <sup>*</sup>
-                            </label>
-                            <input type="password" class="form-control" id="register-confirm-password">
-                        </div>
-                        <!-- /.form-group -->
-
-                        <div class="form-button">
-                            <button type="submit" class="btn btn-lg btn-warning btn-block">Register</button>
-                        </div>
-                        <!-- /.form-button -->
-                    </form>
-                </div>
-                <!-- /.tab-pane -->
-            </div>
-            <!-- /.tab-content -->
-        </div>
-    </div>
-    <!-- /.login-popup -->
-
     <script>
         $(function() {
             $('a[href="#login-popup"]').magnificPopup({
