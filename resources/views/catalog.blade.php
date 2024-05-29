@@ -1,1 +1,6 @@
-<h1>Каталог</h1>
+@extends('master/master')
+@section('content')
+
+
+
+@endsection
