@@ -618,8 +618,6 @@
                                                 </a>
                                             </div>
                                             <!-- /.product-thumbnail -->
-
-
                                             <div class="product-hover">
                                                 <div class="product-actions">
                                                     <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
@@ -636,20 +634,17 @@
                                                 </div>
                                             </div>
                                             <!-- /.product-hover -->
-
-
-
                                             <span class="product-label hot">
-                                    <span>hot</span>
+                                                <span>hot</span>
                                             </span>
 
-                                        </div>
-                                        <!-- /.product-media -->
+                                            </div>
+                                            <!-- /.product-media -->
 
-                                        <div class="product-body">
+                                            <div class="product-body">
                                             <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
-                                </h2>
+                                                <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
+                                            </h2>
                                             <!-- /.product-product -->
 
                                             <div class="product-category">
