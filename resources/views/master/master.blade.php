@@ -728,11 +728,8 @@
 
         <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
         <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
         <script src="js/plugins.js"></script>
-
         <script src="js/main.js"></script>
-
         <script src="js/docs.js"></script>
     <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
