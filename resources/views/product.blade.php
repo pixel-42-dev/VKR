@@ -28,28 +28,29 @@
     <!-- carousel -->
     <div class="col-lg-7">
         <div class="row gutter-1 justify-content-between">
-        <div class="col-lg-10 order-lg-2">
-            <div class="owl-carousel owl-carousel--alt gallery" data-margin="0" data-slider-id="1" data-thumbs="true" data-nav="true">
-            <figure>
-                <a href="{{ asset('img\samples\products\1\product-1.jpg') }}"><img src="{{ asset('img\samples\products\1\product-1.jpg') }}" alt="Image"></a>
-            </figure>
-            <figure>
-                <a href="assets/images/demo/product-1-2.jpg"><img src="assets/images/demo/product-1-2.jpg" alt="Image"></a>
-            </figure>
-            <figure>
-                <a href="assets/images/demo/product-1-3.jpg"><img src="assets/images/demo/product-1-3.jpg" alt="Image"></a>
-            </figure>
+            <div class="col-lg-2 text-center text-lg-left order-lg-1">
+                <div class="owl-thumbs" data-slider-id="1">
+                    <span class="owl-thumb-item" data-index="0"><img src="{{ asset('img/samples/products/1/product-1.jpg') }}" alt=""></span>
+                    <span class="owl-thumb-item" data-index="1"><img src="{{ asset('img/samples/products/1/product-1-2.jpg') }}" alt=""></span>
+                    <span class="owl-thumb-item" data-index="2"><img src="{{ asset('img/samples/products/1/product-1-3.jpg') }}" alt=""></span>
+                </div>
             </div>
-        </div>
-        <div class="col-lg-2 text-center text-lg-left order-lg-1">
-            <div class="owl-thumbs" data-slider-id="1">
-                <span class="owl-thumb-item"><img src="assets/images/demo/product-1.jpg" alt=""></span>
-                <span class="owl-thumb-item"><img src="assets/images/demo/product-1-2.jpg" alt=""></span>
-                <span class="owl-thumb-item"><img src="assets/images/demo/product-1-3.jpg" alt=""></span>
+            <div class="col-lg-10 order-lg-2">
+                <div class="owl-carousel owl-carousel--alt gallery" id="main-carousel" data-margin="0" data-slider-id="1" data-thumbs="true" data-nav="true">
+                    <figure>
+                        <a href="{{ asset('img/samples/products/1/product-1.jpg') }}"><img src="{{ asset('img/samples/products/1/product-1.jpg') }}" alt="Image"></a>
+                    </figure>
+                    <figure>
+                        <a href="{{ asset('img/samples/products/1/product-1-2.jpg') }}"><img src="{{ asset('img/samples/products/1/product-1-2.jpg') }}" alt="Image"></a>
+                    </figure>
+                    <figure>
+                        <a href="{{ asset('img/samples/products/1/product-1-3.jpg') }}"><img src="{{ asset('img/samples/products/1/product-1-3.jpg') }}" alt="Image"></a>
+                    </figure>
+                </div>
             </div>
-        </div>
         </div>
     </div>
+
 
     <div class="col-lg-4 mb-5 mb-lg-0">
 
@@ -204,104 +205,32 @@
             </div>
         </div>
         </div>
-
-        <div class="form-group">
-        <label>Share this product</label>
-        <div>
-            <ul class="list list--horizontal">
-            <li><a href="#!" class="text-hover-facebook"><i class="fs-28 icon-facebook-square-brands"></i></a></li>
-            <li><a href="#!" class="text-hover-instagram"><i class="fs-28 icon-instagram-square-brands"></i></a></li>
-            <li><a href="#!" class="text-hover-twitter"><i class="fs-28 icon-twitter-square-brands"></i></a></li>
-            <li><a href="#!" class="text-hover-pinterest"><i class="fs-28 icon-pinterest-square-brands"></i></a></li>
-            </ul>
-        </div>
-        </div>
     </div>
 
     </div>
 </div>
 </section>
 
-<!-- related -->
-<section class="no-overflow">
-<div class="container">
-    <div class="row">
-    <div class="col">
-        <h2>Recently viewed</h2>
-    </div>
-    </div>
-    <div class="row">
-    <div class="col">
-        <div class="owl-carousel visible" data-items="[4,3,2,1]" data-margin="10" data-nav="true" data-loop="true">
-        <div class="card card-product">
-            <figure class="card-image">
-            <a href="#!" class="action"><i class="icon-heart"></i></a>
-            <a href="#!">
-                <img src="assets/images/demo/product-1.jpg" alt="Image">
-                <img src="assets/images/demo/product-1-2.jpg" alt="Image">
-            </a>
-            </figure>
-            <a href="" class="card-body">
-            <h3 class="card-title">Blouse</h3>
-            <span class="price">$19.00</span>
-            </a>
-        </div>
-        <div class="card card-product">
-            <figure class="card-image">
-            <a href="#!" class="action"><i class="icon-heart"></i></a>
-            <a href="#!">
-                <img src="assets/images/demo/product-2.jpg" alt="Image">
-                <img src="assets/images/demo/product-2-2.jpg" alt="Image">
-            </a>
-            </figure>
-            <a href="" class="card-body">
-            <h3 class="card-title">Swimwear</h3>
-            <span class="price">$49.00</span>
-            </a>
-        </div>
-        <div class="card card-product">
-            <figure class="card-image">
-            <a href="#!" class="action"><i class="icon-heart"></i></a>
-            <a href="#!">
-                <img src="assets/images/demo/product-3.jpg" alt="Image">
-                <img src="assets/images/demo/product-3-2.jpg" alt="Image">
-            </a>
-            </figure>
-            <a href="" class="card-body">
-            <h3 class="card-title">Skirt</h3>
-            <span class="price">$29.00</span>
-            </a>
-        </div>
-        <div class="card card-product">
-            <figure class="card-image">
-            <a href="#!" class="action"><i class="icon-heart"></i></a>
-            <a href="#!">
-                <img src="assets/images/demo/product-listing-1.jpg" alt="Image">
-                <img src="assets/images/demo/product-listing-1-1.jpg" alt="Image">
-            </a>
-            </figure>
-            <a href="" class="card-body">
-            <h3 class="card-title">Burgundy Dress</h3>
-            <span class="price">$69.00</span>
-            </a>
-        </div>
-        <div class="card card-product">
-            <figure class="card-image">
-            <a href="#!" class="action"><i class="icon-heart"></i></a>
-            <a href="#!">
-                <img src="assets/images/demo/product-listing-2.jpg" alt="Image">
-                <img src="assets/images/demo/product-listing-2-1.jpg" alt="Image">
-            </a>
-            </figure>
-            <a href="" class="card-body">
-            <h3 class="card-title">Cream Dress</h3>
-            <span class="price">$69.00</span>
-            </a>
-        </div>
-        </div>
-    </div>
-    </div>
-</div>
-</section>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Инициализация главной карусели
+        var mainCarousel = $('#main-carousel').owlCarousel({
+            items: 1,
+            nav: true,
+            dots: false,
+            loop: true
+        });
+
+        // Обработка кликов на миниатюрах
+        $('.owl-thumb-item').on('click', function() {
+            var index = $(this).data('index');
+            mainCarousel.trigger('to.owl.carousel', [index, 300]);
+        });
+    });
+</script>
+
 
 @endsection
