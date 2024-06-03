@@ -204,8 +204,7 @@ h3 {
 .breadcrumbs{
     margin-left: 60px;
 }
-.row {                  /* ? */
-    /* display: flex;   */
+.row {
     flex-wrap: wrap;
 }
 .gutter-1 h1 {
@@ -278,4 +277,8 @@ h3 {
     white-space: nowrap;
     background-color: transparent;
     border: 0;
+}
+
+.right-info {
+    margin-left: 80px;
 }

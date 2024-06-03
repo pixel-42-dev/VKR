@@ -1,6 +1,8 @@
 @extends('master/master')
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('css/product-page-owl.css') }}">
+
 <!-- breadcrumbs -->
 <section class="breadcrumbs bg-light">
 <div class="container">
@@ -52,7 +54,7 @@
     </div>
 
 
-    <div class="col-lg-4 mb-5 mb-lg-0">
+    <div class="col-lg-4 mb-5 mb-lg-0 right-info">
 
         <!-- description -->
         <div class="row">
@@ -211,8 +213,18 @@
 </div>
 </section>
 
+<div class="owl-carousel">
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+    <div> Your Content </div>
+  </div>
+
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script>
     $(document).ready(function(){

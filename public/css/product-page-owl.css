@@ -1,0 +1,26 @@
+.owl-carousel .owl-stage-outer {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.owl-carousel .owl-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.owl-thumbs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.owl-thumb-item {
+    cursor: pointer;
+}
+
+.owl-thumb-item img {
+    width: 100%;
+    height: auto;
+}
