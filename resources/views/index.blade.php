@@ -1,859 +1,332 @@
 @extends('master/master')
 @section('content')
 
-            <section>
-                <div class="main-slider-wrapper">
-                    <div class="main-slider owl-carousel owl-carousel-inset">
+    <!-- swiper -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
 
-                        <div class="main-slider-item">
-                            <div class="main-slider-image">
-                                <img src="{{ asset('img/samples/sliders/1.jpg') }}" alt="">
+        <div class="swiper-slide">
+          <div class="image" style="background-image:url({{ asset('images/demo/background-2.jpg') }})"></div>
 
-                            </div>
+          <div class="container">
+            <div class="row align-items-end vh-100">
+              <div class="col-lg-8 text-white" data-swiper-parallax-x="-100%">
+                <span class="eyebrow">New Collection</span>
+                <h1 class="mb-3 text-uppercase">Summer is here</h1>
+                <a href="listing-full.html" class="btn btn-outline-white">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                            <div class="main-slider-text">
-                                <div class="fp-table">
-                                    <div class="fp-table-cell center">
-                                        <div class="container">
-                                            <h3>Обувь на лето</h3>
-                                            <h2>Лёгкая обувь<br>От 1100 ₽</h2>
+        <div class="swiper-slide">
+          <div class="image image--overlay" style="background-image:url({{ asset('images/demo/background-1.jpg') }})"></div>
+          <div class="container">
+            <div class="row align-items-end vh-100">
+              <div class="col-lg-8 text-white" data-swiper-parallax-x="-100%">
+                <span class="eyebrow">New Collection</span>
+                <h1>Casual Dresses</h1>
+                <a href="listing-full.html" class="btn btn-outline-white">Shop Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                                            <div class="button">
-                                                <a href="#" class="btn btn-lg btn-primary margin-right-15">Просмотреть</a>
-                                                <a href="#" class="btn btn-lg btn-white btn-outline">Вся категория</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+      </div>
+      <div class="swiper-footer">
+        <div class="container">
+          <div class="row justify-content-end align-items-center">
+            <div class="col-lg-6 text-right">
+              <div class="swiper-navigation">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                        <div class="main-slider-item">
-                            <div class="main-slider-image">
-                                <img src="{{ asset('img/samples/sliders/2.jpg') }}" alt="">
-                            </div>
 
-                            <div class="main-slider-text">
-                                <div class="fp-table">
-                                    <div class="fp-table-cell center">
-                                        <div class="container">
-                                            <h3 class="small">Новая зимняя мода</h3>
-                                            <h2 class="small">Новые куртки <br> От 4000 ₽</h2>
-
-                                            <div class="button">
-                                                <a href="#" class="btn btn-lg btn-primary margin-right-15">Просмотреть</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="main-slider-item">
-                            <div class="main-slider-image">
-                                <img src="{{ asset('img/samples/sliders/3.jpg') }}" alt="">
-                            </div>
-
-                            <div class="main-slider-text">
-                                <div class="fp-table">
-                                    <div class="fp-table-cell center">
-                                        <div class="container">
-                                            <h3 class="light">Новые футболки</h3>
-                                            <h2 class="small margin-bottom-25">Весенняя коллекция</h2>
-
-                                            <div class="dots-color center margin-bottom-35">
-                                                <span class="orange"></span>
-                                                <span class="blue"></span>
-                                                <span class="green"></span>
-                                                <span class="red"></span>
-                                                <span class="black"></span>
-                                            </div>
-
-                                            <div class="button">
-                                                <a href="#" class="btn btn-lg btn-primary">Просмотреть</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- categories -->
+    <section class="py-1">
+      <div class="container-full">
+        <div class="row gutter-1">
+          <div class="col-md-6">
+            <div class="card card-tile">
+              <figure class="card-image equal vh-75">
+                <span class="image" style="background-image: url({{ asset('images/demo/image-2.jpg') }})"></span>
+              </figure>
+              <div class="card-footer p-lg-5">
+                <div class="bg-white d-inline-block p-3">
+                  <h2 class="card-title"><span class="d-block text-gray">Feel the summer</span> New Bag 1913</h2>
+                  <a href="" class="underlined">Shop Now</a>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-tile">
+              <figure class="card-image equal vh-75">
+                <span class="image" style="background-image: url({{ asset('images/demo/image-3.jpg') }})"></span>
+              </figure>
+              <div class="card-footer p-lg-5">
+                <div class="bg-white d-inline-block p-3">
+                  <h2 class="card-title"><span class="d-block text-gray">Feel the summer</span> New Collection</h2>
+                  <a href="" class="underlined">Shop Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <script>
-                    $(function() {  aweMainSlider(); });
-                </script>
 
-            </section>
-            <!-- /section -->
+    <!-- carousel -->
+    <section class="py-lg-0 no-overflow">
+      <div class="container">
+        <div class="row align-items-center gutter-1">
+          <div class="col-lg-3">
+            <div class="pr-lg-5">
+              <div class="level-1">
+                <span class="eyebrow text-muted">Hot Products</span>
+                <h2>Top Sellers</h2>
+                <div class="nav nav-tabs flex-lg-column mt-md-3 lavalamp">
+                  <a class="nav-item nav-link active" data-filter="1">Women</a>
+                  <a class="nav-item nav-link" data-filter="2">Men</a>
+                  <a class="nav-item nav-link" data-filter="3">Kids</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="row gutter-2 filtr-container imagesloaded">
 
+              <!-- women -->
+              <div class="col-12 filtr-item" data-category="1" data-sort="value">
+                <div class="owl-carousel owl-carousel--mask visible" data-items="[2,2,2,1]" data-loop="true" data-margin="10" data-nav="true">
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-1-3.jpg') }}" alt="Image">
 
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">T-shirt</h3>
+                      <span class="price">$19.00</span>
+                    </a>
+                  </div>
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-2-2.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">Swimwear</h3>
+                      <span class="price">$39.00</span>
+                    </a>
+                  </div>
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-3.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-3-3.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">Skirt</h3>
+                      <span class="price">$29.00</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
 
-            <div class="container">
-                <div class="divider"></div>
+              <!-- men -->
+              <div class="col-12 filtr-item filteredOut" data-category="2" data-sort="value">
+                <div class="owl-carousel owl-carousel--mask visible" data-items="[2,2,2,1]" data-loop="true" data-margin="10" data-nav="true">
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-1-3.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">T-shirt</h3>
+                      <span class="price">$19.00</span>
+                    </a>
+                  </div>
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-2-2.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">Swimwear</h3>
+                      <span class="price">$39.00</span>
+                    </a>
+                  </div>
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-3.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-3-3.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">Skirt</h3>
+                      <span class="price">$29.00</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- kids -->
+              <div class="col-12 filtr-item filteredOut" data-category="3" data-sort="value">
+                <div class="owl-carousel owl-carousel--mask visible" data-items="[2,2,2,1]" data-loop="true" data-margin="10" data-nav="true">
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-1-3.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">T-shirt</h3>
+                      <span class="price">$19.00</span>
+                    </a>
+                  </div>
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-2-2.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">Swimwear</h3>
+                      <span class="price">$39.00</span>
+                    </a>
+                  </div>
+                  <div class="card card-product">
+                    <figure class="card-image">
+                      <a href="#!" class="action"><i class="icon-heart"></i></a>
+                      <a href="#!">
+                        <img src="{{ asset('images/demo/product-3.jpg') }}" alt="Image">
+                        <img src="{{ asset('images/demo/product-3-3.jpg') }}" alt="Image">
+                      </a>
+                    </figure>
+                    <a href="" class="card-body">
+                      <h3 class="card-title">Skirt</h3>
+                      <span class="price">$29.00</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <section>
-                <div class="container">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- categories -->
+    <section>
+      <div class="container">
+        <div class="row align-items-end">
+          <div class="col-8 col-md-6">
+            <span class="eyebrow text-muted">Shop by category</span>
+            <h2>Trending Categories</h2>
+          </div>
+          <div class="col-4 col-md-6 text-right">
+            <a href="" class="underlined">View More</a>
+          </div>
+        </div>
+        <div class="row gutter-1">
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/product-5.jpg') }})"></span></div>
+                <figcaption>Dresses</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/product-6.jpg') }})"></span></div>
+                <figcaption>Shoes</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/product-3.jpg') }})"></span></div>
+                <figcaption>Skirt</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/product-4.jpg') }})"></span></div>
+                <figcaption>Jewelery</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/product-1.jpg') }})"></span></div>
+                <figcaption>Blouses</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/product-2.jpg') }})"></span></div>
+                <figcaption>Swimwear</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/category-2.jpg') }})"></span></div>
+                <figcaption>Bodysuit</figcaption>
+              </figure>
+            </a>
+          </div>
+          <div class="col-6 col-lg-3">
+            <a href="">
+              <figure class="category category--alt">
+                <div class="equal"><span class="image" style="background-image: url({{ asset('images/demo/category-1.jpg') }})"></span></div>
+                <figcaption>Sunglass</figcaption>
+              </figure>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                    <div class="home-trending padding-vertical-50">
-                        <div class="section-header center">
-                            <h2 class="upper margin-bottom-20">В тренде</h2>
-                            <p>Стильные вещи для мужчин</p>
-                        </div>
-                        <!-- ./section-header -->
-
-                        <div class="row">
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="awe-media">
-                                    <div class="awe-media-image">
-                                        <a href="#" title="New Collection For Man">
-                                            <img src="{{ asset('img/samples/collections/trending/1.jpg') }}" alt="">
-
-                                        </a>
-                                    </div>
-                                    <!-- /.awe-media-image -->
-
-                                    <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Collection For Man">Новая коллекция для мужчин</a>
-                                    </div>
-                                    <!-- /.awe-media-body -->
-                                </div>
-                                <!-- /.awe-media -->
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="awe-media">
-                                    <div class="awe-media-image">
-                                        <a href="#" title="New Trending Shop">
-                                            <img src="{{ asset('img/samples/collections/trending/2.jpg') }}" alt="">
-                                        </a>
-                                    </div>
-                                    <!-- /.awe-media-image -->
-
-                                    <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Trending Shop">Модная обувь</a>
-                                    </div>
-                                    <!-- /.awe-media-body -->
-                                </div>
-                                <!-- /.awe-media -->
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="awe-media">
-                                    <div class="awe-media-image">
-                                        <a href="#" title="New Fashion for Cafe Racer Boy">
-                                            <img src="{{ asset('img/samples/collections/trending/3.jpg') }}" alt="">
-                                        </a>
-                                    </div>
-                                    <!-- /.awe-media-image -->
-
-                                    <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Fashion for Cafe Racer Boy">Лучшая одежда в мире</a>
-                                    </div>
-                                    <!-- /.awe-media-body -->
-                                </div>
-                                <!-- /.awe-media -->
-                            </div>
-
-                            <div class="col-md-3 col-sm-6 col-xs-6">
-                                <div class="awe-media">
-                                    <div class="awe-media-image">
-                                        <a href="#" title="New Watch Style">
-                                            <img src="{{ asset('img/samples/collections/trending/4.jpg') }}" alt="">
-                                        </a>
-                                    </div>
-                                    <!-- /.awe-media-image -->
-
-                                    <div class="awe-media-body center margin-vertical-20">
-                                        <a href="#" title="New Watch Style">Супер мега стиль</a>
-                                    </div>
-                                    <!-- /.awe-media-body -->
-                                </div>
-                                <!-- /.awe-media -->
-                            </div>
-
-                        </div>
-                        <!-- /.row -->
-                    </div>
-                    <!-- /.home-trending -->
-
-                </div>
-                <!-- /.container -->
-            </section>
-            <!-- /section -->
-
-            <div class="container">
-                <div class="divider"></div>
-            </div>
-
-            <section>
-                <div class="container">
-                    <div class="padding-vertical-50">
-
-                        <div class="arrivals">
-                            <div class="section-header center">
-                                <h2>Новые поступления</h2>
-                            </div>
-                            <!-- /.section-header -->
-
-                            <div class="products home-products owl-carousel" data-items="4">
-
-
-                                <div class="product product-grid">
-                                    <div class="product-media">
-                                        <div class="product-thumbnail">
-                                            <a href="product-fullwidth.html" title="">
-                                                <img src="{{ asset('img/samples/products/index/arrivals/1.jpg') }}" alt="" class="current">
-                                            </a>
-                                        </div>
-                                        <!-- /.product-thumbnail -->
-
-
-                                        <div class="product-hover">
-                                            <div class="product-actions">
-                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                    <i class="icon icon-shopping-bag"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                    <i class="icon icon-star"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                    <i class="icon icon-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- /.product-hover -->
-
-
-
-                                    </div>
-                                    <!-- /.product-media -->
-
-                                    <div class="product-body">
-                                        <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
-                                </h2>
-                                        <!-- /.product-product -->
-
-                                        <div class="product-category">
-                                            <span>Short</span>
-                                        </div>
-                                        <!-- /.product-category -->
-
-                                        <div class="product-price">
-
-                                            <span class="amount">500 ₽</span>
-
-                                        </div>
-                                        <!-- /.product-price -->
-                                    </div>
-                                    <!-- /.product-body -->
-                                </div>
-                                <!-- /.product -->
-
-
-
-                                <div class="product product-grid">
-                                    <div class="product-media">
-                                        <div class="product-thumbnail">
-                                            <a href="product-fullwidth.html" title="">
-                                                <img src="{{ asset('img/samples/products/index/arrivals/2.jpg') }}" alt="" class="current">
-                                            </a>
-                                        </div>
-                                        <!-- /.product-thumbnail -->
-
-
-                                        <div class="product-hover">
-                                            <div class="product-actions">
-                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                    <i class="icon icon-shopping-bag"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                    <i class="icon icon-star"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                    <i class="icon icon-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- /.product-hover -->
-
-
-
-                                    </div>
-                                    <!-- /.product-media -->
-
-                                    <div class="product-body">
-                                        <h2 class="product-name">
-                                    <a href="#" title="Goodale Rutledge Navy/White">Модная вещь</a>
-                                </h2>
-                                        <!-- /.product-product -->
-
-                                        <div class="product-category">
-                                            <span>Shirt</span>
-                                        </div>
-                                        <!-- /.product-category -->
-
-                                        <div class="product-price">
-
-                                            <span class="amount">500 ₽</span>
-
-                                        </div>
-                                        <!-- /.product-price -->
-                                    </div>
-                                    <!-- /.product-body -->
-                                </div>
-                                <!-- /.product -->
-
-
-
-                                <div class="product product-grid">
-                                    <div class="product-media">
-                                        <div class="product-thumbnail">
-                                            <a href="product-fullwidth.html" title="">
-                                                <img src="{{ asset('img/samples/products/index/arrivals/3.jpg') }}" alt="" class="current">
-                                            </a>
-                                        </div>
-                                        <!-- /.product-thumbnail -->
-
-
-                                        <div class="product-hover">
-                                            <div class="product-actions">
-                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                    <i class="icon icon-shopping-bag"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                    <i class="icon icon-star"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                    <i class="icon icon-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- /.product-hover -->
-
-
-
-                                    </div>
-                                    <!-- /.product-media -->
-
-                                    <div class="product-body">
-                                        <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
-                                </h2>
-                                        <!-- /.product-product -->
-
-                                        <div class="product-category">
-                                            <span>Shirt</span>
-                                        </div>
-                                        <!-- /.product-category -->
-
-                                        <div class="product-price">
-
-                                            <span class="amount">500 ₽</span>
-
-                                        </div>
-                                        <!-- /.product-price -->
-                                    </div>
-                                    <!-- /.product-body -->
-                                </div>
-                                <!-- /.product -->
-
-
-
-                                <div class="product product-grid">
-                                    <div class="product-media">
-                                        <div class="product-thumbnail">
-                                            <a href="product-fullwidth.html" title="">
-                                                <img src="{{ asset('img/samples/products/index/arrivals/4.jpg') }}" alt="" class="current">
-                                            </a>
-                                        </div>
-                                        <!-- /.product-thumbnail -->
-
-
-                                        <div class="product-hover">
-                                            <div class="product-actions">
-                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                    <i class="icon icon-shopping-bag"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                    <i class="icon icon-star"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                    <i class="icon icon-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- /.product-hover -->
-
-
-
-                                    </div>
-                                    <!-- /.product-media -->
-
-                                    <div class="product-body">
-                                        <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
-                                </h2>
-                                        <!-- /.product-product -->
-
-                                        <div class="product-category">
-                                            <span>Shirt</span>
-                                        </div>
-                                        <!-- /.product-category -->
-
-                                        <div class="product-price">
-
-                                            <span class="amount">500 ₽</span>
-
-                                        </div>
-                                        <!-- /.product-price -->
-                                    </div>
-                                    <!-- /.product-body -->
-                                </div>
-                                <!-- /.product -->
-
-
-
-                                <div class="product product-grid">
-                                    <div class="product-media">
-                                        <div class="product-thumbnail">
-                                            <a href="product-fullwidth.html" title="">
-                                                <img src="{{ asset('img/samples/products/index/arrivals/5.jpg') }}" alt="" class="current">
-                                            </a>
-                                        </div>
-                                        <!-- /.product-thumbnail -->
-
-
-                                        <div class="product-hover">
-                                            <div class="product-actions">
-                                                <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                    <i class="icon icon-shopping-bag"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                    <i class="icon icon-star"></i>
-                                                </a>
-
-                                                <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                    <i class="icon icon-eye"></i>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <!-- /.product-hover -->
-
-
-
-                                    </div>
-                                    <!-- /.product-media -->
-
-                                    <div class="product-body">
-                                        <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Модная вещь</a>
-                                </h2>
-                                        <!-- /.product-product -->
-
-                                        <div class="product-category">
-                                            <span>Shirt</span>
-                                        </div>
-                                        <!-- /.product-category -->
-
-                                        <div class="product-price">
-
-                                            <span class="amount">500 ₽</span>
-
-                                        </div>
-                                        <!-- /.product-price -->
-                                    </div>
-                                    <!-- /.product-body -->
-                                </div>
-                                <!-- /.product -->
-
-
-                            </div>
-                            <!-- /.products -->
-                        </div>
-                        <!-- /.arrivals -->
-
-                    </div>
-                </div>
-                <!-- /.container -->
-            </section>
-            <!-- /section -->
-
-            <div class="container">
-                <div class="divider"></div>
-            </div>
-
-            <section class="background background-color-dark background-image-section-customers-say">
-                <div class="container">
-                    <div class="padding-top-60">
-                        <div class="section-header center">
-                            <h2>Customer Say</h2>
-                        </div>
-                        <!-- /.section-header -->
-
-                        <div class="section-customers">
-                            <div class="row">
-                                <div class="col-md-8 col-md-offset-2">
-                                    <div class="customers-carousel owl-carousel" id="customers-carousel" data-toggle="carousel" data-dots="true" data-nav="0">
-                                        <div class="center">
-                                            <h4>Natasha Roson</h4>
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                                                you are going to use a passage of Lorem Ipsum“</p>
-                                        </div>
-                                        <!-- /.center -->
-
-                                        <div class="center">
-                                            <h4>Natasha Roson</h4>
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                                                you are going to use a passage of Lorem Ipsum“</p>
-                                        </div>
-                                        <!-- /.center -->
-
-                                        <div class="center">
-                                            <h4>Natasha Roson</h4>
-                                            <p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If
-                                                you are going to use a passage of Lorem Ipsum“</p>
-                                        </div>
-                                        <!-- /.center -->
-                                    </div>
-                                    <!-- /.customers-say-carousel -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- /.section-content -->
-                    </div>
-                </div>
-                <!-- /.container -->
-
-                <div class="section-brands">
-                    <div class="container">
-                        <div class="brands-carousel owl-carousel" id="brands-carousel">
-
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-1.png') }}" alt="">
-
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-2.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-3.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-4.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-1.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-2.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-3.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-                            <div class="center">
-                                <img src="{{ asset('img/samples/brands/brand-4.png') }}" alt="">
-                            </div>
-                            <!-- /.center -->
-
-
-                        </div>
-                        <!-- /.brands-carousel -->
-                    </div>
-                    <!-- /.container -->
-                </div>
-                <!-- /.section-brands -->
-
-            </section>
-            <!-- /section -->s
-
-            <section>
-                <div class="container">
-
-                    <div class="padding-vertical-50 border-bottom">
-                        <div class="section-header center">
-                            <h2>Featured Items</h2>
-                        </div>
-                        <!-- /.section-header -->
-
-                        <div class="products scroll">
-                            <div class="row">
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-
-                                    <div class="product product-grid">
-                                        <div class="product-media">
-                                            <div class="product-thumbnail">
-                                                <a href="product-fullwidth.html" title="">
-                                                    <img src="{{ asset('img/samples/products/index/featured/1.jpg') }}" alt="" class="current">
-                                                </a>
-                                            </div>
-                                            <!-- /.product-thumbnail -->
-                                            <div class="product-hover">
-                                                <div class="product-actions">
-                                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                        <i class="icon icon-shopping-bag"></i>
-                                                    </a>
-
-                                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                        <i class="icon icon-star"></i>
-                                                    </a>
-
-                                                    <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                        <i class="icon icon-eye"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- /.product-hover -->
-                                            <span class="product-label hot">
-                                                <span>hot</span>
-                                            </span>
-
-                                            </div>
-                                            <!-- /.product-media -->
-
-                                            <div class="product-body">
-                                            <h2 class="product-name">
-                                                <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
-                                            </h2>
-                                            <!-- /.product-product -->
-
-                                            <div class="product-category">
-                                                <span>Jackets</span>
-                                            </div>
-                                            <!-- /.product-category -->
-
-                                            <div class="product-price">
-
-                                                <span class="amount">$260</span>
-
-                                            </div>
-                                            <!-- /.product-price -->
-                                        </div>
-                                        <!-- /.product-body -->
-                                    </div>
-                                    <!-- /.product -->
-
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-
-                                    <div class="product product-grid">
-                                        <div class="product-media">
-                                            <div class="product-thumbnail">
-                                                <a href="product-fullwidth.html" title="">
-                                                    <img src="{{ asset('img/samples/products/index/featured/2.jpg') }}" alt="" class="current">
-                                                </a>
-                                            </div>
-                                            <!-- /.product-thumbnail -->
-
-
-                                            <div class="product-hover">
-                                                <div class="product-actions">
-                                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                        <i class="icon icon-shopping-bag"></i>
-                                                    </a>
-
-                                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                        <i class="icon icon-star"></i>
-                                                    </a>
-
-                                                    <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                        <i class="icon icon-eye"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- /.product-hover -->
-
-
-
-                                            <span class="product-label new">
-                                    <span>new</span>
-                                            </span>
-
-                                        </div>
-                                        <!-- /.product-media -->
-
-                                        <div class="product-body">
-                                            <h2 class="product-name">
-                                    <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge Navy/White</a>
-                                </h2>
-                                            <!-- /.product-product -->
-
-                                            <div class="product-category">
-                                                <span>Shorts</span>
-                                            </div>
-                                            <!-- /.product-category -->
-
-                                            <div class="product-price">
-
-                                                <span class="amount">$150</span>
-
-                                            </div>
-                                            <!-- /.product-price -->
-                                        </div>
-                                        <!-- /.product-body -->
-                                    </div>
-                                    <!-- /.product -->
-
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-
-                                    <div class="product product-grid">
-                                        <div class="product-media">
-                                            <div class="product-thumbnail">
-                                                <a href="product-fullwidth.html" title="">
-                                                    <img src="{{ asset('img/samples/products/index/featured/1.jpg') }}" alt="" class="current">
-                                                </a>
-                                            </div>
-                                            <!-- /.product-thumbnail -->
-
-
-                                            <div class="product-soldout">
-                                                <div class="fp-table">
-                                                    <div class="fp-table-cell">
-                                                        <span class="soldout">Sold Out</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <!-- /.product-hover -->
-
-
-
-                                        </div>
-                                        <!-- /.product-media -->
-
-                                        <div class="product-body">
-                                            <h2 class="product-name">
-                                    <a href="#" title="Gin Lane Greenport Cotton Shirt">Gin Lane Greenport Cotton Shirt</a>
-                                </h2>
-                                            <!-- /.product-product -->
-
-                                            <div class="product-category">
-                                                <span>Shirt</span>
-                                            </div>
-                                            <!-- /.product-category -->
-
-                                            <div class="product-price">
-
-                                                <span class="amount">$60</span>
-
-                                            </div>
-                                            <!-- /.product-price -->
-                                        </div>
-                                        <!-- /.product-body -->
-                                    </div>
-                                    <!-- /.product -->
-
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 col-xs-6">
-
-                                    <div class="product product-grid">
-                                        <div class="product-media">
-                                            <div class="product-thumbnail">
-                                                <a href="product-fullwidth.html" title="">
-                                                    <img src="{{ asset('img/samples/products/index/featured/4.jpg') }}" alt="" class="current">
-                                                </a>
-                                            </div>
-                                            <!-- /.product-thumbnail -->
-
-
-                                            <div class="product-hover">
-                                                <div class="product-actions">
-                                                    <a href="#" class="awe-button product-add-cart" data-toggle="tooltip" title="Add to cart">
-                                                        <i class="icon icon-shopping-bag"></i>
-                                                    </a>
-
-                                                    <a href="#" class="awe-button product-quick-whistlist" data-toggle="tooltip" title="Add to whistlist">
-                                                        <i class="icon icon-star"></i>
-                                                    </a>
-
-                                                    <a href="#" class="awe-button product-quick-view" data-toggle="tooltip" title="Quickview">
-                                                        <i class="icon icon-eye"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <!-- /.product-hover -->
-
-
-
-                                            <span class="product-label sale">
-                                    <span>sale</span>
-                                            </span>
-
-                                        </div>
-                                        <!-- /.product-media -->
-
-                                        <div class="product-body">
-                                            <h2 class="product-name">
-                                    <a href="#" title="Goodale Rutledge Navy/White">Goodale Rutledge Navy/White</a>
-                                </h2>
-                                            <!-- /.product-product -->
-
-                                            <div class="product-category">
-                                                <span>Vests</span>
-                                            </div>
-                                            <!-- /.product-category -->
-
-                                            <div class="product-price">
-
-                                                <span class="amount">$630</span>
-                                                <del class="amount">$230</del>
-
-                                            </div>
-                                            <!-- /.product-price -->
-                                        </div>
-                                        <!-- /.product-body -->
-                                    </div>
-                                    <!-- /.product -->
-
-                                </div>
-
-                            </div>
-                            <!-- /.row -->
-                        </div>
-                        <!-- /.products -->
-
-                        <div class="center">
-                            <a href="#" class="btn btn-lg btn-dark btn-outline">
-                                <span>View More Products</span>
-                            </a>
-                        </div>
-                        <!-- /.margin-top-50 -->
-                    </div>
-                    <!-- /.padding-vertical-50 -->
-                </div>
-            </section>
 
 @endsection
