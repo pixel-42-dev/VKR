@@ -16,7 +16,7 @@
               <div class="bg-white cart-item-list p-2 p-lg-3 mb-1">
 
                 <div class="cart-item">
-                  <a href="#!" class="cart-item-image"><img src="assets/images/demo/product-1.jpg" alt="Image"></a>
+                  <a href="#!" class="cart-item-image"><img src="{{ asset('img/samples/products/1/product-1.jpg') }}" alt="Image"></a>
                   <div class="cart-item-body">
                     <div class="row">
                       <div class="col-10">
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="cart-item">
-                  <a href="#!" class="cart-item-image"><img src="assets/images/demo/product-3.jpg" alt="Image"></a>
+                  <a href="#!" class="cart-item-image"><img src="{{ asset('img/samples/products/1/product-1.jpg') }}" alt="Image"></a>
                   <div class="cart-item-body">
                     <div class="row">
                       <div class="col-10">
@@ -128,7 +128,7 @@
                 </div>
 
                 <div class="cart-item">
-                  <a href="#!" class="cart-item-image"><img src="assets/images/demo/product-5.jpg" alt="Image"></a>
+                  <a href="#!" class="cart-item-image"><img src="{{ asset('img/samples/products/1/product-1.jpg') }}" alt="Image"></a>
                   <div class="cart-item-body">
                     <div class="row">
                       <div class="col-10">

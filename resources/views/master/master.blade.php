@@ -407,7 +407,6 @@
                                                 <div class="row">
                                                     <div class="col-lg-3">
                                                         <h2 class="upper">Обувь</h2>
-
                                                         <ul class="super">
                                                             <li><a href="#" title="">Мужская</a>
                                                             </li>
