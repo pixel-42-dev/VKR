@@ -2968,6 +2968,22 @@ input[type="button"].btn-block {
     align-items: center;
     justify-content: space-between; }
 
+.navbar-button {
+    padding: 10px;
+    border: 1px solid black;
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+}
+@media (max-width: 1200px) {
+    .navbar-button {
+        position: static;
+        display: block;
+        border: none;
+
+    }
+}
+
 .navbar-brand {
   display: inline-block;
   padding-top: 0.40625rem;

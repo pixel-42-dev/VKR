@@ -1,34 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/order-details', function () {
-    return view('account-order-details');
-});
-Route::get('/settings', function () {
-    return view('account-settings');
-});
-Route::get('/cart', function () {
-    return view('cart');
-});
-Route::get('/checkout', function () {
-    return view('checkout');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
-Route::get('/listing', function () {
-    return view('listing');
-});
-Route::get('/login', function () {
-    return view('login');
-});
-Route::get('/product', function () {
-    return view('product');
-});
+Route::get('/', [MainController::class, 'index'])->name('index');
+Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/order-details', [MainController::class, 'orderDetails'])->name('order.details');
+Route::get('/settings', [MainController::class, 'settings'])->name('settings');
+Route::get('/cart', [MainController::class, 'cart'])->name('cart');
+Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
+Route::get('/listing', [MainController::class, 'listing'])->name('listing');
+Route::get('/login', [MainController::class, 'login'])->name('login');
+Route::get('/product/{number}', [MainController::class, 'product'])->name('product');   // number попадает в контроллер как переменная

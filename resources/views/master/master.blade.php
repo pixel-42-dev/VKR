@@ -14,17 +14,18 @@
     <header class="header header-absolute">
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-          <a href="index.html" class="navbar-brand order-1 order-lg-1"><img src="{{ asset('images/logo.png') }}" alt="Logo"></a>
+          <a href="/" class="navbar-brand order-1 order-lg-1"><img src="{{ asset('images/logo.png') }}" alt="Logo"></a>
           <div class="collapse navbar-collapse order-4 order-lg-2" id="navbarMenu">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item dropdown dropdown-lg dropdown-hover"> {{-- Одежда --}}
-                <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="/listing" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Одежда
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown-2">
                   <div class="container mx-auto">
                     <div class="row gutter-2">
                       <div class="col-lg-2">
+                        <a href="/listing" class="navbar-button">Вся одежда</a>
                         <span class="eyebrow text-muted mb-1">Пол</span>
                         <ul class="menu-list">
                           <li class="menu-list-item"><a href="" class="menu-list-link">Мужской</a></li>
@@ -91,6 +92,7 @@
                   <div class="container mx-auto">
                     <div class="row gutter-2">
                       <div class="col-lg-2">
+                        <a href="/listing" class="navbar-button">Вся одежда</a>
                         <span class="eyebrow text-muted mb-1">Пол</span>
                         <ul class="menu-list">
                           <li class="menu-list-item"><a href="" class="menu-list-link">Мужской</a></li>
@@ -159,6 +161,7 @@
                   <div class="container mx-auto">
                     <div class="row gutter-2">
                       <div class="col-lg-2">
+                        <a href="/listing" class="navbar-button">Вся одежда</a>
                         <span class="eyebrow text-muted mb-1">Пол</span>
                         <ul class="menu-list">
                           <li class="menu-list-item"><a href="" class="menu-list-link">Мужской</a></li>
@@ -218,8 +221,8 @@
                 </div>
               </li> {{-- /// Аксесуары /// --}}
               <li class="nav-item dropdown-lg dropdown-hover">
-                <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Контакты
+                <a class="nav-link dropdown-toggle" href="/about" id="navbarDropdown-3">
+                  О нас
                 </a>
               </li>
             </ul>

@@ -3,7 +3,7 @@
 
 <style type="text/css">
     body > section {
-        padding-top: 10rem !important;
+        padding-top: 7rem !important;
     }
     body {
         background-color: #f5f5f5 !important;
@@ -234,9 +234,9 @@
                 <div class="card card-product">
                   <figure class="card-image">
                     <a href="#!" class="action"><i class="icon-heart"></i></a>
-                    <a href="#!">
+                    <a href="/product/BurgundyDress">
                       <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">
-                      <img src="{{ asset('images/demo/product-1-1.jpg') }}" alt="Image">
+                      <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
                     </a>
                     <span class="badge badge-success">New</span>
                   </figure>
@@ -251,9 +251,9 @@
                 <div class="card card-product">
                   <figure class="card-image">
                     <a href="#!" class="action"><i class="icon-heart"></i></a>
-                    <a href="#!">
+                    <a href="/product/CreamDress">
                       <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">
-                      <img src="{{ asset('images/demo/product-2-1.jpg') }}" alt="Image">
+                      <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
                     </a>
                     <span class="badge badge-success">New</span>
                   </figure>
@@ -267,9 +267,9 @@
                 <div class="card card-product">
                   <figure class="card-image">
                     <a href="#!" class="action"><i class="icon-heart"></i></a>
-                    <a href="#!">
+                    <a href="/product/StripeDress">
                       <img src="{{ asset('images/demo/product-3.jpg') }}" alt="Image">
-                      <img src="{{ asset('images/demo/product-3-1.jpg') }}" alt="Image">
+                      <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
                     </a>
                     <span class="badge badge-success">New</span>
                   </figure>
@@ -283,9 +283,9 @@
                 <div class="card card-product">
                   <figure class="card-image">
                     <a href="#!" class="action"><i class="icon-heart"></i></a>
-                    <a href="#!">
+                    <a href="/product/BlueStripeDress">
                       <img src="{{ asset('images/demo/product-4.jpg') }}" alt="Image">
-                      <img src="{{ asset('images/demo/product-4-1.jpg') }}" alt="Image">
+                      <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
                     </a>
                   </figure>
                   <div class="card-footer">
@@ -299,9 +299,9 @@
                 <div class="card card-product">
                   <figure class="card-image">
                     <a href="#!" class="action"><i class="icon-heart"></i></a>
-                    <a href="#!">
+                    <a href="/product/BrownDress">
                       <img src="{{ asset('images/demo/product-5.jpg') }}" alt="Image">
-                      <img src="{{ asset('images/demo/product-5-1.jpg') }}" alt="Image">
+                      <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
                     </a>
                   </figure>
                   <div class="card-footer">
@@ -315,7 +315,7 @@
                 <div class="card card-product">
                   <figure class="card-image">
                     <a href="#!" class="action"><i class="icon-heart"></i></a>
-                    <a href="#!">
+                    <a href="/product/SageDress">
                       <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">
                       <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
                     </a>

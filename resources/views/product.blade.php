@@ -67,7 +67,7 @@
             <div class="row">
               <div class="col-12">
                 <span class="eyebrow text-muted">Burberry</span>
-                <h1>Check Cotton Shirt</h1>
+                <h1>{{$name}}</h1>     {{-- Подставляем значение --}}
                 <span class="price fs-18">$290</span>
               </div>
             </div>
