@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="{{ asset('css/vendor.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
-    <title>Homepage - A</title>
+    <title>FashionHub</title>
   </head>
   <body>
 
