@@ -41,35 +41,6 @@
 
                 <!-- sidebar -->
                 <aside class="col-lg-3 sidebar">
-                    {{--            <div class="widget d-none d-lg-block">--}}
-                    {{--              <span class="widget-title">Women</span>--}}
-                    {{--              <ul id="page-nav" class="nav flex-column nav-accordion">--}}
-                    {{--                <li class="nav-item"><a class="nav-link" href="#!">Coats & Jackets</a></li>--}}
-                    {{--                <li class="nav-item active">--}}
-                    {{--                  <a class="nav-link" data-toggle="collapse" href="#menu-2" role="button" aria-expanded="true" aria-controls="menu-2">Dresses</a>--}}
-                    {{--                  <div class="collapse show" id="menu-2" data-parent="#page-nav">--}}
-                    {{--                    <div>--}}
-                    {{--                      <ul class="nav flex-column">--}}
-                    {{--                        <li class="nav-item">--}}
-                    {{--                          <a class="nav-link" href="#!">Backless</a>--}}
-                    {{--                        </li>--}}
-                    {{--                        <li class="nav-item active">--}}
-                    {{--                          <a class="nav-link" href="#!">Casual</a>--}}
-                    {{--                        </li>--}}
-                    {{--                        <li class="nav-item">--}}
-                    {{--                          <a class="nav-link" href="#!">Club</a>--}}
-                    {{--                        </li>--}}
-                    {{--                      </ul>--}}
-                    {{--                    </div>--}}
-                    {{--                  </div>--}}
-                    {{--                </li>--}}
-                    {{--                <li class="nav-item"><a class="nav-link" href="#!">Polo Shirts</a></li>--}}
-                    {{--                <li class="nav-item"><a class="nav-link" href="#!">Sweatshirts</a></li>--}}
-                    {{--                <li class="nav-item"><a class="nav-link" href="#!">T-Shirts & Tops</a></li>--}}
-                    {{--                <li class="nav-item"><a class="nav-link" href="#!">Knitwear</a></li>--}}
-                    {{--              </ul>--}}
-                    {{--            </div>--}}
-
                     <div class="widget d-none d-lg-block">
                         <span class="widget-title">Категории</span>
                         <ul id="page-nav" class="nav flex-column nav-accordion">
@@ -79,7 +50,7 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects1 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="#!">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -91,7 +62,7 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects2 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="#!">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -103,7 +74,7 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects3 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="#!">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -245,7 +216,12 @@
                 <div class="col-lg-9">
                     <div class="row gutter-1 align-items-end">
                         <div class="col-md-6">
-                            <h1>Dresses</h1>
+
+                            @if(isset($categoryName))
+                                <h1>{{ $categoryName }}</h1>
+                            @else
+                                <h1>Каталог</h1>
+                            @endif
                         </div>
                         <div class="col-md-6 text-md-right">
                             <ul class="list list--horizontal list--separated text-muted fs-14">
@@ -272,104 +248,6 @@
                     </div>
 
                     <div class="row gutter-1">
-{{--                        <div class="col-6 col-md-4">--}}
-{{--                            <div class="card card-product">--}}
-{{--                                <figure class="card-image">--}}
-{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
-{{--                                    <a href="/product/BurgundyDress">--}}
-{{--                                        <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">--}}
-{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
-{{--                                    </a>--}}
-{{--                                    <span class="badge badge-success">New</span>--}}
-{{--                                </figure>--}}
-{{--                                <div class="card-footer">--}}
-{{--                                    <h3 class="card-title"><a href="">Burgundy Dress</a></h3>--}}
-{{--                                    <span class="brand">Brand</span>--}}
-{{--                                    <span class="price">$130.00</span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 col-md-4">--}}
-{{--                            <div class="card card-product">--}}
-{{--                                <figure class="card-image">--}}
-{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
-{{--                                    <a href="/product/CreamDress">--}}
-{{--                                        <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">--}}
-{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
-{{--                                    </a>--}}
-{{--                                    <span class="badge badge-success">New</span>--}}
-{{--                                </figure>--}}
-{{--                                <div class="card-footer">--}}
-{{--                                    <h3 class="card-title"><a href="">Cream Dress</a></h3>--}}
-{{--                                    <span class="price">$118.00</span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 col-md-4">--}}
-{{--                            <div class="card card-product">--}}
-{{--                                <figure class="card-image">--}}
-{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
-{{--                                    <a href="/product/StripeDress">--}}
-{{--                                        <img src="{{ asset('images/demo/product-3.jpg') }}" alt="Image">--}}
-{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
-{{--                                    </a>--}}
-{{--                                    <span class="badge badge-success">New</span>--}}
-{{--                                </figure>--}}
-{{--                                <div class="card-footer">--}}
-{{--                                    <h3 class="card-title"><a href="">Stripe Dress</a></h3>--}}
-{{--                                    <span class="price text-red"><s>$130.00</s> $80.00</span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 col-md-4">--}}
-{{--                            <div class="card card-product">--}}
-{{--                                <figure class="card-image">--}}
-{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
-{{--                                    <a href="/product/BlueStripeDress">--}}
-{{--                                        <img src="{{ asset('images/demo/product-4.jpg') }}" alt="Image">--}}
-{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
-{{--                                    </a>--}}
-{{--                                </figure>--}}
-{{--                                <div class="card-footer">--}}
-{{--                                    <h3 class="card-title"><a href="">Blue Stripe Dress</a></h3>--}}
-{{--                                    <span class="brand">Brand</span>--}}
-{{--                                    <span class="price">$98.00</span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 col-md-4">--}}
-{{--                            <div class="card card-product">--}}
-{{--                                <figure class="card-image">--}}
-{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
-{{--                                    <a href="/product/BrownDress">--}}
-{{--                                        <img src="{{ asset('images/demo/product-5.jpg') }}" alt="Image">--}}
-{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
-{{--                                    </a>--}}
-{{--                                </figure>--}}
-{{--                                <div class="card-footer">--}}
-{{--                                    <h3 class="card-title"><a href="">Brown Dress</a></h3>--}}
-{{--                                    <span class="brand">Brand</span>--}}
-{{--                                    <span class="price">$110.00</span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                        <div class="col-6 col-md-4">--}}
-{{--                            <div class="card card-product">--}}
-{{--                                <figure class="card-image">--}}
-{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
-{{--                                    <a href="/product/SageDress">--}}
-{{--                                        <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">--}}
-{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
-{{--                                    </a>--}}
-{{--                                </figure>--}}
-{{--                                <div class="card-footer">--}}
-{{--                                    <h3 class="card-title"><a href="">Sage Dress</a></h3>--}}
-{{--                                    <span class="brand">Brand</span>--}}
-{{--                                    <span class="price">$120.00</span>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-
                         @foreach($products as $product)
                             <div class="col-6 col-md-4">
                                 <div class="card card-product">
@@ -382,12 +260,13 @@
                                     </figure>
                                     <div class="card-footer">
                                         <h3 class="card-title"><a href="">{{ $product->name }}</a></h3>
-                                        <span class="brand">{{ $product->BrandID }}</span>
+                                        <span class="brand">{{ $product->brand->name }}</span> <!-- Отображение имени бренда -->
                                         <span class="price">{{ $product->price }}</span>
                                     </div>
                                 </div>
                             </div>
                         @endforeach
+
 
                     </div>
 

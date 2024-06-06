@@ -37,13 +37,26 @@ class MainController extends Controller
     }
 
     public function listing() {
-        $categoryObjects1 = Category::where('code', 1)->get();  // Получаем с помощью модели Category из таблицы cateries все записи с кодом 1
+        $categoryObjects1 = Category::where('code', 1)->get();
         $categoryObjects2 = Category::where('code', 2)->get();
         $categoryObjects3 = Category::where('code', 3)->get();
-        $products = Product::all();
+
+        $products = Product::with('brand')->get(); // Загрузка бренда вместе с продуктами с помощью метода, добавленного в модель
+
         return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3', 'products'));
     }
 
+    public function listingCategory($categoryNumber) {
+        $categoryObjects1 = Category::where('code', 1)->get();
+        $categoryObjects2 = Category::where('code', 2)->get();
+        $categoryObjects3 = Category::where('code', 3)->get();
+
+        $categoryName = Category::where('id', $categoryNumber)->value('name');
+
+        $products = Product::with('brand')->where('categotyID', $categoryNumber)->get();
+
+        return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3', 'products', 'categoryName'));
+    }
 
     public function login() {
         return view('login');

@@ -36,7 +36,7 @@
                                         <span class="eyebrow text-muted mb-1">Категории</span>
                                         <ul class="menu-list">
                                             @foreach($categories['categories1'] as $category)
-                                                <li class="menu-list-item"><a href="" class="menu-list-link">{{ $category->name }}</a></li>
+                                                <li class="menu-list-item"><a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -101,7 +101,7 @@
                                         <span class="eyebrow text-muted mb-1">Категории</span>
                                         <ul class="menu-list">
                                             @foreach($categories['categories2'] as $category)
-                                                <li class="menu-list-item"><a href="" class="menu-list-link">{{ $category->name }}</a></li>
+                                                <li class="menu-list-item"><a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -164,7 +164,7 @@
                                         <span class="eyebrow text-muted mb-1">Категории</span>
                                         <ul class="menu-list">
                                             @foreach($categories['categories3'] as $category)
-                                                <li class="menu-list-item"><a href="" class="menu-list-link">{{ $category->name }}</a></li>
+                                                <li class="menu-list-item"><a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
