@@ -1,5 +1,11 @@
 <?php
 
+// php artisan migrate
+// php artisan migrate:rollback
+// php artisan make:migration create_products_table
+// php artisan make:model Product
+// php artisan make:model -m Categoty   -   создаёт сразу и модель и миграцию
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 

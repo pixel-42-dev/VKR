@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Categoty;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -35,8 +36,12 @@ class MainController extends Controller
     }
 
     public function listing() {
-        return view('listing');
+        $categoryObjects1 = Categoty::where('code', 1)->get();  // Получаем с помощью модели Category из таблицы cateries все записи с кодом 1
+        $categoryObjects2 = Categoty::where('code', 2)->get();
+        $categoryObjects3 = Categoty::where('code', 3)->get();
+        return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3'));
     }
+
 
     public function login() {
         return view('login');
