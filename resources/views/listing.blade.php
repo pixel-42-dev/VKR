@@ -272,104 +272,122 @@
                     </div>
 
                     <div class="row gutter-1">
+{{--                        <div class="col-6 col-md-4">--}}
+{{--                            <div class="card card-product">--}}
+{{--                                <figure class="card-image">--}}
+{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
+{{--                                    <a href="/product/BurgundyDress">--}}
+{{--                                        <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">--}}
+{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="badge badge-success">New</span>--}}
+{{--                                </figure>--}}
+{{--                                <div class="card-footer">--}}
+{{--                                    <h3 class="card-title"><a href="">Burgundy Dress</a></h3>--}}
+{{--                                    <span class="brand">Brand</span>--}}
+{{--                                    <span class="price">$130.00</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-6 col-md-4">--}}
+{{--                            <div class="card card-product">--}}
+{{--                                <figure class="card-image">--}}
+{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
+{{--                                    <a href="/product/CreamDress">--}}
+{{--                                        <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">--}}
+{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="badge badge-success">New</span>--}}
+{{--                                </figure>--}}
+{{--                                <div class="card-footer">--}}
+{{--                                    <h3 class="card-title"><a href="">Cream Dress</a></h3>--}}
+{{--                                    <span class="price">$118.00</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-6 col-md-4">--}}
+{{--                            <div class="card card-product">--}}
+{{--                                <figure class="card-image">--}}
+{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
+{{--                                    <a href="/product/StripeDress">--}}
+{{--                                        <img src="{{ asset('images/demo/product-3.jpg') }}" alt="Image">--}}
+{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
+{{--                                    </a>--}}
+{{--                                    <span class="badge badge-success">New</span>--}}
+{{--                                </figure>--}}
+{{--                                <div class="card-footer">--}}
+{{--                                    <h3 class="card-title"><a href="">Stripe Dress</a></h3>--}}
+{{--                                    <span class="price text-red"><s>$130.00</s> $80.00</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-6 col-md-4">--}}
+{{--                            <div class="card card-product">--}}
+{{--                                <figure class="card-image">--}}
+{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
+{{--                                    <a href="/product/BlueStripeDress">--}}
+{{--                                        <img src="{{ asset('images/demo/product-4.jpg') }}" alt="Image">--}}
+{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
+{{--                                    </a>--}}
+{{--                                </figure>--}}
+{{--                                <div class="card-footer">--}}
+{{--                                    <h3 class="card-title"><a href="">Blue Stripe Dress</a></h3>--}}
+{{--                                    <span class="brand">Brand</span>--}}
+{{--                                    <span class="price">$98.00</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-6 col-md-4">--}}
+{{--                            <div class="card card-product">--}}
+{{--                                <figure class="card-image">--}}
+{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
+{{--                                    <a href="/product/BrownDress">--}}
+{{--                                        <img src="{{ asset('images/demo/product-5.jpg') }}" alt="Image">--}}
+{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
+{{--                                    </a>--}}
+{{--                                </figure>--}}
+{{--                                <div class="card-footer">--}}
+{{--                                    <h3 class="card-title"><a href="">Brown Dress</a></h3>--}}
+{{--                                    <span class="brand">Brand</span>--}}
+{{--                                    <span class="price">$110.00</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                        <div class="col-6 col-md-4">--}}
+{{--                            <div class="card card-product">--}}
+{{--                                <figure class="card-image">--}}
+{{--                                    <a href="#!" class="action"><i class="icon-heart"></i></a>--}}
+{{--                                    <a href="/product/SageDress">--}}
+{{--                                        <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">--}}
+{{--                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
+{{--                                    </a>--}}
+{{--                                </figure>--}}
+{{--                                <div class="card-footer">--}}
+{{--                                    <h3 class="card-title"><a href="">Sage Dress</a></h3>--}}
+{{--                                    <span class="brand">Brand</span>--}}
+{{--                                    <span class="price">$120.00</span>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
 
-                        <div class="col-6 col-md-4">
-                            <div class="card card-product">
-                                <figure class="card-image">
-                                    <a href="#!" class="action"><i class="icon-heart"></i></a>
-                                    <a href="/product/BurgundyDress">
-                                        <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">
-                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
-                                    </a>
-                                    <span class="badge badge-success">New</span>
-                                </figure>
-                                <div class="card-footer">
-                                    <h3 class="card-title"><a href="">Burgundy Dress</a></h3>
-                                    <span class="brand">Brand</span>
-                                    <span class="price">$130.00</span>
+                        @foreach($products as $product)
+                            <div class="col-6 col-md-4">
+                                <div class="card card-product">
+                                    <figure class="card-image">
+                                        <a href="#!" class="action"><i class="icon-heart"></i></a>
+                                        <a href="/product/SageDress">
+                                            <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">
+                                            <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
+                                        </a>
+                                    </figure>
+                                    <div class="card-footer">
+                                        <h3 class="card-title"><a href="">{{ $product->name }}</a></h3>
+                                        <span class="brand">{{ $product->BrandID }}</span>
+                                        <span class="price">{{ $product->price }}</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="card card-product">
-                                <figure class="card-image">
-                                    <a href="#!" class="action"><i class="icon-heart"></i></a>
-                                    <a href="/product/CreamDress">
-                                        <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">
-                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
-                                    </a>
-                                    <span class="badge badge-success">New</span>
-                                </figure>
-                                <div class="card-footer">
-                                    <h3 class="card-title"><a href="">Cream Dress</a></h3>
-                                    <span class="price">$118.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="card card-product">
-                                <figure class="card-image">
-                                    <a href="#!" class="action"><i class="icon-heart"></i></a>
-                                    <a href="/product/StripeDress">
-                                        <img src="{{ asset('images/demo/product-3.jpg') }}" alt="Image">
-                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
-                                    </a>
-                                    <span class="badge badge-success">New</span>
-                                </figure>
-                                <div class="card-footer">
-                                    <h3 class="card-title"><a href="">Stripe Dress</a></h3>
-                                    <span class="price text-red"><s>$130.00</s> $80.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="card card-product">
-                                <figure class="card-image">
-                                    <a href="#!" class="action"><i class="icon-heart"></i></a>
-                                    <a href="/product/BlueStripeDress">
-                                        <img src="{{ asset('images/demo/product-4.jpg') }}" alt="Image">
-                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="card-footer">
-                                    <h3 class="card-title"><a href="">Blue Stripe Dress</a></h3>
-                                    <span class="brand">Brand</span>
-                                    <span class="price">$98.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="card card-product">
-                                <figure class="card-image">
-                                    <a href="#!" class="action"><i class="icon-heart"></i></a>
-                                    <a href="/product/BrownDress">
-                                        <img src="{{ asset('images/demo/product-5.jpg') }}" alt="Image">
-                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="card-footer">
-                                    <h3 class="card-title"><a href="">Brown Dress</a></h3>
-                                    <span class="brand">Brand</span>
-                                    <span class="price">$110.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 col-md-4">
-                            <div class="card card-product">
-                                <figure class="card-image">
-                                    <a href="#!" class="action"><i class="icon-heart"></i></a>
-                                    <a href="/product/SageDress">
-                                        <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">
-                                        <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
-                                    </a>
-                                </figure>
-                                <div class="card-footer">
-                                    <h3 class="card-title"><a href="">Sage Dress</a></h3>
-                                    <span class="brand">Brand</span>
-                                    <span class="price">$120.00</span>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
                     </div>
 
