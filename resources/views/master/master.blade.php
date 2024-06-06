@@ -14,18 +14,18 @@
 <header class="header header-absolute">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
-            <a href="/" class="navbar-brand order-1 order-lg-1"><img src="{{ asset('images/logo.png') }}" alt="Logo"></a>
+            <a href="{{ route('index')  }}" class="navbar-brand order-1 order-lg-1"><img src="{{ asset('images/logo.png') }}" alt="Logo"></a>
             <div class="collapse navbar-collapse order-4 order-lg-2" id="navbarMenu">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item dropdown dropdown-lg dropdown-hover"> {{-- Одежда --}}
-                        <a class="nav-link dropdown-toggle" href="/listing" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="{{ route('listing')  }}" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Одежда
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-2">
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
                                     <div class="col-lg-2">
-                                        <a href="/listing" class="navbar-button">Вся одежда</a>
+                                        <a href="{{ route('listing')  }}" class="navbar-button">Вся одежда</a>
                                         <span class="eyebrow text-muted mb-1">Пол</span>
                                         <ul class="menu-list">
                                             <li class="menu-list-item"><a href="" class="menu-list-link">Мужская</a></li>
@@ -90,7 +90,7 @@
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
                                     <div class="col-lg-2">
-                                        <a href="/listing" class="navbar-button">Вся обувь</a>
+                                        <a href="{{ route('listing')  }}" class="navbar-button">Вся обувь</a>
                                         <span class="eyebrow text-muted mb-1">Пол</span>
                                         <ul class="menu-list">
                                             <li class="menu-list-item"><a href="" class="menu-list-link">Мужская</a></li>
@@ -145,8 +145,6 @@
                             </div>
                         </div>
                     </li> {{-- /// ОБУВЬ /// --}}
-
-
                     <li class="nav-item dropdown dropdown-lg dropdown-hover"> {{-- Аксесуары --}}
                         <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Аксесуары
@@ -155,7 +153,7 @@
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
                                     <div class="col-lg-2">
-                                        <a href="/listing" class="navbar-button">Все аксесуары</a>
+                                        <a href="{{ route('listing')  }}" class="navbar-button">Все аксесуары</a>
                                         <span class="eyebrow text-muted mb-1">Пол</span>
                                         <ul class="menu-list">
                                             <li class="menu-list-item"><a href="" class="menu-list-link">Мужские</a></li>
@@ -211,7 +209,7 @@
                         </div>
                     </li> {{-- /// Аксесуары /// --}}
                     <li class="nav-item dropdown-lg dropdown-hover">
-                        <a class="nav-link dropdown-toggle" href="/about" id="navbarDropdown-3">
+                        <a class="nav-link dropdown-toggle" href="{{ route('about')  }}" id="navbarDropdown-3">
                             О нас
                         </a>
                     </li>
@@ -233,7 +231,6 @@
                             </div>
                         </div>
                     </li>
-
 
                     <!-- user area -->
                     <li class="nav-item dropdown dropdown-md dropdown-hover">

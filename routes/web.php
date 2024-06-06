@@ -5,6 +5,7 @@
 // php artisan make:migration create_products_table
 // php artisan make:model Product
 // php artisan make:model -m Categoty   -   создаёт сразу и модель и миграцию
+// php artisan route:list   -   все роуты
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
