@@ -16,15 +16,16 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("code");             // Код товара
-            $table->text("description")->nullable;
-            $table->integer("categotyID");
+            $table->string("code");  // Код товара
+            $table->text("description")->nullable();
+            $table->integer("categoryID");
             $table->integer("BrandID");
-            $table->text("image")->nullable;
+            $table->text("image")->nullable();
             $table->double("price")->default(0);
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.

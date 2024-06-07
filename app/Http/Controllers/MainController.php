@@ -53,7 +53,7 @@ class MainController extends Controller
 
         $categoryName = Category::where('id', $categoryNumber)->value('name');
 
-        $products = Product::with('brand')->where('categotyID', $categoryNumber)->get();
+        $products = Product::with('brand')->where('categoryID', $categoryNumber)->get();
 
         return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3', 'products', 'categoryName'));
     }
