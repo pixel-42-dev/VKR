@@ -21,10 +21,10 @@
               <div class="card-header">
                 <ul class="nav nav-tabs nav-fill card-header-tabs lavalamp" id="component-1" role="tablist">
                   <li class="nav-item">
-                    <a class="nav-link active" data-toggle="tab" href="#component-1-1" role="tab" aria-controls="component-1-1" aria-selected="true">Log In</a>
+                    <a class="nav-link active" data-toggle="tab" href="#component-1-1" role="tab" aria-controls="component-1-1" aria-selected="true">Вход</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" data-toggle="tab" href="#component-1-2" role="tab" aria-controls="component-1-2" aria-selected="false">Sign Up</a>
+                    <a class="nav-link" data-toggle="tab" href="#component-1-2" role="tab" aria-controls="component-1-2" aria-selected="false">Регистрация</a>
                   </li>
                 </ul>
               </div>
@@ -38,7 +38,7 @@
                             <div class="col-12">
                               <div class="form-label-group">
                                 <input type="text" id="inputEmail" class="form-control form-control-lg" placeholder="Email address" required="">
-                                <label for="inputEmail">Email address</label>
+                                <label for="inputEmail">Логин</label>
                               </div>
                             </div>
                           </div>
@@ -46,17 +46,17 @@
                             <div class="col-12">
                               <div class="form-label-group">
                                 <input type="text" id="inputPassword" class="form-control form-control-lg" placeholder="Password" required="">
-                                <label for="inputPassword">Password</label>
+                                <label for="inputPassword">Пароль</label>
                               </div>
                             </div>
                           </div>
                         </fieldset>
                       </div>
                       <div class="col-12 text-center">
-                        <a href="" class="underline fs-14">Forgot Password ?</a>
+                        <a href="" class="underline fs-14">Забыли пароль ?</a>
                       </div>
                       <div class="col-12">
-                        <a href="" class="btn btn-primary btn-block">Sign In</a>
+                        <a href="" class="btn btn-primary btn-block">Войти</a>
                       </div>
                     </div>
                   </div>
@@ -68,7 +68,7 @@
                             <div class="col-12">
                               <div class="form-label-group">
                                 <input type="text" id="inputName2" class="form-control form-control-lg" placeholder="First name" required="">
-                                <label for="inputName">First Name</label>
+                                <label for="inputName">Логин</label>
                               </div>
                             </div>
                           </div>
@@ -76,7 +76,7 @@
                             <div class="col-12">
                               <div class="form-label-group">
                                 <input type="text" id="inputEmail2" class="form-control form-control-lg" placeholder="Email address" required="">
-                                <label for="inputEmail">Email address</label>
+                                <label for="inputEmail">Почта</label>
                               </div>
                             </div>
                           </div>
@@ -84,32 +84,21 @@
                             <div class="col-12">
                               <div class="form-label-group">
                                 <input type="text" id="inputPassword2" class="form-control form-control-lg" placeholder="Password" required="">
-                                <label for="inputPassword">Password</label>
+                                <label for="inputPassword">Пароль</label>
                               </div>
                             </div>
                           </div>
                         </fieldset>
                       </div>
                       <div class="col-12">
-                        <span class="label d-block">Gender</span>
-                        <div class="d-block">
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline1">Men</label>
-                          </div>
-                          <div class="custom-control custom-radio custom-control-inline">
-                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                            <label class="custom-control-label" for="customRadioInline2">Women</label>
-                          </div>
                         </div>
-                        <small class="text-muted lh-sm">We will use this information for tailoring your experience.</small>
                         <div class="custom-control custom-checkbox mt-1">
                           <input type="checkbox" id="customCheckbox1" name="customCheckbox1" class="custom-control-input">
-                          <label class="custom-control-label text-muted" for="customCheckbox1">Yes, I agree to the <a href="" class="underline">Terms and Conditions</a></label>
+                          <label class="custom-control-label text-muted" for="customCheckbox1">Да, я согласен с <a href="" class="underline">Правилами использования</a></label>
                         </div>
                       </div>
                       <div class="col-12">
-                        <a href="" class="btn btn-primary btn-block">Creat an account</a>
+                        <a href="" class="btn btn-primary btn-block">Создать аккаунт</a>
                       </div>
                     </div>
                   </div>

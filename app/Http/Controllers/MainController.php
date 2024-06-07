@@ -51,6 +51,11 @@ class MainController extends Controller
             $products = Product::with('brand')->whereHas('category', function ($query) {
                 $query->where('forMen', 0);
             })->get();
+        } else if ($gender == 'all') {
+            $categoryObjects1 = Category::where('code', 1)->get();
+            $categoryObjects2 = Category::where('code', 2)->get();
+            $categoryObjects3 = Category::where('code', 3)->get();
+            $products = Product::all();
         } else {
             dd('Такой пол не существует');
         }
@@ -75,6 +80,10 @@ class MainController extends Controller
             $categoryObjects1 = Category::where('code', 1)->where('forMen', 0)->get();
             $categoryObjects2 = Category::where('code', 2)->where('forMen', 0)->get();
             $categoryObjects3 = Category::where('code', 3)->where('forMen', 0)->get();
+        } else if ($gender == 'all') {
+            $categoryObjects1 = Category::where('code', 1)->where('forMen', 0)->get();
+            $categoryObjects2 = Category::where('code', 2)->where('forMen', 0)->get();
+            $categoryObjects3 = Category::where('code', 3)->where('forMen', 0)->get();
         } else {
             dd('Такой пол не существует');
         }
@@ -96,7 +105,8 @@ class MainController extends Controller
         return view('login');
     }
 
-    public function product($number) {  // Получаем переданную переменную
-        return view('product', ['name' => $number]);     // Можно добавить массив. Первый ключ - имя, по которому можно обращаться, второй - само значение
+    public function product($number) {
+        $product = Product::where('id', $number)->first();
+        return view('product', compact('product'));
     }
 }

@@ -31,7 +31,6 @@
                             @if(isset($categoryName))
                                 <li class="breadcrumb-item active" aria-current="page">{{ $categoryName }}</li>
                             @endif
-
                         </ol>
                     </nav>
                 </div>
@@ -260,13 +259,13 @@
                                 <div class="card card-product">
                                     <figure class="card-image">
                                         <a href="#!" class="action"><i class="icon-heart"></i></a>
-                                        <a href="/product/SageDress">
+                                        <a href="{{ route('product', ['number' => $product->id]) }}">
                                             <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">
                                             <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
                                         </a>
                                     </figure>
                                     <div class="card-footer">
-                                        <h3 class="card-title"><a href="">{{ $product->name }}</a></h3>
+                                        <h3 class="card-title"><a href="{{ route('product', ['number' => $product->id]) }}">{{ $product->name }}</a></h3>
                                         <span class="brand">{{ $product->brand->name }}</span> <!-- Отображение имени бренда -->
                                         <span class="price">{{ $product->price }}</span>
                                     </div>

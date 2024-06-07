@@ -25,7 +25,7 @@
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
                                     <div class="col-lg-2">
-                                        <a href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}" class="navbar-button">Вся одежда</a>
+                                        <a href="{{ route('listing', ['gender' => 'all']) }}" class="navbar-button">Все товары</a>
                                         <span class="eyebrow text-muted mb-1">Мужская</span>
                                         <ul class="menu-list">
                                             @foreach($categories['categories1'] as $category)
@@ -109,7 +109,7 @@
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
                                     <div class="col-lg-2">
-                                        <a href="{{ route('listing', ['gender' => 'men']) }}" class="navbar-button">Вся одежда</a>
+                                        <a href="{{ route('listing', ['gender' => 'all']) }}" class="navbar-button">Все товары</a>
                                         <span class="eyebrow text-muted mb-1">Мужская</span>
                                         <ul class="menu-list">
                                             @foreach($categories['categories2'] as $category)
@@ -193,7 +193,7 @@
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
                                     <div class="col-lg-2">
-                                        <a href="{{ route('listing', ['gender' => 'men']) }}" class="navbar-button">Вся одежда</a>
+                                        <a href="{{ route('listing', ['gender' => 'all']) }}" class="navbar-button">Все товары</a>
                                         <span class="eyebrow text-muted mb-1">Мужская</span>
                                         <ul class="menu-list">
                                             @foreach($categories['categories3'] as $category)
@@ -306,8 +306,8 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-label-group">
-                                                    <input type="text" id="inputName" class="form-control form-control-lg" placeholder="Name" required="" value="Dumitru">
-                                                    <label for="inputName">First Name</label>
+                                                    <input type="text" id="inputName" class="form-control form-control-lg" placeholder="Name" required="" value="">
+                                                    <label for="inputName">Логин</label>
                                                 </div>
                                             </div>
                                         </div>
@@ -315,18 +315,18 @@
                                             <div class="col-12">
                                                 <div class="form-label-group">
                                                     <input type="text" id="inputSurname" class="form-control form-control-lg" placeholder="Surname" required="">
-                                                    <label for="inputSurname">Surname</label>
+                                                    <label for="inputSurname">Пароль</label>
                                                 </div>
                                             </div>
                                         </div>
                                     </fieldset>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <a href="" class="underline fs-14">Forgot Password ?</a>
+                                    <a href="" class="underline fs-14">Забыли пароль ?</a>
                                 </div>
                                 <div class="col-12">
-                                    <a href="" class="btn btn-primary btn-block">Sign In</a>
-                                    <a href="" class="btn btn-outline-secondary btn-block">Create Account</a>
+                                    <a href="" class="btn btn-primary btn-block">Войти</a>
+                                    <a href="" class="btn btn-outline-secondary btn-block">Создать аккаунт</a>
                                 </div>
                             </div>
                         </div>
