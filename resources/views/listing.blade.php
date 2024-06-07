@@ -22,9 +22,16 @@
                 <div class="col">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#!">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#!">Women</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dresses</li>
+                            <li class="breadcrumb-item"><a href="{{ route('index')  }}">Главная</a></li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('listing', ['gender' => $gender]) }}">
+                                    {{ $genderToRussian }}
+                                </a>
+                            </li>
+                            @if(isset($categoryName))
+                                <li class="breadcrumb-item active" aria-current="page">{{ $categoryName }}</li>
+                            @endif
+
                         </ol>
                     </nav>
                 </div>
@@ -50,7 +57,7 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects1 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -62,7 +69,7 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects2 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -74,7 +81,7 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects3 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>

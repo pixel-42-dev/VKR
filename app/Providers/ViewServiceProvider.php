@@ -26,6 +26,7 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $category = Category::first(); // Получаем первую категорию. Вы можете использовать другой метод получения нужной категории.
         $categories1 = Category::where('code', 1)->get();
         $categories2 = Category::where('code', 2)->get();
         $categories3 = Category::where('code', 3)->get();
@@ -36,6 +37,9 @@ class ViewServiceProvider extends ServiceProvider
             'categories3' => $categories3,
         ];
 
-        View::composer('master.master', function($view) use ($categories) {$view->with('categories', $categories);});
+        View::composer('master.master', function($view) use ($categories, $category) {
+            $view->with('categories', $categories)->with('category', $category);
+        });
     }
+
 }

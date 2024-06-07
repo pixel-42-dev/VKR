@@ -10,4 +10,8 @@ class Product extends Model     // Модель для работы с табл�
     {
         return $this->belongsTo(Brand::class, 'BrandID');
     }
+    public function category()
+    {
+        return $this->belongsTo(Category::class, 'categoryID');
+    }
 }
