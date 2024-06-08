@@ -18,4 +18,11 @@ class Product extends Model     // Модель для работы с табл�
     {
         return $this->belongsToMany(Product::class);
     }
+    protected $fillable = ['name', 'code', 'description', 'bucketID', 'sizeID', 'categoryID', 'BrandID', 'image', 'price'];
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class, 'order_product', 'productID', 'orderID')
+            ->withTimestamps();
+    }
 }

@@ -413,8 +413,7 @@
                                     </ul>
                                 </div>
                                 <div class="col-12">
-                                    <a href="" class="btn btn-primary btn-block">Add all to cart</a>
-                                    <a href="" class="btn btn-outline-secondary btn-block">View favorites</a>
+                                    <a href="{{route('cart')}}" class="btn btn-outline-secondary btn-block">В корзину</a>
                                 </div>
                             </div>
                         </div>

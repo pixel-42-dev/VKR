@@ -267,7 +267,7 @@
                                     <div class="card-footer">
                                         <h3 class="card-title"><a href="{{ route('product', ['number' => $product->id]) }}">{{ $product->name }}</a></h3>
                                         <span class="brand">{{ $product->brand->name }}</span> <!-- Отображение имени бренда -->
-                                        <span class="price">{{ $product->price }}</span>
+                                        <span class="price">{{ $product->price }}₽</span>
                                     </div>
                                 </div>
                             </div>

@@ -31,4 +31,5 @@ Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register
 Route::get('/cart', [BasketController::class, 'cart'])->name('cart');
 Route::get('/checkout', [BasketController::class, 'checkout'])->name('checkout');
 Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basketAdd');
+Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basketRemove');
 

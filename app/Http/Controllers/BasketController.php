@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Order;
 use Illuminate\Http\Request;
 
 class BasketController extends Controller
@@ -9,30 +10,43 @@ class BasketController extends Controller
 
 
     public function cart() {
-        return view('cart');
+        $orderID = session('orderID');
+        if (!is_null($orderID)) {
+            $order = Order::findOrFail($orderID);
+        }
+        return view('cart', compact('order'));
     }
 
     public function checkout() {
         return view('checkout');
     }
 
-    public function basketAdd($id, Request $request)
+    public function basketAdd($productId, Request $request)
     {
-//        // Найдите продукт по ID
-//        $product = Product::findOrFail($id);
-//
-//        // Добавьте продукт в корзину (логика может варьироваться)
-//        $basket = Basket::where('user_id', auth()->id())->first();
-//        if (!$basket) {
-//            $basket = new Basket();
-//            $basket->user_id = auth()->id();
-//            $basket->save();
-//        }
-//
-//        // Пример добавления продукта в корзину
-//        $basket->products()->attach($product);
-//
-//        // Перенаправление после добавления в корзину
-//        return redirect()->back()->with('success', 'Продукт добавлен в корзину!');
+        $orderID = session('orderID'); // Получаем заказ из сессии
+
+        if (is_null($orderID)) { // Если заказа нет, то создаём...
+            $order = Order::create(); // создаём заказ
+            session(['orderID' => $order->id]); // Кладём id заказа в сессию
+        } else {
+            $order = Order::find($orderID); // Иначе просто находим заказ
+        }
+
+        $order->products()->attach($productId); // Добавляем в заказ продукт
+
+        // После успешного добавления товара в корзину редиректим пользователя
+        return redirect()->back();
+    }
+    public function basketRemove($productId, Request $request)
+    {
+        $orderID = session('orderID');
+        if (is_null($orderID)) {
+            return false;
+        }
+
+        $order = Order::findOrFail($orderID);
+        $order->products()->detach($productId);
+
+        return view('cart', compact('order'));
     }
 }
