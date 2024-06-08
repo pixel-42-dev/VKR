@@ -119,7 +119,10 @@
                 </div>
               </div>
               <div class="col-12">
-                <a href="" class="btn btn-block btn-primary">Add to bag</a>
+                  <form action="{{ route('basketAdd', ['id' => $product->id]) }}" method="POST">
+                      @csrf
+                      <button type="submit" class="btn btn-block btn-primary">В корзину</button>
+                  </form>
               </div>
             </div>
 

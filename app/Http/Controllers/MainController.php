@@ -24,14 +24,6 @@ class MainController extends Controller
         return view('account-settings');
     }
 
-    public function cart() {
-        return view('cart');
-    }
-
-    public function checkout() {
-        return view('checkout');
-    }
-
     public function contact() {
         return view('contact');
     }
