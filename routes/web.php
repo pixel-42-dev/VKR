@@ -22,3 +22,6 @@ Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listi
 Route::get('/listing/{gender}/{categoryNumber}', [MainController::class, 'listingCategory'])->name('listingCategory');
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/product/{number}', [MainController::class, 'product'])->name('product');   // number попадает в контроллер как переменная
+
+Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('loginPost');
+Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register'])->name('registerPost');
