@@ -68,7 +68,7 @@
               <div class="col-12">
                 <span class="eyebrow text-muted">{{$product->brand->name}}</span>
                 <h1>{{$product->name}}</h1>
-                <span class="price fs-18">{{$product->price}}</span>
+                <span class="price fs-18">{{$product->price}}₽</span>
               </div>
             </div>
 

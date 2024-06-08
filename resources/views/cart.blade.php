@@ -113,10 +113,10 @@
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">
                                 Total to pay
-                                <span>$78.00</span>
+                                <span>{{$order->calculatePrice()}}₽</span>
                             </li>
                         </ul>
-                        <a href="" class="btn btn-primary btn-block">Checkout</a>
+                        <a href="{{route('checkout')}}" class="btn btn-primary btn-block">Checkout</a>
                     </div>
                 </aside>
             </div>

@@ -13,4 +13,13 @@ class Order extends Model
         return $this->belongsToMany(Product::class, 'order_product', 'orderID', 'productID')
             ->withTimestamps();
     }
+
+    public function calculatePrice()
+    {
+        $sum = 0;
+        foreach ($this->products as $product) {
+            $sum += $product->price;
+        }
+        return $sum;
+    }
 }

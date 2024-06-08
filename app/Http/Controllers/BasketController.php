@@ -11,14 +11,19 @@ class BasketController extends Controller
 
     public function cart() {
         $orderID = session('orderID');
-        if (!is_null($orderID)) {
-            $order = Order::findOrFail($orderID);
+        if (is_null($orderID)) {
+            return view('index');
         }
+        $order = Order::findOrFail($orderID);
         return view('cart', compact('order'));
     }
 
     public function checkout() {
-        return view('checkout');
+        $orderID = session('orderID');
+        if (!is_null($orderID)) {
+            $order = Order::findOrFail($orderID);
+        }
+        return view('checkout', compact('order'));
     }
 
     public function basketAdd($productId, Request $request)
