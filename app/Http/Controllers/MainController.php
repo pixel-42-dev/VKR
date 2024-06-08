@@ -66,6 +66,7 @@ class MainController extends Controller
             $genderToRussian = "Женская одежда";
         }
 
+
         return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3', 'products', 'gender', 'genderToRussian'));
     }
 

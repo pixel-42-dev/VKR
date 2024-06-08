@@ -18,10 +18,13 @@ class CreateProductsTable extends Migration
             $table->string("name");
             $table->string("code");  // Код товара
             $table->text("description")->nullable();
-            $table->integer("categoryID");
-            $table->integer("BrandID");
+            $table->integer("bucketID")->nullable();
+            $table->integer("sizeID")->nullable();
+            $table->integer("categoryID")->nullable();
+            $table->integer("BrandID")->nullable();
             $table->text("image")->nullable();
             $table->double("price")->default(0);
+            $table->integer('status')->default(0); // 0 - в наличии, 1 - в корзине, 2 - в заказе, 3 - получен
             $table->timestamps();
         });
     }
