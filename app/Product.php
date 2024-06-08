@@ -14,4 +14,8 @@ class Product extends Model     // Модель для работы с табл�
     {
         return $this->belongsTo(Category::class, 'categoryID');
     }
+    public function products()
+    {
+        return $this->belongsToMany(Product::class);
+    }
 }
