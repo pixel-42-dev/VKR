@@ -15,7 +15,7 @@ use App\Http\Controllers\MainController;
 // MainController
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
-Route::get('/order-details', [MainController::class, 'orderDetails'])->name('order.details');
+Route::get('/order-details', [MainController::class, 'orderDetails'])->name('order-details');
 Route::get('/settings', [MainController::class, 'settings'])->name('settings');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listing');
@@ -32,4 +32,5 @@ Route::get('/cart', [BasketController::class, 'cart'])->name('cart');
 Route::get('/checkout', [BasketController::class, 'checkout'])->name('checkout');
 Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basketAdd');
 Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basketRemove');
+Route::post('/basket/confirm', [BasketController::class, 'confirm'])->name('basketConfirm');
 

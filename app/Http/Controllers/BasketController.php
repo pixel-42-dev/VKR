@@ -12,7 +12,7 @@ class BasketController extends Controller
     public function cart() {
         $orderID = session('orderID');
         if (is_null($orderID)) {
-            return view('index');
+            return redirect()->route('index');
         }
         $order = Order::findOrFail($orderID);
         return view('cart', compact('order'));
@@ -24,6 +24,28 @@ class BasketController extends Controller
             $order = Order::findOrFail($orderID);
         }
         return view('checkout', compact('order'));
+    }
+
+    public function confirm(Request $request)
+    {
+        $orderID = session('orderID');
+        if (is_null($orderID)) {
+            return redirect()->route('index');
+        }
+        $order = Order::findOrFail($orderID);
+
+        // $order->userID = $request->name; todo: тут можно будет добавить пользователя к заказу, скорее всего
+        $order->userID = 666;
+        $order->status = 1;
+        $order->save();
+
+        session()->forget('orderID');
+
+        // dd($order);
+        // dd($request->all());
+        // request - информация, введённая на странице (имя, адрес, т.п.), order - текущие заказы
+
+        return redirect()->route('order-details');
     }
 
     public function basketAdd($productId, Request $request)
