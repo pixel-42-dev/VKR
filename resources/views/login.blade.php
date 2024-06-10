@@ -71,9 +71,9 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-label-group">
-                                                                <input type="text" id="inputName2" name="name" class="form-control form-control-lg" placeholder="First name" required="">
+                                                                <input type="text" id="inputName2" name="nickname" class="form-control form-control-lg" placeholder="First name" required="">
                                                                 <label for="inputName2">Логин</label>
-                                                                @error('name')
+                                                                @error('nickname')
                                                                 <p>Неправильный ник</p>
                                                                 @enderror
                                                             </div>
@@ -106,6 +106,9 @@
                                                             <div class="form-label-group">
                                                                 <input type="password" id="inputPassword3" name="password_confirmation" class="form-control form-control-lg" placeholder="Password" required="">
                                                                 <label for="inputPassword2">Подтвердите пароль</label>
+                                                                @error('password_confirmation')
+                                                                <p>{{$message}}</p>
+                                                                @enderror
                                                             </div>
                                                         </div>
                                                     </div>
