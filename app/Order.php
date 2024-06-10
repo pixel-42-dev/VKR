@@ -22,4 +22,17 @@ class Order extends Model
         }
         return $sum;
     }
+
+    public function saveOrder($id)
+    {
+        if ($this->status == 0) {
+            $this->userID = $id;
+            $this->status = 1;
+            $this->save();
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 }

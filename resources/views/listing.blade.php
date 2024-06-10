@@ -56,7 +56,14 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects1 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                @php
+                                                    if ($category->forMen == 1) {
+                                                        $gender = 'men';
+                                                    } else {
+                                                        $gender = 'women';
+                                                    }
+                                                @endphp
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -68,7 +75,14 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects2 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                @php
+                                                    if ($category->forMen == 1) {
+                                                        $gender = 'men';
+                                                    } else {
+                                                        $gender = 'women';
+                                                    }
+                                                @endphp
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -80,7 +94,14 @@
                                     <div>
                                         <ul class="nav flex-column">
                                             @foreach($categoryObjects3 as $category)
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                @php
+                                                    if ($category->forMen == 1) {
+                                                        $gender = 'men';
+                                                    } else {
+                                                        $gender = 'women';
+                                                    }
+                                                @endphp
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>

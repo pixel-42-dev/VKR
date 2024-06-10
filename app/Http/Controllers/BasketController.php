@@ -33,17 +33,9 @@ class BasketController extends Controller
             return redirect()->route('index');
         }
         $order = Order::findOrFail($orderID);
-
-        // $order->userID = $request->name; todo: тут можно будет добавить пользователя к заказу, скорее всего
-        $order->userID = 666;
-        $order->status = 1;
-        $order->save();
+        $order->saveOrder(666); // todo: нужно будет передать id пользователя
 
         session()->forget('orderID');
-
-        // dd($order);
-        // dd($request->all());
-        // request - информация, введённая на странице (имя, адрес, т.п.), order - текущие заказы
 
         return redirect()->route('order-details');
     }
