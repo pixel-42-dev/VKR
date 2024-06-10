@@ -39,15 +39,15 @@
                                     </div>
                                     <div class="col-lg-2">
                                         <span class="eyebrow text-muted mb-1"></span>
-{{--                                        <ul class="menu-list">--}}
-{{--                                            @foreach($categories['categories1'] as $category)--}}
-{{--                                                @if($category->forMen == 1)--}}
-{{--                                                    <li class="menu-list-item">--}}
-{{--                                                        <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-{{--                                                    </li>--}}
-{{--                                                @endif--}}
-{{--                                            @endforeach--}}
-{{--                                        </ul>--}}
+                                        {{--                                        <ul class="menu-list">--}}
+                                        {{--                                            @foreach($categories['categories1'] as $category)--}}
+                                        {{--                                                @if($category->forMen == 1)--}}
+                                        {{--                                                    <li class="menu-list-item">--}}
+                                        {{--                                                        <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
+                                        {{--                                                    </li>--}}
+                                        {{--                                                @endif--}}
+                                        {{--                                            @endforeach--}}
+                                        {{--                                        </ul>--}}
                                     </div>
                                     <div class="col-lg-2">
                                         <span class="eyebrow text-muted mb-1">Женская</span>
@@ -65,13 +65,13 @@
                                     <div class="col-lg-2">
                                         <span class="eyebrow text-muted mb-1"></span>
                                         <ul class="menu-list">
-{{--                                            @foreach($categories['categories1'] as $category)--}}
-{{--                                                @if($category->forMen == 0)--}}
-{{--                                                    <li class="menu-list-item">--}}
-{{--                                                        <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-{{--                                                    </li>--}}
-{{--                                                @endif--}}
-{{--                                            @endforeach--}}
+                                            {{--                                            @foreach($categories['categories1'] as $category)--}}
+                                            {{--                                                @if($category->forMen == 0)--}}
+                                            {{--                                                    <li class="menu-list-item">--}}
+                                            {{--                                                        <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
+                                            {{--                                                    </li>--}}
+                                            {{--                                                @endif--}}
+                                            {{--                                            @endforeach--}}
                                         </ul>
                                     </div>
                                     <div class="col-lg-2 offset-lg-1">
@@ -280,6 +280,12 @@
             <div class="collapse navbar-collapse order-5 order-lg-3" id="navbarMenu2">
                 <ul class="navbar-nav ml-auto position-relative">
 
+                    <li class="nav-item">
+                        <div style="margin-top: 26px">
+                            <a href="{{route('admin')}}">Панель администратора</a>
+                        </div>
+                    </li>
+
                     <!-- search -->
                     <li class="nav-item dropdown dropdown-md dropdown-hover">
                         <a class="nav-icon dropdown-toggle" id="navbarDropdown-4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -295,42 +301,69 @@
 
                     <!-- user area -->
                     <li class="nav-item dropdown dropdown-md dropdown-hover">
-                        <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-user d-none d-lg-inline-block"></i>
-                            <span class="d-inline-block d-lg-none">Account</span>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown-6">
-                            <div class="row gutter-2">
-                                <div class="col-12">
-                                    <fieldset>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="form-label-group">
-                                                    <input type="text" id="inputName" class="form-control form-control-lg" placeholder="Name" required="" value="">
-                                                    <label for="inputName">Логин</label>
+                        @guest
+                            <form method="POST" action="{{ route('loginPost') }}">
+                                @csrf
+                                <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="icon-user d-none d-lg-inline-block"></i>
+                                    <span class="d-inline-block d-lg-none">Account</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown-6">
+                                    <div class="row gutter-2">
+                                        <div class="col-12">
+                                            <fieldset>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-label-group">
+                                                            <input type="text" id="inputName" name="nickname" class="form-control form-control-lg" placeholder="Name" required="" value="">
+                                                            <label for="inputName">Логин</label>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <div class="form-label-group">
-                                                    <input type="text" id="inputSurname" class="form-control form-control-lg" placeholder="Surname" required="">
-                                                    <label for="inputSurname">Пароль</label>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="form-label-group">
+                                                            <input type="text" id="inputPassword2" name="password"  class="form-control form-control-lg" placeholder="Surname" required="">
+                                                            <label for="inputPassword2">Пароль</label>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                            </fieldset>
                                         </div>
-                                    </fieldset>
+                                        {{--                                    <div class="col-12 text-center">--}}
+                                        {{--                                        <a href="" class="underline fs-14">Забыли пароль ?</a>--}}
+                                        {{--                                    </div>--}}
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-primary btn-block">Войти</button>
+                                            <a href="{{route('login')}}" class="btn btn-outline-secondary btn-block">Создать аккаунт</a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-12 text-center">
-                                    <a href="" class="underline fs-14">Забыли пароль ?</a>
-                                </div>
-                                <div class="col-12">
-                                    <a href="" class="btn btn-primary btn-block">Войти</a>
-                                    <a href="" class="btn btn-outline-secondary btn-block">Создать аккаунт</a>
+                            </form>
+                        @endguest
+                        @auth
+                            <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="icon-user d-none d-lg-inline-block"></i>
+                                <span class="d-inline-block d-lg-none">Аккаунт</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown-6">
+                                <div class="row gutter-2">
+                                    <div class="col-12">
+                                        <p>{{$nickname}}</p>
+                                        <p><a href="{{route('settings')}}">Профиль</a></p>
+                                        <p><a href="{{route('settings')}}">Заказы</a></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <form method="POST" action="{{ route('logoutrPost') }}">
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Выйти</button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        @endauth
                     </li>
+
 
                     <!-- favourites -->
                     <li class="d-none d-lg-inline nav-item dropdown dropdown-md dropdown-hover">

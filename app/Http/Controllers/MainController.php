@@ -102,4 +102,8 @@ class MainController extends Controller
         $product = Product::where('id', $number)->first();
         return view('product', compact('product'));
     }
+    public function admin()
+    {
+        return view('admin');
+    }
 }

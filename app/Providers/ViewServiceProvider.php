@@ -4,6 +4,7 @@ namespace App\Providers;
 
 
 use App\Category;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -38,7 +39,10 @@ class ViewServiceProvider extends ServiceProvider
         ];
 
         View::composer('master.master', function($view) use ($categories, $category) {
-            $view->with('categories', $categories)->with('category', $category);
+            $nickname = Auth::check() ? Auth::user()->nickname : null; // Получаем ник, если пользователь авторизован
+            $view->with('categories', $categories)
+                ->with('category', $category)
+                ->with('nickname', $nickname);
         });
     }
 

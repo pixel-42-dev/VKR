@@ -11,14 +11,14 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->only('nickname', 'password');
 
-        if (Auth::attempt($credentials)) {
+        if (Auth::attempt(['nickname' => $credentials['nickname'], 'password' => $credentials['password']])) {
             return redirect()->route('index');
         }
 
         return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
+            'nickname' => 'The provided credentials do not match our records.',
         ]);
     }
     public function register(Request $request)
@@ -38,6 +38,11 @@ class AuthController extends Controller
 
         Auth::login($user);
 
+        return redirect()->route('index');
+    }
+    public function logout()
+    {
+        Auth::logout();
         return redirect()->route('index');
     }
 }

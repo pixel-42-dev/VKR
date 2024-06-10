@@ -15,17 +15,21 @@ use App\Http\Controllers\MainController;
 // MainController
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
-Route::get('/order-details', [MainController::class, 'orderDetails'])->name('order-details');
-Route::get('/settings', [MainController::class, 'settings'])->name('settings');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/order-details', [MainController::class, 'orderDetails'])->name('order-details');
+    Route::get('/settings', [MainController::class, 'settings'])->name('settings');
+});
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listing');
 Route::get('/listing/{gender}/{categoryNumber}', [MainController::class, 'listingCategory'])->name('listingCategory');
 Route::get('/login', [MainController::class, 'login'])->name('login');
-Route::get('/product/{number}', [MainController::class, 'product'])->name('product');   // number попадает в контроллер как переменная
+Route::get('/product/{number}', [MainController::class, 'product'])->name('product');
+Route::get('/admin', [MainController::class, 'admin'])->name('admin');
 
 // AuthController
 Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login'])->name('loginPost');
 Route::post('/register', [\App\Http\Controllers\AuthController::class, 'register'])->name('registerPost');
+Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logoutrPost');
 
 // BasketController
 Route::get('/cart', [BasketController::class, 'cart'])->name('cart');

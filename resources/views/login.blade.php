@@ -38,15 +38,15 @@
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-label-group">
-                                                                <input type="text" id="inputEmail" name="email" class="form-control form-control-lg" placeholder="Email address" required="">
-                                                                <label for="inputEmail">Логин</label>
+                                                                <input type="text" id="inputNameLog" name="nickname" class="form-control form-control-lg" placeholder="Логин" required="">
+                                                                <label for="inputNameLog">Логин</label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-12">
                                                             <div class="form-label-group">
-                                                                <input type="password" id="inputPassword" name="password" class="form-control form-control-lg" placeholder="Password" required="">
+                                                                <input type="password" id="inputPassword" name="password" class="form-control form-control-lg" placeholder="Пароль" required="">
                                                                 <label for="inputPassword">Пароль</label>
                                                             </div>
                                                         </div>
