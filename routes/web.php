@@ -34,11 +34,13 @@ Route::post('/register', [AuthController::class, 'register'])->name('registerPos
 Route::post('/logout', [AuthController::class, 'logout'])->name('logoutrPost');
 
 // BasketController
-Route::get('/cart', [BasketController::class, 'cart'])->name('cart');
-Route::get('/checkout', [BasketController::class, 'checkout'])->name('checkout');
 Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basketAdd');
-Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basketRemove');
 Route::post('/basket/confirm', [BasketController::class, 'confirm'])->name('basketConfirm');
+Route::group(['middleware' => 'backet_not_empty'], function () {
+    Route::get('/cart', [BasketController::class, 'cart'])->name('cart');
+    Route::get('/checkout', [BasketController::class, 'checkout'])->name('checkout');
+    Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basketRemove');
+});
 
 // AdminController
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('auth')->middleware('is_admin');
