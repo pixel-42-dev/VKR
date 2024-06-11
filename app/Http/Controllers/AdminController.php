@@ -10,6 +10,6 @@ class AdminController extends Controller
     public function admin()
     {
         $orders = Order::all()->where('status', 1);
-        return view('admin/order', compact('orders'));
+        return view('admin/orders/index', compact('orders'));
     }
 }

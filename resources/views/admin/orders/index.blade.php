@@ -41,6 +41,7 @@
             @endforeach
         </tbody>
     </table>
+    <button class="btn btn-primary">Добавить заказ</button>
 </div>
 
 @endsection

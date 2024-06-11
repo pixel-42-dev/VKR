@@ -1,5 +1,6 @@
 <?php
 
+// php artisan route:list   -   все роуты
 // php artisan migrate
 // php artisan migrate:rollback
 // php artisan migrate:refresh      -   перезалить миграции (легко внести изменения, но с потерей данных)
@@ -7,8 +8,10 @@
 // php artisan make:model Product
 // php artisan make:model -m Categoty   -   создаёт сразу и модель и миграцию
 // php artisan make:middleware checkIsAdmin - создаёт Middleware
-// php artisan route:list   -   все роуты
+// php artisan make:controller Admin/CategoryController --resource
+// php artisan make:controller Admin/CategoryController --resource --model=Category
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\BasketController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
@@ -44,3 +47,8 @@ Route::group(['middleware' => 'backet_not_empty'], function () {
 
 // AdminController
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('auth')->middleware('is_admin');
+
+// Admin\CategoryController
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('categories', 'Admin\CategoryController');
+});

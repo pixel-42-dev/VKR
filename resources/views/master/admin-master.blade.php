@@ -14,13 +14,13 @@
         <a class="navbar-brand" href="#">Администратор</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Заказы</a>
+                <a class="nav-link" href="{{route('admin')}}">Заказы</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Товары</a>
+                <a class="nav-link" href="">Товары</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Категории</a>
+                <a class="nav-link" href="{{route('categories.index')}}">Категории</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Пользователи</a>
