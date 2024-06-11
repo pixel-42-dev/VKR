@@ -14,6 +14,11 @@ class Order extends Model
             ->withTimestamps();
     }
 
+    public function user()  // Устанавливается отношение с таблицей пользователи
+    {
+        return $this->belongsTo(User::class, 'userID');
+    }
+
     public function calculatePrice()
     {
         $sum = 0;

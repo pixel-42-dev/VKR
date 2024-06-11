@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Order;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BasketController extends Controller
 {
@@ -33,7 +34,7 @@ class BasketController extends Controller
             return redirect()->route('index');
         }
         $order = Order::findOrFail($orderID);
-        $order->saveOrder(666); // todo: нужно будет передать id пользователя
+        $order->saveOrder(Auth::id());
 
         session()->forget('orderID');
 

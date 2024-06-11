@@ -281,9 +281,11 @@
                 <ul class="navbar-nav ml-auto position-relative">
 
                     <li class="nav-item">
-                        <div style="margin-top: 26px">
-                            <a href="{{route('admin')}}">Панель администратора</a>
-                        </div>
+                        @if(Auth::check() && Auth::user()->isAdmin)
+                            <div style="margin-top: 26px">
+                                <a href="{{ route('admin') }}">Панель администратора</a>
+                            </div>
+                        @endif
                     </li>
 
                     <!-- search -->
