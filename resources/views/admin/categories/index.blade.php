@@ -13,7 +13,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Название</th>
-                <th scope="col">code</th>
+                <th scope="col">Тип</th>
                 <th scope="col">Описание</th>
                 <th scope="col">Пол</th>
                 <th scope="col" style="min-width: 210px;">Действия</th>
@@ -27,17 +27,28 @@
                     } else {
                         $gender = 'Женская';
                     }
+                    if ($category->code == 1) {
+                        $type = 'Одежда';
+                    } elseif ($category->code == 2) {
+                        $type = 'Обувь';
+                    } else {
+                        $type = 'Аксесуары';
+                    }
                 @endphp
 
                 <tr>
                     <th scope="row">{{$category->id}}</th>
                     <td>{{$category->name}}</td>
-                    <td>{{$category->code}}</td>
+                    <td>{{$type}}</td>
                     <td>{{$category->description}}</td>
                     <td>{{$gender}}</td>
                     <td>
-                        <button class="btn btn-primary">Изменить</button>
-                        <button class="btn btn-danger">Удалить</button>
+                        <a href="{{route('categories.edit', $category)}}" class="btn btn-success">Изменить</a>
+                        <form action="{{ route('categories.destroy', $category) }}" method="POST" style="display: inline-block;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Удалить</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

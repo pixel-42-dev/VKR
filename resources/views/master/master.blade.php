@@ -24,56 +24,63 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-2">
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
+                                    @php
+                                        $menCategories = $categories['categories1']->where('forMen', 1);
+                                        $womenCategories = $categories['categories1']->where('forMen', 0);
+
+                                        $menChunks = $menCategories->chunk(6);
+                                        $womenChunks = $womenCategories->chunk(6);
+                                    @endphp
+
+                                    {{-- Мужская одежда --}}
                                     <div class="col-lg-2">
                                         <a href="{{ route('listing', ['gender' => 'all']) }}" class="navbar-button">Все товары</a>
                                         <span class="eyebrow text-muted mb-1">Мужская</span>
                                         <ul class="menu-list">
-                                            @foreach($categories['categories1'] as $category)
-                                                @if($category->forMen == 1)
+                                            @foreach($menChunks->first() as $category)
+                                                <li class="menu-list-item">
+                                                    <a href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <span class="eyebrow text-muted mb-1">⠀</span>
+                                        <ul class="menu-list">
+                                            @if($menChunks->count() > 1)
+                                                @foreach($menChunks->last() as $category)
                                                     <li class="menu-list-item">
                                                         <a href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
                                                     </li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1"></span>
-                                        {{--                                        <ul class="menu-list">--}}
-                                        {{--                                            @foreach($categories['categories1'] as $category)--}}
-                                        {{--                                                @if($category->forMen == 1)--}}
-                                        {{--                                                    <li class="menu-list-item">--}}
-                                        {{--                                                        <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-                                        {{--                                                    </li>--}}
-                                        {{--                                                @endif--}}
-                                        {{--                                            @endforeach--}}
-                                        {{--                                        </ul>--}}
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1">Женская</span>
-                                        <ul class="menu-list">
-                                            @foreach($categories['categories1'] as $category)
-                                                @if($category->forMen == 0)
-                                                    <li class="menu-list-item">
-                                                        <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
-                                                    </li>
-                                                @endif
-                                            @endforeach
+                                                @endforeach
+                                            @endif
                                         </ul>
                                     </div>
 
+                                    {{-- Женская одежда --}}
                                     <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1"></span>
+                                        <span class="eyebrow text-muted mb-1">Женская</span>
                                         <ul class="menu-list">
-                                            {{--                                            @foreach($categories['categories1'] as $category)--}}
-                                            {{--                                                @if($category->forMen == 0)--}}
-                                            {{--                                                    <li class="menu-list-item">--}}
-                                            {{--                                                        <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-                                            {{--                                                    </li>--}}
-                                            {{--                                                @endif--}}
-                                            {{--                                            @endforeach--}}
+                                            @foreach($womenChunks->first() as $category)
+                                                <li class="menu-list-item">
+                                                    <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
+                                    <div class="col-lg-2">
+                                        <span class="eyebrow text-muted mb-1">⠀</span>
+                                        <ul class="menu-list">
+                                            @if($womenChunks->count() > 1)
+                                                @foreach($womenChunks->last() as $category)
+                                                    <li class="menu-list-item">
+                                                        <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            @endif
+                                        </ul>
+                                    </div>
+
                                     <div class="col-lg-2 offset-lg-1">
                                         <div class="awe-media inline mb-3 text-center">
                                             <div class="awe-media-image">
@@ -86,7 +93,7 @@
                                             </h4>
                                         </div>
 
-                                        <div class="awe-media inline  text-center">
+                                        <div class="awe-media inline text-center">
                                             <div class="awe-media-image">
                                                 <a href="#" title="">
                                                     <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
@@ -101,6 +108,7 @@
                             </div>
                         </div>
                     </li> {{-- /// Одежда /// --}}
+
                     <li class="nav-item dropdown dropdown-lg dropdown-hover"> {{-- ОБУВЬ --}}
                         <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Обувь
@@ -108,56 +116,63 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-2">
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
+                                    @php
+                                        $menCategories = $categories['categories2']->where('forMen', 1);
+                                        $womenCategories = $categories['categories2']->where('forMen', 0);
+
+                                        $menChunks = $menCategories->chunk(6);
+                                        $womenChunks = $womenCategories->chunk(6);
+                                    @endphp
+
+                                    {{-- Мужская обувь --}}
                                     <div class="col-lg-2">
                                         <a href="{{ route('listing', ['gender' => 'all']) }}" class="navbar-button">Все товары</a>
                                         <span class="eyebrow text-muted mb-1">Мужская</span>
                                         <ul class="menu-list">
-                                            @foreach($categories['categories2'] as $category)
-                                                @if($category->forMen == 1)
+                                            @foreach($menChunks->first() as $category)
+                                                <li class="menu-list-item">
+                                                    <a href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <span class="eyebrow text-muted mb-1">⠀</span>
+                                        <ul class="menu-list">
+                                            @if($menChunks->count() > 1)
+                                                @foreach($menChunks->last() as $category)
                                                     <li class="menu-list-item">
                                                         <a href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
                                                     </li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1"></span>
-                                        {{--<ul class="menu-list">--}}
-                                        {{--    @foreach($categories['categories1'] as $category)--}}
-                                        {{--        @if($category->forMen == 1)--}}
-                                        {{--            <li class="menu-list-item">--}}
-                                        {{--                <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-                                        {{--            </li>--}}
-                                        {{--        @endif--}}
-                                        {{--    @endforeach--}}
-                                        {{--</ul>--}}
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1">Женская</span>
-                                        <ul class="menu-list">
-                                            @foreach($categories['categories2'] as $category)
-                                                @if($category->forMen == 0)
-                                                    <li class="menu-list-item">
-                                                        <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
-                                                    </li>
-                                                @endif
-                                            @endforeach
+                                                @endforeach
+                                            @endif
                                         </ul>
                                     </div>
 
+                                    {{-- Женская обувь --}}
                                     <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1"></span>
+                                        <span class="eyebrow text-muted mb-1">Женская</span>
                                         <ul class="menu-list">
-                                            {{--@foreach($categories['categories1'] as $category)--}}
-                                            {{--    @if($category->forMen == 0)--}}
-                                            {{--        <li class="menu-list-item">--}}
-                                            {{--            <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-                                            {{--        </li>--}}
-                                            {{--    @endif--}}
-                                            {{--@endforeach--}}
+                                            @foreach($womenChunks->first() as $category)
+                                                <li class="menu-list-item">
+                                                    <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
+                                    <div class="col-lg-2">
+                                        <span class="eyebrow text-muted mb-1">⠀</span>
+                                        <ul class="menu-list">
+                                            @if($womenChunks->count() > 1)
+                                                @foreach($womenChunks->last() as $category)
+                                                    <li class="menu-list-item">
+                                                        <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            @endif
+                                        </ul>
+                                    </div>
+
                                     <div class="col-lg-2 offset-lg-1">
                                         <div class="awe-media inline mb-3 text-center">
                                             <div class="awe-media-image">
@@ -170,7 +185,7 @@
                                             </h4>
                                         </div>
 
-                                        <div class="awe-media inline  text-center">
+                                        <div class="awe-media inline text-center">
                                             <div class="awe-media-image">
                                                 <a href="#" title="">
                                                     <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
@@ -185,6 +200,7 @@
                             </div>
                         </div>
                     </li> {{-- /// ОБУВЬ /// --}}
+
                     <li class="nav-item dropdown dropdown-lg dropdown-hover"> {{-- Аксесуары --}}
                         <a class="nav-link dropdown-toggle" href="#!" id="navbarDropdown-2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Аксесуары
@@ -192,56 +208,63 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-2">
                             <div class="container mx-auto">
                                 <div class="row gutter-2">
+                                    @php
+                                        $menCategories = $categories['categories3']->where('forMen', 1);
+                                        $womenCategories = $categories['categories3']->where('forMen', 0);
+
+                                        $menChunks = $menCategories->chunk(6);
+                                        $womenChunks = $womenCategories->chunk(6);
+                                    @endphp
+
+                                    {{-- Мужская одежда --}}
                                     <div class="col-lg-2">
                                         <a href="{{ route('listing', ['gender' => 'all']) }}" class="navbar-button">Все товары</a>
-                                        <span class="eyebrow text-muted mb-1">Мужская</span>
+                                        <span class="eyebrow text-muted mb-1">Мужские</span>
                                         <ul class="menu-list">
-                                            @foreach($categories['categories3'] as $category)
-                                                @if($category->forMen == 1)
+                                            @foreach($menChunks->first() as $category)
+                                                <li class="menu-list-item">
+                                                    <a href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <span class="eyebrow text-muted mb-1">⠀</span>
+                                        <ul class="menu-list">
+                                            @if($menChunks->count() > 1)
+                                                @foreach($menChunks->last() as $category)
                                                     <li class="menu-list-item">
                                                         <a href="{{ route('listingCategory', ['gender' => 'men', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
                                                     </li>
-                                                @endif
-                                            @endforeach
-                                        </ul>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1"></span>
-                                        {{--<ul class="menu-list">--}}
-                                        {{--    @foreach($categories['categories1'] as $category)--}}
-                                        {{--        @if($category->forMen == 1)--}}
-                                        {{--            <li class="menu-list-item">--}}
-                                        {{--                <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-                                        {{--            </li>--}}
-                                        {{--        @endif--}}
-                                        {{--    @endforeach--}}
-                                        {{--</ul>--}}
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1">Женская</span>
-                                        <ul class="menu-list">
-                                            @foreach($categories['categories3'] as $category)
-                                                @if($category->forMen == 0)
-                                                    <li class="menu-list-item">
-                                                        <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
-                                                    </li>
-                                                @endif
-                                            @endforeach
+                                                @endforeach
+                                            @endif
                                         </ul>
                                     </div>
 
+                                    {{-- Женская одежда --}}
                                     <div class="col-lg-2">
-                                        <span class="eyebrow text-muted mb-1"></span>
+                                        <span class="eyebrow text-muted mb-1">Женские</span>
                                         <ul class="menu-list">
-                                            {{--@foreach($categories['categories1'] as $category)--}}
-                                            {{--    @if($category->forMen == 0)--}}
-                                            {{--        <li class="menu-list-item">--}}
-                                            {{--            <a href="{{ route('listingCategory', ['categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>--}}
-                                            {{--        </li>--}}
-                                            {{--    @endif--}}
-                                            {{--@endforeach--}}
+                                            @foreach($womenChunks->first() as $category)
+                                                <li class="menu-list-item">
+                                                    <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
+                                    <div class="col-lg-2">
+                                        <span class="eyebrow text-muted mb-1">⠀</span>
+                                        <ul class="menu-list">
+                                            @if($womenChunks->count() > 1)
+                                                @foreach($womenChunks->last() as $category)
+                                                    <li class="menu-list-item">
+                                                        <a href="{{ route('listingCategory', ['gender' => 'women', 'categoryNumber' => $category->id]) }}" class="menu-list-link">{{ $category->name }}</a>
+                                                    </li>
+                                                @endforeach
+                                            @endif
+                                        </ul>
+                                    </div>
+
                                     <div class="col-lg-2 offset-lg-1">
                                         <div class="awe-media inline mb-3 text-center">
                                             <div class="awe-media-image">
@@ -254,7 +277,7 @@
                                             </h4>
                                         </div>
 
-                                        <div class="awe-media inline  text-center">
+                                        <div class="awe-media inline text-center">
                                             <div class="awe-media-image">
                                                 <a href="#" title="">
                                                     <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
@@ -269,6 +292,7 @@
                             </div>
                         </div>
                     </li> {{-- /// Аксесуары /// --}}
+
                     <li class="nav-item dropdown-lg dropdown-hover">
                         <a class="nav-link dropdown-toggle" href="{{ route('about')  }}" id="navbarDropdown-3">
                             О нас
