@@ -1,10 +1,5 @@
 @extends('master/admin-master')
 @section('content')
-    <style>
-        .table-actions {
-            min-width: 150px;
-        }
-    </style>
 
     <div class="container mt-4">
         <h2>Категории</h2>
@@ -54,7 +49,7 @@
             @endforeach
             </tbody>
         </table>
-        <a href="{{route('categories.create')}}" class="btn btn-success">Добавить категорию</a>
+        <a href="{{route('categories.create')}}" class="btn btn-success" style="margin-bottom: 100px;">Добавить категорию</a>
     </div>
 
 @endsection

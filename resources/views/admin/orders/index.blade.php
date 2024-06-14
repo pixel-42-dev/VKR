@@ -15,17 +15,6 @@
         </tr>
         </thead>
         <tbody>
-{{--        <tr>--}}
-{{--            <th scope="row">1</th>--}}
-{{--            <td>Иванов Иван</td>--}}
-{{--            <td>123-456-7890</td>--}}
-{{--            <td>2024-06-10</td>--}}
-{{--            <td>$100</td>--}}
-{{--            <td>--}}
-{{--                <button class="btn btn-primary">Изменить</button>--}}
-{{--                <button class="btn btn-danger">Удалить</button>--}}
-{{--            </td>--}}
-{{--        </tr>--}}
             @foreach($orders as $order)
                 <tr>
                     <th scope="row">{{$order->id}}</th>
@@ -41,7 +30,6 @@
             @endforeach
         </tbody>
     </table>
-    <button class="btn btn-primary">Добавить заказ</button>
 </div>
 
 @endsection

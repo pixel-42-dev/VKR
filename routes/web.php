@@ -49,6 +49,7 @@ Route::group(['middleware' => 'backet_not_empty'], function () {
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('auth')->middleware('is_admin');
 
 // Admin\CategoryController
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('categories', 'Admin\CategoryController');
+    Route::resource('products', 'Admin\ProductController');
 });
