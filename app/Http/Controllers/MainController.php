@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -21,7 +22,8 @@ class MainController extends Controller
     }
 
     public function settings() {
-        return view('account-settings');
+        $orders = Order::get();
+        return view('account-settings', compact('orders'));
     }
 
     public function contact() {
