@@ -42,7 +42,12 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        Product::create($request->all());
+        $params = $request->all();
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('product-images', 'public');
+            $params['image'] = $path;
+        }
+        Product::create($params);
         return redirect()->route('products.index');
     }
 

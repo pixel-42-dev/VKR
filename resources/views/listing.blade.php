@@ -281,8 +281,13 @@
                                     <figure class="card-image">
                                         <a href="#!" class="action"><i class="icon-heart"></i></a>
                                         <a href="{{ route('product', ['number' => $product->id]) }}">
-                                            <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">
-                                            <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">
+{{--                                            <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">--}}
+{{--                                            <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
+                                            @if ($product->image)
+                                                <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image) }}" alt="Product Image">
+                                            @else
+                                                <img class="product-image-size" src="{{ asset('images/demo/product-6.jpg') }}" alt="Default Image">
+                                            @endif
                                         </a>
                                     </figure>
                                     <div class="card-footer">
@@ -294,6 +299,7 @@
                             </div>
                         @endforeach
                     </div>
+
 
                     <div class="row">
                         <div class="col">

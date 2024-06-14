@@ -4,7 +4,7 @@
 
     <div class="container mt-4">
         <h2>Редактировать товар {{$product->name}}</h2>
-        <form action="{{ route('products.update', $product->id) }}" method="POST">
+        <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
             <div class="form-group">
@@ -39,6 +39,10 @@
                 <label for="price">Цена</label>
                 <input type="text" class="form-control" id="price" name="price" value="{{ $product->price }}" required>
             </div>
+            <div class="form-group">
+                <label for="image">Изображение</label>
+                <input type="file" class="form-control" id="image" name="image">
+            </div>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
     </div>
@@ -47,7 +51,7 @@
 
     <div class="container mt-4">
         <h2>Добавить новый товар</h2>
-        <form action="{{ route('products.store') }}" method="POST">
+        <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="name">Название</label>
@@ -80,6 +84,10 @@
             <div class="form-group">
                 <label for="price">Цена</label>
                 <input type="text" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Изображение</label>
+                <input type="file" class="form-control" id="image" name="image">
             </div>
             <button type="submit" class="btn btn-success">Добавить товар</button>
         </form>

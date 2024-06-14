@@ -12238,6 +12238,11 @@ img {
     left: 0.625rem;
     z-index: 50; }
 
+  .product-image-size {
+      width: 280px;
+      height: 350px;
+  }
+
 .product-image {
   position: relative;
   overflow: hidden; }
