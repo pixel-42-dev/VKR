@@ -22,7 +22,9 @@ class CreateProductsTable extends Migration
             $table->integer("sizeID")->nullable();
             $table->integer("categoryID")->nullable();
             $table->integer("BrandID")->nullable();
-            $table->text("image")->nullable();
+            $table->text("image1")->nullable();
+            $table->text("image2")->nullable();
+            $table->text("image3")->nullable();
             $table->double("price")->default(0);
             // $table->integer('status')->default(0); // 0 - в наличии, 1 - в корзине, 2 - в заказе, 3 - получен
             $table->timestamps();

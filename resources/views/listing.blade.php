@@ -279,12 +279,11 @@
                             <div class="col-6 col-md-4">
                                 <div class="card card-product">
                                     <figure class="card-image">
-                                        <a href="#!" class="action"><i class="icon-heart"></i></a>
+                                        <a href="#!" class="action icon-heart-conteiner"><i class="icon-heart"></i></a>
                                         <a href="{{ route('product', ['number' => $product->id]) }}">
-{{--                                            <img src="{{ asset('images/demo/product-6.jpg') }}" alt="Image">--}}
-{{--                                            <img src="{{ asset('images/demo/product-6-1.jpg') }}" alt="Image">--}}
-                                            @if ($product->image)
-                                                <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image) }}" alt="Product Image">
+                                            @if ($product->image1)
+                                                <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Product Image">
+                                                <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image2) }}" alt="Product Image">
                                             @else
                                                 <img class="product-image-size" src="{{ asset('images/demo/product-6.jpg') }}" alt="Default Image">
                                             @endif

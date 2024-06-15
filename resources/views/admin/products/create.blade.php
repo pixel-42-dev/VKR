@@ -3,7 +3,7 @@
     @isset($product)   {{-- Редактирование --}}
 
     <div class="container mt-4">
-        <h2>Редактировать товар {{$product->name}}</h2>
+        <h2>Редактировать товар {{ $product->name }}</h2>
         <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -40,8 +40,16 @@
                 <input type="text" class="form-control" id="price" name="price" value="{{ $product->price }}" required>
             </div>
             <div class="form-group">
-                <label for="image">Изображение</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <label for="image1">Изображение 1</label>
+                <input type="file" class="form-control" id="image1" name="image1">
+            </div>
+            <div class="form-group">
+                <label for="image2">Изображение 2</label>
+                <input type="file" class="form-control" id="image2" name="image2">
+            </div>
+            <div class="form-group">
+                <label for="image3">Изображение 3</label>
+                <input type="file" class="form-control" id="image3" name="image3">
             </div>
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
@@ -86,12 +94,21 @@
                 <input type="text" class="form-control" id="price" name="price" required>
             </div>
             <div class="form-group">
-                <label for="image">Изображение</label>
-                <input type="file" class="form-control" id="image" name="image">
+                <label for="image1">Изображение 1</label>
+                <input type="file" class="form-control" id="image1" name="image1">
+            </div>
+            <div class="form-group">
+                <label for="image2">Изображение 2</label>
+                <input type="file" class="form-control" id="image2" name="image2">
+            </div>
+            <div class="form-group">
+                <label for="image3">Изображение 3</label>
+                <input type="file" class="form-control" id="image3" name="image3">
             </div>
             <button type="submit" class="btn btn-success">Добавить товар</button>
         </form>
     </div>
+
 
     @endisset
 @endsection

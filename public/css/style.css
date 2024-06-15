@@ -12238,10 +12238,29 @@ img {
     left: 0.625rem;
     z-index: 50; }
 
-  .product-image-size {
-      width: 280px;
-      height: 350px;
-  }
+.product-image-size {
+    width: 280px;
+    height: 350px;
+}
+
+/*.product-main-size {*/
+/*    display: block;*/
+/*    width: 550px;*/
+/*    height: 680px;*/
+/*    object-fit: cover;*/
+/*}*/
+/*.product-main-size {*/
+/*    display: block;*/
+/*    width: 250px;*/
+/*    height: 380px;*/
+/*    object-fit: cover;*/
+/*}*/
+.owl-carousel .owl-item img {
+    width: 550px;
+    height: 680px;
+    object-fit: cover;
+}
+
 
 .product-image {
   position: relative;
@@ -13462,3 +13481,10 @@ div.code-toolbar > .toolbar {
 
 .status.verified::after {
   background: #28a745; }
+
+
+@media (min-width: 1600px) {
+    .icon-heart-conteiner {
+        margin-right: 2rem;
+    }
+}

@@ -18,7 +18,7 @@ class Product extends Model     // Модель для работы с табл�
     {
         return $this->belongsToMany(Product::class);
     }
-    protected $fillable = ['name', 'code', 'description', 'bucketID', 'sizeID', 'categoryID', 'BrandID', 'image', 'price'];
+    protected $fillable = ['name', 'code', 'description', 'bucketID', 'sizeID', 'categoryID', 'BrandID', 'image1', 'image2', 'image3', 'price'];
 
     public function orders()
     {

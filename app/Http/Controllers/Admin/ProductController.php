@@ -43,13 +43,18 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $params = $request->all();
-        if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('product-images', 'public');
-            $params['image'] = $path;
+
+        for ($i = 1; $i <= 3; $i++) {
+            if ($request->hasFile("image{$i}")) {
+                $path = $request->file("image{$i}")->store('product-images', 'public');
+                $params["image{$i}"] = $path;
+            }
         }
+
         Product::create($params);
         return redirect()->route('products.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -84,9 +89,31 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
+        $params = $request->except(['_token', '_method']);
+
+        // Обновление основных данных товара
+        $product->update($params);
+
+        // Загрузка и обновление изображений
+        if ($request->hasFile('image1')) {
+            $path = $request->file('image1')->store('product-images', 'public');
+            $product->image1 = $path;
+        }
+        if ($request->hasFile('image2')) {
+            $path = $request->file('image2')->store('product-images', 'public');
+            $product->image2 = $path;
+        }
+        if ($request->hasFile('image3')) {
+            $path = $request->file('image3')->store('product-images', 'public');
+            $product->image3 = $path;
+        }
+
+        // Сохранение изменений
+        $product->save();
+
         return redirect()->route('products.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
