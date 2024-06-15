@@ -25,4 +25,9 @@ class Product extends Model     // Модель для работы с табл�
         return $this->belongsToMany(Order::class, 'order_product', 'productID', 'orderID')
             ->withTimestamps();
     }
+    public function favoritedBy()
+    {
+        return $this->belongsToMany(User::class, 'favorites', 'product_id', 'user_id')
+            ->withTimestamps();
+    }
 }

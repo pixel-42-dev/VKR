@@ -279,7 +279,7 @@
                             <div class="col-6 col-md-4">
                                 <div class="card card-product">
                                     <figure class="card-image">
-                                        <a href="#!" class="action icon-heart-conteiner"><i class="icon-heart"></i></a>
+                                        <a href="#" class="action icon-heart-container {{ Auth::user()->favorites->contains($product->id) ? 'is-favorite' : '' }}" data-product-id="{{ $product->id }}"><i class="icon-heart"></i></a>
                                         <a href="{{ route('product', ['number' => $product->id]) }}">
                                             @if ($product->image1)
                                                 <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Product Image">
@@ -295,6 +295,7 @@
                                         <span class="price">{{ $product->price }}₽</span>
                                     </div>
                                 </div>
+
                             </div>
                         @endforeach
                     </div>
@@ -321,4 +322,48 @@
         </div>
     </section>
 
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.icon-heart-container').on('click', function(event) {
+                event.preventDefault();
+                var iconContainer = $(this);
+                var productId = iconContainer.data('product-id');
+
+                // Проверяем, содержит ли элемент класс is-favorite
+                var isFavorite = iconContainer.hasClass('is-favorite');
+
+                $.ajax({
+                    url: '{{ route('favorites-toggle') }}',
+                    method: 'POST',
+                    data: {
+                        product_id: productId,
+                        _token: '{{ csrf_token() }}'
+                    },
+                    success: function(response) {
+                        if (response.success) {
+                            if (isFavorite) {
+                                // Если товар был в избранном, удаляем класс is-favorite и меняем иконку на обычную
+                                iconContainer.removeClass('is-favorite');
+                            } else {
+                                // Если товар не был в избранном, добавляем класс is-favorite и меняем иконку на заполненное сердечко
+                                iconContainer.addClass('is-favorite');
+                            }
+                            alert(response.success); // Показываем сообщение об успешном добавлении/удалении из избранного
+                        } else {
+                            alert('Error occurred. Please try again later.');
+                        }
+                    },
+                    error: function(xhr) {
+                        if (xhr.status === 401) {
+                            alert('Unauthorized. Please login to add to favorites.');
+                        } else {
+                            alert('Error occurred. Please try again later.');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

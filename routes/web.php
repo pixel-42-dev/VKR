@@ -30,6 +30,11 @@ Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listi
 Route::get('/listing/{gender}/{categoryNumber}', [MainController::class, 'listingCategory'])->name('listingCategory');
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/product/{number}', [MainController::class, 'product'])->name('product');
+Route::post('/favorites/add', [MainController::class, 'favoritesAdd'])->name('favorites-add');
+Route::post('/favorites/remove', [MainController::class, 'favoritesRemove'])->name('favorites-remove');
+Route::post('/favorites/toggle', [MainController::class, 'toggleFavorite'])->name('favorites-toggle');
+
+
 
 // AuthController
 Route::post('/login', [AuthController::class, 'login'])->name('loginPost');

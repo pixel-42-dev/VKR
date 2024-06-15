@@ -109,4 +109,56 @@ class MainController extends Controller
         $product = Product::where('id', $number)->first();
         return view('product', compact('product'));
     }
+
+    public function favoritesAdd(Request $request)
+    {
+        $productId = $request->input('product_id');
+
+        $user = Auth::user();
+
+        // Проверяем, что пользователь авторизован
+        if (!$user) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+        // Находим продукт по его ID
+        $product = Product::find($productId);
+
+        // Проверяем, что продукт существует
+        if (!$product) {
+            return response()->json(['error' => 'Product not found'], 404);
+        }
+
+        // Проверяем, не добавлен ли уже продукт в избранное пользователем
+        if ($user->favorites()->where('product_id', $productId)->exists()) {
+            return response()->json(['error' => 'Product already added to favorites'], 400);
+        }
+
+        // Добавляем продукт в избранное пользователя
+        $user->favorites()->attach($productId);
+
+        return response()->json(['success' => 'Product added to favorites']);
+
+        return response()->json(['success' => 'Product added to favorites']);
+    }
+    public function favoritesRemove(Request $request)
+    {
+        dd($request->all());
+    }
+    public function toggleFavorite(Request $request)
+    {
+        $productId = $request->input('product_id');
+        $user = Auth::user();
+
+        // Проверяем, есть ли товар уже в избранном у пользователя
+        if ($user->favorites->contains($productId)) {
+            // Удаляем товар из избранного
+            $user->favorites()->detach($productId);
+            return response()->json(['success' => 'Product removed from favorites']);
+        } else {
+            // Добавляем товар в избранное
+            $user->favorites()->attach($productId);
+            return response()->json(['success' => 'Product added to favorites']);
+        }
+    }
 }

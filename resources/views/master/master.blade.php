@@ -320,7 +320,7 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-4">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="searchForm" placeholder="Search for items and brands">
+                                <input type="text" class="form-control" id="searchForm" placeholder="Поиск товаров">
                             </div>
                         </div>
                     </li>
@@ -397,8 +397,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-7">
                             <div class="row gutter-3">
                                 <div class="col-12">
-                                    <h3 class="eyebrow text-dark fs-16 mb-1">My Favorites</h3>
-                                    <p class="text-muted fs-14"><a href="" class="underline">Sign in</a> to keep your saves for up to 60 days.</p>
+                                    <h3 class="eyebrow text-dark fs-16 mb-1">Избранное</h3>
                                 </div>
                                 <div class="col-12">
                                     <div class="cart-item">
@@ -406,11 +405,11 @@
                                         <div class="cart-item-body">
                                             <div class="row">
                                                 <div class="col-9">
-                                                    <h5 class="cart-item-title">Bold Cuff Insert Polo Shirt</h5>
+                                                    <h5 class="cart-item-title">Футболка поло</h5>
                                                     <small>Fred Perry</small>
+                                                    <br>
                                                     <ul class="list list--horizontal fs-14">
-                                                        <li><s>$85.00</s></li>
-                                                        <li class="text-red">$42.00</li>
+                                                        <li>2000 ₽</li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-3 text-right">
@@ -423,8 +422,8 @@
                                     </div>
                                 </div>
                                 <div class="col-12">
-                                    <a href="" class="btn btn-primary btn-block">Add all to cart</a>
-                                    <a href="" class="btn btn-outline-secondary btn-block">View favorites</a>
+{{--                                    <a href="" class="btn btn-primary btn-block">Add all to cart</a>--}}
+                                    <a href="" class="btn btn-outline-secondary btn-block">Открыть избранное</a>
                                 </div>
                             </div>
                         </div>
@@ -439,7 +438,7 @@
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-8">
                             <div class="row gutter-3">
                                 <div class="col-12">
-                                    <h3 class="eyebrow text-dark fs-16 mb-0">My Bag</h3>
+                                    <h3 class="eyebrow text-dark fs-16 mb-0">Корзина</h3>
                                 </div>
                                 <div class="col-12">
                                     <div class="cart-item">
@@ -447,11 +446,11 @@
                                         <div class="cart-item-body">
                                             <div class="row">
                                                 <div class="col-9">
-                                                    <h5 class="cart-item-title">Bold Cuff Insert Polo Shirt</h5>
+                                                    <h5 class="cart-item-title">Футболка поло</h5>
                                                     <small>Fred Perry</small>
+                                                    <br>
                                                     <ul class="list list--horizontal fs-14">
-                                                        <li><s>$85.00</s></li>
-                                                        <li class="text-red">$42.00</li>
+                                                        <li>2000 ₽</li>
                                                     </ul>
                                                 </div>
                                                 <div class="col-3 text-right">
@@ -466,8 +465,8 @@
                                 <div class="col-12">
                                     <ul class="list-group list-group-minimal">
                                         <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">
-                                            Subtotal
-                                            <span>$78.00</span>
+                                            Итого
+                                            <span>2000 ₽</span>
                                         </li>
                                     </ul>
                                 </div>

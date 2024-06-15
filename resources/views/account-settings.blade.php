@@ -102,99 +102,32 @@
                 <div class="tab-pane fade" id="sidebar-1-2" role="tabpanel" aria-labelledby="sidebar-1-2">
                   <div class="row align-items-end">
                     <div class="col">
-                      <h2>Favourites</h2>
+                      <h2>Избранное</h2>
                     </div>
                     <div class="col text-right">
                       <a href="" class="underline"><i class="icon-plus"></i> add all to bag</a>
                     </div>
                   </div>
                   <div class="row gutter-2">
-                    <div class="col-md-6">
-                      <div class="card card-product">
-                        <figure class="card-image">
-                          <a href="#!" class="action"><i class="icon-x"></i></a>
-                          <a href="#!">
-                            <img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image">
-                            <img src="{{ asset('images/demo/product-1-2.jpg') }}" alt="Image">
-                          </a>
-                        </figure>
-                        <div class="card-footer">
-                          <h3 class="card-title"><a href="">Black IC Pendant Light</a></h3>
-                          <span class="price">$410</span>
-                        </div>
-                      </div>
-                      <fieldset class="my-1">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="select-frame">
-                              <select class="custom-select custom-select-lg" id="custom-select-1" data-placeholder="Select colour">
-                                <option label="color"></option>
-                                <option value="1">Red</option>
-                                <option value="2">Green</option>
-                                <option value="3">Blue</option>
-                              </select>
-                            </div>
+
+                      @foreach(Auth::user()->favorites as $favoriteProduct)
+                          <div class="col-md-6">
+                              <div class="card card-product">
+                                  <figure class="card-image">
+                                      <a href="#!" class="action icon-cross-container" ><i class="icon-x"></i></a>
+                                      <a href="#!">
+                                          <img class="home-favorive-images" src="{{ \Illuminate\Support\Facades\Storage::url($favoriteProduct->image1) }}" alt="Image">
+                                          <img class="home-favorive-images" src="{{ \Illuminate\Support\Facades\Storage::url($favoriteProduct->image2) }}" alt="Image">
+                                      </a>
+                                  </figure>
+                                  <div class="card-footer">
+                                      <h3 class="card-title"><a href="">{{$favoriteProduct->name}}</a></h3>
+                                      <span class="price">{{$favoriteProduct->price}} ₽</span>
+                                  </div>
+                              </div>
                           </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="select-frame">
-                              <select class="custom-select custom-select-lg" id="custom-select-1-2" data-placeholder="Size">
-                                <option label="size"></option>
-                                <option value="1">S</option>
-                                <option value="2">M</option>
-                                <option value="3">L</option>
-                                <option value="4">XL</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </fieldset>
-                      <a href="" class="btn btn-block btn-primary">Add to Bag</a>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="card card-product">
-                        <figure class="card-image">
-                          <a href="#!" class="action"><i class="icon-x"></i></a>
-                          <a href="#!">
-                            <img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image">
-                            <img src="{{ asset('images/demo/product-2-2.jpg') }}" alt="Image">
-                          </a>
-                        </figure>
-                        <div class="card-footer">
-                          <h3 class="card-title"><a href="">Black IC Pendant Light</a></h3>
-                          <span class="price">$410</span>
-                        </div>
-                      </div>
-                      <fieldset class="my-1">
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="select-frame">
-                              <select class="custom-select custom-select-lg" id="custom-select-2" data-placeholder="Select colour">
-                                <option label="color"></option>
-                                <option value="1">Red</option>
-                                <option value="2">Green</option>
-                                <option value="3">Blue</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="select-frame">
-                              <select class="custom-select custom-select-lg" id="custom-select-2-2" data-placeholder="Size">
-                                <option label="size"></option>
-                                <option value="1">S</option>
-                                <option value="2">M</option>
-                                <option value="3">L</option>
-                                <option value="4">XL</option>
-                              </select>
-                            </div>
-                          </div>
-                        </div>
-                      </fieldset>
-                      <a href="" class="btn btn-block btn-primary">Add to Bag</a>
-                    </div>
+                      @endforeach
+
                   </div>
                 </div>
 

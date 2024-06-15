@@ -24,9 +24,9 @@
           <div class="container">
             <div class="row align-items-end vh-100">
               <div class="col-lg-8 text-white" data-swiper-parallax-x="-100%">
-                <span class="eyebrow">New Collection</span>
-                <h1>Casual Dresses</h1>
-                <a href="listing-full.html" class="btn btn-outline-white">Shop Now</a>
+                <span class="eyebrow">Новая коллекция</span>
+                <h1>Летние платья</h1>
+                <a href="listing-full.html" class="btn btn-outline-white">К товарам</a>
               </div>
             </div>
           </div>

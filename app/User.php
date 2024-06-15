@@ -44,4 +44,9 @@ class User extends Authenticatable
     public function isAdmin(){
         return $this->isAdmin() === 1;
     }
+    public function favorites()
+    {
+        return $this->belongsToMany(Product::class, 'favorites', 'user_id', 'product_id')
+            ->withTimestamps();
+    }
 }
