@@ -10713,7 +10713,9 @@ dt {
     .cart-item .dropdown-toggle span {
       color: #000; }
   .cart-item img {
-    max-width: 5rem; }
+      width: 80px;
+      height: 100px;
+  }
   .cart-item + .cart-item {
     margin-top: 0.625rem; }
 

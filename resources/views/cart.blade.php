@@ -27,7 +27,7 @@
 
                         @foreach($order->products as $product)
                             <div class="cart-item">
-                                <a href="{{ route('product', ['number' => $product->id]) }}" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>
+                                <a href="{{ route('product', ['number' => $product->id]) }}" class="cart-item-image"><img src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Image"></a>
                                 <div class="cart-item-body">
                                     <div class="row">
                                         <div class="col-10">
@@ -44,28 +44,8 @@
                                                         <li class="mr-2">
                                                             <div class="dropdown">
                                                                 <a class="dropdown-toggle" href="#!" role="button" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    Size <span>M</span>
+                                                                    Размер <span>M</span>
                                                                 </a>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdown-1">
-                                                                    <a class="dropdown-item" href="#!">S</a>
-                                                                    <a class="dropdown-item active">M</a>
-                                                                    <a class="dropdown-item" href="#!">L</a>
-                                                                    <a class="dropdown-item" href="#!">XL</a>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="dropdown">
-                                                                <a class="dropdown-toggle" href="#!" role="button" id="dropdown-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    QTY <span>1</span>
-                                                                </a>
-                                                                <div class="dropdown-menu" aria-labelledby="dropdown-2">
-                                                                    <a class="dropdown-item active" href="#!">1</a>
-                                                                    <a class="dropdown-item" href="#!">2</a>
-                                                                    <a class="dropdown-item" href="#!">3</a>
-                                                                    <a class="dropdown-item" href="#!">4</a>
-                                                                    <a class="dropdown-item" href="#!">5</a>
-                                                                </div>
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -85,7 +65,7 @@
                         @endforeach
                     </div>
 
-                    <a href="" class="underlined">Continue Shopping</a>
+                    <a href="{{ route('listing', ['gender' => 'all']) }}" class="underlined">Продолжить покупки</a>
                 </div>
 
 
@@ -100,23 +80,24 @@
                         </div>
                         <ul class="list-group list-group-minimal mb-3">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Items
-                                <span>$84.00</span>
+                                Товары
+                                <span>{{$order->calculatePrice()}} ₽</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
-                                Shipping
-                                <span>$8.00</span>
+                                Доставка
+                                <span>200 ₽</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-red">
-                                Discount
-                                <span class="text-red">-$14.00</span>
+                                Скидка
+                                <span class="text-red">0</span>
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">
-                                Total to pay
-                                <span>{{$order->calculatePrice()}}₽</span>
+                                Итого
+                                <?php $final = $order->calculatePrice() + 200?>
+                                <span>{{$final}} ₽</span>
                             </li>
                         </ul>
-                        <a href="{{route('checkout')}}" class="btn btn-primary btn-block">Checkout</a>
+                        <a href="{{route('checkout')}}" class="btn btn-primary btn-block">Оформить заказ</a>
                     </div>
                 </aside>
             </div>
