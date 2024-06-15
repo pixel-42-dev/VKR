@@ -13508,3 +13508,7 @@ div.code-toolbar > .toolbar {
     width: 340px;
     height: 430px;
 }
+.map {
+    /*width: 611px;*/
+    height: 500px;
+}
