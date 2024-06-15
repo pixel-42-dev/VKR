@@ -27,14 +27,34 @@ class BasketController extends Controller
         return view('checkout', compact('order'));
     }
 
+//    public function confirm(Request $request)
+//    {
+//        $orderID = session('orderID');
+//        if (is_null($orderID)) {
+//            return redirect()->route('index');
+//        }
+//        $order = Order::findOrFail($orderID);
+//        $order->saveOrder(Auth::id());
+//
+//        session()->forget('orderID');
+//
+//        return redirect()->route('order-details');
+//    }
     public function confirm(Request $request)
     {
         $orderID = session('orderID');
         if (is_null($orderID)) {
             return redirect()->route('index');
         }
+
+        $request->validate([
+            'name' => 'required|string',
+            'phone' => 'required|string',
+            'address' => 'required|string',
+        ]);
+
         $order = Order::findOrFail($orderID);
-        $order->saveOrder(Auth::id());
+        $order->saveOrder(Auth::id(), $request->input('name'), $request->input('phone'), $request->input('address'));
 
         session()->forget('orderID');
 

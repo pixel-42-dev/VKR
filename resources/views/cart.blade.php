@@ -15,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1>Shopping Cart</h1>
+                    <h1>Корзина</h1>
                 </div>
             </div>
 
@@ -72,10 +72,10 @@
                 <!-- sidebar -->
                 <aside class="col-lg-4">
                     <div class="bg-white p-2 p-lg-3">
-                        <h2 class="mb-3 text-uppercase fs-20">Order total</h2>
+                        <h2 class="mb-3 text-uppercase fs-20">Итого</h2>
                         <div class="input-combined mb-2">
-                            <input type="text" class="form-control" placeholder="Promo code" aria-label="Promo code" aria-describedby="button-addon2">
-                            <button class="btn btn-white" type="button" id="button-addon2">Apply</button>
+                            <input type="text" class="form-control" placeholder="Промокод" aria-label="Promo code" aria-describedby="button-addon2">
+                            <button class="btn btn-white" type="button" id="button-addon2">Применить</button>
                             <span class="input-combined_indicator"></span>
                         </div>
                         <ul class="list-group list-group-minimal mb-3">

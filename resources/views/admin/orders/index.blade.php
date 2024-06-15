@@ -9,6 +9,7 @@
             <th scope="col">#</th>
             <th scope="col">Имя</th>
             <th scope="col">Телефон</th>
+            <th scope="col">Адрес</th>
             <th scope="col">Дата</th>
             <th scope="col">Сумма</th>
             <th scope="col">Действия</th>
@@ -18,8 +19,9 @@
             @foreach($orders as $order)
                 <tr>
                     <th scope="row">{{$order->id}}</th>
-                    <td>{{$order->user->nickname}}</td>
-                    <td></td>
+                    <td>{{$order->userName}}</td>
+                    <td>{{$order->userPhone}}</td>
+                    <td>{{$order->userAddress}}</td>
                     <td>{{$order->created_at->format('H:i d/m/y')}}</td>
                     <td>{{$order->calculatePrice()}}</td>
                     <td>

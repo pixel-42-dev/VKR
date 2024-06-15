@@ -43,9 +43,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
+{{--                                        <div class="form-label-group">--}}
+{{--                                            <input type="text" id="password1" name="password" class="form-control form-control-lg" placeholder="Телефон" required="">--}}
+{{--                                            <label for="password">Пароль</label>--}}
+{{--                                        </div>--}}
                                         <div class="form-label-group">
-                                            <input type="text" id="inputSurname2" name="surname" class="form-control form-control-lg" placeholder="Surname" required="">
-                                            <label for="inputSurname2">Фамилия</label>
+                                            <input type="text" id="inputPhone" name="phone" class="form-control form-control-lg" placeholder="телефон" required="">
+                                            <label for="phone">Телефон</label>
                                         </div>
                                     </div>
                                 </div>

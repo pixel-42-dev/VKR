@@ -28,10 +28,13 @@ class Order extends Model
         return $sum;
     }
 
-    public function saveOrder($id)
+    public function saveOrder($id, $name, $phone, $address)
     {
         if ($this->status == 0) {
             $this->userID = $id;
+            $this->userName =$name;
+            $this->userPhone = $phone;
+            $this->userAddress = $address;
             $this->status = 1;
             $this->save();
             return true;
