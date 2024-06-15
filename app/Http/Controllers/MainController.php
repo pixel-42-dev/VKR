@@ -6,6 +6,7 @@ use App\Category;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -17,12 +18,16 @@ class MainController extends Controller
         return view('about');
     }
 
-    public function orderDetails() {
-        return view('account-order-details');
+    public function orderDetails($orderID) {
+        $order = Order::find($orderID);
+        return view('account-order-details', compact('order'));
     }
 
-    public function settings() {
-        $orders = Order::get();
+
+    public function settings()
+    {
+        $orders = Order::where('userID', Auth::id())->get();
+
         return view('account-settings', compact('orders'));
     }
 

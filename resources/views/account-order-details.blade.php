@@ -16,14 +16,14 @@
         <div class="row gutter-1 gutter-md-2">
           <div class="col-lg-4">
             <aside class="bg-white p-2 p-md-3">
-              <h3 class="fs-20 text-uppercase text-muted mb-2">Welcome, John Doe!</h3>
-              <div class="nav nav-menu flex-column lavalamp" id="sidebar-1" role="tablist">
-                <a class="nav-link active" data-toggle="tab" href="#sidebar-1-1" role="tab"  aria-controls="sidebar-1" aria-selected="true"><i class="fs-24 icon-box"></i> Orders</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-2" role="tab" aria-controls="sidebar-1-2" aria-selected="false"><i class="fs-24 icon-heart"></i> Favorites</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-3" role="tab" aria-controls="sidebar-1-3" aria-selected="false"><i class="fs-24 icon-user"></i> Personal data </a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-4" role="tab" aria-controls="sidebar-1-4" aria-selected="false"><i class="fs-24 icon-lock"></i> Change password</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-5" role="tab" aria-controls="sidebar-1-5" aria-selected="false"><i class="fs-24 icon-home"></i> Addresses</a>
-              </div>
+                <h3 class="fs-20 text-uppercase text-muted mb-2">Добро пожаловать, {{Auth::user()->nickname}}</h3>
+                <div class="nav nav-menu flex-column lavalamp" id="sidebar-1" role="tablist">
+                    <a class="nav-link active" data-toggle="tab" href="#sidebar-1-1" role="tab"  aria-controls="sidebar-1" aria-selected="true"><i class="fs-24 icon-box"></i> Заказы</a>
+                    <a class="nav-link" data-toggle="tab" href="#sidebar-1-2" role="tab" aria-controls="sidebar-1-2" aria-selected="false"><i class="fs-24 icon-heart"></i> Избранное</a>
+                    <a class="nav-link" data-toggle="tab" href="#sidebar-1-3" role="tab" aria-controls="sidebar-1-3" aria-selected="false"><i class="fs-24 icon-user"></i> Личные данные </a>
+                    <a class="nav-link" data-toggle="tab" href="#sidebar-1-4" role="tab" aria-controls="sidebar-1-4" aria-selected="false"><i class="fs-24 icon-lock"></i> Сменить пароль</a>
+                    <a class="nav-link" data-toggle="tab" href="#sidebar-1-5" role="tab" aria-controls="sidebar-1-5" aria-selected="false"><i class="fs-24 icon-home"></i> Адреса</a>
+                </div>
             </aside>
           </div>
           <div class="col-lg-8">
@@ -36,14 +36,10 @@
                     <div class="col">
                       <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="#!">Orders</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">7681029</li>
+                          <li class="breadcrumb-item"><a href="{{route('settings')}}">Заказы</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">{{$order->id}}</li>
                         </ol>
                       </nav>
-                      <h2>Order 7681029</h2>
-                    </div>
-                    <div class="col text-right">
-                      <a href="" class="btn btn-outline-primary">Track Order</a>
                     </div>
                   </div>
 
@@ -53,79 +49,67 @@
                       <div class="bordered p-3">
                         <ul class="order-meta">
                           <li>
-                            <h5 class="order-meta-title">Order #</h5>
-                            <span>12339201</span>
+                            <h5 class="order-meta-title">Заказ #</h5>
+                            <span>{{$order->id}}</span>
                           </li>
                           <li>
-                            <h5 class="order-meta-title">Shipped Date</h5>
-                            <span>23 March 2019</span>
+                            <h5 class="order-meta-title">Дата заказа</h5>
+                            <span>{{$order->created_at->format('H:i d/m/y')}}</span>
                           </li>
                           <li>
-                            <h5 class="order-meta-title">Total</h5>
-                            <span>$78.00</span>
+                            <h5 class="order-meta-title">Стоимость</h5>
+                            <span>{{$order->calculatePrice() + 200}}</span>
                           </li>
                           <li>
-                            <h5 class="order-meta-title">Status</h5>
-                            <span class="text-muted">Processing</span>
+                            <h5 class="order-meta-title">Статус</h5>
+                              <?php
+                                if ($order->status == 1) {
+                                    $status = "В обработке";
+                                } elseif ($order->status == 2) {
+                                    $status = "В пути";
+                                } else {
+                                    $status = "Получен";
+                                }
+                              ?>
+                            <span class="text-muted">{{$status}}</span>
                           </li>
                         </ul>
                       </div>
                     </div>
                   </div>
 
+
+
                   <!-- products -->
                   <div class="row">
                     <div class="col-12">
-                      <h2 class="mb-1 text-uppercase fs-20">2 Items</h2>
+                      <h2 class="mb-1 text-uppercase fs-20">{{$order->products->count()}} товара(ов)</h2>
                     </div>
                     <div class="col-12">
                       <div class="bordered cart-item-list p-3">
-                        <div class="cart-item">
-                          <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>
-                          <div class="cart-item-body">
-                            <div class="row">
-                              <div class="col">
-                                <h5 class="cart-item-title">Bold Cuff Insert Polo Shirt</h5>
-                                <small class="cart-item-subtitle">Fred Perry</small>
-                                <div>
-                                  <ul class="list list--horizontal list--separated fs-14 text-muted mt-1">
-                                    <li>Color <span class="text-dark">Blue</span></li>
-                                    <li>Qty <span class="text-dark">1</span></li>
-                                  </ul>
-                                </div>
+                          @foreach($order->products as $product)
+                              <div class="cart-item">
+                                  <a href="{{ route('product', ['number' => $product->id]) }}" class="cart-item-image"><img src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Image"></a>
+                                  <div class="cart-item-body">
+                                      <div class="row">
+                                          <div class="col">
+                                              <h5 class="cart-item-title">{{$product->name}}</h5>
+                                              <small class="cart-item-subtitle">{{$product->brand->name}}</small>
+                                              <div>
+                                                  <ul class="list list--horizontal list--separated fs-14 text-muted mt-1">
+                                                      <li>Размер: <span class="text-dark">42</span></li>
+                                                  </ul>
+                                              </div>
+                                          </div>
+                                          <div class="col text-right">
+                                              <ul class="cart-item-meta">
+                                                  <li>{{$product->price}} ₽</li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
                               </div>
-                              <div class="col text-right">
-                                <ul class="cart-item-meta">
-                                  <li><s>$85.00</s></li>
-                                  <li class="text-red">$42.00</li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="cart-item">
-                          <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-2.jpg') }}" alt="Image"></a>
-                          <div class="cart-item-body">
-                            <div class="row">
-                              <div class="col">
-                                <h5 class="cart-item-title">Bold Cuff Insert Polo Shirt</h5>
-                                <small class="cart-item-subtitle">Fred Perry</small>
-                                <div>
-                                  <ul class="list list--horizontal list--separated fs-14 text-muted mt-1">
-                                    <li>Color <span class="text-dark">Blue</span></li>
-                                    <li>Qty <span class="text-dark">1</span></li>
-                                  </ul>
-                                </div>
-                              </div>
-                              <div class="col text-right">
-                                <ul class="cart-item-meta">
-                                  <li><s>$85.00</s></li>
-                                  <li class="text-red">$42.00</li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                          @endforeach
                       </div>
                     </div>
                   </div>
@@ -133,26 +117,26 @@
                   <!-- order total -->
                   <div class="row">
                     <div class="col-12">
-                      <h2 class="text-uppercase fs-20 mb-1">Order Total</h2>
+                      <h2 class="text-uppercase fs-20 mb-1">Итоговая стоимость</h2>
                     </div>
                     <div class="col-12">
                       <div class="bordered p-3">
                         <ul class="list-group list-group-minimal">
                           <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Items
-                            <span>$84.00</span>
+                              Товары
+                              <span>{{$order->calculatePrice()}} ₽</span>
                           </li>
                           <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Shipping
-                            <span>$8.00</span>
+                              Доставка
+                              <span>200 ₽</span>
                           </li>
                           <li class="list-group-item d-flex justify-content-between align-items-center text-red">
-                            Discount
-                            <span class="text-red">-$14.00</span>
+                              Скидка
+                              <span class="text-red">0</span>
                           </li>
                           <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">
-                            Total to pay
-                            <span>$78.00</span>
+                              Итого
+                              <span>{{$order->calculatePrice() + 200}} ₽</span>
                           </li>
                         </ul>
                       </div>
@@ -162,37 +146,18 @@
                   <!-- delivery details -->
                   <div class="row">
                     <div class="col-12">
-                      <h2 class="mb-1 text-uppercase fs-20">Delivery Details</h2>
+                      <h2 class="mb-1 text-uppercase fs-20">Информация о доставке</h2>
                     </div>
                     <div class="col-12">
                       <div class="bordered p-3">
-                        <h5 class="eyebrow text-muted">Delivery Address</h5>
-                        <p class="card-text">Jhon Doe
-                        1620 East Ayre Str <br>
-                        Suite M3115662 <br>
-                        Wilmington, DE 19804 <br>
-                        United States</p>
-                        <h5 class="eyebrow text-muted">Delivery Method</h5>
-                        <p class="card-text">Standart shipping</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- billing details -->
-                  <div class="row">
-                    <div class="col-12">
-                      <h2 class="mb-1 text-uppercase fs-20">Billing Details</h2>
-                    </div>
-                    <div class="col-12">
-                      <div class="bordered p-3">
-                        <h5 class="eyebrow text-muted">Delivery Address</h5>
-                        <p class="card-text">Jhon Doe
-                        1620 East Ayre Str <br>
-                        Suite M3115662 <br>
-                        Wilmington, DE 19804 <br>
-                        United States</p>
-                        <h5 class="eyebrow text-muted">Payment Method</h5>
-                        <p class="card-text">Credit Card</p>
+                        <h5 class="eyebrow text-muted">Адрес доставки</h5>
+                        <p>{{$order->userAddress}}</p>
+                          <h5 class="eyebrow text-muted">Имя получателя</h5>
+                          <p>{{$order->userName}}</p>
+                          <h5 class="eyebrow text-muted">Телефон получателя</h5>
+                          <p>{{$order->userPhone}}</p>
+                        <h5 class="eyebrow text-muted">Способ доставки</h5>
+                        <p class="card-text">Стандартная доставка курьером</p>
                       </div>
                     </div>
                   </div>

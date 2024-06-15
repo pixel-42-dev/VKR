@@ -16,13 +16,13 @@
         <div class="row gutter-1 gutter-md-2">
           <div class="col-lg-4">
             <aside class="bg-white p-2 p-md-3">
-              <h3 class="fs-20 text-uppercase text-muted mb-2">Welcome, John Doe!</h3>
+              <h3 class="fs-20 text-uppercase text-muted mb-2">Добро пожаловать, {{Auth::user()->nickname}}</h3>
               <div class="nav nav-menu flex-column lavalamp" id="sidebar-1" role="tablist">
-                <a class="nav-link active" data-toggle="tab" href="#sidebar-1-1" role="tab"  aria-controls="sidebar-1" aria-selected="true"><i class="fs-24 icon-box"></i> Orders</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-2" role="tab" aria-controls="sidebar-1-2" aria-selected="false"><i class="fs-24 icon-heart"></i> Favorites</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-3" role="tab" aria-controls="sidebar-1-3" aria-selected="false"><i class="fs-24 icon-user"></i> Personal data </a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-4" role="tab" aria-controls="sidebar-1-4" aria-selected="false"><i class="fs-24 icon-lock"></i> Change password</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-5" role="tab" aria-controls="sidebar-1-5" aria-selected="false"><i class="fs-24 icon-home"></i> Addresses</a>
+                <a class="nav-link active" data-toggle="tab" href="#sidebar-1-1" role="tab"  aria-controls="sidebar-1" aria-selected="true"><i class="fs-24 icon-box"></i> Заказы</a>
+                <a class="nav-link" data-toggle="tab" href="#sidebar-1-2" role="tab" aria-controls="sidebar-1-2" aria-selected="false"><i class="fs-24 icon-heart"></i> Избранное</a>
+                <a class="nav-link" data-toggle="tab" href="#sidebar-1-3" role="tab" aria-controls="sidebar-1-3" aria-selected="false"><i class="fs-24 icon-user"></i> Личные данные </a>
+                <a class="nav-link" data-toggle="tab" href="#sidebar-1-4" role="tab" aria-controls="sidebar-1-4" aria-selected="false"><i class="fs-24 icon-lock"></i> Сменить пароль</a>
+                <a class="nav-link" data-toggle="tab" href="#sidebar-1-5" role="tab" aria-controls="sidebar-1-5" aria-selected="false"><i class="fs-24 icon-home"></i> Адреса</a>
               </div>
             </aside>
           </div>
@@ -34,7 +34,7 @@
                 <div class="tab-pane fade show active" id="sidebar-1-1" role="tabpanel" aria-labelledby="sidebar-1-1">
                   <div class="row">
                     <div class="col">
-                      <h2>Orders</h2>
+                      <h2>Заказы</h2>
                     </div>
                   </div>
                   <div class="row gutter-2">
@@ -44,44 +44,51 @@
                         <div class="card-header">
                           <div class="row align-items-center">
                             <div class="col">
-                              <h2 class="card-title fs-18"><a href="">Order {{$order->id}}</a></h2>
+                              <h2 class="card-title fs-18"><a href="{{route('order-details', ['id' => $order->id])}}">Заказ номер {{$order->id}}</a></h2>
                             </div>
                             <div class="col text-right">
                               <span class="dropdown">
                                 <button class="btn btn-lg btn-white btn-ico" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button"><i class="icon-more-vertical"></i></button>
                                 <span class="dropdown-menu" aria-labelledby="dropdown-1">
-                                  <a class="dropdown-item" href="#!">Action</a>
-                                  <a class="dropdown-item" href="#!">Another action</a>
-                                  <a class="dropdown-item" href="#!">Something else here</a>
+                                  <a class="dropdown-item" href="#!">Отменить</a>
                                 </span>
                               </span>
                             </div>
                           </div>
                         </div>
                         <div class="card-body">
-                          <ul class="order-preview">
-                            <li><a href="product-1.html" title="Fawn Wool / Natural Mammoth Chair" data-toggle="tooltip" data-placement="top"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Fawn Wool / Natural Mammoth Chair"></a></li>
-                            <li><a href="product-1.html" title="Dark Stained NY11 Dining Chair" data-toggle="tooltip" data-placement="top"><img src="{{ asset('images/demo/product-2.jpg') }}" alt="Dark Stained NY11 Dining Chair"></a></li>
-                            <li><a href="product-1.html" title="Dark Stained NY11 Dining Chair" data-toggle="tooltip" data-placement="top"><img src="{{ asset('images/demo/product-3.jpg') }}" alt="Dark Stained NY11 Dining Chair"></a></li>
-                          </ul>
+                            <ul class="order-preview">
+                                @foreach($order->products as $product)
+                                    <li><a href="{{ route('product', ['number' => $product->id]) }}" title="{{$product->name}}" data-toggle="tooltip" data-placement="top"><img class="product-order-listing" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="{{$product->name}}"></a></li>
+                                @endforeach
+                            </ul>
                         </div>
                         <div class="card-body">
                           <ul class="order-meta">
                             <li>
-                              <h5 class="order-meta-title">Order #</h5>
+                              <h5 class="order-meta-title">Заказ #</h5>
                               <span>{{$order->id}}</span>
                             </li>
                             <li>
-                              <h5 class="order-meta-title">Shipped Date</h5>
+                              <h5 class="order-meta-title">Дата заказа</h5>
                               <span>{{$order->created_at->format('H:i d.m.Y')}}</span>
                             </li>
                             <li>
-                              <h5 class="order-meta-title">Total</h5>
-                              <span>$78.00</span>
+                              <h5 class="order-meta-title">Итого</h5>
+                              <span>{{$order->calculatePrice()}} ₽</span>
                             </li>
                             <li>
-                              <h5 class="order-meta-title">Status</h5>
-                              <span class="text-muted">Processing</span>
+                              <h5 class="order-meta-title">Статус</h5>
+                                    <?php
+                                    if ($order->status == 1) {
+                                        $status = "В обработке";
+                                    } elseif ($order->status == 2) {
+                                        $status = "В пути";
+                                    } else {
+                                        $status = "Получен";
+                                    }
+                                    ?>
+                              <span class="text-muted">{{$status}}</span>
                             </li>
                           </ul>
                         </div>
@@ -191,119 +198,69 @@
                   </div>
                 </div>
 
-                <!-- personal data -->
-                <div class="tab-pane fade" id="sidebar-1-3" role="tabpanel" aria-labelledby="sidebar-1-3">
-                  <div class="row">
-                    <div class="col">
-                      <h2>Personal Data</h2>
-                    </div>
+                <!-- Личные данные -->
+                  <div class="tab-pane fade" id="sidebar-1-3" role="tabpanel" aria-labelledby="sidebar-1-3">
+                      <div class="row">
+                          <div class="col">
+                              <h2>Личные данные</h2>
+                          </div>
+                      </div>
+                      <form action="{{ route('account-update') }}" method="POST">
+                          @csrf
+                          <fieldset class="mb-2">
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="form-label-group">
+                                          <input type="text" id="inputName2" class="form-control form-control-lg" placeholder="nickname" name="nickname" required value="{{ Auth::user()->nickname }}">
+                                          <label for="inputName2">Никнейм</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="form-label-group">
+                                          <input type="text" id="inputName3" class="form-control form-control-lg" placeholder="Имя" name="name" required value="{{ Auth::user()->name }}">
+                                          <label for="inputName3">Имя</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="form-label-group">
+                                          <input type="text" id="surname2" class="form-control form-control-lg" placeholder="Фамилия" name="surname" required value="{{ Auth::user()->surname }}">
+                                          <label for="surname2">Фамилия</label>
+                                      </div>
+                                  </div>
+                              </div>
+                          </fieldset>
+                          <fieldset class="mb-2">
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="form-label-group">
+                                          <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="Почта" name="email" required value="{{ Auth::user()->email }}">
+                                          <label for="inputEmail">Почта</label>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="row">
+                                  <div class="col-12">
+                                      <div class="form-label-group">
+                                          <input type="text" id="mobilePhone" class="form-control form-control-lg" placeholder="Мобильный телефон" name="phone" required value="{{ Auth::user()->phone }}">
+                                          <label for="mobilePhone">Мобильный телефон</label>
+                                      </div>
+                                  </div>
+                              </div>
+                          </fieldset>
+                          <div class="row">
+                              <div class="col">
+                                  <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                              </div>
+                          </div>
+                      </form>
                   </div>
 
-                  <fieldset class="mb-2">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-label-group">
-                          <input type="text" id="inputName2" class="form-control form-control-lg" placeholder="Name" required="" value="Dumitru">
-                          <label for="inputName2">First Name</label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-label-group">
-                          <input type="text" id="inputSurname2" class="form-control form-control-lg" placeholder="Surname" required="">
-                          <label for="inputSurname2">Surname</label>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
 
-                  <fieldset class="mb-2">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="form-label-group">
-                          <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="Email Address" required="" value="">
-                          <label for="inputEmail">Email Address</label>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-
-                  <span class="label">Date of birth</span>
-                  <fieldset class="mb-2">
-                    <div class="row">
-                      <div class="col-lg-3">
-                        <div class="select-frame">
-                          <select class="custom-select custom-select-lg" id="customSelect-1" data-placeholder="Day">
-                            <option label="number"></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">...</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="select-frame">
-                          <select class="custom-select custom-select-lg" id="customSelect-2" data-placeholder="Month">
-                            <option label="number"></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">...</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-lg-3">
-                        <div class="select-frame">
-                          <select class="custom-select custom-select-lg" id="customSelect-3" data-placeholder="Year">
-                            <option label="number"></option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">...</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                  </fieldset>
-
-                  <div class="row">
-                    <div class="col-12">
-                      <span class="label">Gender</span>
-                    </div>
-                    <div class="col">
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline1">Men</label>
-                      </div>
-                      <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadioInline2">Women</label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col">
-                      <a href="" class="btn btn-primary">Save Changes</a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- change password -->
+                  <!-- change password -->
                 <div class="tab-pane fade" id="sidebar-1-4" role="tabpanel" aria-labelledby="sidebar-1-4">
                   <div class="row">
                     <div class="col">

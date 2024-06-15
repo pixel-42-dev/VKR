@@ -45,4 +45,25 @@ class AuthController extends Controller
         Auth::logout();
         return redirect()->route('index');
     }
+    public function update(Request $request)
+    {
+        $validatedData = $request->validate([
+            'nickname' => 'required|string|max:255',
+            'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'phone' => 'required|string|max:255',
+        ]);
+
+        $user = Auth::user();
+
+        $user->nickname = $validatedData['nickname'];
+        $user->name = $validatedData['name'];
+        $user->surname = $validatedData['surname'];
+        $user->email = $validatedData['email'];
+        $user->phone = $validatedData['phone'];
+        $user->save();
+
+        return redirect()->route('settings');
+    }
 }

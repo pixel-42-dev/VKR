@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/order-details', [MainController::class, 'orderDetails'])->name('order-details');
+    Route::get('/order-details/{id}', [MainController::class, 'orderDetails'])->name('order-details');
     Route::get('/settings', [MainController::class, 'settings'])->name('settings');
 });
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
@@ -35,6 +35,7 @@ Route::get('/product/{number}', [MainController::class, 'product'])->name('produ
 Route::post('/login', [AuthController::class, 'login'])->name('loginPost');
 Route::post('/register', [AuthController::class, 'register'])->name('registerPost');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logoutrPost');
+Route::post('/account-update', [AuthController::class, 'update'])->name('account-update');
 
 // BasketController
 Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basketAdd');

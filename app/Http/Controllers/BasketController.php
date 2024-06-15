@@ -58,7 +58,7 @@ class BasketController extends Controller
 
         session()->forget('orderID');
 
-        return redirect()->route('order-details');
+        return redirect()->route('order-details', ['id' => $orderID]);
     }
 
     public function basketAdd($productId, Request $request)
