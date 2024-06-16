@@ -525,20 +525,20 @@
             <div class="order-1 col-md-8 col-lg-4">
                 <div class="row">
                     <div class="col">
-                        <h4 class="eyebrow mb-1">Company</h4>
+                        <h4 class="eyebrow mb-1">Компания</h4>
                         <ul class="menu-list">
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Our story</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Careers</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Press</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Contact</a></li>
+                            <li class="menu-list-item"><a href="" class="menu-list-link">Наша история</a></li>
+                            <li class="menu-list-item"><a href="" class="menu-list-link">Контакты</a></li>
+                            <li class="menu-list-item"><a href="" class="menu-list-link">Товары</a></li>
+                            <li class="menu-list-item"><a href="" class="menu-list-link">О нас</a></li>
                         </ul>
                     </div>
                     <div class="col">
-                        <h4 class="eyebrow mb-1">Help Center</h4>
+                        <h4 class="eyebrow mb-1">Помощь</h4>
                         <ul class="menu-list">
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Shipping</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Returns</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Payment</a></li>
+                            <li class="menu-list-item"><a href="" class="menu-list-link">Оплата</a></li>
+                            <li class="menu-list-item"><a href="" class="menu-list-link">Возвраты</a></li>
+                            <li class="menu-list-item"><a href="" class="menu-list-link">Доставка</a></li>
                             <li class="menu-list-item"><a href="" class="menu-list-link">FAQ</a></li>
                         </ul>
                     </div>
@@ -547,10 +547,10 @@
 
             <!-- subscribe -->
             <div class="order-2 order-md-3 order-lg-2 col-md-8 col-lg-4">
-                <h4 class="eyebrow mb-1">Subscribe to Newsletter</h4>
+                <h4 class="eyebrow mb-1">Подписка на новости</h4>
                 <div class="input-combined mb-2">
-                    <input type="text" class="form-control" placeholder="Your email" aria-label="Your Email" aria-describedby="button-addon2">
-                    <button class="btn btn-white" type="button" id="button-addon2">Subscribe</button>
+                    <input type="text" class="form-control" placeholder="Ваша почта" aria-label="Ваша почта" aria-describedby="button-addon2">
+                    <button class="btn btn-white" type="button" id="button-addon2">Подписаться</button>
                     <span class="input-combined_indicator"></span>
                 </div>
                 <ul class="list list--horizontal">
@@ -563,17 +563,17 @@
 
             <!-- settings -->
             <div class="order-3 order-md-2 order-lg-3 col-md-4 col-lg-3">
-                <h4 class="eyebrow mb-1">Region & Currency</h4>
+                <h4 class="eyebrow mb-1">Регион и валюта</h4>
                 <div class="select-frame mb-2">
                     <select class="custom-select custom-select-lg mb-2" id="countrySelect2">
-                        <option value="1">United States</option>
+                        <option value="1">Россия</option>
                         <option value="2">Germany</option>
                         <option value="3">France</option>
                     </select>
                 </div>
                 <div class="select-frame">
                     <select class="custom-select custom-select-lg" id="curencySelect2">
-                        <option value="1">USD</option>
+                        <option value="1">RUB</option>
                         <option value="2">EUR</option>
                         <option value="3">RUB</option>
                     </select>
@@ -588,25 +588,7 @@
         </div>
     </div>
 
-    <div class="bg-transparent mt-8 py-2">
-        <div class="container">
-            <div class="row align-items-center gutter-1">
-                <div class="col-md-8">
-                    <p class="small text-muted">&copy; 2020 SHOPY. Bootstrap template by https://htmlhunters.com, скачен с <a href="https://bayguzin.ru" class="underline">bayguzin.ru</a>.</p>
-                </div>
-                <div class="col-md-4 text-md-right text-muted">
-                    <ul class="list list--horizontal list--separated">
-                        <li>
-                            <a class="small underline" href="#!">Privacy Policy</a>
-                        </li>
-                        <li>
-                            <a class="small underline" href="#!">Terms of Use</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+
 </footer>
 
 

@@ -105,7 +105,7 @@
                       <h2>Избранное</h2>
                     </div>
                     <div class="col text-right">
-                      <a href="" class="underline"><i class="icon-plus"></i> add all to bag</a>
+                      <a href="" class="underline"><i class="icon-plus"></i>Добавить всё в корзину</a>
                     </div>
                   </div>
                   <div class="row gutter-2">

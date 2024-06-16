@@ -15,7 +15,7 @@
         </div>
         <div class="row justify-content-center vh-100">
           <div class="col-md-4 align-self-center text-white text-center">
-            <h1 class="text-uppercase fs-60">Our Story</h1>
+            <h1 class="text-uppercase fs-60">О нас</h1>
           </div>
         </div>
       </div>

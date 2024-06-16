@@ -34,6 +34,14 @@ class MainController extends Controller
     public function contact() {
         return view('contact');
     }
+    public function login() {
+        return view('login');
+    }
+
+    public function product($number) {
+        $product = Product::where('id', $number)->first();
+        return view('product', compact('product'));
+    }
 
     public function listing($gender) {
         if ($gender == 'men') {
@@ -101,22 +109,13 @@ class MainController extends Controller
         return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3', 'products', 'categoryName', 'gender', 'genderToRussian'));
     }
 
-    public function login() {
-        return view('login');
-    }
 
-    public function product($number) {
-        $product = Product::where('id', $number)->first();
-        return view('product', compact('product'));
-    }
 
     public function favoritesAdd(Request $request)
     {
         $productId = $request->input('product_id');
 
         $user = Auth::user();
-
-        // Проверяем, что пользователь авторизован
         if (!$user) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }

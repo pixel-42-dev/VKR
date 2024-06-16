@@ -27,19 +27,6 @@ class BasketController extends Controller
         return view('checkout', compact('order'));
     }
 
-//    public function confirm(Request $request)
-//    {
-//        $orderID = session('orderID');
-//        if (is_null($orderID)) {
-//            return redirect()->route('index');
-//        }
-//        $order = Order::findOrFail($orderID);
-//        $order->saveOrder(Auth::id());
-//
-//        session()->forget('orderID');
-//
-//        return redirect()->route('order-details');
-//    }
     public function confirm(Request $request)
     {
         $orderID = session('orderID');

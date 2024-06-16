@@ -23,9 +23,9 @@
               <div class="equal bg-white">
                 <div class="card-body text-center">
                   <i class="icon-phone-call fs-40 mb-4"></i>
-                  <h3 class="mb-1">Call Us</h3>
-                  <span class="fs-18 text-dark">1-888-963-8944</span>
-                  <p class="mt-1">Monday - Friday 9am-5pm PST</p>
+                  <h3 class="mb-1">Позвоните нам</h3>
+                  <span class="fs-18 text-dark">8-800-555-35-35</span>
+                  <p class="mt-1">Понедельник - пятница, с 9:00 до 17:00</p>
                 </div>
               </div>
             </div>
@@ -35,9 +35,9 @@
               <div class="equal bg-white">
                 <div class="card-body text-center">
                   <i class="icon-mail fs-40 mb-4"></i>
-                  <h3 class="mb-1">Email Us</h3>
-                  <a href="" class="fs-18 underlined">Send a message</a>
-                  <p class="mt-1">We'll reply within 24 hours</p>
+                  <h3 class="mb-1">Напишите на почту</h3>
+                  <a href="" class="fs-18 underlined">отправить письмо</a>
+                  <p class="mt-1">Письма принимаются 24 часа</p>
                 </div>
               </div>
             </div>
@@ -48,8 +48,8 @@
                 <div class="card-body text-center">
                   <i class="icon-message-circle fs-40 mb-4"></i>
                   <h3 class="mb-1">FAQ</h3>
-                  <a href="" class="fs-18 underlined">Find Your Answer</a>
-                  <p class="mt-1">Find the answer you need in our FAQ.</p>
+                  <a href="" class="fs-18 underlined">Найдите свой вопрос</a>
+                  <p class="mt-1">Найдите ответ на интересующий вопрос в FAQ.</p>
                 </div>
               </div>
             </div>

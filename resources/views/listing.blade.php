@@ -112,13 +112,13 @@
 
 
                     <div class="widget">
-                        <span class="widget-title">Filters <a href="" class="small text-red">clear</a></span>
+                        <span class="widget-title">Фильтры <a href="" class="small text-red">clear</a></span>
                         <div class="accordion" id="accordion-1">
                             <div class="card">
                                 <div class="card-header" id="heading-1-1">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
-                                            Style
+                                            Стиль
                                         </button>
                                     </h5>
                                 </div>
@@ -156,7 +156,7 @@
                                 <div class="card-header" id="heading-1-2">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
-                                            Size
+                                            Размер
                                         </button>
                                     </h5>
                                 </div>
@@ -192,7 +192,7 @@
                                 <div class="card-header" id="heading-1-3">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
-                                            Color
+                                            Цвет
                                         </button>
                                     </h5>
                                 </div>
@@ -225,7 +225,7 @@
                                 <div class="card-header" id="heading-1-4">
                                     <h5 class="mb-0">
                                         <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1-4" aria-expanded="false" aria-controls="collapse-1-4">
-                                            Price Range
+                                            Цена
                                         </button>
                                     </h5>
                                 </div>
@@ -253,13 +253,13 @@
                         <div class="col-md-6 text-md-right">
                             <ul class="list list--horizontal list--separated text-muted fs-14">
                                 <li>
-                                    <span>15 from 90 items</span>
+                                    <span>15 из 16 товаров</span>
                                 </li>
                                 <li>
-                      <span>Sort by
+                      <span>Отсортировано по:
                       <span class="dropdown">
                         <a class="dropdown-toggle underline" href="#!" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Most popular
+                          Самые популярные
                         </a>
 
                         <span class="dropdown-menu" aria-labelledby="dropdownMenuLink">

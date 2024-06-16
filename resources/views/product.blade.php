@@ -76,7 +76,7 @@
             <div class="row gutter-2">
               <div class="col-12">
                 <div class="form-group">
-                  <label>Size</label>
+                  <label>Размер</label>
                   <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
                     <label class="btn active">
                       <input type="radio" name="customRadio" id="option-1"> xs
@@ -96,25 +96,10 @@
                   </div>
                 </div>
               </div>
+
               <div class="col-12">
                 <div class="form-group">
-                  <label>Color</label>
-                  <div class="btn-group-toggle btn-group-square btn-group-colors" data-toggle="buttons">
-                    <label class="btn active text-red">
-                      <input type="radio" name="color-select" id="option-2-1" checked>
-                    </label>
-                    <label class="btn text-blue">
-                      <input type="radio" name="color-select" id="option-2-2">
-                    </label>
-                    <label class="btn text-yellow">
-                      <input type="radio" name="color-select" id="option-2-3">
-                    </label>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label>Product code</label>
+                  <label>Код продукта</label>
                   <small class="d-block text-dark">H182420Z</small>
                 </div>
               </div>
@@ -134,7 +119,7 @@
                     <div class="card-header" id="heading-1-1">
                       <h5 class="mb-0">
                         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-1" aria-expanded="true" aria-controls="collapse-1-1">
-                          Details
+                          Детали
                         </button>
                       </h5>
                     </div>
@@ -142,12 +127,12 @@
                     <div id="collapse-1-1" class="collapse show" aria-labelledby="heading-1-1" data-parent="#accordion-1">
                       <div class="card-body">
                         <ul class="list list--unordered">
-                          <li>Black leather and mesh</li>
-                          <li>Black rubber sole</li>
-                          <li>Metal star and rose shaped studs</li>
-                          <li>Metal studs</li>
-                          <li>Adjustable Velcro straps</li>
-                          <li>Made in Italy</li>
+                            <li>Белый цвет</li>
+                            <li>Натуральный шёлк</li>
+                            <li>Дышащий материал</li>
+                            <li>Мужская</li>
+                            <li>Сделано в Италии</li>
+                            <li>Хит продаж</li>
                         </ul>
                         <p>Staged in Alyscamps in the city of Arles—an ancient Roman necropolis that also serves as a promenade—the Cruise 2019 explores the idea of hybridization.</p>
                       </div>
