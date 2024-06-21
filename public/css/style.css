@@ -4043,7 +4043,7 @@ a.close.disabled {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 0.75rem;
   border-top: 1px solid #e9e9e9; }
   .modal-footer > * {
@@ -13505,9 +13505,6 @@ div.code-toolbar > .toolbar {
     .icon-cross-container {
         margin-right: 2.5rem;
     }
-    /*.owl-next{*/
-    /*    margin-right: 4rem !important;*/
-    /*}*/
 }
 .home-favorive-images {
     width: 340px;
@@ -13517,3 +13514,27 @@ div.code-toolbar > .toolbar {
     height: 500px;
 }
 
+.is-favorite {
+    background: #444 !important;
+}
+.is-favorite i{
+    color: white !important;
+}
+
+.dropdown-menu-custom {
+    min-width: 200px !important; /* Ширина меню */
+}
+
+.dropdown-menu-right {
+    right: 0 !important; /* Разместить меню справа */
+}
+
+.dropdown-menu-right .dropdown-item {
+    text-align: left; !important /* Выравнивание текста слева */
+    white-space: normal !important; /* Обычный перенос строк */
+}
+
+.dropdown-menu-auth {
+    width: 3rem !important;
+    padding: 15px !important;
+}

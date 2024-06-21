@@ -14,6 +14,26 @@
         }
     </style>
 
+    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Регистрация</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Пожалуйста, зарегистрируйтесь или войдите в свой аккаунт, чтобы добавить товар в избранное.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    <a href="{{ route('login') }}" class="btn btn-primary">Регистрация</a>
+                    <a href="{{ route('login') }}" class="btn btn-primary">Войти</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- breadcrumbs -->
     <section class="breadcrumbs bg-light">
@@ -279,7 +299,12 @@
                             <div class="col-6 col-md-4">
                                 <div class="card card-product">
                                     <figure class="card-image">
-                                        <a href="#" class="action icon-heart-container {{ Auth::user()->favorites->contains($product->id) ? 'is-favorite' : '' }}" data-product-id="{{ $product->id }}"><i class="icon-heart"></i></a>
+                                        @guest
+                                            <a href="#" class="action icon-heart-container"><i class="icon-heart"></i></a>
+                                        @endguest
+                                        @auth
+                                                <a href="#" class="action icon-heart-container {{ Auth::user()->favorites->contains($product->id) ? 'is-favorite' : '' }}" data-product-id="{{ $product->id }}"><i class="icon-heart"></i></a>
+                                            @endauth
                                         <a href="{{ route('product', ['number' => $product->id]) }}">
                                             @if ($product->image1)
                                                 <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Product Image">
@@ -350,14 +375,14 @@
                                 // Если товар не был в избранном, добавляем класс is-favorite и меняем иконку на заполненное сердечко
                                 iconContainer.addClass('is-favorite');
                             }
-                            alert(response.success); // Показываем сообщение об успешном добавлении/удалении из избранного
                         } else {
                             alert('Error occurred. Please try again later.');
                         }
                     },
                     error: function(xhr) {
                         if (xhr.status === 401) {
-                            alert('Unauthorized. Please login to add to favorites.');
+                            // Отображение модального окна при статусе 401
+                            $('#authModal').modal('show');
                         } else {
                             alert('Error occurred. Please try again later.');
                         }

@@ -24,6 +24,7 @@ Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/order-details/{id}', [MainController::class, 'orderDetails'])->name('order-details');
     Route::get('/settings', [MainController::class, 'settings'])->name('settings');
+    Route::post('/favorites/toggle', [MainController::class, 'toggleFavorite'])->name('favorites-toggle');
 });
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listing');
@@ -32,7 +33,6 @@ Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/product/{number}', [MainController::class, 'product'])->name('product');
 Route::post('/favorites/add', [MainController::class, 'favoritesAdd'])->name('favorites-add');
 Route::post('/favorites/remove', [MainController::class, 'favoritesRemove'])->name('favorites-remove');
-Route::post('/favorites/toggle', [MainController::class, 'toggleFavorite'])->name('favorites-toggle');
 
 
 

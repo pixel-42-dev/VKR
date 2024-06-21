@@ -372,21 +372,31 @@
                                 <i class="icon-user d-none d-lg-inline-block"></i>
                                 <span class="d-inline-block d-lg-none">Аккаунт</span>
                             </a>
-                            <div class="dropdown-menu dropdown-menu-custom" aria-labelledby="navbarDropdown-6">
-                                <div class="row gutter-2">
-                                    <div class="col-12">
-                                        <p>{{$nickname}}</p>
-                                        <p><a href="{{route('settings')}}">Профиль</a></p>
-                                        <p><a href="{{route('settings')}}">Заказы</a></p>
-                                    </div>
-                                    <div class="col-12">
-                                        <form method="POST" action="{{ route('logoutrPost') }}">
-                                            @csrf
-                                            <button type="submit" class="btn btn-danger">Выйти</button>
-                                        </form>
+                                <div class="dropdown-menu dropdown-menu-custom dropdown-menu-auth" aria-labelledby="navbarDropdown-6">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="profile-info">
+                                                    <h3>{{$nickname}}</h3>
+                                                </div>
+                                                <hr>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="profile-links">
+                                                    <a href="{{ route('settings') }}" class="dropdown-item">Профиль</a>
+                                                    <a href="{{ route('settings') }}" class="dropdown-item">Заказы</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <hr>
+                                                <form method="POST" action="{{ route('logoutrPost') }}">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-block">Выйти</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         @endauth
                     </li>
 
