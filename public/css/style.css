@@ -13495,7 +13495,9 @@ div.code-toolbar > .toolbar {
 .status.verified::after {
   background: #28a745; }
 
-
+/*@media (min-width: 1200px) and (max-width: 1599px) {*/
+/*    margin-right: 40rem !important;*/
+/*}*/
 @media (min-width: 1600px) {
     .icon-heart-container {
         margin-right: 2rem;
@@ -13503,12 +13505,15 @@ div.code-toolbar > .toolbar {
     .icon-cross-container {
         margin-right: 2.5rem;
     }
+    /*.owl-next{*/
+    /*    margin-right: 4rem !important;*/
+    /*}*/
 }
 .home-favorive-images {
     width: 340px;
     height: 430px;
 }
 .map {
-    /*width: 611px;*/
     height: 500px;
 }
+

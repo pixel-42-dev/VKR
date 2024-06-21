@@ -11,9 +11,9 @@
           <div class="container">
             <div class="row align-items-end vh-100">
               <div class="col-lg-8 text-white" data-swiper-parallax-x="-100%">
-                <span class="eyebrow">New Collection</span>
-                <h1 class="mb-3 text-uppercase">Summer is here</h1>
-                <a href="listing-full.html" class="btn btn-outline-white">Shop Now</a>
+                <span class="eyebrow">Новая коллекция</span>
+                <h1 class="mb-3 text-uppercase">Лето наступило</h1>
+                <a href="listing-full.html" class="btn btn-outline-white">К покупкамд</a>
               </div>
             </div>
           </div>
