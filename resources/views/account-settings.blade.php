@@ -18,11 +18,11 @@
             <aside class="bg-white p-2 p-md-3">
               <h3 class="fs-20 text-uppercase text-muted mb-2">Добро пожаловать, {{Auth::user()->nickname}}</h3>
               <div class="nav nav-menu flex-column lavalamp" id="sidebar-1" role="tablist">
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-1" role="tab"  aria-controls="sidebar-1" aria-selected="true"><i class="fs-24 icon-box"></i> Заказы</a>
-                <a class="nav-link active" data-toggle="tab" href="#sidebar-1-2" role="tab" aria-controls="sidebar-1-2" aria-selected="false"><i class="fs-24 icon-heart"></i> Избранное</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-3" role="tab" aria-controls="sidebar-1-3" aria-selected="false"><i class="fs-24 icon-user"></i> Личные данные </a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-4" role="tab" aria-controls="sidebar-1-4" aria-selected="false"><i class="fs-24 icon-lock"></i> Сменить пароль</a>
-                <a class="nav-link" data-toggle="tab" href="#sidebar-1-5" role="tab" aria-controls="sidebar-1-5" aria-selected="false"><i class="fs-24 icon-home"></i> Адреса</a>
+                <a class="nav-link {{ $page==1 ? 'active' : '' }}" data-toggle="tab" href="#sidebar-1-1" role="tab"  aria-controls="sidebar-1" aria-selected="true"><i class="fs-24 icon-box"></i> Заказы</a>
+                <a class="nav-link {{ $page==2 ? 'active' : '' }}" data-toggle="tab" href="#sidebar-1-2" role="tab" aria-controls="sidebar-1-2" aria-selected="false"><i class="fs-24 icon-heart"></i> Избранное</a>
+                <a class="nav-link {{ $page==3 ? 'active' : '' }}" data-toggle="tab" href="#sidebar-1-3" role="tab" aria-controls="sidebar-1-3" aria-selected="false"><i class="fs-24 icon-user"></i> Личные данные </a>
+                <a class="nav-link {{ $page==4 ? 'active' : '' }}" data-toggle="tab" href="#sidebar-1-4" role="tab" aria-controls="sidebar-1-4" aria-selected="false"><i class="fs-24 icon-lock"></i> Сменить пароль</a>
+                <a class="nav-link {{ $page==5 ? 'active' : '' }}" data-toggle="tab" href="#sidebar-1-5" role="tab" aria-controls="sidebar-1-5" aria-selected="false"><i class="fs-24 icon-home"></i> Адреса</a>
               </div>
             </aside>
           </div>
@@ -31,7 +31,7 @@
               <div class="tab-content" id="myTabContent">
 
                 <!-- orders -->
-                <div class="tab-pane fade show active" id="sidebar-1-1" role="tabpanel" aria-labelledby="sidebar-1-1">
+                <div class="tab-pane {{ $page==1 ? 'show active' : 'fade' }}" id="sidebar-1-1" role="tabpanel" aria-labelledby="sidebar-1-1">
                   <div class="row">
                     <div class="col">
                       <h2>Заказы</h2>
@@ -99,13 +99,13 @@
                 </div>
 
                 <!-- favorites -->
-                <div class="tab-pane fade" id="sidebar-1-2" role="tabpanel" aria-labelledby="sidebar-1-2">
+                <div class="tab-pane {{ $page==2 ? 'show active' : 'fade' }}" id="sidebar-1-2" role="tabpanel" aria-labelledby="sidebar-1-2">
                   <div class="row align-items-end">
                     <div class="col">
                       <h2>Избранное</h2>
                     </div>
                     <div class="col text-right">
-                      <a href="" class="underline"><i class="icon-plus"></i>Добавить всё в корзину</a>
+                      <a href="" class="underline"><i class=""></i>Очистить</a>
                     </div>
                   </div>
                   <div class="row gutter-2">
@@ -132,7 +132,7 @@
                 </div>
 
                 <!-- Личные данные -->
-                  <div class="tab-pane fade" id="sidebar-1-3" role="tabpanel" aria-labelledby="sidebar-1-3">
+                  <div class="tab-pane {{ $page==3 ? 'show active' : 'fade' }}" id="sidebar-1-3" role="tabpanel" aria-labelledby="sidebar-1-3">
                       <div class="row">
                           <div class="col">
                               <h2>Личные данные</h2>
@@ -194,7 +194,7 @@
 
 
                   <!-- change password -->
-                <div class="tab-pane fade" id="sidebar-1-4" role="tabpanel" aria-labelledby="sidebar-1-4">
+                <div class="tab-pane {{ $page==4 ? 'show active' : 'fade' }}" id="sidebar-1-4" role="tabpanel" aria-labelledby="sidebar-1-4">
                   <div class="row">
                     <div class="col">
                       <h2>Change Password</h2>
@@ -228,7 +228,7 @@
                 </div>
 
                 <!-- addresses -->
-                <div class="tab-pane fade" id="sidebar-1-5" role="tabpanel" aria-labelledby="sidebar-1-5">
+                <div class="tab-pane {{ $page==5 ? 'show active' : 'fade' }}" id="sidebar-1-5" role="tabpanel" aria-labelledby="sidebar-1-5">
                   <div class="row align-items-center">
                     <div class="col-md-6">
                       <h2>Addresses</h2>

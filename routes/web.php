@@ -23,7 +23,7 @@ Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/order-details/{id}', [MainController::class, 'orderDetails'])->name('order-details');
-    Route::get('/settings', [MainController::class, 'settings'])->name('settings');
+    Route::get('/settings/{page}', [MainController::class, 'settings'])->name('settings');
     Route::post('/favorites/toggle', [MainController::class, 'toggleFavorite'])->name('favorites-toggle');
 });
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');

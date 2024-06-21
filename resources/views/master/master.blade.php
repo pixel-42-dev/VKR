@@ -341,7 +341,7 @@
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="inputName" name="nickname" class="form-control form-control-lg" placeholder="Name" required="" value="">
+                                                            <input type="text" id="inputName" name="nickname" class="form-control form-control-lg" placeholder="Логин" required="" autocomplete="off">
                                                             <label for="inputName">Логин</label>
                                                         </div>
                                                     </div>
@@ -349,19 +349,25 @@
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-label-group">
-                                                            <input type="text" id="inputPassword2" name="password"  class="form-control form-control-lg" placeholder="Surname" required="">
+                                                            <input type="password" id="inputPassword2" name="password" class="form-control form-control-lg" placeholder="Пароль" required="" autocomplete="off">
                                                             <label for="inputPassword2">Пароль</label>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </fieldset>
                                         </div>
-                                        {{--                                    <div class="col-12 text-center">--}}
-                                        {{--                                        <a href="" class="underline fs-14">Забыли пароль ?</a>--}}
-                                        {{--                                    </div>--}}
+                                        {{-- Проверка на наличие ошибки аутентификации --}}
+                                        @if(session('error'))
+                                            <div class="col-12">
+                                                <div class="alert alert-danger mt-3">
+                                                    {{ session('error') }}
+                                                </div>
+                                            </div>
+                                        @endif
+
                                         <div class="col-12">
                                             <button type="submit" class="btn btn-primary btn-block">Войти</button>
-                                            <a href="{{route('login')}}" class="btn btn-outline-secondary btn-block">Создать аккаунт</a>
+                                            <a href="{{ route('login') }}" class="btn btn-outline-secondary btn-block">Создать аккаунт</a>
                                         </div>
                                     </div>
                                 </div>
@@ -371,6 +377,7 @@
                             <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <i class="icon-user d-none d-lg-inline-block"></i>
                                 <span class="d-inline-block d-lg-none">Аккаунт</span>
+{{--                                <span class="d-none d-lg-inline-block ml-2 head-nickname">{{$nickname}}</span>--}}
                             </a>
                                 <div class="dropdown-menu dropdown-menu-custom dropdown-menu-auth" aria-labelledby="navbarDropdown-6">
                                     <div class="container">
@@ -383,15 +390,15 @@
                                             </div>
                                             <div class="col-12">
                                                 <div class="profile-links">
-                                                    <a href="{{ route('settings') }}" class="dropdown-item">Профиль</a>
-                                                    <a href="{{ route('settings') }}" class="dropdown-item">Заказы</a>
+                                                    <a href="{{ route('settings', ['page' => 3]) }}" class="dropdown-item">Профиль</a>
+                                                    <a href="{{ route('settings', ['page' => 1]) }}" class="dropdown-item">Заказы</a>
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <hr>
                                                 <form method="POST" action="{{ route('logoutrPost') }}">
                                                     @csrf
-                                                    <button type="submit" class="btn btn-danger btn-block">Выйти</button>
+                                                    <button type="submit" class="btn btn-outline-secondary btn-block">Выйти</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -400,92 +407,120 @@
                         @endauth
                     </li>
 
+{{--                    <li class="nav-item dropdown dropdown-md dropdown-hover">--}}
+{{--                        <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <i class="icon-user d-none d-lg-inline-block"></i>--}}
+{{--                            <span class="d-inline-block d-lg-none">Account</span>--}}
+{{--                        </a>--}}
+{{--                        @guest--}}
+
+{{--                        @endguest--}}
+{{--                        @auth--}}
+
+{{--                        @endauth--}}
+{{--                    </li>--}}
+
 
                     <!-- favourites -->
-                    <li class="d-none d-lg-inline nav-item dropdown dropdown-md dropdown-hover">
-                        <a class="nav-icon" id="navbarDropdown-7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-heart"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown-7">
-                            <div class="row gutter-3">
-                                <div class="col-12">
-                                    <h3 class="eyebrow text-dark fs-16 mb-1">Избранное</h3>
-                                </div>
-                                <div class="col-12">
-                                    <div class="cart-item">
-                                        <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>
-                                        <div class="cart-item-body">
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <h5 class="cart-item-title">Футболка поло</h5>
-                                                    <small>Fred Perry</small>
-                                                    <br>
-                                                    <ul class="list list--horizontal fs-14">
-                                                        <li>2000 ₽</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-3 text-right">
-                                                    <ul class="cart-item-options">
-                                                        <li><a href="" class="icon-x"></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
+{{--                    <li class="d-none d-lg-inline nav-item dropdown dropdown-md dropdown-hover">--}}
+{{--                        <a class="nav-icon" id="navbarDropdown-7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-heart"></i></a>--}}
+{{--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown-7">--}}
+{{--                            <div class="row gutter-3">--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <h3 class="eyebrow text-dark fs-16 mb-1">Избранное</h3>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <div class="cart-item">--}}
+{{--                                        <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>--}}
+{{--                                        <div class="cart-item-body">--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col-9">--}}
+{{--                                                    <h5 class="cart-item-title">Футболка поло</h5>--}}
+{{--                                                    <small>Fred Perry</small>--}}
+{{--                                                    <br>--}}
+{{--                                                    <ul class="list list--horizontal fs-14">--}}
+{{--                                                        <li>2000 ₽</li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-3 text-right">--}}
+{{--                                                    <ul class="cart-item-options">--}}
+{{--                                                        <li><a href="" class="icon-x"></a></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-12">--}}
 {{--                                    <a href="" class="btn btn-primary btn-block">Add all to cart</a>--}}
-                                    <a href="" class="btn btn-outline-secondary btn-block">Открыть избранное</a>
-                                </div>
-                            </div>
-                        </div>
+{{--                                    <a href="" class="btn btn-outline-secondary btn-block">Открыть избранное</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
+
+                    <!-- favourites -->
+                    <li class="d-none d-lg-inline nav-item">
+                        <a class="nav-icon" href="{{ route('settings', ['page' => 2]) }}">
+                            <i class="icon-heart"></i>
+                        </a>
                     </li>
 
                     <!-- cart -->
-                    <li class="nav-item dropdown dropdown-md dropdown-hover">
-                        <a class="nav-icon dropdown-toggle" id="navbarDropdown-8" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="icon-shopping-bag d-none d-lg-inline-block"></i>
-                            <span class="d-inline-block d-lg-none">Bag</span>
+                    <li class="d-none d-lg-inline nav-item">
+                        <a class="nav-icon" href="{{route('cart')}}">
+                            <i class="icon-shopping-bag"></i>
+                            <span class="position-absolute translate-middle badge rounded-pill bg-light text-dark cart-count">+99</span>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown-8">
-                            <div class="row gutter-3">
-                                <div class="col-12">
-                                    <h3 class="eyebrow text-dark fs-16 mb-0">Корзина</h3>
-                                </div>
-                                <div class="col-12">
-                                    <div class="cart-item">
-                                        <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>
-                                        <div class="cart-item-body">
-                                            <div class="row">
-                                                <div class="col-9">
-                                                    <h5 class="cart-item-title">Футболка поло</h5>
-                                                    <small>Fred Perry</small>
-                                                    <br>
-                                                    <ul class="list list--horizontal fs-14">
-                                                        <li>2000 ₽</li>
-                                                    </ul>
-                                                </div>
-                                                <div class="col-3 text-right">
-                                                    <ul class="cart-item-options">
-                                                        <li><a href="" class="icon-x"></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <ul class="list-group list-group-minimal">
-                                        <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">
-                                            Итого
-                                            <span>2000 ₽</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-12">
-                                    <a href="{{route('cart')}}" class="btn btn-outline-secondary btn-block">В корзину</a>
-                                </div>
-                            </div>
-                        </div>
                     </li>
+
+                    <!-- cart -->
+{{--                    <li class="nav-item dropdown dropdown-md dropdown-hover">--}}
+{{--                        <a class="nav-icon dropdown-toggle" id="navbarDropdown-8" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
+{{--                            <i class="icon-shopping-bag d-none d-lg-inline-block"></i>--}}
+{{--                            <span class="d-inline-block d-lg-none">Bag</span>--}}
+{{--                        </a>--}}
+{{--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown-8">--}}
+{{--                            <div class="row gutter-3">--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <h3 class="eyebrow text-dark fs-16 mb-0">Корзина</h3>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <div class="cart-item">--}}
+{{--                                        <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>--}}
+{{--                                        <div class="cart-item-body">--}}
+{{--                                            <div class="row">--}}
+{{--                                                <div class="col-9">--}}
+{{--                                                    <h5 class="cart-item-title">Футболка поло</h5>--}}
+{{--                                                    <small>Fred Perry</small>--}}
+{{--                                                    <br>--}}
+{{--                                                    <ul class="list list--horizontal fs-14">--}}
+{{--                                                        <li>2000 ₽</li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="col-3 text-right">--}}
+{{--                                                    <ul class="cart-item-options">--}}
+{{--                                                        <li><a href="" class="icon-x"></a></li>--}}
+{{--                                                    </ul>--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <ul class="list-group list-group-minimal">--}}
+{{--                                        <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">--}}
+{{--                                            Итого--}}
+{{--                                            <span>2000 ₽</span>--}}
+{{--                                        </li>--}}
+{{--                                    </ul>--}}
+{{--                                </div>--}}
+{{--                                <div class="col-12">--}}
+{{--                                    <a href="{{route('cart')}}" class="btn btn-outline-secondary btn-block">В корзину</a>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
+{{--                    </li>--}}
                 </ul>
             </div>
 

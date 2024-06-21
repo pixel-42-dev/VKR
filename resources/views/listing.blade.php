@@ -27,7 +27,6 @@
                     Пожалуйста, зарегистрируйтесь или войдите в свой аккаунт, чтобы добавить товар в избранное.
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
                     <a href="{{ route('login') }}" class="btn btn-primary">Регистрация</a>
                     <a href="{{ route('login') }}" class="btn btn-primary">Войти</a>
                 </div>

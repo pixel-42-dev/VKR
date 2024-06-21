@@ -24,12 +24,12 @@ class MainController extends Controller
     }
 
 
-    public function settings()
+    public function settings($page)
     {
         $orders = Order::where('userID', Auth::id())->get();
-
-        return view('account-settings', compact('orders'));
+        return view('account-settings', compact('orders', 'page'));
     }
+
 
     public function contact() {
         return view('contact');

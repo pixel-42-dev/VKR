@@ -17,9 +17,7 @@ class AuthController extends Controller
             return redirect()->route('index');
         }
 
-        return back()->withErrors([
-            'nickname' => 'The provided credentials do not match our records.',
-        ]);
+        return back()->with('error', 'Неверный логин или пароль.');
     }
     public function register(Request $request)
     {
@@ -38,13 +36,14 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('index');
+        return redirect()->route('settings', ['page' => 3]);
     }
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('index');
+        return redirect()->back();
     }
+
     public function update(Request $request)
     {
         $validatedData = $request->validate([
@@ -64,6 +63,6 @@ class AuthController extends Controller
         $user->phone = $validatedData['phone'];
         $user->save();
 
-        return redirect()->route('settings');
+        return redirect()->route('settings', ['page' => 3]);
     }
 }
