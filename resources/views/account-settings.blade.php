@@ -105,29 +105,38 @@
                       <h2>Избранное</h2>
                     </div>
                     <div class="col text-right">
-                      <a href="" class="underline"><i class=""></i>Очистить</a>
+                        <form id="clearFavoritesForm" action="{{ route('favorites-clear') }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="underline" style="border: none; background: none; padding: 0; cursor: pointer;">
+                                <i class=""></i>Очистить
+                            </button>
+                        </form>
+
                     </div>
                   </div>
                   <div class="row gutter-2">
-
                       @foreach(Auth::user()->favorites as $favoriteProduct)
-                          <div class="col-md-6">
+                          <div class="col-md-6" id="favorite-product-{{ $favoriteProduct->id }}">
                               <div class="card card-product">
                                   <figure class="card-image">
-                                      <a href="#!" class="action icon-cross-container" ><i class="icon-x"></i></a>
-                                      <a href="#!">
+                                      <form action="{{ route('favorites-remove', ['product_id' => $favoriteProduct->id]) }}" method="POST">
+                                          @csrf
+                                          <button type="submit" class="action icon-cross-container favorite-del-container">
+                                              <i class="icon-x"></i>
+                                          </button>
+                                      </form>
+                                      <a href="{{ route('product', ['number' => $favoriteProduct->id]) }}">
                                           <img class="home-favorive-images" src="{{ \Illuminate\Support\Facades\Storage::url($favoriteProduct->image1) }}" alt="Image">
                                           <img class="home-favorive-images" src="{{ \Illuminate\Support\Facades\Storage::url($favoriteProduct->image2) }}" alt="Image">
                                       </a>
                                   </figure>
                                   <div class="card-footer">
-                                      <h3 class="card-title"><a href="">{{$favoriteProduct->name}}</a></h3>
-                                      <span class="price">{{$favoriteProduct->price}} ₽</span>
+                                      <h3 class="card-title"><a href="">{{ $favoriteProduct->name }}</a></h3>
+                                      <span class="price">{{ $favoriteProduct->price }} ₽</span>
                                   </div>
                               </div>
                           </div>
                       @endforeach
-
                   </div>
                 </div>
 
@@ -337,6 +346,4 @@
         </div>
       </div>
     </section>
-
-
 @endsection

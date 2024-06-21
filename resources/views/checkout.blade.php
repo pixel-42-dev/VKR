@@ -82,7 +82,7 @@
                 <!-- sidebar -->
                 <aside class="col-lg-5">
                     <div class="bg-white p-2 p-lg-3">
-                        <h2 class="mb-3 text-uppercase fs-20">Order total</h2>
+                        <h2 class="mb-3 text-uppercase fs-20">Итого</h2>
                         @foreach($order->products as $product)
                             <div class="cart-item">
                                 <a href="{{ route('product', ['number' => $product->id]) }}" class="cart-item-image"><img src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Image"></a>
@@ -123,5 +123,5 @@
             </div>
         </div>
     </section>
-    
+
 @endsection

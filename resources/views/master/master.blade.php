@@ -392,6 +392,7 @@
                                                 <div class="profile-links">
                                                     <a href="{{ route('settings', ['page' => 3]) }}" class="dropdown-item">Профиль</a>
                                                     <a href="{{ route('settings', ['page' => 1]) }}" class="dropdown-item">Заказы</a>
+                                                    <a href="{{ route('settings', ['page' => 2]) }}" class="dropdown-item">Избранное</a>
                                                 </div>
                                             </div>
                                             <div class="col-12">
@@ -467,60 +468,28 @@
                     </li>
 
                     <!-- cart -->
-                    <li class="d-none d-lg-inline nav-item">
-                        <a class="nav-icon" href="{{route('cart')}}">
+                    @if($orderCount > 0)
+                    <li class="d-none d-lg-inline nav-item position-relative">
+                        <a class="nav-icon" href="{{ route('cart') }}" data-toggle="tooltip" data-placement="bottom" title="{{ $orderCount == 0 ? 'Корзина пуста' : '' }}">
                             <i class="icon-shopping-bag"></i>
-                            <span class="position-absolute translate-middle badge rounded-pill bg-light text-dark cart-count">+99</span>
+                            <span class="position-absolute translate-middle badge rounded-pill bg-light text-dark cart-count">{{ $orderCount }}</span>
                         </a>
                     </li>
-
-                    <!-- cart -->
-{{--                    <li class="nav-item dropdown dropdown-md dropdown-hover">--}}
-{{--                        <a class="nav-icon dropdown-toggle" id="navbarDropdown-8" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <i class="icon-shopping-bag d-none d-lg-inline-block"></i>--}}
-{{--                            <span class="d-inline-block d-lg-none">Bag</span>--}}
-{{--                        </a>--}}
-{{--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown-8">--}}
-{{--                            <div class="row gutter-3">--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <h3 class="eyebrow text-dark fs-16 mb-0">Корзина</h3>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <div class="cart-item">--}}
-{{--                                        <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>--}}
-{{--                                        <div class="cart-item-body">--}}
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col-9">--}}
-{{--                                                    <h5 class="cart-item-title">Футболка поло</h5>--}}
-{{--                                                    <small>Fred Perry</small>--}}
-{{--                                                    <br>--}}
-{{--                                                    <ul class="list list--horizontal fs-14">--}}
-{{--                                                        <li>2000 ₽</li>--}}
-{{--                                                    </ul>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col-3 text-right">--}}
-{{--                                                    <ul class="cart-item-options">--}}
-{{--                                                        <li><a href="" class="icon-x"></a></li>--}}
-{{--                                                    </ul>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <ul class="list-group list-group-minimal">--}}
-{{--                                        <li class="list-group-item d-flex justify-content-between align-items-center text-uppercase font-weight-bold">--}}
-{{--                                            Итого--}}
-{{--                                            <span>2000 ₽</span>--}}
-{{--                                        </li>--}}
-{{--                                    </ul>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <a href="{{route('cart')}}" class="btn btn-outline-secondary btn-block">В корзину</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
+                    @else
+                        <li class="nav-item dropdown dropdown-md dropdown-hover">
+                            <a class="nav-icon dropdown-toggle" id="navbarDropdown-8" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="icon-shopping-bag d-none d-lg-inline-block"></i>
+                                <span class="d-inline-block d-lg-none">Bag</span>
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown-8">
+                                <div class="row gutter-3">
+                                    <div class="col-12">
+                                        <h3 class="eyebrow text-dark fs-16 mb-0">Корзина пустая</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    @endif
                 </ul>
             </div>
 

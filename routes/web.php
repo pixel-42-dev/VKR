@@ -25,6 +25,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/order-details/{id}', [MainController::class, 'orderDetails'])->name('order-details');
     Route::get('/settings/{page}', [MainController::class, 'settings'])->name('settings');
     Route::post('/favorites/toggle', [MainController::class, 'toggleFavorite'])->name('favorites-toggle');
+    Route::post('/favorites/remove', [MainController::class, 'removeFavorite'])->name('favorites-remove');
+    Route::post('/favorites/clear', [MainController::class, 'clearFavorites'])->name('favorites-clear');
 });
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listing');
@@ -32,9 +34,6 @@ Route::get('/listing/{gender}/{categoryNumber}', [MainController::class, 'listin
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/product/{number}', [MainController::class, 'product'])->name('product');
 Route::post('/favorites/add', [MainController::class, 'favoritesAdd'])->name('favorites-add');
-Route::post('/favorites/remove', [MainController::class, 'favoritesRemove'])->name('favorites-remove');
-
-
 
 // AuthController
 Route::post('/login', [AuthController::class, 'login'])->name('loginPost');
@@ -53,7 +52,6 @@ Route::group(['middleware' => 'backet_not_empty'], function () {
 
 // AdminController
 Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('auth')->middleware('is_admin');
-
 // Admin\CategoryController
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('categories', 'Admin\CategoryController');

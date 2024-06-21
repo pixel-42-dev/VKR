@@ -160,4 +160,17 @@ class MainController extends Controller
             return response()->json(['success' => 'Product added to favorites']);
         }
     }
+
+    public function removeFavorite(Request $request)
+    {
+        $productId = $request->input('product_id');
+        Auth::user()->favorites()->detach($productId);
+        return redirect()->back();
+    }
+    public function clearFavorites()
+    {
+        Auth::user()->favorites()->detach();
+        return redirect()->back();
+    }
+
 }

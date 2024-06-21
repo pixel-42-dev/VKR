@@ -13548,3 +13548,7 @@ div.code-toolbar > .toolbar {
     margin-top: 10px !important;
     margin-left: -10px;
 }
+
+.favorite-del-container {
+    width: 25px !important;
+}
