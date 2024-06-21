@@ -71,8 +71,6 @@
                 <span class="price fs-18">{{$product->price}}₽</span>
               </div>
             </div>
-
-
             <div class="row gutter-2">
               <div class="col-12">
                 <div class="form-group">
@@ -97,18 +95,38 @@
                 </div>
               </div>
 
-              <div class="col-12">
-                <div class="form-group">
-                  <label>Код продукта</label>
-                  <small class="d-block text-dark">H182420Z</small>
-                </div>
-              </div>
-              <div class="col-12">
-                  <form action="{{ route('basketAdd', ['id' => $product->id]) }}" method="POST">
-                      @csrf
-                      <button type="submit" class="btn btn-block btn-primary">В корзину</button>
-                  </form>
-              </div>
+{{--                @if($isInCart)--}}
+{{--                    <a href="{{ route('cart') }}" class="btn btn-block btn-primary">Перейти в корзину</a>--}}
+{{--                    <a href="{{ route('listing', ['gender' => 'all']) }}" class="btn btn-block btn-primary">Продолжить покупки</a>--}}
+{{--                @else--}}
+{{--                    <div class="col-12">--}}
+{{--                        <form action="{{ route('basketAdd', ['id' => $product->id]) }}" method="POST">--}}
+{{--                            @csrf--}}
+{{--                            <button type="submit" class="btn btn-block btn-primary">Добавить в корзину</button>--}}
+{{--                        </form>--}}
+{{--                    </div>--}}
+{{--                @endif--}}
+
+                @if($isInCart)
+                    <div class="row">
+                        <div class="col-sm-6 mb-3">
+                            <a href="{{ route('cart') }}" class="btn btn-block btn-primary">Перейти в корзину</a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="{{ route('listing', ['gender' => 'all']) }}" class="btn btn-block btn-secondary">Продолжить покупки</a>
+                        </div>
+                    </div>
+                @else
+                    <div class="col-12">
+                        <form action="{{ route('basketAdd', ['id' => $product->id]) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-block btn-primary">Добавить в корзину</button>
+                        </form>
+                    </div>
+                @endif
+
+
+
             </div>
 
             <!-- accordion -->
@@ -123,20 +141,11 @@
                         </button>
                       </h5>
                     </div>
-
-                    <div id="collapse-1-1" class="collapse show" aria-labelledby="heading-1-1" data-parent="#accordion-1">
-                      <div class="card-body">
-                        <ul class="list list--unordered">
-                            <li>Белый цвет</li>
-                            <li>Натуральный шёлк</li>
-                            <li>Дышащий материал</li>
-                            <li>Мужская</li>
-                            <li>Сделано в Италии</li>
-                            <li>Хит продаж</li>
-                        </ul>
-                        <p>Staged in Alyscamps in the city of Arles—an ancient Roman necropolis that also serves as a promenade—the Cruise 2019 explores the idea of hybridization.</p>
+                      <div id="collapse-1-1" class="collapse show" aria-labelledby="heading-1-1" data-parent="#accordion-1">
+                          <div class="card-body">
+                              <pre>{{$product->description}}</pre>
+                          </div>
                       </div>
-                    </div>
                   </div>
                   <div class="card">
                     <div class="card-header" id="heading-1-2">

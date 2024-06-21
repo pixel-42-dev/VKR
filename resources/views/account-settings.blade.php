@@ -108,10 +108,9 @@
                         <form id="clearFavoritesForm" action="{{ route('favorites-clear') }}" method="POST" style="display: inline;">
                             @csrf
                             <button type="submit" class="underline" style="border: none; background: none; padding: 0; cursor: pointer;">
-                                <i class=""></i>Очистить
+                                <i class="">Очистить</i>
                             </button>
                         </form>
-
                     </div>
                   </div>
                   <div class="row gutter-2">

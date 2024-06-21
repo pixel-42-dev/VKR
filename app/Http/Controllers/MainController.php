@@ -40,8 +40,20 @@ class MainController extends Controller
 
     public function product($number) {
         $product = Product::where('id', $number)->first();
-        return view('product', compact('product'));
+
+        // Проверяем, добавлен ли продукт в корзину пользователя
+        $isInCart = false;
+        $orderID = session('orderID');
+        if (!is_null($orderID)) {
+            $order = Order::find($orderID);
+            if ($order && $order->products()->where('products.id', $product->id)->exists()) {
+                $isInCart = true;
+            }
+        }
+
+        return view('product', compact('product', 'isInCart'));
     }
+
 
     public function listing($gender) {
         if ($gender == 'men') {
