@@ -3,7 +3,7 @@
 
     <style type="text/css">
         body > section {
-            padding: 10rem 0;
+            padding: 7rem 0;
         }
         body {
             background-color: #f5f5f5 !important;
@@ -39,7 +39,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-label-group">
-                                            <input type="text" id="inputName2" name="name" class="form-control form-control-lg" placeholder="Name" required="" value="">
+                                            <input type="text" id="inputName2" name="name" class="form-control form-control-lg" placeholder="Name" required="" value="{{ Auth::check() ? Auth::user()->name : '' }}">
                                             <label for="inputName2">Имя</label>
                                         </div>
                                     </div>
@@ -47,7 +47,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-label-group">
-                                            <input type="text" id="inputPhone" name="phone" class="form-control form-control-lg" placeholder="телефон" required="">
+                                            <input type="text" id="inputPhone" name="phone" class="form-control form-control-lg" placeholder="телефон" required="" value="{{ Auth::check() ? Auth::user()->phone : '' }}">
                                             <label for="phone">Телефон</label>
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-label-group">
-                                            <input type="text" id="inputAddress" name="address" class="form-control form-control-lg" placeholder="Address" required="" value="">
+                                            <input type="text" id="inputAddress" name="address" class="form-control form-control-lg" placeholder="Address" required="" value="{{ Auth::check() ? Auth::user()->address : '' }}">
                                             <label for="inputAddress">Адрес</label>
                                         </div>
                                     </div>

@@ -3,29 +3,45 @@
 
 <style type="text/css">
     body > section {
-        padding: 10rem 0;
+        padding: 2rem 0;
     }
     body {
         background-color: #f5f5f5 !important;
+    }
+    .breadcrumbs {
+        padding-top: 7rem;
     }
 </style>
 
 
     <!-- breadcrumbs -->
     <section class="breadcrumbs bg-light">
-      <div class="container">
-        <div class="row">
-          <div class="col">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#!">Home</a></li>
-                <li class="breadcrumb-item"><a href="#!">Women</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Blouses</li>
-              </ol>
-            </nav>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route('index')  }}">Главная</a></li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('listing', ['gender' => $product->category->forMen == 1 ? 'men' : 'women']) }}">
+                                    @if($product->category->forMen == 1)
+                                        Мужская одежда
+                                    @else
+                                        Женская одежда
+                                    @endif
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="{{ route('listingCategory', ['gender' => $product->category->forMen == 1 ? 'men' : 'women', 'categoryNumber' => $product->category->id]) }}">
+                                    {{$product->category->name}}
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">{{$product->name}}</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
 

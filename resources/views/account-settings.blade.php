@@ -3,7 +3,7 @@
 
     <style type="text/css">
         body > section {
-            padding: 10rem 0;
+            padding: 8rem 0;
         }
         body {
             background-color: #f5f5f5 !important;

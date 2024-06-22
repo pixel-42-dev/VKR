@@ -40,13 +40,33 @@ class BasketController extends Controller
             'address' => 'required|string',
         ]);
 
-        $order = Order::findOrFail($orderID);
-        $order->saveOrder(Auth::id(), $request->input('name'), $request->input('phone'), $request->input('address'));
+        $userData = [
+            'name' => $request->input('name'),
+            'phone' => $request->input('phone'),
+            'address' => $request->input('address'),
+        ];
 
+        // Determine the userID to use
+        if (Auth::check()) {
+            $userID = Auth::id();
+        } else {
+            $userID = 0; // Use 0 to indicate unregistered user
+        }
+
+        // Update the order with user data
+        $order = Order::findOrFail($orderID);
+        $order->saveOrder($userID, $userData['name'], $userData['phone'], $userData['address']);
+
+        // Clear the orderID from session
         session()->forget('orderID');
 
-        return redirect()->route('order-details', ['id' => $orderID]);
+        // Redirect to order details page
+        if (Auth::check()) {
+            return redirect()->route('order-details', ['id' => $orderID]);
+        }
+        return redirect()->route('index');
     }
+
 
     public function basketAdd($productId, Request $request)
     {

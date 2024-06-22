@@ -81,8 +81,10 @@ class MainController extends Controller
 
         if ($gender == 'men') {
             $genderToRussian = "Мужская одежда";
-        } else {
+        } elseif ($gender == 'women') {
             $genderToRussian = "Женская одежда";
+        } else {
+            $genderToRussian = "Вся одежда";
         }
 
 
