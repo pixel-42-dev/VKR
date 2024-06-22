@@ -182,7 +182,7 @@ class MainController extends Controller
     public function clearFavorites()
     {
         Auth::user()->favorites()->detach();
-        return redirect()->back();
+        return redirect()->route('settings', ['page' => 2]);
     }
 
 }

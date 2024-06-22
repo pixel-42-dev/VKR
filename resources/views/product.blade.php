@@ -108,7 +108,7 @@
 {{--                @endif--}}
 
                 @if($isInCart)
-                    <div class="row">
+                    <div class="row margin-row-1">
                         <div class="col-sm-6 mb-3">
                             <a href="{{ route('cart') }}" class="btn btn-block btn-primary">Перейти в корзину</a>
                         </div>

@@ -13552,3 +13552,7 @@ div.code-toolbar > .toolbar {
 .favorite-del-container {
     width: 25px !important;
 }
+
+.margin-row-1 {
+    margin-bottom: -50px !important;
+}
