@@ -13,7 +13,7 @@
         <a class="navbar-brand" href="#">Администратор</a>
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{{route('admin')}}">Заказы</a>
+                <a class="nav-link" href="{{ route('admin', ['page' => 'new']) }}">Заказы</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('products.index')}}">Товары</a>

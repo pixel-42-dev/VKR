@@ -307,7 +307,7 @@
                     <li class="nav-item">
                         @if(Auth::check() && Auth::user()->isAdmin)
                             <div style="margin-top: 26px">
-                                <a href="{{ route('admin') }}">Панель администратора</a>
+                                <a href="{{ route('admin', ['page' => 'new']) }}">Панель администратора</a>
                             </div>
                         @endif
                     </li>

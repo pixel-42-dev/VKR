@@ -5,16 +5,16 @@
     <div class="container">
         <ul class="navbar-nav">
             <li class="nav-item active">
-                <a class="nav-link" href="">Новые</a>
+                <a class="nav-link" href="{{ route('admin', ['page' => 'new']) }}">Новые</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Подтверждённые</a>
+                <a class="nav-link" href="{{ route('admin', ['page' => 'confirmed']) }}">Подтверждённые</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Отправленные</a>
+                <a class="nav-link" href="{{ route('admin', ['page' => 'sent']) }}">Отправленные</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">Полученные</a>
+                <a class="nav-link" href="{{ route('admin', ['page' => 'delivered']) }}">Полученные</a>
             </li>
         </ul>
     </div>

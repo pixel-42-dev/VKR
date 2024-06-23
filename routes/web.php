@@ -51,9 +51,10 @@ Route::group(['middleware' => 'backet_not_empty'], function () {
 });
 
 // AdminController
-Route::get('/admin', [AdminController::class, 'admin'])->name('admin')->middleware('auth')->middleware('is_admin');
+Route::get('/admin/{page}', [AdminController::class, 'admin'])->name('admin')->middleware('auth')->middleware('is_admin');
+
 // Admin\CategoryController
-Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+Route::group(['prefix' => 'admin-panel', 'middleware' => 'auth'], function () {
     Route::resource('categories', 'Admin\CategoryController');
     Route::resource('products', 'Admin\ProductController');
 });
