@@ -13556,3 +13556,7 @@ div.code-toolbar > .toolbar {
 .margin-row-1 {
     margin-bottom: -50px !important;
 }
+
+.btn-product-add {
+    margin-top: 2rem !important;
+}

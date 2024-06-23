@@ -95,11 +95,6 @@
                                           <div class="col">
                                               <h5 class="cart-item-title">{{$product->name}}</h5>
                                               <small class="cart-item-subtitle">{{$product->brand->name}}</small>
-                                              <div>
-                                                  <ul class="list list--horizontal list--separated fs-14 text-muted mt-1">
-                                                      <li>Размер: <span class="text-dark">42</span></li>
-                                                  </ul>
-                                              </div>
                                           </div>
                                           <div class="col text-right">
                                               <ul class="cart-item-meta">

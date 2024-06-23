@@ -44,6 +44,7 @@ class ProductController extends Controller
     {
         $params = $request->all();
 
+        // Сохранение изображений
         for ($i = 1; $i <= 3; $i++) {
             if ($request->hasFile("image{$i}")) {
                 $path = $request->file("image{$i}")->store('product-images', 'public');
@@ -51,9 +52,38 @@ class ProductController extends Controller
             }
         }
 
-        Product::create($params);
+        // Создание нового продукта
+        $product = Product::create($params);
+
+        // Получение категории продукта
+        $category = Category::find($product->categoryID);
+
+        // Определение размеров в зависимости от категории
+        if ($category->code == 1) {
+            // Одежда
+            $sizes = ['XS', 'S', 'M', 'L', 'XL', 'XXL'];
+        } elseif ($category->code == 2) {
+            // Обувь
+            $sizes = [37, 38, 39, 40, 41, 42, 43, 44, 45, 46];
+        } else {
+            // Аксессуары (размеры не требуются)
+            $sizes = [];
+        }
+
+        // Добавление записей в таблицу sizes для нового продукта
+        foreach ($sizes as $size) {
+            \DB::table('sizes')->insert([
+                'clothes_id' => $product->id,
+                'clothes_size' => $size,
+                'count' => 0,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+
         return redirect()->route('products.index');
     }
+
 
 
     /**

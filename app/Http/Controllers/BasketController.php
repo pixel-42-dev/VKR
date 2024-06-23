@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Order;
+use App\Size;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,6 +31,7 @@ class BasketController extends Controller
     public function confirm(Request $request)
     {
         $orderID = session('orderID');
+
         if (is_null($orderID)) {
             return redirect()->route('index');
         }
@@ -57,8 +59,21 @@ class BasketController extends Controller
         $order = Order::findOrFail($orderID);
         $order->saveOrder($userID, $userData['name'], $userData['phone'], $userData['address']);
 
+        $sizes = session('sizes', []);
+        foreach ($sizes as $productId => $size) {
+            $sizeRecord = Size::where('clothes_id', $productId)
+                ->where('clothes_size', $size)
+                ->first();
+
+            if ($sizeRecord && $sizeRecord->count > 0) {
+                $sizeRecord->count--;
+                $sizeRecord->save();
+            }
+        }
+
         // Clear the orderID from session
         session()->forget('orderID');
+        session()->forget('sizes');
 
         // Redirect to order details page
         if (Auth::check()) {
@@ -70,6 +85,10 @@ class BasketController extends Controller
 
     public function basketAdd($productId, Request $request)
     {
+        if (!$request->has('size')) {
+            return redirect()->back()->with('error', 'Пожалуйста, выберите размер');
+        }
+
         $orderID = session('orderID'); // Получаем заказ из сессии
 
         if (is_null($orderID)) { // Если заказа нет, то создаём...
@@ -79,7 +98,22 @@ class BasketController extends Controller
             $order = Order::find($orderID); // Иначе просто находим заказ
         }
 
-        $order->products()->attach($productId); // Добавляем в заказ продукт
+        $size = $request->input('size');
+
+        $sizesInSession = session()->get('sizes', []);  // Получаем или инициализируем массив размеров в сессии
+        $sizesInSession[$productId] = $size;    // Добавляем новый размер в массив
+        session()->put('sizes', $sizesInSession);   // Сохраняем обновлённый массив размеров в сессию
+
+        $order->products()->attach($productId, ['size' => $size]); // Добавляем в заказ продукт
+
+//        $sizeRecord = Size::where('clothes_id', $productId)
+//            ->where('clothes_size', $size)
+//            ->first();
+//
+//        if ($sizeRecord && $sizeRecord->count > 0) {
+//            $sizeRecord->count--;
+//            $sizeRecord->save();
+//        }
 
         // После успешного добавления товара в корзину редиректим пользователя
         return redirect()->back();

@@ -43,9 +43,9 @@
                                                     <ul class="list list--horizontal">
                                                         <li class="mr-2">
                                                             <div class="dropdown">
-                                                                <a class="dropdown-toggle" href="#!" role="button" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                    Размер <span>M</span>
-                                                                </a>
+                                                                <p>
+                                                                    Размер: <span>{{ session('sizes.' . $product->id, 'M') }}</span>
+                                                                </p>
                                                             </div>
                                                         </li>
                                                     </ul>
@@ -58,11 +58,11 @@
                                                 <button type="submit" class="btn btn-link"><i class="icon-x fas fa-times"></i></button>
                                             </form>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
                         @endforeach
+
                     </div>
 
                     <a href="{{ route('listing', ['gender' => 'all']) }}" class="underlined">Продолжить покупки</a>

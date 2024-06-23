@@ -7,6 +7,7 @@ use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -51,7 +52,11 @@ class MainController extends Controller
             }
         }
 
-        return view('product', compact('product', 'isInCart'));
+        $sizes = DB::table('sizes')
+            ->where('clothes_id', $product->id)
+            ->get();
+
+        return view('product', compact('product', 'isInCart', 'sizes'));
     }
 
 
