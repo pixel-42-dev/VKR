@@ -13560,3 +13560,16 @@ div.code-toolbar > .toolbar {
 .btn-product-add {
     margin-top: 2rem !important;
 }
+
+.table {
+    color: #333 !important;
+}
+.table th {
+    font-size: 1rem !important;
+    font-weight: 800 !important;
+    color: #000 !important;
+}
+
+.admin-second-header {
+    background-color: #fdff96;
+}

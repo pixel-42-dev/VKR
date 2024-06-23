@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Администратор</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    {{--    <link rel="stylesheet" href="{{ asset('css/vendor.css') }}" />--}}
-    {{--    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />--}}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">

@@ -1,6 +1,25 @@
 @extends('master/admin-master')
 @section('content')
 
+<nav class="navbar navbar-expand-lg navbar-light admin-second-header">
+    <div class="container">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="">Новые</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Подтверждённые</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Отправленные</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Полученные</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <div class="container mt-4">
     <h2>Заказы</h2>
     <table class="table">

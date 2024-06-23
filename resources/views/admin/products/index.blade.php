@@ -19,7 +19,7 @@
                 <th scope="col">Категория</th>
                 <th scope="col">Брэнд</th>
                 <th scope="col">Цена</th>
-                <th scope="col" style="min-width: 210px;">Действия</th>
+                <th scope="col" style="min-width: 284px;">Действия</th>
             </tr>
             </thead>
             <tbody>

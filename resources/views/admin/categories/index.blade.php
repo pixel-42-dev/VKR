@@ -11,7 +11,7 @@
                 <th scope="col">Тип</th>
                 <th scope="col">Описание</th>
                 <th scope="col">Пол</th>
-                <th scope="col" style="min-width: 210px;">Действия</th>
+                <th scope="col" style="min-width: 284px;">Действия</th>
             </tr>
             </thead>
             <tbody>
