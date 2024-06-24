@@ -66,8 +66,13 @@
                                                             <button class="btn btn-lg btn-white btn-ico" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
                                                                 <i class="icon-more-vertical"></i>
                                                             </button>
-                                                            <span class="dropdown-menu" aria-labelledby="dropdown-1">
-                                                                <a class="dropdown-item" href="#!">Отменить</a>
+                                                            <span class="dropdown-menu dropdown-menu-padding" aria-labelledby="dropdown-1">
+                                                                <form action="{{ route('orders-cancel', ['order' => $order->id]) }}" method="POST">
+                                                                    @csrf
+                                                                    <button type="submit" class="btn btn-lg btn-white btn-order-cancel">
+                                                                        Отменить
+                                                                    </button>
+                                                                </form>
                                                             </span>
                                                         </span>
                                                         </div>

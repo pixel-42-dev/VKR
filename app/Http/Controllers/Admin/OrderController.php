@@ -82,7 +82,7 @@ class OrderController extends Controller
         // Получаем список продуктов и их размеров по orderID
         $orderProducts = \App\OrderProduct::where('orderID', $orderID)->get();
 
-        // Теперь у вас есть список продуктов и их размеров в $orderProducts
+        // Список продуктов и их размеров в $orderProducts
         foreach ($orderProducts as $orderProduct) {
             $productID = $orderProduct->productID;
             $size = $orderProduct->size;

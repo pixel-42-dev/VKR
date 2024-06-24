@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Order;
 use App\Product;
+use App\Size;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -200,6 +201,34 @@ class MainController extends Controller
     {
         Auth::user()->favorites()->detach();
         return redirect()->route('settings', ['page' => 2]);
+    }
+
+    public function deleteOrder(Order $order)
+    {
+        if (Auth::id() == $order->userID && in_array($order->status, [1, 2])) {
+            // Получаем список продуктов и их размеров по orderID
+            $orderProducts = \App\OrderProduct::where('orderID', $order->id)->get();
+
+            // Список продуктов и их размеров в $orderProducts
+            foreach ($orderProducts as $orderProduct) {
+                $productID = $orderProduct->productID;
+                $size = $orderProduct->size;
+
+                // Логика по увеличению количества продуктов в таблице sizes
+                $sizeRecord = Size::where('clothes_id', $productID)
+                    ->where('clothes_size', $size)
+                    ->first();
+
+                if ($sizeRecord) {
+                    $sizeRecord->count++;
+                    $sizeRecord->save();
+                }
+            }
+
+            $order->delete();
+        }
+
+        return redirect()->back();
     }
 
 }

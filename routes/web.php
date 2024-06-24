@@ -27,6 +27,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/favorites/toggle', [MainController::class, 'toggleFavorite'])->name('favorites-toggle');
     Route::post('/favorites/remove', [MainController::class, 'removeFavorite'])->name('favorites-remove');
     Route::post('/favorites/clear', [MainController::class, 'clearFavorites'])->name('favorites-clear');
+    Route::post('/deleteorder/{order}', [MainController::class, 'deleteOrder'])->name('orders-cancel');                 //!!!
 });
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listing');

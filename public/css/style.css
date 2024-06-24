@@ -13588,3 +13588,11 @@ div.code-toolbar > .toolbar {
 .admin-last-object {
     margin-bottom: 10rem;
 }
+
+.dropdown-menu-padding {
+    padding: 0 !important;
+}
+
+.btn-order-cancel {
+    width: 160px;
+}
