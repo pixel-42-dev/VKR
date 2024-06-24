@@ -12,10 +12,6 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ $product->name }}" required>
             </div>
             <div class="form-group">
-                <label for="code">Код товара</label>
-                <input type="text" class="form-control" id="code" name="code" value="{{ $product->code }}" required>
-            </div>
-            <div class="form-group">
                 <label for="description">Описание</label>
                 <textarea class="form-control" id="description" name="description" rows="3" required>{{ $product->description }}</textarea>
             </div>
@@ -64,10 +60,6 @@
             <div class="form-group">
                 <label for="name">Название</label>
                 <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="code">Код товара</label>
-                <input type="text" class="form-control" id="code" name="code" required>
             </div>
             <div class="form-group">
                 <label for="description">Описание</label>

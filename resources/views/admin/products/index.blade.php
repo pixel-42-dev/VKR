@@ -14,7 +14,6 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Имя</th>
-                <th scope="col">Код</th>
                 <th scope="col">Описание</th>
                 <th scope="col">Категория</th>
                 <th scope="col">Брэнд</th>
@@ -27,7 +26,6 @@
                 <tr>
                     <th scope="row">{{$product->id}}</th>
                     <td>{{$product->name}}</td>
-                    <td>{{$product->code}}</td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->category['name']}}</td>
                     <td>{{$product->brand['name']}}</td>
