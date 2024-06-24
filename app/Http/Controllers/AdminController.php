@@ -19,7 +19,6 @@ class AdminController extends Controller
             $status = 4;
         }
 
-        dump($status);
 
         $orders = Order::all()->where('status', $status);
         return view('admin/orders/index', compact('orders'));

@@ -57,4 +57,6 @@ Route::get('/admin/{page}', [AdminController::class, 'admin'])->name('admin')->m
 Route::group(['prefix' => 'admin-panel', 'middleware' => 'auth'], function () {
     Route::resource('categories', 'Admin\CategoryController');
     Route::resource('products', 'Admin\ProductController');
+    Route::resource('orders', 'Admin\OrderController');
+    Route::resource('users', 'Admin\UserController');
 });

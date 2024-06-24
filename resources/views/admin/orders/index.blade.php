@@ -44,8 +44,9 @@
                     <td>{{$order->created_at->format('H:i d/m/y')}}</td>
                     <td>{{$order->calculatePrice()}}</td>
                     <td>
-                        <button class="btn btn-primary">Изменить</button>
-                        <button class="btn btn-danger">Удалить</button>
+                        <button class="btn btn-success">Открыть</button>
+                        <button class="btn btn-danger">Отменить</button>
+                        <button class="btn btn-primary">Подтвердить</button>
                     </td>
                 </tr>
             @endforeach
