@@ -17,6 +17,11 @@ class Product extends Model
         return $this->belongsTo(Brand::class, 'BrandID');
     }
 
+    public function sizes()
+    {
+        return $this->hasMany(Size::class, 'clothes_id', 'id');
+    }
+
     public function category()
     {
         return $this->belongsTo(Category::class, 'categoryID');

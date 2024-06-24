@@ -72,31 +72,49 @@ class MainController extends Controller
 
 
     public function listing(Request $request, $gender) {
-        dump($request->all());
-
+        // Выборка категорий в зависимости от пола
         if ($gender == 'men') {
             $categoryObjects1 = Category::where('code', 1)->where('forMen', 1)->get();
             $categoryObjects2 = Category::where('code', 2)->where('forMen', 1)->get();
             $categoryObjects3 = Category::where('code', 3)->where('forMen', 1)->get();
-            $products = Product::with('brand')->whereHas('category', function ($query) {
+            $productsQuery = Product::with('brand')->whereHas('category', function ($query) {
                 $query->where('forMen', 1);
-            })->paginate();
+            });
         } else if ($gender == 'women') {
             $categoryObjects1 = Category::where('code', 1)->where('forMen', 0)->get();
             $categoryObjects2 = Category::where('code', 2)->where('forMen', 0)->get();
             $categoryObjects3 = Category::where('code', 3)->where('forMen', 0)->get();
-            $products = Product::with('brand')->whereHas('category', function ($query) {
+            $productsQuery = Product::with('brand')->whereHas('category', function ($query) {
                 $query->where('forMen', 0);
-            })->paginate();
+            });
         } else if ($gender == 'all') {
             $categoryObjects1 = Category::where('code', 1)->get();
             $categoryObjects2 = Category::where('code', 2)->get();
             $categoryObjects3 = Category::where('code', 3)->get();
-            $products = Product::paginate();
+            $productsQuery = Product::with('brand');
         } else {
             dd('Такой пол не существует');
         }
 
+        // Применяем фильтры по размеру
+        if ($request->has('sizes')) {
+            $sizes = $request->input('sizes');
+            $productsQuery->whereHas('sizes', function($query) use ($sizes) {
+                $query->whereIn('clothes_size', $sizes)
+                    ->where('count', '>', 0);
+            });
+        }
+
+        // Применяем фильтры по цене
+        if ($request->has('Range_Slider')) {
+            list($priceFrom, $priceTo) = explode(';', $request->input('Range_Slider'));
+            $productsQuery->whereBetween('price', [(int)$priceFrom, (int)$priceTo]);
+        }
+
+        // Пагинация
+        $products = $productsQuery->paginate(15);
+
+        // Перевод пола на русский
         if ($gender == 'men') {
             $genderToRussian = "Мужская одежда";
         } elseif ($gender == 'women') {
@@ -106,15 +124,21 @@ class MainController extends Controller
         }
 
         $categoryCode = 0;
-        return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3', 'products', 'gender', 'genderToRussian', 'categoryCode'));
+
+        return view('listing', compact(
+            'categoryObjects1', 'categoryObjects2', 'categoryObjects3',
+            'products', 'gender', 'genderToRussian', 'categoryCode'
+        ));
     }
 
 
-    public function listingCategory(Request $request, $gender, $categoryNumber) {
-//        dump($request->all());
 
+    public function listingCategory(Request $request, $gender, $categoryNumber) {
+
+        // Получаем код категории
         $categoryCode = Category::select('code')->where('id', $categoryNumber)->first()->code;
 
+        // Выборка категорий в зависимости от пола
         if ($gender == 'men') {
             $categoryObjects1 = Category::where('code', 1)->where('forMen', 1)->get();
             $categoryObjects2 = Category::where('code', 2)->where('forMen', 1)->get();
@@ -124,34 +148,47 @@ class MainController extends Controller
             $categoryObjects2 = Category::where('code', 2)->where('forMen', 0)->get();
             $categoryObjects3 = Category::where('code', 3)->where('forMen', 0)->get();
         } else if ($gender == 'all') {
-            $categoryObjects1 = Category::where('code', 1);
-            $categoryObjects2 = Category::where('code', 2);
-            $categoryObjects3 = Category::where('code', 3);
+            $categoryObjects1 = Category::where('code', 1)->get();
+            $categoryObjects2 = Category::where('code', 2)->get();
+            $categoryObjects3 = Category::where('code', 3)->get();
         } else {
             dd('Такой пол не существует');
         }
 
+        // Получаем название категории
         $categoryName = Category::where('id', $categoryNumber)->value('name');
 
         // Формируем запрос к продуктам с учетом фильтров
         $productsQuery = Product::with('brand')->where('categoryID', $categoryNumber);
+
         // Применяем фильтры по размеру
         if ($request->has('sizes')) {
             $sizes = $request->input('sizes');
-            $productsQuery->whereIn('size', $sizes);
+            $productsQuery->whereHas('sizes', function($query) use ($sizes) {
+                $query->whereIn('clothes_size', $sizes)
+                    ->where('count', '>', 0);
+            });
         }
+
         // Применяем фильтры по цене
         if ($request->has('Range_Slider')) {
             list($priceFrom, $priceTo) = explode(';', $request->input('Range_Slider'));
             $productsQuery->whereBetween('price', [(int)$priceFrom, (int)$priceTo]);
         }
 
+        // Пагинация
         $products = $productsQuery->paginate(15);
 
+        // Перевод пола на русский
         $genderToRussian = $gender == 'men' ? "Мужская одежда" : "Женская одежда";
 
-        return view('listing', compact('categoryObjects1', 'categoryObjects2', 'categoryObjects3', 'products', 'categoryName', 'gender', 'genderToRussian', 'categoryCode', 'categoryNumber'));
+        return view('listing', compact(
+            'categoryObjects1', 'categoryObjects2', 'categoryObjects3',
+            'products', 'categoryName', 'gender',
+            'genderToRussian', 'categoryCode', 'categoryNumber'
+        ));
     }
+
 
 
 

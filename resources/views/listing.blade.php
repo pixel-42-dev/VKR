@@ -77,12 +77,12 @@
                                             @foreach($categoryObjects1 as $category)
                                                 @php
                                                     if ($category->forMen == 1) {
-                                                        $gender = 'men';
+                                                        $genderLink = 'men';
                                                     } else {
-                                                        $gender = 'women';
+                                                        $genderLink = 'women';
                                                     }
                                                 @endphp
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $genderLink, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -96,12 +96,12 @@
                                             @foreach($categoryObjects2 as $category)
                                                 @php
                                                     if ($category->forMen == 1) {
-                                                        $gender = 'men';
+                                                        $genderLink = 'men';
                                                     } else {
-                                                        $gender = 'women';
+                                                        $genderLink = 'women';
                                                     }
                                                 @endphp
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $genderLink, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
@@ -115,12 +115,12 @@
                                             @foreach($categoryObjects3 as $category)
                                                 @php
                                                     if ($category->forMen == 1) {
-                                                        $gender = 'men';
+                                                        $genderLink = 'men';
                                                     } else {
-                                                        $gender = 'women';
+                                                        $genderLink = 'women';
                                                     }
                                                 @endphp
-                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="{{ route('listingCategory', ['gender' => $genderLink, 'categoryNumber' => $category->id]) }}">{{ $category->name }}</a></li>
                                             @endforeach
                                         </ul>
                                     </div>
