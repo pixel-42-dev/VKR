@@ -64,6 +64,8 @@ class OrderController extends Controller
 
         $order->update($params);
         $order->save();
+
+        return redirect()->route('admin', ['page' => 'new']);
     }
 
     /**
@@ -74,6 +76,7 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
-        //
+        $order->delete();
+        return redirect()->route('admin', ['page' => 'new']);
     }
 }

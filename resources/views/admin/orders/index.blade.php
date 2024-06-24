@@ -54,15 +54,14 @@
                     <td>
                         <a href="{{route('orders.edit', $order)}}" class="btn btn-success">Открыть</a>
                         @if($page == 'new')
-                            <form action="" method="POST" style="display:inline;">
+                            <form action="{{route('orders.destroy', $order)}}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Отменить</button>
                             </form>
                             <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Подтвердить</a>
                         @elseif($page == 'confirmed')
-
-                            <form action="" method="POST" style="display:inline;">
+                            <form action="{{route('orders.destroy', $order)}}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Отменить</button>
