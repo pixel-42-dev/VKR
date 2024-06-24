@@ -3,6 +3,10 @@
 @section('content')
 
     <div class="container mt-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Поступления для: {{ $product->name }}</h2>
+            <a href="{{route('products.index')}}" class="btn btn-secondary">Назад</a>
+        </div>
         <form action="{{ route('addPost', $product->id) }}" method="POST">
             @csrf
 
@@ -30,7 +34,7 @@
                 </div>
             @endforeach
 
-            <button type="submit" class="btn btn-success">Сохранить поставки</button>
+            <button type="submit" class="btn btn-success admin-last-object">Сохранить поставки</button>
         </form>
     </div>
 

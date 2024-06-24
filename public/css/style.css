@@ -13584,3 +13584,7 @@ div.code-toolbar > .toolbar {
 .product-without-category {
     background-color: red;
 }
+
+.admin-last-object {
+    margin-bottom: 10rem;
+}

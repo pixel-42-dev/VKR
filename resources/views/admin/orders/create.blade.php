@@ -2,7 +2,11 @@
 @section('content')
 
     <div class="container mt-4">
-        <h2>Информация о заказе {{ $order->id }}</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Информация о заказе: {{ $order->id }}</h2>
+            <a href="{{ route('admin', ['page' => 'new']) }}" class="btn btn-secondary">Назад</a>
+        </div>
+
         <form action="{{ route('orders.update', $order->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -12,17 +16,15 @@
                 <input type="text" class="form-control" id="id" name="id" value="{{ $order->id }}" readonly>
             </div>
 
-            <a class="text-info" href="{{ route('users.edit', $order->userID) }}">
-                <div class="form-group">
-                    <label for="userID">ID пользователя</label>
-                    <input type="text" class="form-control" id="userID" name="userID" value="{{ $order->userID }}" readonly>
-                </div>
+            <div class="form-group">
+                <label for="userID">ID пользователя</label>
+                <input type="text" class="form-control" id="userID" name="userID" value="{{ $order->userID }}" readonly>
+            </div>
 
-                <div class="form-group">
-                    <label for="userName">Имя пользователя</label>
-                    <input type="text" class="form-control" id="userName" name="userName" value="{{ $order->userName }}" readonly>
-                </div>
-            </a>
+            <div class="form-group">
+                <label for="userName">Имя пользователя</label>
+                <input type="text" class="form-control" id="userName" name="userName" value="{{ $order->userName }}" readonly>
+            </div>
 
             <div class="form-group">
                 <label for="userPhone">Телефон пользователя</label>
@@ -78,7 +80,7 @@
                 </tbody>
             </table>
 
-            <button type="submit" class="btn btn-success">Сохранить</button>
+            <button type="submit" class="btn btn-success admin-last-object">Сохранить</button>
         </form>
     </div>
 

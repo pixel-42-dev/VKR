@@ -3,7 +3,10 @@
     @isset($product)   {{-- Редактирование --}}
 
     <div class="container mt-4">
-        <h2>Редактировать товар {{ $product->name }}</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Редактировать товар: {{ $product->name }}</h2>
+            <a href="{{route('products.index')}}" class="btn btn-secondary">Назад</a>
+        </div>
         <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             @method('PUT')
@@ -47,14 +50,17 @@
                 <label for="image3">Изображение 3</label>
                 <input type="file" class="form-control" id="image3" name="image3">
             </div>
-            <button type="submit" class="btn btn-success">Сохранить</button>
+            <button type="submit" class="btn btn-success admin-last-object">Сохранить</button>
         </form>
     </div>
 
     @else   {{-- Добавление --}}
 
     <div class="container mt-4">
-        <h2>Добавить новый товар</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Добавить новый товар</h2>
+            <a href="{{route('products.index')}}" class="btn btn-secondary">Назад</a>
+        </div>
         <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
@@ -97,7 +103,7 @@
                 <label for="image3">Изображение 3</label>
                 <input type="file" class="form-control" id="image3" name="image3">
             </div>
-            <button type="submit" class="btn btn-success">Добавить товар</button>
+            <button type="submit" class="btn btn-success admin-last-object">Добавить товар</button>
         </form>
     </div>
 

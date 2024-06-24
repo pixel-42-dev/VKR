@@ -3,7 +3,10 @@
 @isset($category)   {{-- Редактирование --}}
 
     <div class="container mt-4">
-        <h2>Редактировать категорию <b>{{$category->name}}</b></h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Редактировать категорию: <b>{{$category->name}}</b></h2>
+            <a href="{{route('categories.index')}}" class="btn btn-secondary">Назад</a>
+        </div>
         <form action="{{ route('categories.update', $category) }}" method="POST">
             @csrf
             @method('PUT')
@@ -30,14 +33,17 @@
                     <option value="0" {{ $category->forMen == 0 ? 'selected' : '' }}>Женская</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success">Сохранить</button>
+            <button type="submit" class="btn btn-success admin-last-object">Сохранить</button>
         </form>
     </div>
 
 @else   {{-- Добавление --}}
 
     <div class="container mt-4">
-        <h2>Добавить новую категорию</h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Добавить новую категорию</h2>
+            <a href="{{route('categories.index')}}" class="btn btn-secondary">Назад</a>
+        </div>
         <form action="{{ route('categories.store') }}" method="POST">
             @csrf
             <div class="form-group">
@@ -63,7 +69,7 @@
                     <option value="0">Женская</option>
                 </select>
             </div>
-            <button type="submit" class="btn btn-success">Добавить категорию</button>
+            <button type="submit" class="btn btn-success admin-last-object">Добавить категорию</button>
         </form>
     </div>
 

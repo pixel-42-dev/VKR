@@ -2,7 +2,10 @@
 @section('content')
 
     <div class="container mt-4">
-        <h2>Профиль пользователя <b>{{ $user->nickname }}</b></h2>
+        <div class="d-flex justify-content-between align-items-center">
+            <h2>Профиль пользователя: <b>{{ $user->nickname }}</b></h2>
+            <a href="{{route('users.index')}}" class="btn btn-secondary">Назад</a>
+        </div>
         <form action="{{ route('users.update', $user) }}" method="POST">
             @csrf
             @method('PUT')
@@ -52,6 +55,50 @@
 
             <button type="submit" class="btn btn-success">Сохранить</button>
         </form>
+
+        <!-- Таблица заказов пользователя -->
+        <br>
+        <br>
+        <br>
+
+        <div class="col-md-9 mx-auto">
+            <h3>Заказы пользователя</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Дата заказа</th>
+                    <th scope="col">Статус</th>
+                    <th scope="col">Итого</th>
+                    <th scope="col">Действия</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($orders as $order)
+                    <tr>
+                        <th scope="row">{{ $order->id }}</th>
+                        <td>{{ $order->created_at->format('H:i d/m/y') }}</td>
+                        <td>
+                            @if($order->status == 1)
+                                В обработке
+                            @elseif($order->status == 2)
+                                Подтверждён
+                            @elseif($order->status == 3)
+                                В пути
+                            @elseif($order->status == 4)
+                                Доставлен
+                            @endif
+                        </td>
+                        <td>{{ $order->calculatePrice() }} ₽</td>
+                        <td>
+                            <a href="{{ route('orders.edit', $order) }}" class="btn btn-success">Открыть</a>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
 @endsection

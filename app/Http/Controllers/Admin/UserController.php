@@ -59,7 +59,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        return view('admin/users/create', compact('user'));
+        // Получаем все заказы пользователя
+        $orders = \App\Order::where('userID', $user->id)->get();
+        return view('admin/users/create', compact('user', 'orders'));
     }
 
     /**
