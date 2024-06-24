@@ -46,7 +46,11 @@
             @foreach($orders as $order)
                 <tr>
                     <th scope="row">{{$order->id}}</th>
-                    <td>{{$order->userName}}</td>
+                    @if($order->userID == 0)
+                        <td>{{$order->userName}}</td>
+                    @else
+                        <td><a class="text-info" href="{{ route('users.edit', $order->userID) }}">{{$order->userName}}</a></td>
+                    @endif
                     <td>{{$order->userPhone}}</td>
                     <td>{{$order->userAddress}}</td>
                     <td>{{$order->created_at->format('H:i d/m/y')}}</td>
@@ -71,8 +75,6 @@
                             <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Завершить</a>
                         @elseif($page == 'delivered')
                         @endif
-
-
                     </td>
                 </tr>
             @endforeach

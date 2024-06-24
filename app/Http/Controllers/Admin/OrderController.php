@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Order;
+use App\Size;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -76,7 +77,31 @@ class OrderController extends Controller
      */
     public function destroy(Order $order)
     {
+        $orderID = $order->id;
+
+        // Получаем список продуктов и их размеров по orderID
+        $orderProducts = \App\OrderProduct::where('orderID', $orderID)->get();
+
+        // Теперь у вас есть список продуктов и их размеров в $orderProducts
+        foreach ($orderProducts as $orderProduct) {
+            $productID = $orderProduct->productID;
+            $size = $orderProduct->size;
+
+            // Логика по увеличению количества продуктов в таблице sizes
+            $sizeRecord = Size::where('clothes_id', $productID)
+                ->where('clothes_size', $size)
+                ->first();
+
+            if ($sizeRecord) {
+                $sizeRecord->count++;
+                $sizeRecord->save();
+            }
+        }
+
+        // Удаляем заказ
         $order->delete();
+
         return redirect()->route('admin', ['page' => 'new']);
     }
+
 }

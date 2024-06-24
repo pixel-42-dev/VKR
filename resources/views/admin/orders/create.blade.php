@@ -12,15 +12,17 @@
                 <input type="text" class="form-control" id="id" name="id" value="{{ $order->id }}" readonly>
             </div>
 
-            <div class="form-group">
-                <label for="userID">ID пользователя</label>
-                <input type="text" class="form-control" id="userID" name="userID" value="{{ $order->userID }}" readonly>
-            </div>
+            <a class="text-info" href="{{ route('users.edit', $order->userID) }}">
+                <div class="form-group">
+                    <label for="userID">ID пользователя</label>
+                    <input type="text" class="form-control" id="userID" name="userID" value="{{ $order->userID }}" readonly>
+                </div>
 
-            <div class="form-group">
-                <label for="userName">Имя пользователя</label>
-                <input type="text" class="form-control" id="userName" name="userName" value="{{ $order->userName }}" readonly>
-            </div>
+                <div class="form-group">
+                    <label for="userName">Имя пользователя</label>
+                    <input type="text" class="form-control" id="userName" name="userName" value="{{ $order->userName }}" readonly>
+                </div>
+            </a>
 
             <div class="form-group">
                 <label for="userPhone">Телефон пользователя</label>

@@ -48,11 +48,10 @@ class BasketController extends Controller
             'address' => $request->input('address'),
         ];
 
-        // Determine the userID to use
         if (Auth::check()) {
             $userID = Auth::id();
         } else {
-            $userID = 0; // Use 0 to indicate unregistered user
+            $userID = 0; // 0 для незарегистрированных пользователей
         }
 
         // Update the order with user data
@@ -105,15 +104,6 @@ class BasketController extends Controller
         session()->put('sizes', $sizesInSession);   // Сохраняем обновлённый массив размеров в сессию
 
         $order->products()->attach($productId, ['size' => $size]); // Добавляем в заказ продукт
-
-//        $sizeRecord = Size::where('clothes_id', $productId)
-//            ->where('clothes_size', $size)
-//            ->first();
-//
-//        if ($sizeRecord && $sizeRecord->count > 0) {
-//            $sizeRecord->count--;
-//            $sizeRecord->save();
-//        }
 
         // После успешного добавления товара в корзину редиректим пользователя
         return redirect()->back();

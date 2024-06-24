@@ -23,7 +23,7 @@
             </thead>
             <tbody>
             @foreach($products as $product)
-                <tr>
+                <tr class="{{ $product->category ? '' : 'table-danger' }}">
                     <th scope="row">{{$product->id}}</th>
                     <td>{{$product->name}}</td>
                     <td>{{$product->description}}</td>
@@ -32,11 +32,7 @@
                     <td>{{$product->price}}</td>
                     <td>
                         <a href="{{route('products.edit', $product)}}" class="btn btn-success">Изменить</a>
-{{--                        @if (session('success'))--}}
-{{--                            <div class="alert alert-success">--}}
-{{--                                {{ session('success') }}--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
+
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')

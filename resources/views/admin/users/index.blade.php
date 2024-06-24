@@ -6,9 +6,8 @@
         }
     </style>
 
-
     <div class="container mt-4">
-        <h2>Товары</h2>
+        <h2>Пользователи</h2>
         <table class="table">
             <thead>
             <tr>
@@ -34,7 +33,7 @@
                     <td>{{$user->address}}</td>
                     <td>
                         <a href="{{route('users.edit', $user)}}" class="btn btn-success">Профиль</a>
-                        <form action="" method="POST" style="display: inline-block;">
+                        <form action="{{ route('users.destroy', $user) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Удалить</button>
@@ -45,5 +44,4 @@
             </tbody>
         </table>
     </div>
-
 @endsection
