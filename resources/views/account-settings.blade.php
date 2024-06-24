@@ -36,7 +36,7 @@
                             <form id="logout-form" action="{{ route('logoutrPost') }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-outline-danger btn-block">
-                                     Выйти
+                                    Выйти
                                 </button>
                             </form>
                         </div>
@@ -76,11 +76,19 @@
                                                 <div class="card-body">
                                                     <ul class="order-preview">
                                                         @foreach($order->products as $product)
-                                                            <li>
-                                                                <a href="{{ route('product', ['number' => $product->id]) }}" title="{{ $product->name }}" data-toggle="tooltip" data-placement="top">
-                                                                    <img class="product-order-listing" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="{{ $product->name }}">
-                                                                </a>
-                                                            </li>
+                                                            @if($product->trashed())
+                                                                <li>
+                                                                    <a href="" title="{{ $product->name }}" data-toggle="tooltip" data-placement="top">
+                                                                        <img class="product-order-listing" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="{{ $product->name }}">
+                                                                    </a>
+                                                                </li>
+                                                            @else
+                                                                <li>
+                                                                    <a href="{{ route('product', ['number' => $product->id]) }}" title="{{ $product->name }}" data-toggle="tooltip" data-placement="top">
+                                                                        <img class="product-order-listing" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="{{ $product->name }}">
+                                                                    </a>
+                                                                </li>
+                                                            @endif
                                                         @endforeach
                                                     </ul>
                                                 </div>
@@ -100,15 +108,17 @@
                                                         </li>
                                                         <li>
                                                             <h5 class="order-meta-title">Статус</h5>
-                                                                <?php
+                                                            @php
                                                                 if ($order->status == 1) {
                                                                     $status = "В обработке";
                                                                 } elseif ($order->status == 2) {
+                                                                    $status = "Подтверждён";
+                                                                } elseif ($order->status == 3) {
                                                                     $status = "В пути";
                                                                 } else {
                                                                     $status = "Получен";
                                                                 }
-                                                                ?>
+                                                            @endphp
                                                             <span class="text-muted">{{ $status }}</span>
                                                         </li>
                                                     </ul>

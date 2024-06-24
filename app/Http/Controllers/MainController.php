@@ -19,15 +19,25 @@ class MainController extends Controller
         return view('about');
     }
 
-    public function orderDetails($orderID) {
-        $order = Order::find($orderID);
+    public function orderDetails($orderID)
+    {
+        $order = Order::with(['products' => function ($query) {
+            $query->withTrashed(); // Включаем удаленные товары
+        }])->find($orderID);
+
         return view('account-order-details', compact('order'));
     }
 
 
     public function settings($page)
     {
-        $orders = Order::where('userID', Auth::id())->get();
+        // Получаем все заказы пользователя, включая удалённые товары
+        $orders = Order::with(['products' => function ($query) {
+            $query->withTrashed(); // Включаем удалённые товары
+        }])
+            ->where('userID', Auth::id())
+            ->get();
+
         return view('account-settings', compact('orders', 'page'));
     }
 

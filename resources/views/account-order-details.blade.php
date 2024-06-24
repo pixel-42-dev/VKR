@@ -58,18 +58,20 @@
                           </li>
                           <li>
                             <h5 class="order-meta-title">Стоимость</h5>
-                            <span>{{$order->calculatePrice() + 200}}</span>
+                            <span>{{$order->calculatePrice() + 200}} ₽</span>
                           </li>
                           <li>
                             <h5 class="order-meta-title">Статус</h5>
                               <?php
-                                if ($order->status == 1) {
-                                    $status = "В обработке";
-                                } elseif ($order->status == 2) {
-                                    $status = "В пути";
-                                } else {
-                                    $status = "Получен";
-                                }
+                              if ($order->status == 1) {
+                                  $status = "В обработке";
+                              } elseif ($order->status == 2) {
+                                  $status = "Подтверждён";
+                              } elseif ($order->status == 3) {
+                                  $status = "В пути";
+                              } else {
+                                  $status = "Получен";
+                              }
                               ?>
                             <span class="text-muted">{{$status}}</span>
                           </li>
@@ -81,35 +83,43 @@
 
 
                   <!-- products -->
-                  <div class="row">
-                    <div class="col-12">
-                      <h2 class="mb-1 text-uppercase fs-20">{{$order->products->count()}} товара(ов)</h2>
-                    </div>
-                    <div class="col-12">
-                      <div class="bordered cart-item-list p-3">
-                          @foreach($order->products as $product)
-                              <div class="cart-item">
-                                  <a href="{{ route('product', ['number' => $product->id]) }}" class="cart-item-image"><img src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Image"></a>
-                                  <div class="cart-item-body">
-                                      <div class="row">
-                                          <div class="col">
-                                              <h5 class="cart-item-title">{{$product->name}}</h5>
-                                              <small class="cart-item-subtitle">{{$product->brand->name}}</small>
-                                          </div>
-                                          <div class="col text-right">
-                                              <ul class="cart-item-meta">
-                                                  <li>{{$product->price}} ₽</li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          @endforeach
-                      </div>
-                    </div>
-                  </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-1 text-uppercase fs-20">{{ $order->products->count() }} товара(ов)</h2>
+                        </div>
+                        <div class="col-12">
+                            <div class="bordered cart-item-list p-3">
+                                @foreach($order->products as $product)
+                                    <div class="cart-item">
+                                        @if(!$product->trashed())
+                                            <a href="{{ route('product', ['number' => $product->id]) }}" class="cart-item-image">
+                                                <img src="{{ Storage::url($product->image1) }}" alt="Image">
+                                            </a>
+                                        @else
+                                            <img src="{{ Storage::url($product->image1) }}" alt="Image">
+                                        @endif
+                                        <div class="cart-item-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 class="cart-item-title">{{ $product->name }}</h5>
+                                                    <small class="cart-item-subtitle">{{ $product->brand->name }}</small>
+                                                </div>
+                                                <div class="col text-right">
+                                                    <ul class="cart-item-meta">
+                                                        <li>{{ $product->price }} ₽</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
 
-                  <!-- order total -->
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- order total -->
                   <div class="row">
                     <div class="col-12">
                       <h2 class="text-uppercase fs-20 mb-1">Итоговая стоимость</h2>

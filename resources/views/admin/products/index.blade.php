@@ -32,6 +32,11 @@
                     <td>{{$product->price}}</td>
                     <td>
                         <a href="{{route('products.edit', $product)}}" class="btn btn-success">Изменить</a>
+{{--                        @if (session('success'))--}}
+{{--                            <div class="alert alert-success">--}}
+{{--                                {{ session('success') }}--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
