@@ -134,52 +134,14 @@
                         <span class="widget-title">Фильтры <a href="" class="small text-red">clear</a></span>
                         <div class="accordion" id="accordion-1">
                             <div class="card">
-                                <div class="card-header" id="heading-1-1">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-1" aria-expanded="false" aria-controls="collapse-1-1">
-                                            Стиль
-                                        </button>
-                                    </h5>
-                                </div>
-
-                                <div id="collapse-1-1" class="collapse" aria-labelledby="heading-1-1">
-                                    <div class="card-body">
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Coats & Jackets</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                            <label class="custom-control-label" for="customCheck2">Dresses</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                            <label class="custom-control-label" for="customCheck3">Polo Shirts</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck4">
-                                            <label class="custom-control-label" for="customCheck4">Sweatshirts</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck5">
-                                            <label class="custom-control-label" for="customCheck5">T-Shirts & Tops</label>
-                                        </div>
-                                        <div class="custom-control custom-checkbox">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck6">
-                                            <label class="custom-control-label" for="customCheck6">Knitwear</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
                                 <div class="card-header" id="heading-1-2">
                                     <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1-2" aria-expanded="false" aria-controls="collapse-1-2">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-2" aria-expanded="true" aria-controls="collapse-1-2">
                                             Размер
                                         </button>
                                     </h5>
                                 </div>
-                                <div id="collapse-1-2" class="collapse" aria-labelledby="heading-1-2">
+                                <div id="collapse-1-2" class="collapse show" aria-labelledby="heading-1-2">
                                     <div class="card-body">
                                         <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
                                             <label class="btn active">
@@ -208,54 +170,23 @@
                                 </div>
                             </div>
                             <div class="card">
-                                <div class="card-header" id="heading-1-3">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
-                                            Цвет
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapse-1-3" class="collapse" aria-labelledby="heading-1-3">
-                                    <div class="card-body">
-                                        <div class="btn-group-toggle btn-group-square btn-group-colors" data-toggle="buttons">
-                                            <label class="btn active text-red">
-                                                <input type="checkbox" name="color-select" id="option-2-1" checked>
-                                            </label>
-                                            <label class="btn text-blue">
-                                                <input type="checkbox" name="color-select" id="option-2-2">
-                                            </label>
-                                            <label class="btn text-yellow">
-                                                <input type="checkbox" name="color-select" id="option-2-3">
-                                            </label>
-                                            <label class="btn text-green">
-                                                <input type="checkbox" name="color-select" id="option-2-4">
-                                            </label>
-                                            <label class="btn text-white">
-                                                <input type="checkbox" name="color-select" id="option-2-5">
-                                            </label>
-                                            <label class="btn text-dark">
-                                                <input type="checkbox" name="color-select" id="option-2-6">
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card">
                                 <div class="card-header" id="heading-1-4">
                                     <h5 class="mb-0">
-                                        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1-4" aria-expanded="false" aria-controls="collapse-1-4">
+                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-4" aria-expanded="true" aria-controls="collapse-1-4">
                                             Цена
                                         </button>
                                     </h5>
                                 </div>
-                                <div id="collapse-1-4" class="collapse" aria-labelledby="heading-1-4">
+                                <div id="collapse-1-4" class="collapse show" aria-labelledby="heading-1-4">
                                     <div class="card-body">
                                         <input type="text" class="rangeslider" name="Range Slider" value="" />
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button type="button" class="btn btn-primary btn-sm mt-3" id="apply-filters-btn">Применить фильтры</button>
                     </div>
+
                 </aside>
 
                 <!-- content -->
