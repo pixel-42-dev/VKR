@@ -131,62 +131,115 @@
 
 
                     <div class="widget">
-                        <span class="widget-title">Фильтры <a href="" class="small text-red">clear</a></span>
-                        <div class="accordion" id="accordion-1">
-                            <div class="card">
-                                <div class="card-header" id="heading-1-2">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-2" aria-expanded="true" aria-controls="collapse-1-2">
-                                            Размер
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapse-1-2" class="collapse show" aria-labelledby="heading-1-2">
-                                    <div class="card-body">
-                                        <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
-                                            <label class="btn active">
-                                                <input type="checkbox" name="options" id="option-1" checked> 35
-                                            </label>
-                                            <label class="btn">
-                                                <input type="checkbox" name="options" id="option-2"> 35.5
-                                            </label>
-                                            <label class="btn">
-                                                <input type="checkbox" name="options" id="option-3"> 36
-                                            </label>
-                                            <label class="btn">
-                                                <input type="checkbox" name="options" id="option-4"> 36.5
-                                            </label>
-                                            <label class="btn">
-                                                <input type="checkbox" name="options" id="option-5"> 37
-                                            </label>
-                                            <label class="btn">
-                                                <input type="checkbox" name="options" id="option-6"> 38
-                                            </label>
-                                            <label class="btn">
-                                                <input type="checkbox" name="options" id="option-7"> 38.5
-                                            </label>
+                        @if(isset($categoryNumber))
+                            <form method="GET" action="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $categoryNumber]) }}">
+                        @else
+                            <form method="GET" action="{{ route('listing', ['gender' => $gender]) }}">
+                        @endif
+                            @csrf
+                            <span class="widget-title">Фильтры <a href="" class="small text-red">clear</a></span>
+                            <div class="accordion" id="accordion-1">
+                                @if($categoryCode == 1)
+                                    <div class="card">
+                                        <div class="card-header" id="heading-1-2">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-2" aria-expanded="true" aria-controls="collapse-1-2">
+                                                    Размер
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse-1-2" class="collapse show" aria-labelledby="heading-1-2">
+                                            <div class="card-body">
+                                                <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
+                                                    <label class="btn active">
+                                                        <input type="checkbox" name="sizes[]" value="XS" id="option-1"> XS
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="S" id="option-2"> S
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="M" id="option-3"> M
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="L" id="option-4"> L
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="XL" id="option-5"> XL
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="XXL" id="option-6"> XXL
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @elseif($categoryCode == 2)
+                                    <div class="card">
+                                        <div class="card-header" id="heading-1-2">
+                                            <h5 class="mb-0">
+                                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-2" aria-expanded="true" aria-controls="collapse-1-2">
+                                                    Размер
+                                                </button>
+                                            </h5>
+                                        </div>
+                                        <div id="collapse-1-2" class="collapse show" aria-labelledby="heading-1-2">
+                                            <div class="card-body">
+                                                <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
+                                                    <label class="btn active">
+                                                        <input type="checkbox" name="sizes[]" value="37" id="option-1"> 37
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="38" id="option-2"> 38
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="39" id="option-3"> 39
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="40" id="option-4"> 40
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="41" id="option-5"> 41
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="42" id="option-6"> 42
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="43" id="option-7"> 43
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="44" id="option-8"> 44
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="45" id="option-9"> 45
+                                                    </label>
+                                                    <label class="btn">
+                                                        <input type="checkbox" name="sizes[]" value="46" id="option-10"> 46
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                @else
+                                @endif
+                                <div class="card">
+                                    <div class="card-header" id="heading-1-4">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-4" aria-expanded="true" aria-controls="collapse-1-4">
+                                                Цена
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapse-1-4" class="collapse show" aria-labelledby="heading-1-4">
+                                        <div class="card-body">
+                                            <input type="text" class="rangeslider" name="Range Slider" value="" data-min="0" data-max="20000" data-from="0" data-to="20000"/>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="card">
-                                <div class="card-header" id="heading-1-4">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse-1-4" aria-expanded="true" aria-controls="collapse-1-4">
-                                            Цена
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="collapse-1-4" class="collapse show" aria-labelledby="heading-1-4">
-                                    <div class="card-body">
-                                        <input type="text" class="rangeslider" name="Range Slider" value="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="btn btn-primary btn-sm mt-3" id="apply-filters-btn">Применить фильтры</button>
+                            <button type="submit" class="btn btn-primary btn-sm btn-block mt-3" id="apply-filters-btn">Применить фильтры</button>
+                        </form>
                     </div>
-
                 </aside>
 
                 <!-- content -->
@@ -203,7 +256,7 @@
                         <div class="col-md-6 text-md-right">
                             <ul class="list list--horizontal list--separated text-muted fs-14">
                                 <li>
-                                    <span>15 из 16 товаров</span>
+                                    <span> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</span>
                                 </li>
                                 <li>
                       <span>Отсортировано по:
@@ -233,9 +286,9 @@
                                             <a href="#" class="action icon-heart-container"><i class="icon-heart"></i></a>
                                         @endguest
                                         @auth
-                                                <a href="#" class="action icon-heart-container {{ Auth::user()->favorites->contains($product->id) ? 'is-favorite' : '' }}" data-product-id="{{ $product->id }}"><i class="icon-heart"></i></a>
-                                            @endauth
-                                                <a href="{{ route('product', ['number' => $product->id]) }}">
+                                            <a href="#" class="action icon-heart-container {{ Auth::user()->favorites->contains($product->id) ? 'is-favorite' : '' }}" data-product-id="{{ $product->id }}"><i class="icon-heart"></i></a>
+                                        @endauth
+                                        <a href="{{ route('product', ['number' => $product->id]) }}">
                                             @if ($product->image1)
                                                 <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Product Image">
                                                 <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image2) }}" alt="Product Image">
@@ -255,21 +308,8 @@
                         @endforeach
                     </div>
 
-
                     <div class="row">
-                        <div class="col">
-                            <nav aria-label="Page navigation">
-                                <ul class="pagination">
-                                    <li class="page-item"><a class="page-link" href="#!">Previous</a></li>
-                                    <li class="page-item"><a class="page-link" href="#!">1</a></li>
-                                    <li class="page-item active"><a class="page-link" href="#!">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                                    <li class="page-item"><a class="page-link" href="#!">4</a></li>
-                                    <li class="page-item"><a class="page-link" href="#!">5</a></li>
-                                    <li class="page-item"><a class="page-link" href="#!">Next</a></li>
-                                </ul>
-                            </nav>
-                        </div>
+                        {{$products->links()}}
                     </div>
                 </div>
 
