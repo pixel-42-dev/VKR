@@ -48,7 +48,7 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        //
+        return view('admin/orders/create', compact('order'));
     }
 
     /**
@@ -60,7 +60,10 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        //
+        $params = $request->except(['_token', '_method']);
+
+        $order->update($params);
+        $order->save();
     }
 
     /**

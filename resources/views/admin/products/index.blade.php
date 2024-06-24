@@ -19,7 +19,7 @@
                 <th scope="col">Категория</th>
                 <th scope="col">Брэнд</th>
                 <th scope="col">Цена</th>
-                <th scope="col" style="min-width: 284px;">Действия</th>
+                <th scope="col" style="min-width: 447px;">Действия</th>
             </tr>
             </thead>
             <tbody>
@@ -39,6 +39,7 @@
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Удалить</button>
                         </form>
+                        <a href="{{ route('products-add', ['product_id' => $product->id]) }}" class="btn btn-primary">Поступления</a>
                     </td>
                 </tr>
             @endforeach

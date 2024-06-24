@@ -33,8 +33,8 @@
                     <td>{{$user->phone}}</td>
                     <td>{{$user->address}}</td>
                     <td>
-                        <a href="" class="btn btn-success">Заказы</a>
-                        <form action="{" method="POST" style="display: inline-block;">
+                        <a href="{{route('users.edit', $user)}}" class="btn btn-success">Профиль</a>
+                        <form action="" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger">Удалить</button>

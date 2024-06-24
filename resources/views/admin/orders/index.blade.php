@@ -31,7 +31,15 @@
             <th scope="col">Адрес</th>
             <th scope="col">Дата</th>
             <th scope="col">Сумма</th>
-            <th scope="col">Действия</th>
+            @if($page == 'new')
+                <th scope="col" style="min-width: 445px;">Действия</th>
+            @elseif($page == 'confirmed')
+                <th scope="col" style="min-width: 445px;">Действия</th>
+            @elseif($page == 'sent')
+                <th scope="col" style="min-width: 291px;">Действия</th>
+            @elseif($page == 'delivered')
+                <th scope="col">Действия</th>
+            @endif
         </tr>
         </thead>
         <tbody>
@@ -44,9 +52,28 @@
                     <td>{{$order->created_at->format('H:i d/m/y')}}</td>
                     <td>{{$order->calculatePrice()}}</td>
                     <td>
-                        <button class="btn btn-success">Открыть</button>
-                        <button class="btn btn-danger">Отменить</button>
-                        <button class="btn btn-primary">Подтвердить</button>
+                        <a href="{{route('orders.edit', $order)}}" class="btn btn-success">Открыть</a>
+                        @if($page == 'new')
+                            <form action="" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Отменить</button>
+                            </form>
+                            <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Подтвердить</a>
+                        @elseif($page == 'confirmed')
+
+                            <form action="" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Отменить</button>
+                            </form>
+                            <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Отправлено</a>
+                        @elseif($page == 'sent')
+                            <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Завершить</a>
+                        @elseif($page == 'delivered')
+                        @endif
+
+
                     </td>
                 </tr>
             @endforeach
