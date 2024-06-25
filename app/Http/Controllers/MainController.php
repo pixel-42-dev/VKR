@@ -329,4 +329,8 @@ class MainController extends Controller
         return redirect()->route('settings', ['page' => 1]);
     }
 
+    public function listingFull()
+    {
+        return view('listing-2');
+    }
 }
