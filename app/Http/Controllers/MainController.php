@@ -72,6 +72,7 @@ class MainController extends Controller
 
 
     public function listing(Request $request, $gender) {
+
         // Выборка категорий в зависимости от пола
         if ($gender == 'men') {
             $categoryObjects1 = Category::where('code', 1)->where('forMen', 1)->get();
@@ -111,6 +112,28 @@ class MainController extends Controller
             $productsQuery->whereBetween('price', [(int)$priceFrom, (int)$priceTo]);
         }
 
+        // Применяем сортировку
+        if ($request->has('sort')) {
+            switch ($request->input('sort')) {
+                case 'price_asc':
+                    $productsQuery->orderBy('price', 'asc');
+                    break;
+                case 'price_desc':
+                    $productsQuery->orderBy('price', 'desc');
+                    break;
+                case 'alphabetical':
+                    $productsQuery->orderBy('name', 'asc');
+                    break;
+                case 'newest':
+                default:
+                    $productsQuery->orderBy('created_at', 'desc');
+                    break;
+            }
+        } else {
+            // По умолчанию сортируем по новизне
+            $productsQuery->orderBy('created_at', 'desc');
+        }
+
         // Пагинация
         $products = $productsQuery->paginate(15);
 
@@ -130,6 +153,7 @@ class MainController extends Controller
             'products', 'gender', 'genderToRussian', 'categoryCode'
         ));
     }
+
 
 
 
@@ -176,6 +200,28 @@ class MainController extends Controller
             $productsQuery->whereBetween('price', [(int)$priceFrom, (int)$priceTo]);
         }
 
+        // Применяем сортировку
+        if ($request->has('sort')) {
+            switch ($request->input('sort')) {
+                case 'price_asc':
+                    $productsQuery->orderBy('price', 'asc');
+                    break;
+                case 'price_desc':
+                    $productsQuery->orderBy('price', 'desc');
+                    break;
+                case 'alphabetical':
+                    $productsQuery->orderBy('name', 'asc');
+                    break;
+                case 'newest':
+                default:
+                    $productsQuery->orderBy('created_at', 'desc');
+                    break;
+            }
+        } else {
+            // По умолчанию сортируем по новизне
+            $productsQuery->orderBy('created_at', 'desc');
+        }
+
         // Пагинация
         $products = $productsQuery->paginate(15);
 
@@ -188,6 +234,7 @@ class MainController extends Controller
             'genderToRussian', 'categoryCode', 'categoryNumber'
         ));
     }
+
 
 
 
@@ -246,7 +293,7 @@ class MainController extends Controller
     {
         $productId = $request->input('product_id');
         Auth::user()->favorites()->detach($productId);
-        return redirect()->back();
+        return redirect()->route('settings', ['page' => 2]);
     }
     public function clearFavorites()
     {
@@ -279,7 +326,7 @@ class MainController extends Controller
             $order->delete();
         }
 
-        return redirect()->back();
+        return redirect()->route('settings', ['page' => 1]);
     }
 
 }

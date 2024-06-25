@@ -35,10 +35,27 @@
                   <div class="row align-items-end">
                     <div class="col">
                       <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                          <li class="breadcrumb-item"><a href="{{ route('settings', ['page' => 1]) }}">Заказы</a></li>
-                          <li class="breadcrumb-item active" aria-current="page">{{$order->id}}</li>
-                        </ol>
+                          <div class="row align-items-center">
+                              <ol class="breadcrumb">
+                                  <li class="breadcrumb-item"><a href="{{ route('settings', ['page' => 1]) }}">Заказы</a></li>
+                                  <li class="breadcrumb-item active" aria-current="page">{{$order->id}}</li>
+                              </ol>
+                              <div class="col text-right">
+                                <span class="dropdown">
+                                    <button class="btn btn-lg btn-white btn-ico" id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" type="button">
+                                        <i class="icon-more-vertical"></i>
+                                    </button>
+                                    <span class="dropdown-menu dropdown-menu-padding" aria-labelledby="dropdown-1">
+                                        <form action="{{ route('orders-cancel', ['order' => $order->id]) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-lg btn-white btn-order-cancel">
+                                                Отменить
+                                            </button>
+                                        </form>
+                                    </span>
+                                </span>
+                              </div>
+                          </div>
                       </nav>
                     </div>
                   </div>

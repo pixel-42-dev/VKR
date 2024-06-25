@@ -3,7 +3,7 @@
 
     <style type="text/css">
         body > section {
-            padding-top: 7rem !important;
+            padding-top: 5.5rem !important;
         }
         body {
             background-color: #f5f5f5 !important;
@@ -137,7 +137,11 @@
                             <form method="GET" action="{{ route('listing', ['gender' => $gender]) }}">
                         @endif
                             @csrf
-                            <span class="widget-title">Фильтры <a href="" class="small text-red">clear</a></span>
+                            @if(isset($categoryNumber))
+                                <span class="widget-title">Фильтры <a href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $categoryNumber]) }}" class="small text-red">clear</a></span>
+                            @else
+                                <span class="widget-title">Фильтры <a href="{{ route('listing', ['gender' => $gender]) }}" class="small text-red">clear</a></span>
+                            @endif
                             <div class="accordion" id="accordion-1">
                                 @if($categoryCode == 1)
                                     <div class="card">
@@ -259,19 +263,25 @@
                                     <span> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</span>
                                 </li>
                                 <li>
-                                  <span>Отсортировано:
-                                      <span class="dropdown">
-                                        <a class="dropdown-toggle underline" href="#!" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          По новизне
-                                        </a>
-
-                                        <span class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                          <a class="dropdown-item" href="#!">По новизне</a>
-                                          <a class="dropdown-item" href="#!">По убыванию цены</a>
-                                          <a class="dropdown-item" href="#!">По возрастанию цены</a>
-                                          <a class="dropdown-item" href="#!">По алфавиту</a>
+                                    <span>Отсортировано:
+                                        <span class="dropdown">
+                                            <a class="dropdown-toggle underline" href="#!" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                {{ request('sort') == 'price_asc' ? 'По возрастанию цены' : (request('sort') == 'price_desc' ? 'По убыванию цены' : (request('sort') == 'alphabetical' ? 'По алфавиту' : 'По новизне')) }}
+                                            </a>
+                                            <span class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                @if(isset($categoryNumber))
+                                                    <a class="dropdown-item" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $categoryNumber, 'sort' => 'newest']) }}">По новизне</a>
+                                                    <a class="dropdown-item" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $categoryNumber, 'sort' => 'price_desc']) }}">По убыванию цены</a>
+                                                    <a class="dropdown-item" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $categoryNumber, 'sort' => 'price_asc']) }}">По возрастанию цены</a>
+                                                    <a class="dropdown-item" href="{{ route('listingCategory', ['gender' => $gender, 'categoryNumber' => $categoryNumber, 'sort' => 'alphabetical']) }}">По алфавиту</a>
+                                                @else
+                                                    <a class="dropdown-item" href="{{ route('listing', ['gender' => $gender, 'sort' => 'newest']) }}">По новизне</a>
+                                                    <a class="dropdown-item" href="{{ route('listing', ['gender' => $gender, 'sort' => 'price_desc']) }}">По убыванию цены</a>
+                                                    <a class="dropdown-item" href="{{ route('listing', ['gender' => $gender, 'sort' => 'price_asc']) }}">По возрастанию цены</a>
+                                                    <a class="dropdown-item" href="{{ route('listing', ['gender' => $gender, 'sort' => 'alphabetical']) }}">По алфавиту</a>
+                                                @endif
+                                            </span>
                                         </span>
-                                      </span>
                                     </span>
                                 </li>
                             </ul>

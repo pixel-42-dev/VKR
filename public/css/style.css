@@ -13596,3 +13596,9 @@ div.code-toolbar > .toolbar {
 .btn-order-cancel {
     width: 160px;
 }
+.padding-section {
+    background-color: white;
+}
+.hero{
+    background-color: white;
+}
