@@ -331,6 +331,8 @@ class MainController extends Controller
 
     public function listingFull($parameters)
     {
+        $title = '';
+
         switch ($parameters) {
             case 'clothes-trend':
                 $products = Product::whereHas('category', function ($query) {
@@ -368,12 +370,25 @@ class MainController extends Controller
                 })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))->paginate(15);
                 $title = "Новые аксессуары";
                 break;
+            case 'search':
+                $query = request('query');
+                $products = Product::where('name', 'like', "%{$query}%")
+                    ->orWhere('description', 'like', "%{$query}%")
+                    ->paginate(15);
+
+                if ($products->isEmpty()) {
+                    $title = "Товаров не найдено";
+                } else {
+                    $title = "Результаты поиска";
+                }
+                break;
             default:
                 dd('Неизвестный параметр: ' . $parameters);
         }
 
         return view('listing-2', compact('products', 'title'));
     }
+
 
 
 

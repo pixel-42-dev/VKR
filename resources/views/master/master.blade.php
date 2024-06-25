@@ -319,11 +319,15 @@
                             <span class="d-inline-block d-lg-none">Search</span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown-4">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="searchForm" placeholder="Поиск товаров">
-                            </div>
+                            <form action="{{ route('listing-2', ['parameters' => 'search']) }}" method="GET" class="form-inline">
+                                <div class="form-group header-search">
+                                    <input type="text" class="form-control" name="query" id="searchForm" placeholder="Поиск товаров" autocomplete="off">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Поиск</button>
+                            </form>
                         </div>
                     </li>
+
 
                     <!-- user area -->
                     <li class="nav-item dropdown dropdown-md dropdown-hover">

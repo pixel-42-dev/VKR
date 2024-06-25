@@ -11,19 +11,27 @@ class AdminController extends Controller
 {
     public function admin($page)
     {
-        if ($page == 'new') {
-            $status = 1;
-        } elseif ($page == 'confirmed') {
-            $status = 2;
-        } elseif ($page == 'sent') {
-            $status = 3;
-        } elseif ($page == 'delivered') {
-            $status = 4;
+        switch ($page) {
+            case 'new':
+                $status = 1;
+                break;
+            case 'confirmed':
+                $status = 2;
+                break;
+            case 'sent':
+                $status = 3;
+                break;
+            case 'delivered':
+                $status = 4;
+                break;
+            default:
+                abort(404);
         }
 
-        $orders = Order::all()->where('status', $status);
+        $orders = Order::where('status', $status)->paginate(10); // Укажите нужное количество элементов на страницу
         return view('admin/orders/index', compact('orders', 'page'));
     }
+
     public function confirm($orderID, Request $request)
     {
         $order = Order::findOrFail($orderID);

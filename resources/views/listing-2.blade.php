@@ -19,7 +19,10 @@
             <div class="col-md-6 text-md-right">
                 <ul class="list list--horizontal list--separated text-muted fs-14">
                     <li>
-                        <span> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</span>
+                        @if($title != "Товаров не найдено")
+                            <span> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</span>
+                        @endif
+                    </li>
                 </ul>
             </div>
         </div>
@@ -65,6 +68,10 @@
         </div>
     </div>
 </section>
+
+    @if($title == "Товаров не найдено")
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    @endif
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

@@ -54,6 +54,16 @@
                 <label for="trend">Трендовый товар</label>
                 <input type="checkbox" id="trend" name="trend" value="1" {{ $product->trend ? 'checked' : '' }}>
             </div>
+
+            <h4>Размеры товара и количество:</h4>
+
+            @foreach($sizes as $size)
+                <div class="form-group">
+                    <label class="size-label" for="current_size_{{ $size->id }}">{{$size->clothes_size}}</label>
+                    <input type="number" class="form-control" id="current_size_{{ $size->id }}" value="{{ $size->count ?? 0 }}" readonly>
+                </div>
+            @endforeach
+
             <button type="submit" class="btn btn-success admin-last-object">Сохранить</button>
         </form>
     </div>

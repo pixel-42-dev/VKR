@@ -7,7 +7,7 @@
     </style>
 
     <div class="container mt-4">
-        <h2>Пользователи</h2>
+        <h2> Пользователи {{ $users->firstItem() }} - {{ $users->lastItem() }} из {{ $users->total() }}</h2>
         <table class="table">
             <thead>
             <tr>
@@ -43,5 +43,10 @@
             @endforeach
             </tbody>
         </table>
+
+
+        <div class="d-flex justify-content-center">
+            {{ $users->links() }}
+        </div>
     </div>
 @endsection

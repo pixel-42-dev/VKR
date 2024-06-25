@@ -6,9 +6,8 @@
         }
     </style>
 
-
     <div class="container mt-4">
-        <h2>Товары</h2>
+        <h2> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</h2>
         <table class="table">
             <thead>
             <tr>
@@ -25,15 +24,15 @@
             <tbody>
             @foreach($products as $product)
                 <tr class="{{ $product->category ? '' : 'table-danger' }}">
-                    <th scope="row">{{$product->id}}</th>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->description}}</td>
-                    <td>{{$product->category['name']}}</td>
-                    <td>{{$product->brand['name']}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>{{$product->trend}}</td>
+                    <th scope="row">{{ $product->id }}</th>
+                    <td>{{ $product->name }}</td>
+                    <td>{{ $product->description }}</td>
+                    <td>{{ $product->category['name'] }}</td>
+                    <td>{{ $product->brand['name'] }}</td>
+                    <td>{{ $product->price }}</td>
+                    <td>{{ $product->trend }}</td>
                     <td>
-                        <a href="{{route('products.edit', $product)}}" class="btn btn-success">Изменить</a>
+                        <a href="{{ route('products.edit', $product) }}" class="btn btn-success">Изменить</a>
 
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display: inline-block;">
                             @csrf
@@ -46,7 +45,11 @@
             @endforeach
             </tbody>
         </table>
-        <a href="{{route('products.create')}}" class="btn btn-success" style="margin-bottom: 100px;">Добавить товар</a>
-    </div>
 
+        <div class="d-flex justify-content-center">
+            {{ $products->links() }}
+        </div>
+
+        <a href="{{ route('products.create') }}" class="btn btn-success" style="margin-bottom: 100px;">Добавить товар</a>
+    </div>
 @endsection

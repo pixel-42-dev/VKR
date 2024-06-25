@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="container mt-4">
-        <h2>Категории</h2>
+        <h2> Категории {{ $categories->firstItem() }} - {{ $categories->lastItem() }} из {{ $categories->total() }}</h2>
         <table class="table">
             <thead>
             <tr>
@@ -49,6 +49,11 @@
             @endforeach
             </tbody>
         </table>
+
+        <div class="d-flex justify-content-center">
+            {{ $categories->links() }}
+        </div>
+
         <a href="{{route('categories.create')}}" class="btn btn-success" style="margin-bottom: 100px;">Добавить категорию</a>
     </div>
 

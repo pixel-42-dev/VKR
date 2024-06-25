@@ -13632,3 +13632,6 @@ div.code-toolbar > .toolbar {
         bottom: 19rem !important;
     }
 }
+.header-search {
+    margin: 0 !important;
+}

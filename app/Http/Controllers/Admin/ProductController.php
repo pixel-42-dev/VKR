@@ -6,6 +6,7 @@ use App\Brand;
 use App\Category;
 use App\Http\Controllers\Controller;
 use App\Product;
+use App\Size;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -17,7 +18,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::get();
+        $products = Product::paginate(30);
         return view('admin/products/index', compact('products'));
     }
 
@@ -107,7 +108,9 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $brands = Brand::all();
-        return view('admin/products/create', compact('product', 'categories', 'brands'));
+        $sizes = Size::where('clothes_id', $product->id)->get();
+
+        return view('admin/products/create', compact('product', 'categories', 'brands', 'sizes'));
     }
 
     /**

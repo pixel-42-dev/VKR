@@ -21,7 +21,9 @@
 </nav>
 
 <div class="container mt-4">
-    <h2>Заказы</h2>
+    @if($orders->total() != 0)
+        <h2> Заказы {{ $orders->firstItem() }} - {{ $orders->lastItem() }} из {{ $orders->total() }}</h2>
+    @endif
     <table class="table">
         <thead>
         <tr>
@@ -80,6 +82,10 @@
             @endforeach
         </tbody>
     </table>
+
+    <div class="d-flex justify-content-center">
+        {{ $orders->links() }}
+    </div>
 </div>
 
 @endsection
