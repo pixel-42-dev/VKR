@@ -151,53 +151,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card">
-                                    <div class="card-header" id="heading-1-3">
-                                        <h5 class="mb-0">
-                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse-1-3" aria-expanded="false" aria-controls="collapse-1-3">
-                                            <span>
-                                                Отзывы (3)
-                                            </span>
-                                            </button>
-                                        </h5>
-                                    </div>
-                                    <div id="collapse-1-3" class="collapse" aria-labelledby="heading-1-3" data-parent="#accordion-1">
-                                        <div class="card-body">
-                                            <p class="text-muted fs-14">Check Cotton Shirt is rated <b class="text-dark">4.6</b> out of 5 by 3.</p>
-                                            <ul>
-                                                <li class="review">
-                                                    <div class="review_meta">
-                                                        <ul class="rating">
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star-o"></i></li>
-                                                        </ul>
-                                                        <span class="fs-12 text-uppercase text-muted ml-1">Juliet A. on may 31, 2018</span>
-                                                    </div>
-                                                    <h4 class="review_title">Love it.</h4>
-                                                    <p>Nice jacket! Fits great. Looks good. Would buy again.</p>
-                                                </li>
-                                                <li class="review">
-                                                    <div class="review_meta">
-                                                        <ul class="rating">
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star"></i></li>
-                                                            <li><i class="icon-star-o"></i></li>
-                                                        </ul>
-                                                        <span class="fs-12 text-uppercase text-muted ml-1">Juliet A. on may 31, 2018</span>
-                                                    </div>
-                                                    <h4 class="review_title">Amazing fit.</h4>
-                                                    <p>Nice jacket! Fits great. Looks good. Would buy again.</p>
-                                                </li>
-                                            </ul>
-                                            <a href="" class="underlined">Add a review</a>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

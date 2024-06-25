@@ -10,6 +10,7 @@
 // php artisan make:middleware checkIsAdmin - создаёт Middleware
 // php artisan make:controller Admin/CategoryController --resource
 // php artisan make:controller Admin/CategoryController --resource --model=Category
+// php artisan storage:link
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\BasketController;
