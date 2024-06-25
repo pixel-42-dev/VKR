@@ -50,6 +50,10 @@
                 <label for="image3">Изображение 3</label>
                 <input type="file" class="form-control" id="image3" name="image3">
             </div>
+            <div class="form-group">
+                <label for="trend">Трендовый товар</label>
+                <input type="checkbox" id="trend" name="trend" value="1" {{ $product->trend ? 'checked' : '' }}>
+            </div>
             <button type="submit" class="btn btn-success admin-last-object">Сохранить</button>
         </form>
     </div>
@@ -103,10 +107,13 @@
                 <label for="image3">Изображение 3</label>
                 <input type="file" class="form-control" id="image3" name="image3">
             </div>
+            <div class="form-group">
+                <label for="trend">Трендовый товар</label>
+                <input type="checkbox" id="trend" name="trend" value="1">
+            </div>
             <button type="submit" class="btn btn-success admin-last-object">Добавить товар</button>
         </form>
     </div>
-
 
     @endisset
 @endsection

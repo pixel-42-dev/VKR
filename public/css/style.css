@@ -13505,6 +13505,9 @@ div.code-toolbar > .toolbar {
     .icon-cross-container {
         margin-right: 2.5rem;
     }
+    .owl-next {
+        margin-right: 4rem !important;
+    }
 }
 .home-favorive-images {
     width: 340px;
@@ -13601,4 +13604,10 @@ div.code-toolbar > .toolbar {
 }
 .hero{
     background-color: white;
+}
+.badge-position-absolute {
+    position: absolute !important;
+    bottom: 20rem !important;
+    background-color: red !important;
+    color: white !important;
 }

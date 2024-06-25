@@ -307,6 +307,14 @@
                                                 <img class="product-image-size" src="{{ asset('images/demo/product-6.jpg') }}" alt="Default Image">
                                             @endif
                                         </a>
+                                        @if(!is_null($product->created_at))
+                                            @if($product->created_at->gt(\Carbon\Carbon::now()->subDays(10)))
+                                                <span class="badge badge-success">New</span>
+                                            @endif
+                                        @endif
+                                        @if($product->trend)
+                                            <span class="badge badge-warning badge-position-absolute">Trending</span>
+                                        @endif
                                     </figure>
                                     <div class="card-footer">
                                         <h3 class="card-title"><a href="{{ route('product', ['number' => $product->id]) }}">{{ $product->name }}</a></h3>

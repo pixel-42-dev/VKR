@@ -9,7 +9,7 @@ class Product extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['name', 'description', 'categoryID', 'BrandID', 'image1', 'image2', 'image3', 'price'];
+    protected $fillable = ['name', 'description', 'categoryID', 'BrandID', 'image1', 'image2', 'image3', 'price', 'new', 'trend'];
     protected $dates = ['deleted_at'];
 
     public function brand()
@@ -37,5 +37,11 @@ class Product extends Model
     {
         return $this->belongsToMany(User::class, 'favorites', 'product_id', 'user_id')
             ->withTimestamps();
+    }
+    public function isNew() {
+        return $this->new === 1;
+    }
+    public function isTrend() {
+        return $this->trend === 1;
     }
 }

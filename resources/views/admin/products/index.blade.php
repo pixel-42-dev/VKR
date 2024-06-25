@@ -18,6 +18,7 @@
                 <th scope="col">Категория</th>
                 <th scope="col">Брэнд</th>
                 <th scope="col">Цена</th>
+                <th scope="col">Trend</th>
                 <th scope="col" style="min-width: 447px;">Действия</th>
             </tr>
             </thead>
@@ -30,6 +31,7 @@
                     <td>{{$product->category['name']}}</td>
                     <td>{{$product->brand['name']}}</td>
                     <td>{{$product->price}}</td>
+                    <td>{{$product->trend}}</td>
                     <td>
                         <a href="{{route('products.edit', $product)}}" class="btn btn-success">Изменить</a>
 
