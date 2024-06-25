@@ -80,7 +80,17 @@
                             <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Отправлено</a>
                         @elseif($page == 'sent')
                             <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Завершить</a>
+                            <form action="{{route('orders.destroy', $order)}}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите отменить заказз?')">Отменить</button>
+                            </form>
                         @elseif($page == 'delivered')
+                            <form action="{{route('orders.destroy', $order)}}" method="POST" style="display:inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите отменить заказз?')">Отменить</button>
+                            </form>
                         @endif
                     </td>
                 </tr>

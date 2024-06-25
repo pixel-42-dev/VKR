@@ -52,6 +52,19 @@
                                         <h2>Заказы</h2>
                                     </div>
                                 </div>
+                                <div>
+                                    @if(session('success'))
+                                        <div class="alert alert-success">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+
+                                    @if(session('error'))
+                                        <div class="alert alert-danger">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
+                                </div>
                                 <div class="row gutter-2">
                                     @foreach($orders as $order)
                                         <div class="col-12">

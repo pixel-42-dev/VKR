@@ -553,11 +553,7 @@
             </div>
         </div>
     </div>
-
-
 </footer>
-
-
 
 <script src="{{ asset('js/vendor.min.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>

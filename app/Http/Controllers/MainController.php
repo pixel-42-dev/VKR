@@ -317,31 +317,43 @@ class MainController extends Controller
 
     public function deleteOrder(Order $order)
     {
-        if (Auth::id() == $order->userID && in_array($order->status, [1, 2])) {
-            // Получаем список продуктов и их размеров по orderID
-            $orderProducts = \App\OrderProduct::where('orderID', $order->id)->get();
+        if (Auth::id() == $order->userID) {
+            if (in_array($order->status, [1, 2])) {
+                // Получаем список продуктов и их размеров по orderID
+                $orderProducts = \App\OrderProduct::where('orderID', $order->id)->get();
 
-            // Список продуктов и их размеров в $orderProducts
-            foreach ($orderProducts as $orderProduct) {
-                $productID = $orderProduct->productID;
-                $size = $orderProduct->size;
+                // Список продуктов и их размеров в $orderProducts
+                foreach ($orderProducts as $orderProduct) {
+                    $productID = $orderProduct->productID;
+                    $size = $orderProduct->size;
 
-                // Логика по увеличению количества продуктов в таблице sizes
-                $sizeRecord = Size::where('clothes_id', $productID)
-                    ->where('clothes_size', $size)
-                    ->first();
+                    // Логика по увеличению количества продуктов в таблице sizes
+                    $sizeRecord = Size::where('clothes_id', $productID)
+                        ->where('clothes_size', $size)
+                        ->first();
 
-                if ($sizeRecord) {
-                    $sizeRecord->count++;
-                    $sizeRecord->save();
+                    if ($sizeRecord) {
+                        $sizeRecord->count++;
+                        $sizeRecord->save();
+                    }
                 }
-            }
 
-            $order->delete();
+                $order->delete();
+
+                // Устанавливаем успешное сообщение об отмене заказа
+                session()->flash('success', 'Заказ успешно отменен.');
+            } else {
+                // Устанавливаем сообщение о невозможности отмены заказа
+                session()->flash('error', 'Заказ не может быть отменен.');
+            }
+        } else {
+            // Устанавливаем сообщение о невозможности отмены заказа
+            session()->flash('error', 'У вас нет прав для отмены этого заказа.');
         }
 
         return redirect()->route('settings', ['page' => 1]);
     }
+
 
     public function listingFull($parameters)
     {
