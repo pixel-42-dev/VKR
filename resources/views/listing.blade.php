@@ -259,19 +259,20 @@
                                     <span> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</span>
                                 </li>
                                 <li>
-                      <span>Отсортировано по:
-                      <span class="dropdown">
-                        <a class="dropdown-toggle underline" href="#!" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Самые популярные
-                        </a>
+                                  <span>Отсортировано:
+                                      <span class="dropdown">
+                                        <a class="dropdown-toggle underline" href="#!" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                          По новизне
+                                        </a>
 
-                        <span class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                          <a class="dropdown-item" href="#!">Action</a>
-                          <a class="dropdown-item" href="#!">Another action</a>
-                          <a class="dropdown-item" href="#!">Something else here</a>
-                        </span>
-                      </span>
-                    </span>
+                                        <span class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <a class="dropdown-item" href="#!">По новизне</a>
+                                          <a class="dropdown-item" href="#!">По убыванию цены</a>
+                                          <a class="dropdown-item" href="#!">По возрастанию цены</a>
+                                          <a class="dropdown-item" href="#!">По алфавиту</a>
+                                        </span>
+                                      </span>
+                                    </span>
                                 </li>
                             </ul>
                         </div>
