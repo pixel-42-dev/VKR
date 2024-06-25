@@ -73,11 +73,11 @@
                 <aside class="col-lg-4">
                     <div class="bg-white p-2 p-lg-3">
                         <h2 class="mb-3 text-uppercase fs-20">Итого</h2>
-                        <div class="input-combined mb-2">
-                            <input type="text" class="form-control" placeholder="Промокод" aria-label="Promo code" aria-describedby="button-addon2">
-                            <button class="btn btn-white" type="button" id="button-addon2">Применить</button>
-                            <span class="input-combined_indicator"></span>
-                        </div>
+{{--                        <div class="input-combined mb-2">--}}
+{{--                            <input type="text" class="form-control" placeholder="Промокод" aria-label="Promo code" aria-describedby="button-addon2">--}}
+{{--                            <button class="btn btn-white" type="button" id="button-addon2">Применить</button>--}}
+{{--                            <span class="input-combined_indicator"></span>--}}
+{{--                        </div>--}}
                         <ul class="list-group list-group-minimal mb-3">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 Товары
@@ -97,6 +97,11 @@
                                 <span>{{$final}} ₽</span>
                             </li>
                         </ul>
+                        @if (session('error'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ session('error') }}
+                            </div>
+                        @endif
                         <a href="{{route('checkout')}}" class="btn btn-primary btn-block">Оформить заказ</a>
                     </div>
                 </aside>

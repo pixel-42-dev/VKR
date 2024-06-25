@@ -127,9 +127,9 @@
                                                     </div>
                                                 </fieldset>
                                             </div>
-                                            <div class="col-12 text-center">
-                                                <a href="" class="underline fs-14">Забыли пароль ?</a>
-                                            </div>
+{{--                                            <div class="col-12 text-center">--}}
+{{--                                                <a href="" class="underline fs-14">Забыли пароль ?</a>--}}
+{{--                                            </div>--}}
                                             <div class="col-12">
                                                 <button type="submit" class="btn btn-primary btn-block">Войти</button>
                                             </div>

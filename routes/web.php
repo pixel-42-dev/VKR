@@ -50,7 +50,6 @@ Route::group(['middleware' => 'backet_not_empty'], function () {
     Route::get('/cart', [BasketController::class, 'cart'])->name('cart');
     Route::get('/checkout', [BasketController::class, 'checkout'])->name('checkout');
     Route::post('/basket/remove/{id}', [BasketController::class, 'basketRemove'])->name('basketRemove');
-    Route::post('/addproduct/{product}', [AdminController::class, 'addPost'])->name('addPost');
 });
 
 // AdminController
@@ -58,6 +57,7 @@ Route::group(['middleware' => ['auth', 'is_admin']], function () {
     Route::get('/admin/{page}', [AdminController::class, 'admin'])->name('admin');
     Route::get('/order/confirm/{orderID}', [AdminController::class, 'confirm'])->name('order-confirm');
     Route::get('/addproduct/{product_id}', [AdminController::class, 'productsAdd'])->name('products-add');
+    Route::post('/addproduct/{product}', [AdminController::class, 'addPost'])->name('addPost');
 });
 
 // Admin\ResourceController

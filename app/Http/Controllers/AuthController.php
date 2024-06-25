@@ -14,11 +14,17 @@ class AuthController extends Controller
         $credentials = $request->only('nickname', 'password');
 
         if (Auth::attempt(['nickname' => $credentials['nickname'], 'password' => $credentials['password']])) {
+            $user = Auth::user(); // Получаем текущего пользователя
+
+            // Сохраняем сообщение в сессии
+            $request->session()->flash('success', 'Вы вошли как ' . $user->nickname);
+
             return redirect()->route('index');
         }
 
         return back()->with('error', 'Неверный логин или пароль.');
     }
+
     public function register(Request $request)
     {
         $request->validate([

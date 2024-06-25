@@ -3,8 +3,15 @@
 
     <!-- swiper -->
     <div class="swiper-container">
+        @if(session('success'))
+            <div class="alert alert-success alert-dismissible fade show alert-index-auth" role="alert">
+                {{ session('success') }}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
       <div class="swiper-wrapper">
-
         <div class="swiper-slide">
           <div class="image" style="background-image:url({{ asset('images/demo/background-2.jpg') }})"></div>
 
@@ -18,7 +25,6 @@
             </div>
           </div>
         </div>
-
         <div class="swiper-slide">
           <div class="image image--overlay" style="background-image:url({{ asset('images/demo/background-1.jpg') }})"></div>
           <div class="container">
@@ -47,6 +53,7 @@
         </div>
       </div>
     </div>
+
 
 
     <!-- categories -->
@@ -82,7 +89,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- carousel -->
     <section class="py-lg-0 no-overflow">

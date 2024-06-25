@@ -25,6 +25,11 @@ class BasketController extends Controller
         if (!is_null($orderID)) {
             $order = Order::findOrFail($orderID);
         }
+
+        if ($order->calculatePrice() < 1000) {
+            return redirect()->back()->with('error', 'Минимальная сумма заказа составляет 1000 рублей.');
+        }
+
         return view('checkout', compact('order'));
     }
 
@@ -70,7 +75,6 @@ class BasketController extends Controller
             }
         }
 
-        // Clear the orderID from session
         session()->forget('orderID');
         session()->forget('sizes');
 
