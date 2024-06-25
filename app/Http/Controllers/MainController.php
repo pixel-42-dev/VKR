@@ -74,7 +74,6 @@ class MainController extends Controller
         return view('product', compact('product', 'isInCart', 'sizes'));
     }
 
-
     public function listing(Request $request, $gender) {
 
         // Выборка категорий в зависимости от пола
@@ -100,6 +99,11 @@ class MainController extends Controller
         } else {
             dd('Такой пол не существует');
         }
+
+        // Фильтр по наличию на складе
+        $productsQuery->whereHas('sizes', function($query) {
+            $query->where('count', '>', 0);
+        });
 
         // Применяем фильтры по размеру
         if ($request->has('sizes')) {
@@ -161,6 +165,7 @@ class MainController extends Controller
 
 
 
+
     public function listingCategory(Request $request, $gender, $categoryNumber) {
 
         // Получаем код категории
@@ -188,6 +193,11 @@ class MainController extends Controller
 
         // Формируем запрос к продуктам с учетом фильтров
         $productsQuery = Product::with('brand')->where('categoryID', $categoryNumber);
+
+        // Фильтр по наличию на складе
+        $productsQuery->whereHas('sizes', function($query) {
+            $query->where('count', '>', 0);
+        });
 
         // Применяем фильтры по размеру
         if ($request->has('sizes')) {
@@ -341,44 +351,64 @@ class MainController extends Controller
             case 'clothes-trend':
                 $products = Product::whereHas('category', function ($query) {
                     $query->where('code', 1); // Одежда
-                })->where('trend', 1)->paginate(15);
+                })->where('trend', 1)
+                    ->whereHas('sizes', function($query) {
+                        $query->where('count', '>', 0);
+                    })->paginate(15);
                 $title = "Одежда в тренде";
                 break;
             case 'clothes-new':
                 $products = Product::whereHas('category', function ($query) {
                     $query->where('code', 1); // Одежда
-                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))->paginate(15);
+                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))
+                    ->whereHas('sizes', function($query) {
+                        $query->where('count', '>', 0);
+                    })->paginate(15);
                 $title = "Новая одежда";
                 break;
             case 'shoes-trend':
                 $products = Product::whereHas('category', function ($query) {
                     $query->where('code', 2); // Обувь
-                })->where('trend', 1)->paginate(15);
+                })->where('trend', 1)
+                    ->whereHas('sizes', function($query) {
+                        $query->where('count', '>', 0);
+                    })->paginate(15);
                 $title = "Обувь в тренде";
                 break;
             case 'shoes-new':
                 $products = Product::whereHas('category', function ($query) {
                     $query->where('code', 2); // Обувь
-                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))->paginate(15);
+                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))
+                    ->whereHas('sizes', function($query) {
+                        $query->where('count', '>', 0);
+                    })->paginate(15);
                 $title = "Новая обувь";
                 break;
             case 'accessories-trend':
                 $products = Product::whereHas('category', function ($query) {
                     $query->where('code', 3); // Аксессуары
-                })->where('trend', 1)->paginate(15);
+                })->where('trend', 1)
+                    ->whereHas('sizes', function($query) {
+                        $query->where('count', '>', 0);
+                    })->paginate(15);
                 $title = "Аксессуары в тренде";
                 break;
             case 'accessories-new':
                 $products = Product::whereHas('category', function ($query) {
                     $query->where('code', 3); // Аксессуары
-                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))->paginate(15);
+                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))
+                    ->whereHas('sizes', function($query) {
+                        $query->where('count', '>', 0);
+                    })->paginate(15);
                 $title = "Новые аксессуары";
                 break;
             case 'search':
                 $query = request('query');
                 $products = Product::where('name', 'like', "%{$query}%")
                     ->orWhere('description', 'like', "%{$query}%")
-                    ->paginate(15);
+                    ->whereHas('sizes', function($query) {
+                        $query->where('count', '>', 0);
+                    })->paginate(15);
 
                 if ($products->isEmpty()) {
                     $title = "Товаров не найдено";
@@ -392,6 +422,7 @@ class MainController extends Controller
 
         return view('listing-2', compact('products', 'title'));
     }
+
 
 
 

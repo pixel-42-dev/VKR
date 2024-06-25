@@ -69,7 +69,7 @@
     </div>
 </section>
 
-    @if($title == "Товаров не найдено")
+    @if($products->total() == 0)
         <br><br><br><br><br><br><br><br><br><br><br><br><br>
     @endif
 
