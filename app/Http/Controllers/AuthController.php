@@ -28,9 +28,9 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $request->validate([
-            'nickname' => 'required|string|unique:users|max:255',
-            'email' => 'required|string|unique:users|email|max:255',
-            'password' => 'required|string|min:8|confirmed',
+            'nickname' => 'required|string|unique:users|min:6|max:16',
+            'email' => 'required|string|unique:users|email|max:64',
+            'password' => 'required|string|min:8|max:16|confirmed|regex:/^(?=.*\d)/',
             'terms' => 'accepted',
         ]);
 
@@ -53,12 +53,12 @@ class AuthController extends Controller
     public function update(Request $request)
     {
         $validatedData = $request->validate([
-            'nickname' => 'required|string|max:255',
-            'name' => 'required|string|max:255',
-            'surname' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255',
-            'phone' => 'required|string|max:255',
-            'address' => 'required|string|max:255',
+            'nickname' => 'required|string|min:6|max:16',
+            'name' => 'required|string|min:2|max:16',
+            'surname' => 'required|string|min:2|max:16',
+            'email' => 'required|string|email|max:64',
+            'phone' => 'required|string|min:6|max:64',
+            'address' => 'required|string|max:64',
         ]);
 
         $user = Auth::user();
@@ -71,6 +71,29 @@ class AuthController extends Controller
         $user->address = $validatedData['address'];
         $user->save();
 
-        return redirect()->route('settings', ['page' => 3]);
+        return redirect()->route('settings', ['page' => 3])->with('success', 'Изменения сохранены успешно.');
     }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|string|min:8|max:16|confirmed|regex:/^(?=.*\d)/',
+        ]);
+
+        $user = Auth::user();
+
+        // Проверка текущего пароля
+        if (!Hash::check($request->current_password, $user->password)) {
+            return redirect()->route('settings', ['page' => 4])->withInput()->withErrors(['current_password' => 'Текущий пароль указан неверно.']);
+        }
+
+        // Обновление пароля
+        $user->password = Hash::make($request->new_password);
+        $user->save();
+
+        return redirect()->route('settings', ['page' => 4])->with('success', 'Пароль успешно изменён.');
+    }
+
+
 }

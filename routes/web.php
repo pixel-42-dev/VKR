@@ -42,6 +42,7 @@ Route::post('/login', [AuthController::class, 'login'])->name('loginPost');
 Route::post('/register', [AuthController::class, 'register'])->name('registerPost');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logoutrPost');
 Route::post('/account-update', [AuthController::class, 'update'])->name('account-update');
+Route::post('/change-password', [AuthController::class, 'changePassword'])->name('changePassword')->middleware('auth');
 
 // BasketController
 Route::post('/basket/add/{id}', [BasketController::class, 'basketAdd'])->name('basketAdd');

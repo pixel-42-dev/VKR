@@ -8,6 +8,11 @@
 
     <div class="container mt-4">
         <h2> Пользователи {{ $users->firstItem() }} - {{ $users->lastItem() }} из {{ $users->total() }}</h2>
+        @if (session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
+            </div>
+        @endif
         <table class="table">
             <thead>
             <tr>
@@ -36,8 +41,9 @@
                         <form action="{{ route('users.destroy', $user) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Удалить</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите удалить пользователя?')">Удалить</button>
                         </form>
+
                     </td>
                 </tr>
             @endforeach
@@ -49,4 +55,5 @@
             {{ $users->links() }}
         </div>
     </div>
+
 @endsection

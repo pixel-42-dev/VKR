@@ -8,6 +8,11 @@
 
     <div class="container mt-4">
         <h2> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</h2>
+        @if (session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
+            </div>
+        @endif
         <table class="table">
             <thead>
             <tr>
@@ -33,11 +38,10 @@
                     <td>{{ $product->trend }}</td>
                     <td>
                         <a href="{{ route('products.edit', $product) }}" class="btn btn-success">Изменить</a>
-
                         <form action="{{ route('products.destroy', $product) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Удалить</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите удалить товар?')">Удалить</button>
                         </form>
                         <a href="{{ route('products-add', ['product_id' => $product->id]) }}" class="btn btn-primary">Поступления</a>
                     </td>

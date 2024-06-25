@@ -42,9 +42,9 @@ class BasketController extends Controller
         }
 
         $request->validate([
-            'name' => 'required|string',
-            'phone' => 'required|string',
-            'address' => 'required|string',
+            'name' => 'required|string|min:2|max:32',
+            'phone' => 'required|string|min:6|max:64',
+            'address' => 'required|string|max:64',
         ]);
 
         $userData = [
@@ -80,9 +80,10 @@ class BasketController extends Controller
 
         // Redirect to order details page
         if (Auth::check()) {
-            return redirect()->route('order-details', ['id' => $orderID]);
+            return redirect()->route('order-details', ['id' => $orderID])->with('success', 'Заказ успешно оформлен.');
         }
-        return redirect()->route('index');
+
+        return redirect()->route('index')->with('success', 'Заказ успешно оформлен.');
     }
 
 

@@ -3,6 +3,11 @@
 
     <div class="container mt-4">
         <h2> Категории {{ $categories->firstItem() }} - {{ $categories->lastItem() }} из {{ $categories->total() }}</h2>
+        @if (session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
+            </div>
+        @endif
         <table class="table">
             <thead>
             <tr>
@@ -42,7 +47,7 @@
                         <form action="{{ route('categories.destroy', $category) }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger">Удалить</button>
+                            <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите удалить категорию?')">Удалить</button>
                         </form>
                     </td>
                 </tr>

@@ -61,12 +61,13 @@ class OrderController extends Controller
      */
     public function update(Request $request, Order $order)
     {
-        $params = $request->except(['_token', '_method']);
+        $params = $request->validate([
+            'status' => 'required|integer|in:1,2,3,4',
+        ]);
 
         $order->update($params);
-        $order->save();
 
-        return redirect()->route('admin', ['page' => 'new']);
+        return redirect()->route('admin', ['page' => 'new'])->with('success', 'Заказ успешно обновлен.');
     }
 
     /**
@@ -101,7 +102,7 @@ class OrderController extends Controller
         // Удаляем заказ
         $order->delete();
 
-        return redirect()->route('admin', ['page' => 'new']);
+        return redirect()->route('admin', ['page' => 'new'])->with('success', 'Заказ успешно отменён.');
     }
 
 }

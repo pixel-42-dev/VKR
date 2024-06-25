@@ -24,6 +24,11 @@
     @if($orders->total() != 0)
         <h2> Заказы {{ $orders->firstItem() }} - {{ $orders->lastItem() }} из {{ $orders->total() }}</h2>
     @endif
+        @if (session('success'))
+            <div class="alert alert-success mt-3">
+                {{ session('success') }}
+            </div>
+        @endif
     <table class="table">
         <thead>
         <tr>
@@ -63,14 +68,14 @@
                             <form action="{{route('orders.destroy', $order)}}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Отменить</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите отменить заказз?')">Отменить</button>
                             </form>
                             <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Подтвердить</a>
                         @elseif($page == 'confirmed')
                             <form action="{{route('orders.destroy', $order)}}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Отменить</button>
+                                <button type="submit" class="btn btn-danger" onclick="return confirm('Вы уверены, что хотите отменить заказз?')">Отменить</button>
                             </form>
                             <a href="{{ route('order-confirm', ['orderID' => $order->id, 'page' => $page]) }}" class="btn btn-primary">Отправлено</a>
                         @elseif($page == 'sent')

@@ -182,30 +182,46 @@
                                         <h2>Личные данные</h2>
                                     </div>
                                 </div>
+
+                                @if (session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
                                 <form action="{{ route('account-update') }}" method="POST">
                                     @csrf
                                     <fieldset class="mb-2">
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-label-group">
-                                                    <input type="text" id="inputName2" class="form-control form-control-lg" placeholder="nickname" name="nickname" required value="{{ Auth::user()->nickname }}">
+                                                    <input type="text" id="inputName2" class="form-control form-control-lg @error('nickname') is-invalid @enderror" placeholder="Никнейм" name="nickname" required value="{{ old('nickname', Auth::user()->nickname) }}">
                                                     <label for="inputName2">Никнейм</label>
+                                                    @error('nickname')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-label-group">
-                                                    <input type="text" id="inputName3" class="form-control form-control-lg" placeholder="Имя" name="name" required value="{{ Auth::user()->name }}">
+                                                    <input type="text" id="inputName3" class="form-control form-control-lg @error('name') is-invalid @enderror" placeholder="Имя" name="name" required value="{{ old('name', Auth::user()->name) }}">
                                                     <label for="inputName3">Имя</label>
+                                                    @error('name')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-label-group">
-                                                    <input type="text" id="surname2" class="form-control form-control-lg" placeholder="Фамилия" name="surname" required value="{{ Auth::user()->surname }}">
+                                                    <input type="text" id="surname2" class="form-control form-control-lg @error('surname') is-invalid @enderror" placeholder="Фамилия" name="surname" required value="{{ old('surname', Auth::user()->surname) }}">
                                                     <label for="surname2">Фамилия</label>
+                                                    @error('surname')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
@@ -215,8 +231,11 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-label-group">
-                                                    <input type="address" id="inputAddress" class="form-control form-control-lg" placeholder="Адрес" name="address" required value="{{ Auth::user()->address }}">
+                                                    <input type="text" id="inputAddress" class="form-control form-control-lg @error('address') is-invalid @enderror" placeholder="Адрес" name="address" required value="{{ old('address', Auth::user()->address) }}">
                                                     <label for="inputAddress">Адрес</label>
+                                                    @error('address')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
@@ -226,16 +245,22 @@
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-label-group">
-                                                    <input type="email" id="inputEmail" class="form-control form-control-lg" placeholder="Почта" name="email" required value="{{ Auth::user()->email }}">
+                                                    <input type="email" id="inputEmail" class="form-control form-control-lg @error('email') is-invalid @enderror" placeholder="Почта" name="email" required value="{{ old('email', Auth::user()->email) }}">
                                                     <label for="inputEmail">Почта</label>
+                                                    @error('email')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="row">
                                             <div class="col-12">
                                                 <div class="form-label-group">
-                                                    <input type="text" id="mobilePhone" class="form-control form-control-lg" placeholder="Мобильный телефон" name="phone" required value="{{ Auth::user()->phone }}">
+                                                    <input type="text" id="mobilePhone" class="form-control form-control-lg @error('phone') is-invalid @enderror" placeholder="Мобильный телефон" name="phone" required value="{{ old('phone', Auth::user()->phone) }}">
                                                     <label for="mobilePhone">Мобильный телефон</label>
+                                                    @error('phone')
+                                                    <div class="invalid-feedback">{{ $message }}</div>
+                                                    @enderror
                                                 </div>
                                             </div>
                                         </div>
@@ -248,39 +273,69 @@
                                 </form>
                             </div>
 
+
                             <!-- change password -->
                             <div class="tab-pane {{ $page == 4 ? 'show active' : 'fade' }}" id="sidebar-1-4" role="tabpanel" aria-labelledby="sidebar-1-4">
                                 <div class="row">
                                     <div class="col">
-                                        <h2>Change Password</h2>
+                                        <h2>Сменить пароль</h2>
                                     </div>
                                 </div>
 
-                                <fieldset class="mb-2">
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-label-group">
-                                                <input type="password" id="inputPassword" class="form-control form-control-lg" placeholder="Current Password" required="" value="$120-N<>&^9">
-                                                <label for="inputPassword">Current Password</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-label-group">
-                                                <input type="password" id="inputPassword2" class="form-control form-control-lg" placeholder="New Password" required="">
-                                                <label for="inputPassword2">New Password</label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </fieldset>
 
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="" class="btn btn-primary">Save Password</a>
+                                <form method="POST" action="{{ route('changePassword') }}">
+                                    @csrf
+                                    @if(session('success'))
+                                        <div class="alert alert-success mb-3">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger mb-3">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
+
+                                    <fieldset class="mb-2">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-label-group">
+                                                    <input type="password" id="currentPassword" name="current_password" class="form-control form-control-lg" placeholder="Текущий пароль" required>
+                                                    <label for="currentPassword">Текущий пароль</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-label-group">
+                                                    <input type="password" id="newPassword" name="new_password" class="form-control form-control-lg" placeholder="Новый пароль" required>
+                                                    <label for="newPassword">Новый пароль</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-label-group">
+                                                    <input type="password" id="confirmNewPassword" name="new_password_confirmation" class="form-control form-control-lg" placeholder="Подтвердите новый пароль" required>
+                                                    <label for="confirmNewPassword">Подтвердите новый пароль</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <button type="submit" class="btn btn-primary">Сохранить</button>
+                                        </div>
                                     </div>
-                                </div>
+                                </form>
                             </div>
+
                         </div>
                     </div>
                 </div>

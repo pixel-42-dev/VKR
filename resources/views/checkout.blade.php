@@ -25,13 +25,12 @@
             </div>
             <div class="row gutter-1">
                 <div class="col">
-                    <!-- address -->
                     <form action="{{ route('basketConfirm') }}" method="POST">
                         @csrf
                         <div class="bg-white p-2 p-lg-3 mb-1">
                             <div class="row gutter-1 align-items-center">
                                 <div class="col-md-6">
-                                    <h2 class="text-uppercase fs-20">Адрес доставки</h2>
+                                    <h2 class="text-uppercase fs-20">Информация для доставки</h2>
                                 </div>
                             </div>
 
@@ -42,6 +41,9 @@
                                             <input type="text" id="inputName2" name="name" class="form-control form-control-lg" placeholder="Name" required="" value="{{ Auth::check() ? Auth::user()->name : '' }}">
                                             <label for="inputName2">Имя</label>
                                         </div>
+                                        @error('name')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                                 <div class="row">
@@ -50,6 +52,9 @@
                                             <input type="text" id="inputPhone" name="phone" class="form-control form-control-lg" placeholder="телефон" required="" value="{{ Auth::check() ? Auth::user()->phone : '' }}">
                                             <label for="phone">Телефон</label>
                                         </div>
+                                        @error('phone')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                             </fieldset>
@@ -61,6 +66,9 @@
                                             <input type="text" id="inputAddress" name="address" class="form-control form-control-lg" placeholder="Address" required="" value="{{ Auth::check() ? Auth::user()->address : '' }}">
                                             <label for="inputAddress">Адрес</label>
                                         </div>
+                                        @error('address')
+                                        <div class="alert alert-danger">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
                             </fieldset>

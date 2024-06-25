@@ -31,7 +31,7 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $brands = Brand::all();
-        return view('admin.products.create', compact('categories', 'brands'));
+        return view('admin.products.create', compact('categories', 'brands'))->with('success', 'Товар успешно создан.');
     }
 
 
@@ -82,7 +82,7 @@ class ProductController extends Controller
             ]);
         }
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success', 'Товар успешно создан.');
     }
 
 
@@ -144,7 +144,7 @@ class ProductController extends Controller
         // Сохранение изменений
         $product->save();
 
-        return redirect()->route('products.index');
+        return redirect()->route('products.index')->with('success', 'Товар успешно обновлен.');
     }
 
 
