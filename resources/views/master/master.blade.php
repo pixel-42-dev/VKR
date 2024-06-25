@@ -493,19 +493,16 @@
                     <div class="col">
                         <h4 class="eyebrow mb-1">Компания</h4>
                         <ul class="menu-list">
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Наша история</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Контакты</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Товары</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">О нас</a></li>
+                            <li class="menu-list-item"><a href="{{ route('about') }}" class="menu-list-link">Наша история</a></li>
+                            <li class="menu-list-item"><a href="{{ route('contact') }}" class="menu-list-link">Контакты</a></li>
+                            <li class="menu-list-item"><a href="{{ route('listing', ['gender' => 'all']) }}" class="menu-list-link">Товары</a></li>
+                            <li class="menu-list-item"><a href="{{ route('about') }}" class="menu-list-link">О нас</a></li>
                         </ul>
                     </div>
                     <div class="col">
                         <h4 class="eyebrow mb-1">Помощь</h4>
                         <ul class="menu-list">
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Оплата</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Возвраты</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">Доставка</a></li>
-                            <li class="menu-list-item"><a href="" class="menu-list-link">FAQ</a></li>
+                            <li class="menu-list-item"><a href="{{ route('FAQ') }}" class="menu-list-link">FAQ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -513,47 +510,32 @@
 
             <!-- subscribe -->
             <div class="order-2 order-md-3 order-lg-2 col-md-8 col-lg-4">
-                <h4 class="eyebrow mb-1">Подписка на новости</h4>
+                <h4 class="eyebrow mb-1">Контакты</h4>
                 <div class="input-combined mb-2">
-                    <input type="text" class="form-control" placeholder="Ваша почта" aria-label="Ваша почта" aria-describedby="button-addon2">
-                    <button class="btn btn-white" type="button" id="button-addon2">Подписаться</button>
-                    <span class="input-combined_indicator"></span>
+                    <p><a href="mailto:vadim.tkachev.42@gmail.com">vadim.tkachev.42@gmail.com</a></p>
                 </div>
-                <ul class="list list--horizontal">
-                    <li><a href="#!" class="text-hover-facebook"><i class="fs-28 icon-facebook-square-brands"></i></a></li>
-                    <li><a href="#!" class="text-hover-instagram"><i class="fs-28 icon-instagram-square-brands"></i></a></li>
-                    <li><a href="#!" class="text-hover-twitter"><i class="fs-28 icon-twitter-square-brands"></i></a></li>
-                    <li><a href="#!" class="text-hover-pinterest"><i class="fs-28 icon-pinterest-square-brands"></i></a></li>
-                </ul>
+                <div class="input-combined mb-2">
+                    <p><a href="tel:+79308228784">+7-930-822-87-84</a></p>
+                </div>
             </div>
 
-            <!-- settings -->
-            <div class="order-3 order-md-2 order-lg-3 col-md-4 col-lg-3">
-                <h4 class="eyebrow mb-1">Регион и валюта</h4>
-                <div class="select-frame mb-2">
-                    <select class="custom-select custom-select-lg mb-2" id="countrySelect2">
-                        <option value="1">Россия</option>
-                        <option value="2">Germany</option>
-                        <option value="3">France</option>
-                    </select>
-                </div>
-                <div class="select-frame">
-                    <select class="custom-select custom-select-lg" id="curencySelect2">
-                        <option value="1">RUB</option>
-                        <option value="2">EUR</option>
-                        <option value="3">RUB</option>
-                    </select>
-                </div>
-                <ul class="list list--horizontal mt-2">
-                    <li><img src="{{ asset('images/demo/visa-1.svg') }}" class="payment" alt="Image"></li>
-                    <li><img src="{{ asset('images/demo/master-card-1.svg') }}" class="payment" alt="Image"></li>
-                    <li><img src="{{ asset('images/demo/amex-1.svg') }}" class="payment" alt="Image"></li>
-
+            <div class="order-2 order-md-3 order-lg-2 col-md-8 col-lg-4">
+                <h4 class="eyebrow mb-1">Шоппинг</h4>
+                <ul class="menu-list">
+                    <li class="menu-list-item"><a href="{{ route('about') }}" class="menu-list-link">Корзина</a></li>
+                    <li class="menu-list-item"><a href="{{ route('contact') }}" class="menu-list-link">Ваши заказы</a></li>
+                    <li class="menu-list-item"><a href="{{ route('listing', ['gender' => 'all']) }}" class="menu-list-link">Избранное</a></li>
+                    <li class="menu-list-item"><a href="{{ route('about') }}" class="menu-list-link">Профиль</a></li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <div class="container text-center py-3">
+        <p class="mb-0">&copy;2024 All rights reserved</p>
+    </div>
 </footer>
+
 
 <script src="{{ asset('js/vendor.min.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
