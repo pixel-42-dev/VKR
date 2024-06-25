@@ -26,16 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-//        $categories1 = Categoty::where('code', 1)->get();
-//        $categories2 = Categoty::where('code', 2)->get();
-//        $categories3 = Categoty::where('code', 3)->get();
-//
-//        $categories = [
-//            'categories1' => $categories1,
-//            'categories2' => $categories2,
-//            'categories3' => $categories3,
-//        ];
-//
-//        View::share('categories', $categories);
+
     }
 }
