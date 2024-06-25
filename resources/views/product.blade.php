@@ -85,18 +85,6 @@
                     <div class="row gutter-2">
 
                         @if($isInCart)
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label>Размер</label>
-                                    <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
-                                        @foreach($sizes as $size)
-                                            <label class="btn {{ $size->count == 0 ? 'disabled' : '' }}">
-                                                <input type="radio" name="customRadio" value="{{ $size->clothes_size }}" {{ $size->count == 0 ? 'disabled' : '' }}> {{ $size->clothes_size }}
-                                            </label>
-                                        @endforeach
-                                    </div>
-                                </div>
-                            </div>
                             <div class="row margin-row-1">
                                 <div class="col-sm-6 mb-3">
                                     <a href="{{ route('cart') }}" class="btn btn-block btn-primary">Перейти в корзину</a>
@@ -108,18 +96,26 @@
                         @else
                             <form action="{{ route('basketAdd', ['id' => $product->id]) }}" method="POST">
                                 @csrf
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label>Размер</label>
-                                        <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
-                                            @foreach($sizes as $size)
-                                                <label class="btn {{ $size->count == 0 ? 'disabled' : '' }}">
-                                                    <input type="radio" name="size" value="{{ $size->clothes_size }}" {{ $size->count == 0 ? 'disabled' : '' }}> {{ $size->clothes_size }}
-                                                </label>
-                                            @endforeach
+
+                                @if ($product->category->code == 3)
+                                    <!-- Если товар является аксессуаром, скрываем выбор размера -->
+                                    <input type="hidden" name="size" value="a">
+                                @else
+                                    <!-- Если товар не является аксессуаром, отображаем выбор размера -->
+                                    <div class="col-12">
+                                        <div class="form-group">
+                                            <label>Размер</label>
+                                            <div class="btn-group-toggle btn-group-square" data-toggle="buttons">
+                                                @foreach($sizes as $size)
+                                                    <label class="btn {{ $size->count == 0 ? 'disabled' : '' }}">
+                                                        <input type="radio" name="size" value="{{ $size->clothes_size }}" {{ $size->count == 0 ? 'disabled' : '' }}> {{ $size->clothes_size }}
+                                                    </label>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endif
+
                                 @if(session('error'))
                                     <div class="alert alert-danger">
                                         {{ session('error') }}
@@ -127,9 +123,10 @@
                                 @endif
 
                                 <div class="col-12">
-                                        <button type="submit" class="btn btn-block btn-primary btn-product-add">Добавить в корзину</button>
+                                    <button type="submit" class="btn btn-block btn-primary btn-product-add">Добавить в корзину</button>
                                 </div>
                             </form>
+
                         @endif
                     </div>
 
@@ -155,19 +152,6 @@
                             </div>
                         </div>
                     </div>
-
-                    {{--            <div class="form-group">--}}
-                    {{--              <label>Share this product</label>--}}
-                    {{--              <div>--}}
-                    {{--                <ul class="list list--horizontal">--}}
-                    {{--                  <li><a href="#!" class="text-hover-facebook"><i class="fs-28 icon-facebook-square-brands"></i></a></li>--}}
-                    {{--                  <li><a href="#!" class="text-hover-instagram"><i class="fs-28 icon-instagram-square-brands"></i></a></li>--}}
-                    {{--                  <li><a href="#!" class="text-hover-twitter"><i class="fs-28 icon-twitter-square-brands"></i></a></li>--}}
-                    {{--                  <li><a href="#!" class="text-hover-pinterest"><i class="fs-28 icon-pinterest-square-brands"></i></a></li>--}}
-                    {{--                </ul>--}}
-                    {{--              </div>--}}
-                    {{--            </div>--}}
-                    {{--          </div>--}}
 
                 </div>
             </div>
