@@ -13611,3 +13611,24 @@ div.code-toolbar > .toolbar {
     background-color: red !important;
     color: white !important;
 }
+.badge-position-absolute-2 {
+    position: absolute !important;
+    bottom: 35rem !important;
+    background-color: red !important;
+    color: white !important;
+}
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .badge-position-absolute-2 {
+        bottom: 31rem !important;
+    }
+}
+@media (min-width: 769px) and (max-width: 1199px) {
+    .badge-position-absolute-2 {
+        bottom: 17rem !important;
+    }
+}
+@media (max-width: 768px) {
+    .badge-position-absolute-2 {
+        bottom: 19rem !important;
+    }
+}

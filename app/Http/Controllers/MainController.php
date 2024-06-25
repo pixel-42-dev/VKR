@@ -329,8 +329,52 @@ class MainController extends Controller
         return redirect()->route('settings', ['page' => 1]);
     }
 
-    public function listingFull()
+    public function listingFull($parameters)
     {
-        return view('listing-2');
+        switch ($parameters) {
+            case 'clothes-trend':
+                $products = Product::whereHas('category', function ($query) {
+                    $query->where('code', 1); // Одежда
+                })->where('trend', 1)->paginate(15);
+                $title = "Одежда в тренде";
+                break;
+            case 'clothes-new':
+                $products = Product::whereHas('category', function ($query) {
+                    $query->where('code', 1); // Одежда
+                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))->paginate(15);
+                $title = "Новая одежда";
+                break;
+            case 'shoes-trend':
+                $products = Product::whereHas('category', function ($query) {
+                    $query->where('code', 2); // Обувь
+                })->where('trend', 1)->paginate(15);
+                $title = "Обувь в тренде";
+                break;
+            case 'shoes-new':
+                $products = Product::whereHas('category', function ($query) {
+                    $query->where('code', 2); // Обувь
+                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))->paginate(15);
+                $title = "Новая обувь";
+                break;
+            case 'accessories-trend':
+                $products = Product::whereHas('category', function ($query) {
+                    $query->where('code', 3); // Аксессуары
+                })->where('trend', 1)->paginate(15);
+                $title = "Аксессуары в тренде";
+                break;
+            case 'accessories-new':
+                $products = Product::whereHas('category', function ($query) {
+                    $query->where('code', 3); // Аксессуары
+                })->where('created_at', '>', \Carbon\Carbon::now()->subDays(10))->paginate(15);
+                $title = "Новые аксессуары";
+                break;
+            default:
+                dd('Неизвестный параметр: ' . $parameters);
+        }
+
+        return view('listing-2', compact('products', 'title'));
     }
+
+
+
 }

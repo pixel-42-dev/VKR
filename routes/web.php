@@ -32,7 +32,7 @@ Route::group(['middleware' => 'auth'], function () {
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/listing/{gender}', [MainController::class, 'listing'])->name('listing');
 Route::get('/listing/{gender}/{categoryNumber}', [MainController::class, 'listingCategory'])->name('listingCategory');
-Route::get('/full/listing', [MainController::class, 'listingFull'])->name('listing-2');
+Route::get('/full/listing/{parameters}', [MainController::class, 'listingFull'])->name('listing-2');
 Route::get('/login', [MainController::class, 'login'])->name('login');
 Route::get('/product/{number}', [MainController::class, 'product'])->name('product');
 Route::post('/favorites/add', [MainController::class, 'favoritesAdd'])->name('favorites-add');

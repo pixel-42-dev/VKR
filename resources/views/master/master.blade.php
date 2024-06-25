@@ -83,25 +83,25 @@
 
                                     <div class="col-lg-2 offset-lg-1">
                                         <div class="awe-media inline mb-3 text-center">
-                                            <div class="awe-media-image">
-                                                <a href="#" title="">
-                                                    <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
-                                                </a>
-                                            </div>
-                                            <h4 class="awe-media-title medium upper center">
-                                                <a href="#" title="">В тренде</a>
-                                            </h4>
+                                            <a href="{{ route('listing-2', ['parameters' => 'clothes-trend']) }}" title="">
+                                                <div class="awe-media-image">
+                                                    <img src="{{ asset('images/header-images/trending-clothes.jpg') }}" alt="">
+                                                </div>
+                                                <h4 class="awe-media-title medium upper center">
+                                                    <p>В тренде</p>
+                                                </h4>
+                                            </a>
                                         </div>
 
                                         <div class="awe-media inline text-center">
-                                            <div class="awe-media-image">
-                                                <a href="#" title="">
-                                                    <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
-                                                </a>
-                                            </div>
-                                            <h4 class="awe-media-title medium upper center">
-                                                <a href="#" title="">Новинки</a>
-                                            </h4>
+                                            <a href="{{ route('listing-2', ['parameters' => 'clothes-new']) }}" title="">
+                                                <div class="awe-media-image">
+                                                    <img src="{{ asset('images/header-images/new-clothes.jpg') }}" alt="">
+                                                </div>
+                                                <h4 class="awe-media-title medium upper center">
+                                                    <p>Новинки</p>
+                                                </h4>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -175,25 +175,25 @@
 
                                     <div class="col-lg-2 offset-lg-1">
                                         <div class="awe-media inline mb-3 text-center">
-                                            <div class="awe-media-image">
-                                                <a href="#" title="">
-                                                    <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
-                                                </a>
-                                            </div>
-                                            <h4 class="awe-media-title medium upper center">
-                                                <a href="#" title="">В тренде</a>
-                                            </h4>
+                                            <a href="{{ route('listing-2', ['parameters' => 'shoes-trend']) }}" title="">
+                                                <div class="awe-media-image">
+                                                    <img src="{{ asset('images/header-images/trending-shoes.jpg') }}" alt="">
+                                                </div>
+                                                <h4 class="awe-media-title medium upper center">
+                                                    <p>В тренде</p>
+                                                </h4>
+                                            </a>
                                         </div>
 
                                         <div class="awe-media inline text-center">
-                                            <div class="awe-media-image">
-                                                <a href="#" title="">
-                                                    <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
-                                                </a>
-                                            </div>
-                                            <h4 class="awe-media-title medium upper center">
-                                                <a href="#" title="">Новинки</a>
-                                            </h4>
+                                            <a href="{{ route('listing-2', ['parameters' => 'shoes-new']) }}" title="">
+                                                <div class="awe-media-image">
+                                                    <img src="{{ asset('images/header-images/new-shoes.jpg') }}" alt="">
+                                                </div>
+                                                <h4 class="awe-media-title medium upper center">
+                                                    <p>Новинки</p>
+                                                </h4>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -267,25 +267,25 @@
 
                                     <div class="col-lg-2 offset-lg-1">
                                         <div class="awe-media inline mb-3 text-center">
-                                            <div class="awe-media-image">
-                                                <a href="#" title="">
-                                                    <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
-                                                </a>
-                                            </div>
-                                            <h4 class="awe-media-title medium upper center">
-                                                <a href="#" title="">В тренде</a>
-                                            </h4>
+                                            <a href="{{ route('listing-2', ['parameters' => 'accessories-trend']) }}" title="">
+                                                <div class="awe-media-image">
+                                                    <img src="{{ asset('images/header-images/trending-accessories.jpg') }}" alt="">
+                                                </div>
+                                                <h4 class="awe-media-title medium upper center">
+                                                    <p>В тренде</p>
+                                                </h4>
+                                            </a>
                                         </div>
 
                                         <div class="awe-media inline text-center">
-                                            <div class="awe-media-image">
-                                                <a href="#" title="">
-                                                    <img src="{{ asset('images/demo/trending-shoes.jpg') }}" alt="">
-                                                </a>
-                                            </div>
-                                            <h4 class="awe-media-title medium upper center">
-                                                <a href="#" title="">Новинки</a>
-                                            </h4>
+                                            <a href="{{ route('listing-2', ['parameters' => 'accessories-new']) }}" title="">
+                                                <div class="awe-media-image">
+                                                    <img src="{{ asset('images/header-images/new-accessories.jpg') }}" alt="">
+                                                </div>
+                                                <h4 class="awe-media-title medium upper center">
+                                                    <p>Новинки</p>
+                                                </h4>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -407,58 +407,6 @@
                                 </div>
                         @endauth
                     </li>
-
-{{--                    <li class="nav-item dropdown dropdown-md dropdown-hover">--}}
-{{--                        <a class="nav-icon dropdown-toggle" id="navbarDropdown-6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                            <i class="icon-user d-none d-lg-inline-block"></i>--}}
-{{--                            <span class="d-inline-block d-lg-none">Account</span>--}}
-{{--                        </a>--}}
-{{--                        @guest--}}
-
-{{--                        @endguest--}}
-{{--                        @auth--}}
-
-{{--                        @endauth--}}
-{{--                    </li>--}}
-
-
-                    <!-- favourites -->
-{{--                    <li class="d-none d-lg-inline nav-item dropdown dropdown-md dropdown-hover">--}}
-{{--                        <a class="nav-icon" id="navbarDropdown-7" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="icon-heart"></i></a>--}}
-{{--                        <div class="dropdown-menu" aria-labelledby="navbarDropdown-7">--}}
-{{--                            <div class="row gutter-3">--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <h3 class="eyebrow text-dark fs-16 mb-1">Избранное</h3>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <div class="cart-item">--}}
-{{--                                        <a href="#!" class="cart-item-image"><img src="{{ asset('images/demo/product-1.jpg') }}" alt="Image"></a>--}}
-{{--                                        <div class="cart-item-body">--}}
-{{--                                            <div class="row">--}}
-{{--                                                <div class="col-9">--}}
-{{--                                                    <h5 class="cart-item-title">Футболка поло</h5>--}}
-{{--                                                    <small>Fred Perry</small>--}}
-{{--                                                    <br>--}}
-{{--                                                    <ul class="list list--horizontal fs-14">--}}
-{{--                                                        <li>2000 ₽</li>--}}
-{{--                                                    </ul>--}}
-{{--                                                </div>--}}
-{{--                                                <div class="col-3 text-right">--}}
-{{--                                                    <ul class="cart-item-options">--}}
-{{--                                                        <li><a href="" class="icon-x"></a></li>--}}
-{{--                                                    </ul>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col-12">--}}
-{{--                                    <a href="" class="btn btn-primary btn-block">Add all to cart</a>--}}
-{{--                                    <a href="" class="btn btn-outline-secondary btn-block">Открыть избранное</a>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
 
                     <!-- favourites -->
                     <li class="d-none d-lg-inline nav-item">

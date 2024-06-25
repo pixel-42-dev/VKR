@@ -1,21 +1,11 @@
 @extends('master/master')
 @section('content')
+    <style type="text/css">
+        .align-items-end {
+            margin-top: 3rem !important;
+        }
+    </style>
 
-<section class="breadcrumbs bg-light">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#!">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#!">Women</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Dresses</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- listing -->
 <section class="pt-6">
@@ -24,271 +14,99 @@
         <!-- sort -->
         <div class="row gutter-1 align-items-end">
             <div class="col-md-6">
-                <h1>Dresses</h1>
+                <h1>{{$title}}</h1>
             </div>
             <div class="col-md-6 text-md-right">
                 <ul class="list list--horizontal list--separated text-muted fs-14">
                     <li>
-                        <span class="text-primary">15 from 90 items</span>
-{{--                    </li>--}}
-{{--                    <li>--}}
-{{--                  <span>Sort by--}}
-{{--                  <span class="dropdown">--}}
-{{--                    <a class="dropdown-toggle underline" href="#!" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                      Most popular--}}
-{{--                    </a>--}}
-
-{{--                    <span class="dropdown-menu" aria-labelledby="dropdownMenuLink">--}}
-{{--                      <a class="dropdown-item" href="#!">Action</a>--}}
-{{--                      <a class="dropdown-item" href="#!">Another action</a>--}}
-{{--                      <a class="dropdown-item" href="#!">Something else here</a>--}}
-{{--                    </span>--}}
-{{--                  </span>--}}
-{{--                </span>--}}
-{{--                    </li>--}}
+                        <span> Товары {{ $products->firstItem() }} - {{ $products->lastItem() }} из {{ $products->total() }}</span>
                 </ul>
             </div>
         </div>
 
-        <!-- filters -->
-{{--        <div class="row filter">--}}
-{{--            <div class="col-md-6 col-lg">--}}
-{{--                <div class="dropdown">--}}
-{{--                    <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        Style--}}
-{{--                    </button>--}}
-{{--                    <div class="dropdown-menu" aria-labelledby="dropdown-filter-1">--}}
-{{--                        <form>--}}
-{{--                            <div class="custom-control custom-checkbox">--}}
-{{--                                <input type="checkbox" class="custom-control-input" id="customCheck1">--}}
-{{--                                <label class="custom-control-label" for="customCheck1">Coats & Jackets</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="custom-control custom-checkbox">--}}
-{{--                                <input type="checkbox" class="custom-control-input" id="customCheck2">--}}
-{{--                                <label class="custom-control-label" for="customCheck2">Dresses</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="custom-control custom-checkbox">--}}
-{{--                                <input type="checkbox" class="custom-control-input" id="customCheck3">--}}
-{{--                                <label class="custom-control-label" for="customCheck3">Polo Shirts</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="custom-control custom-checkbox">--}}
-{{--                                <input type="checkbox" class="custom-control-input" id="customCheck4">--}}
-{{--                                <label class="custom-control-label" for="customCheck4">Sweatshirts</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="custom-control custom-checkbox">--}}
-{{--                                <input type="checkbox" class="custom-control-input" id="customCheck5">--}}
-{{--                                <label class="custom-control-label" for="customCheck5">T-Shirts & Tops</label>--}}
-{{--                            </div>--}}
-{{--                            <div class="custom-control custom-checkbox">--}}
-{{--                                <input type="checkbox" class="custom-control-input" id="customCheck6">--}}
-{{--                                <label class="custom-control-label" for="customCheck6">Knitwear</label>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg">--}}
-{{--                <div class="dropdown">--}}
-{{--                    <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        Size--}}
-{{--                    </button>--}}
-{{--                    <div class="dropdown-menu" aria-labelledby="dropdown-filter-2">--}}
-{{--                        <form>--}}
-{{--                            <div class="btn-group-toggle btn-group-square" data-toggle="buttons">--}}
-{{--                                <label class="btn active">--}}
-{{--                                    <input type="checkbox" name="options" id="option-1" checked> 35--}}
-{{--                                </label>--}}
-{{--                                <label class="btn">--}}
-{{--                                    <input type="checkbox" name="options" id="option-2"> 35.5--}}
-{{--                                </label>--}}
-{{--                                <label class="btn">--}}
-{{--                                    <input type="checkbox" name="options" id="option-3"> 36--}}
-{{--                                </label>--}}
-{{--                                <label class="btn">--}}
-{{--                                    <input type="checkbox" name="options" id="option-4"> 36.5--}}
-{{--                                </label>--}}
-{{--                                <label class="btn">--}}
-{{--                                    <input type="checkbox" name="options" id="option-5"> 37--}}
-{{--                                </label>--}}
-{{--                                <label class="btn">--}}
-{{--                                    <input type="checkbox" name="options" id="option-6"> 38--}}
-{{--                                </label>--}}
-{{--                                <label class="btn">--}}
-{{--                                    <input type="checkbox" name="options" id="option-7"> 38.5--}}
-{{--                                </label>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg">--}}
-{{--                <div class="dropdown">--}}
-{{--                    <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        Color--}}
-{{--                    </button>--}}
-{{--                    <div class="dropdown-menu" aria-labelledby="dropdown-filter-3">--}}
-{{--                        <form>--}}
-{{--                            <div class="btn-group-toggle btn-group-square btn-group-colors" data-toggle="buttons">--}}
-{{--                                <label class="btn active text-red">--}}
-{{--                                    <input type="checkbox" name="color-select" id="option-2-1" checked>--}}
-{{--                                </label>--}}
-{{--                                <label class="btn text-blue">--}}
-{{--                                    <input type="checkbox" name="color-select" id="option-2-2">--}}
-{{--                                </label>--}}
-{{--                                <label class="btn text-yellow">--}}
-{{--                                    <input type="checkbox" name="color-select" id="option-2-3">--}}
-{{--                                </label>--}}
-{{--                                <label class="btn text-green">--}}
-{{--                                    <input type="checkbox" name="color-select" id="option-2-4">--}}
-{{--                                </label>--}}
-{{--                                <label class="btn text-white">--}}
-{{--                                    <input type="checkbox" name="color-select" id="option-2-5">--}}
-{{--                                </label>--}}
-{{--                                <label class="btn text-dark">--}}
-{{--                                    <input type="checkbox" name="color-select" id="option-2-6">--}}
-{{--                                </label>--}}
-{{--                            </div>--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--            <div class="col-md-6 col-lg">--}}
-{{--                <div class="dropdown">--}}
-{{--                    <button class="btn btn-filter btn-block dropdown-toggle" type="button" id="dropdown-filter-4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">--}}
-{{--                        Price Range--}}
-{{--                    </button>--}}
-{{--                    <div class="dropdown-menu" aria-labelledby="dropdown-filter-4">--}}
-{{--                        <form>--}}
-{{--                            <input type="text" class="rangeslider" name="Range Slider" value="" />--}}
-{{--                        </form>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
-
         <!-- products -->
         <div class="row gutter-1">
-
-            <div class="col-6 col-md-4">
-                <div class="card card-product">
-                    <figure class="card-image">
-                        <a href="#!" class="action"><i class="icon-heart"></i></a>
-                        <a href="#!">
-                            <img src="assets/images/demo/product-listing-1.jpg" alt="Image">
-                            <img src="assets/images/demo/product-listing-1-1.jpg" alt="Image">
-                        </a>
-                        <span class="badge badge-success">New</span>
-                    </figure>
-                    <div class="card-footer">
-                        <h3 class="card-title"><a href="">Highwaist Jeans</a></h3>
-                        <span class="brand">Armani</span>
-                        <span class="price">$410</span>
+            @foreach($products as $product)
+                <div class="col-6 col-md-4">
+                    <div class="card card-product">
+                        <figure class="card-image">
+                            @guest
+                                <a href="#" class="action icon-heart-container"><i class="icon-heart"></i></a>
+                            @endguest
+                            @auth
+                                <a href="#" class="action icon-heart-container-2 {{ Auth::user()->favorites->contains($product->id) ? 'is-favorite' : '' }}" data-product-id="{{ $product->id }}"><i class="icon-heart"></i></a>
+                            @endauth
+                                <a href="{{ route('product', ['number' => $product->id]) }}">
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Product Image">
+                                    <img src="{{ \Illuminate\Support\Facades\Storage::url($product->image2) }}" alt="Product Image">
+                                </a>
+                            </a>
+                            @if(!is_null($product->created_at))
+                                @if($product->created_at->gt(\Carbon\Carbon::now()->subDays(10)))
+                                    <span class="badge badge-success">New</span>
+                                @endif
+                            @endif
+                            @if($product->trend)
+                                <span class="badge badge-warning badge-position-absolute-2">Trending</span>
+                            @endif
+                        </figure>
+                        <div class="card-footer">
+                            <h3 class="card-title"><a href="">{{$product->name}}</a></h3>
+                            <span class="brand">{{ $product->brand->name }}</span>
+                            <span class="price">{{ $product->price }}₽</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="card card-product">
-                    <figure class="card-image">
-                        <a href="#!" class="action"><i class="icon-heart"></i></a>
-                        <a href="#!">
-                            <img src="assets/images/demo/product-listing-2.jpg" alt="Image">
-                            <img src="assets/images/demo/product-listing-2-1.jpg" alt="Image">
-                        </a>
-                        <span class="badge badge-success">New</span>
-                    </figure>
-                    <div class="card-footer">
-                        <h3 class="card-title"><a href="">Highwaist Jeans</a></h3>
-                        <span class="price">$410</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="card card-product">
-                    <figure class="card-image">
-                        <a href="#!" class="action"><i class="icon-heart"></i></a>
-                        <a href="#!">
-                            <img src="assets/images/demo/product-listing-3.jpg" alt="Image">
-                            <img src="assets/images/demo/product-listing-3-1.jpg" alt="Image">
-                        </a>
-                        <span class="badge badge-success">New</span>
-                    </figure>
-                    <div class="card-footer">
-                        <h3 class="card-title"><a href="">Highwaist Jeans</a></h3>
-                        <span class="price text-red"><s>$500</s> $410</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="card card-product">
-                    <figure class="card-image">
-                        <a href="#!" class="action"><i class="icon-heart"></i></a>
-                        <a href="#!">
-                            <img src="assets/images/demo/product-listing-4.jpg" alt="Image">
-                            <img src="assets/images/demo/product-listing-4-1.jpg" alt="Image">
-                        </a>
-                        <span class="badge badge-success">New</span>
-                    </figure>
-                    <div class="card-footer">
-                        <h3 class="card-title"><a href="">Highwaist Jeans</a></h3>
-                        <span class="brand">Armani</span>
-                        <span class="price">$410</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="card card-product">
-                    <figure class="card-image">
-                        <a href="#!" class="action"><i class="icon-heart"></i></a>
-                        <a href="#!">
-                            <img src="assets/images/demo/product-listing-5.jpg" alt="Image">
-                            <img src="assets/images/demo/product-listing-5-1.jpg" alt="Image">
-                        </a>
-                        <span class="badge badge-success">New</span>
-                    </figure>
-                    <div class="card-footer">
-                        <h3 class="card-title"><a href="">Highwaist Jeans</a></h3>
-                        <span class="brand">Armani</span>
-                        <span class="price">$410</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-md-4">
-                <div class="card card-product">
-                    <figure class="card-image">
-                        <a href="#!" class="action"><i class="icon-heart"></i></a>
-                        <a href="#!">
-                            <img src="assets/images/demo/product-listing-6.jpg" alt="Image">
-                            <img src="assets/images/demo/product-listing-6-1.jpg" alt="Image">
-                        </a>
-                        <span class="badge badge-success">New</span>
-                    </figure>
-                    <div class="card-footer">
-                        <h3 class="card-title"><a href="">Highwaist Jeans</a></h3>
-                        <span class="brand">Armani</span>
-                        <span class="price">$410</span>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
 
         <div class="row">
-            <div class="col">
-                <nav aria-label="Page navigation">
-                    <ul class="pagination">
-                        <li class="page-item"><a class="page-link" href="#!">Previous</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">1</a></li>
-                        <li class="page-item active"><a class="page-link" href="#!">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">5</a></li>
-                        <li class="page-item"><a class="page-link" href="#!">Next</a></li>
-                    </ul>
-                </nav>
-            </div>
+            {{$products->links()}}
         </div>
     </div>
 </section>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.icon-heart-container').on('click', function(event) {
+            event.preventDefault();
+            var iconContainer = $(this);
+            var productId = iconContainer.data('product-id');
+
+            // Проверяем, содержит ли элемент класс is-favorite
+            var isFavorite = iconContainer.hasClass('is-favorite');
+
+            $.ajax({
+                url: '{{ route('favorites-toggle') }}',
+                method: 'POST',
+                data: {
+                    product_id: productId,
+                    _token: '{{ csrf_token() }}'
+                },
+                success: function(response) {
+                    if (response.success) {
+                        if (isFavorite) {
+                            // Если товар был в избранном, удаляем класс is-favorite и меняем иконку на обычную
+                            iconContainer.removeClass('is-favorite');
+                        } else {
+                            // Если товар не был в избранном, добавляем класс is-favorite и меняем иконку на заполненное сердечко
+                            iconContainer.addClass('is-favorite');
+                        }
+                    } else {
+                        alert('Error occurred. Please try again later.');
+                    }
+                },
+                error: function(xhr) {
+                    if (xhr.status === 401) {
+                        // Отображение модального окна при статусе 401
+                        $('#authModal').modal('show');
+                    } else {
+                        alert('Error occurred. Please try again later.');
+                    }
+                }
+            });
+        });
+    });
+</script>
 @endsection
