@@ -127,5 +127,43 @@
 
 
 
+    <section class="section-popular-products">
+        <div class="container">
+            <h2 class="section-title text-center mb-4">Популярные товары</h2>
+
+            <div class="row">
+                @foreach ($trendingProducts as $product)
+                    <div class="col-6 col-md-3 mb-4">
+                        <div class="card card-product">
+                            <figure class="card-image">
+                                <a href="{{ route('product', ['number' => $product->id]) }}">
+                                    @if ($product->image1)
+                                        <img class="product-image-size" src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Product Image">
+                                    @else
+                                        <img class="product-image-size" src="{{ asset('images/demo/product-6.jpg') }}" alt="Default Image">
+                                    @endif
+                                </a>
+                                @if(!is_null($product->created_at))
+                                    @if($product->created_at->gt(\Carbon\Carbon::now()->subDays(10)))
+                                        <span class="badge badge-success">New</span>
+                                    @endif
+                                @endif
+                                @if($product->trend)
+                                    <span class="badge badge-warning badge-position-absolute">Trending</span>
+                                @endif
+                            </figure>
+                            <div class="card-footer">
+                                <h3 class="card-title"><a href="{{ route('product', ['number' => $product->id]) }}">{{ $product->name }}</a></h3>
+                                <span class="brand">{{ $product->brand->name }}</span>
+                                <span class="price">{{ $product->price }}₽</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
+
 
 @endsection

@@ -12,8 +12,10 @@ use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
-    public function index() {
-        return view('index');
+    public function index()
+    {
+        $trendingProducts = Product::where('trend', 1)->take(4)->get();
+        return view('index')->with('trendingProducts', $trendingProducts);
     }
 
     public function about() {
