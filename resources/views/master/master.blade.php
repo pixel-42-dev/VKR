@@ -561,7 +561,5 @@
 
 <script src="{{ asset('js/vendor.min.js') }}"></script>
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="https://api-maps.yandex.ru/2.1/?apikey=<7d846d95-6905-4435-9040-64b65faaa789>&lang=ru_RU" type="text/javascript"></script>
-<script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

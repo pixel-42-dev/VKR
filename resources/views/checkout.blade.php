@@ -67,7 +67,7 @@
                             <fieldset class="mb-2">
                                 <div class="row">
                                     <div class="col-12">
-                                        <div id="map" class="map"></div>
+                                        <div id="map"></div>
                                     </div>
                                 </div>
                             </fieldset>
@@ -123,5 +123,55 @@
             </div>
         </div>
     </section>
+
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=7d846d95-6905-4435-9040-64b65faaa789&lang=ru_RU" type="text/javascript"></script>
+    <script>
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map("map", {
+                center: [53.249236, 34.342387],
+                zoom: 17
+            });
+
+            var myPlacemark;
+            myMap.events.add('click', function (e) {
+                var coords = e.get('coords');
+
+                if (myPlacemark) {
+                    myPlacemark.geometry.setCoordinates(coords);
+                } else {
+                    myPlacemark = createPlacemark(coords);
+                    myMap.geoObjects.add(myPlacemark);
+                }
+
+                getAddress(coords);
+            });
+
+            function createPlacemark(coords) {
+                return new ymaps.Placemark(coords, {
+                    iconCaption: 'поиск...'
+                }, {
+                    preset: 'islands#violetDotIconWithCaption',
+                    draggable: true
+                });
+            }
+
+            function getAddress(coords) {
+                myPlacemark.properties.set('iconCaption', 'поиск...');
+                ymaps.geocode(coords).then(function (res) {
+                    var firstGeoObject = res.geoObjects.get(0);
+                    var address = firstGeoObject.getAddressLine();
+
+                    myPlacemark.properties.set({
+                        iconCaption: address,
+                        balloonContent: address
+                    });
+
+                    document.getElementById('inputAddress').value = address;
+                });
+            }
+        }
+    </script>
 
 @endsection
