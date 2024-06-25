@@ -13639,3 +13639,6 @@ div.code-toolbar > .toolbar {
     margin-top: 5rem;
     margin-bottom: -1px;
 }
+.faq-container {
+    margin-top: 5rem !important;
+}

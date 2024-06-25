@@ -20,6 +20,10 @@ class MainController extends Controller
         return view('about');
     }
 
+    public function faq() {
+        return view('faq');
+    }
+
     public function orderDetails($orderID)
     {
         $order = Order::with(['products' => function ($query) {

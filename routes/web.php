@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 // MainController
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/FAQ', [MainController::class, 'faq'])->name('FAQ');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/order-details/{id}', [MainController::class, 'orderDetails'])->name('order-details');
     Route::get('/settings/{page}', [MainController::class, 'settings'])->name('settings');
