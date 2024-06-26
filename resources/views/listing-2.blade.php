@@ -39,7 +39,7 @@
                             @auth
                                 <a href="#" class="action icon-heart-container-2 {{ Auth::user()->favorites->contains($product->id) ? 'is-favorite' : '' }}" data-product-id="{{ $product->id }}"><i class="icon-heart"></i></a>
                             @endauth
-                                <a href="{{ route('product', ['number' => $product->id]) }}">
+                                <a class="card-listing-height" href="{{ route('product', ['number' => $product->id]) }}">
                                     <img src="{{ \Illuminate\Support\Facades\Storage::url($product->image1) }}" alt="Product Image">
                                     <img src="{{ \Illuminate\Support\Facades\Storage::url($product->image2) }}" alt="Product Image">
                                 </a>

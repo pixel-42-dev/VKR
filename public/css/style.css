@@ -10552,8 +10552,7 @@ dt {
   position: relative;
   flex-shrink: 0; }
   .card-image a {
-    display: block;
-      height: 37rem; }
+    display: block;}
 
 .card-body + .card-body {
   padding-top: 0; }
@@ -13538,6 +13537,12 @@ div.code-toolbar > .toolbar {
     white-space: normal !important; /* Обычный перенос строк */
 }
 
+
+.card-listing-height {
+    height: 37rem !important;
+}
+
+
 .dropdown-menu-auth {
     width: 3rem !important;
     padding: 15px !important;
@@ -13623,24 +13628,24 @@ div.code-toolbar > .toolbar {
         bottom: 31rem !important;
     }
 
-    .card-image a {
-        height: 33rem;
+    .card-listing-height {
+        height: 33rem !important;
     }
 }
 @media (min-width: 769px) and (max-width: 1199px) {
     .badge-position-absolute-2 {
         bottom: 17rem !important;
     }
-    .card-image a {
-        height: 19rem;
+    .card-listing-height {
+        height: 19rem !important;
     }
 }
 @media (max-width: 768px) {
     .badge-position-absolute-2 {
         bottom: 19rem !important;
     }
-    .card-image a {
-        height: 21rem;
+    .card-listing-height {
+        height: 21rem !important;
     }
 }
 .header-search {
@@ -13659,8 +13664,6 @@ div.code-toolbar > .toolbar {
     top: 1rem;
     left: 0rem;
 }
-
-
 
 
 
