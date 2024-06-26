@@ -10552,7 +10552,8 @@ dt {
   position: relative;
   flex-shrink: 0; }
   .card-image a {
-    display: block; }
+    display: block;
+      height: 37rem; }
 
 .card-body + .card-body {
   padding-top: 0; }
@@ -13621,15 +13622,25 @@ div.code-toolbar > .toolbar {
     .badge-position-absolute-2 {
         bottom: 31rem !important;
     }
+
+    .card-image a {
+        height: 33rem;
+    }
 }
 @media (min-width: 769px) and (max-width: 1199px) {
     .badge-position-absolute-2 {
         bottom: 17rem !important;
     }
+    .card-image a {
+        height: 19rem;
+    }
 }
 @media (max-width: 768px) {
     .badge-position-absolute-2 {
         bottom: 19rem !important;
+    }
+    .card-image a {
+        height: 21rem;
     }
 }
 .header-search {
