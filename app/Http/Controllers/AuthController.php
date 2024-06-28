@@ -42,7 +42,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('settings', ['page' => 3]);
+        return redirect()->route('settings', ['page' => 3])->with('success', 'Вы зарегестрированы.');
     }
     public function logout()
     {
