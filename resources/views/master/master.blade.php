@@ -305,11 +305,14 @@
                 <ul class="navbar-nav ml-auto position-relative">
 
                     <li class="nav-item">
-                        @if(Auth::check() && Auth::user()->isAdmin)
-                            <div style="margin-top: 26px">
-                                <a href="{{ route('admin', ['page' => 'new']) }}">Панель администратора</a>
-                            </div>
-                        @endif
+{{--                        @if(Auth::check() && Auth::user()->isAdmin)--}}
+{{--                            <div style="margin-top: 26px">--}}
+{{--                                <a href="{{ route('admin', ['page' => 'new']) }}">Панель администратора</a>--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
+                        <div style="margin-top: 26px">
+                            <a href="{{ route('admin', ['page' => 'new']) }}">Панель администратора</a>
+                        </div>
                     </li>
 
                     <!-- search -->

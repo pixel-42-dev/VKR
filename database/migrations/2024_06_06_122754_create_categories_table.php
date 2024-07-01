@@ -17,7 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("code");             // Код категории
-            $table->text("description")->nullable;
+            $table->text("description")->nullable();
             $table->boolean("forMen")->default(true);
             $table->timestamps();
         });
